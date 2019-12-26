@@ -21,16 +21,19 @@
         <artifactId>solon.boot.smarthttp</artifactId>
         <version>1.0.4</version>
     </dependency>
+    <!-- 一个小巧的JSON框架 -->
     <dependency>
         <groupId>org.noear</groupId>
         <artifactId>solon.serialization.snack3</artifactId>
         <version>1.0.4</version>
     </dependency>
+    <!-- enjoy模板引擎 -->
     <dependency>
         <groupId>org.noear</groupId>
         <artifactId>solon.view.enjoy</artifactId>
         <version>1.0.4</version>
     </dependency>
+    <!-- 静态文件支持 -->
     <dependency>
         <groupId>org.noear</groupId>
         <artifactId>solon.extend.staticfiles</artifactId>

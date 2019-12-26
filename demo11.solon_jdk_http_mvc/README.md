@@ -15,21 +15,25 @@
 ##### （二）添加 maven 引用
 ```xml
 <dependencies>
+    <!-- 基于com.sun.net.httpserver封装的 solon.boot -->
     <dependency>
         <groupId>org.noear</groupId>
         <artifactId>solon.boot.jdkhttp</artifactId>
         <version>1.0.4</version>
     </dependency>
+    <!-- 一个小巧的JSON框架 -->
     <dependency>
         <groupId>org.noear</groupId>
         <artifactId>solon.serialization.snack3</artifactId>
         <version>1.0.4</version>
     </dependency>
+    <!-- enjoy模板引擎 -->
     <dependency>
         <groupId>org.noear</groupId>
         <artifactId>solon.view.enjoy</artifactId>
         <version>1.0.4</version>
     </dependency>
+    <!-- 静态文件支持 -->
     <dependency>
         <groupId>org.noear</groupId>
         <artifactId>solon.extend.staticfiles</artifactId>
