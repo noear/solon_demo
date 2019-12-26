@@ -44,7 +44,7 @@
 * java/webapp/controller/HomeController.java
 * java/webapp/model/UserModel.java
 * java/webapp/widget/FooterTag.java
-* java/webapp/JdkApp.java
+* java/webapp/AioApp.java
 * resources/static/jinjin.htm
 * resources/WEB-INF/view/helloworld.shtm
 * //不用配置
@@ -62,11 +62,11 @@ resources/WEB-INF/view/ 为视图文件根目标（支持多视图共存）
 
 ##### （四）代码
 
-* webapp/JdkApp.java
+* webapp/AioApp.java
 ```java
-public class JdkApp {
+public class AioApp {
     public static void main(String[] args) {
-        XApp.start(JdkApp.class, args);
+        XApp.start(AioApp.class, args);
     }
 }
 ```
@@ -153,7 +153,7 @@ public class HelloworldController {
 </html>
 ```
 
-##### （五）运行 JdkApp.main()
+##### （五）运行 AioApp.main()
 * 浏览器打开：http://localhost:8080/
 * 浏览器输出：<a href='/helloworld'>/helloworld</a>
 
