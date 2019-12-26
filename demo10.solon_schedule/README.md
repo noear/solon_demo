@@ -1,8 +1,8 @@
 # 使用 cron4j-solon-plugin 开发定时任务
 
-##### （一）新建一个空的meven项目
+##### （一）新建一个 maven 空项目
 
-##### （二）添加meven引用
+##### （二）添加 maven 引用
 ```xml
 <dependency>
     <groupId>org.noear</groupId>
