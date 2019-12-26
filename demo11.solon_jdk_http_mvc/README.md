@@ -130,6 +130,23 @@ public class HelloworldController {
 }
 ```
 
+* resources/WEB-INF/view/helloworld.shtm
+```html
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>#(title)</title>
+</head>
+<body>
+<div>
+    #(m.name) : #(message) （我想<a href="/jinjin.htm">静静</a>）
+</div>
+#footer()
+</body>
+</html>
+```
+
 ##### （五）运行 JdkApp.main()
 * 浏览器打开：http://localhost:8080/
 * 浏览器输出：<a href='/helloworld'>/helloworld</a>
