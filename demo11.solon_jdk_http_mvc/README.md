@@ -1,4 +1,4 @@
-# 基于jdk自带httpserver开发的最小完整mvc
+# 基于jdk自带httpserver开发的最小完整MVC框架
 
 ##### 410kb级的完整MVC：solon(83k) + jdkhttp(27k) + enjoy(227k) + snack3(73k)
 
