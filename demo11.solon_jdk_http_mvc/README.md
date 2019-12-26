@@ -6,7 +6,7 @@
 
 * solon 是一个插件框架，提供MVC,IOC,AOP,注解,插件机制。
 * jdkhttp 基于jdk自带httpserver封装而成，有完整的http功能，参数，cookies，上传文件。
-* snack3 提供json和序列化支持。
+* snack3 提供json和序列化支持，也足够小。
 * enjoy 很难再找到比它更小的模板引擎了，还快得让人想哭。
 
 
