@@ -125,4 +125,4 @@ public class HelloworldController {
 
 
 ##### （六）DEMO源码
-[源码：demo01.solon_tmp](https://gitee.com/noear/solon_demo/tree/master/demo01.solon_tmp)
+[源码：demo11.solon_jdk_http_mvc](https://gitee.com/noear/solon_demo/tree/master/demo11.solon_jdk_http_mvc)
