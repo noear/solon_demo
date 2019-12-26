@@ -4,9 +4,13 @@
 
 ##### DEMO启动时间：0.1s（应该算少的吧？）
 
-* solon 是一个插件框架，提供MVC,IOC,AOP,注解,插件等机制。
-* smarthttp smart-http 是一款比较简易的 http服务器，其通信内核采用了smart-socket最新版v1.4.6。
-* snack3 提供json和序列化支持，也足够小。
+smart-http 是一款比较简易的 http服务器，其通信内核采用了smart-socket最新版v1.4.6。但想提供友好的WEB服务，需要很多别的功能。
+
+通过与solon框架的融合，便可以友好的提供MVC和AOP服务：
+
+* solon 是一个框架的壳，实现了MVC,IOC,AOP,注解,插件等等机制。把这个壳套在smart-http上，便可以为其提供mvc等能力。
+* smarthttp 是对smart-http的适配，使其能套上solon这个壳；同时还可以享用solon的其它插件带来的能力，如session，json等。
+* snack3 提供json和序列化支持，也足够小；已适配为solon的序列化框架之一。
 * enjoy 很难再找到比它更小的模板引擎了，还快得让人想哭。
 
 
@@ -49,7 +53,7 @@
 * java/webapp/widget/FooterTag.java
 * java/webapp/AioApp.java
 * resources/static/jinjin.htm
-* resources/WEB-INF/view/helloworld.shtm
+* resources/WEB-INF/view/helloworld.shtm （shtm，被适配为enjoy默认的后缀名）
 * //不用配置
 
 补充说明：
