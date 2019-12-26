@@ -1,11 +1,11 @@
-# 基于jdk自带httpserver开发的最小完整MVC框架
+# 基于AIO架构smarthttp开发的完整MVC框架
 
-##### 410kb级的完整MVC：solon(83k) + jdkhttp(27k) + enjoy(227k) + snack3(73k)
+> 写了篇《基于jdk自带httpserver开发的最小完整MVC框架》，就再写篇AIO的MVC
 
 ##### DEMO启动时间：0.1s
 
-* solon 是一个插件框架，提供MVC,IOC,AOP,注解,插件机制。
-* jdkhttp 基于jdk8自带com.sun.net.httpserver封装而成，有完整的http功能。
+* solon 是一个插件框架，提供MVC,IOC,AOP,注解,插件等机制。
+* smarthttp smart-http 是一款比较简易的 http服务器，其通信内核采用了smart-socket最新版v1.4.6。
 * snack3 提供json和序列化支持，也足够小。
 * enjoy 很难再找到比它更小的模板引擎了，还快得让人想哭。
 
@@ -15,9 +15,10 @@
 ##### （二）添加 maven 引用
 ```xml
 <dependencies>
+    <!-- 基于 smart-http 封装的 solon.boot -->
     <dependency>
         <groupId>org.noear</groupId>
-        <artifactId>solon.boot.jdkhttp</artifactId>
+        <artifactId>solon.boot.smarthttp</artifactId>
         <version>1.0.4</version>
     </dependency>
     <dependency>
@@ -158,4 +159,4 @@ public class HelloworldController {
 
 
 ##### （六）DEMO源码
-[源码：demo11.solon_jdk_http_mvc](https://gitee.com/noear/solon_demo/tree/master/demo11.solon_jdk_http_mvc)
+[源码：demo12.solon_aio_http_mvc](https://gitee.com/noear/solon_demo/tree/master/demo12.solon_aio_http_mvc)

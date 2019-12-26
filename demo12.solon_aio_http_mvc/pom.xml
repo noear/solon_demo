@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear</groupId>
-    <artifactId>demo11.solon_jdk_http_mvc</artifactId>
+    <artifactId>demo12.solon_aio_http_mvc</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
@@ -21,7 +21,7 @@
     <dependencies>
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.boot.jdkhttp</artifactId>
+            <artifactId>solon.boot.smarthttp</artifactId>
         </dependency>
         <dependency>
             <groupId>org.noear</groupId>
@@ -70,7 +70,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>webapp.JdkApp</mainClass>
+                            <mainClass>webapp.AioApp</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

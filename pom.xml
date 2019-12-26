@@ -26,6 +26,7 @@
 
         <module>demo10.solon_schedule</module>
         <module>demo11.solon_jdk_http_mvc</module>
+        <module>demo12.solon_aio_http_mvc</module>
 
         <module>demo20.solon_db_weed_snack</module>
 
