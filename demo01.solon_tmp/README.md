@@ -35,6 +35,6 @@ public class HelloworldApp {
 
 
 ##### （五）DEMO源码
-[源码：demo10.solon_schedule](https://gitee.com/noear/solon_demo/tree/master/demo10.solon_schedule)
+[源码：demo01.solon_tmp](https://gitee.com/noear/solon_demo/tree/master/demo01.solon_tmp)
 
 
