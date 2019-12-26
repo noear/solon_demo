@@ -10,9 +10,9 @@ public class HelloworldController {
     @XMapping("/helloworld")
     public Object helloworld(){
         UserModel m = new UserModel();
-        m.id=10;
-        m.name = "刘之西东";
-        m.sex=1;
+        m.setId(10);
+        m.setName("刘之西东");
+        m.setSex(1);
 
         ModelAndView vm = new ModelAndView("helloworld.ftl");
 

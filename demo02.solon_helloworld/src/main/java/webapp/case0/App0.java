@@ -1,4 +1,4 @@
-package webapp;
+package webapp.case0;
 
 import org.noear.solon.XApp;
 

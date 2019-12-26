@@ -1,4 +1,4 @@
-package webapp;
+package webapp.case1;
 
 import org.noear.solon.XApp;
 import org.noear.solon.annotation.XController;
