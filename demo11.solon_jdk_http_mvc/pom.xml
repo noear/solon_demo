@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear</groupId>
-    <artifactId>solon_demo</artifactId>
-    <version>1-SNAPSHOT</version>
-    <packaging>pom</packaging>
+    <artifactId>demo11.solon_jdk_http_mvc</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
 
     <name>${artifactId}</name>
     <description>java project for solon demo</description>
@@ -18,19 +18,27 @@
         <version>1.0.4</version>
     </parent>
 
-    <modules>
-        <module>demo01.solon_tmp</module>
-        <module>demo02.solon_helloworld</module>
-        <module>demo03.solon_mvc</module>
-        <module>demo04.solon_mvc_jsp</module>
+    <dependencies>
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.boot.jdkhttp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.serialization.snack3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.view.enjoy</artifactId>
+        </dependency>
 
-        <module>demo10.solon_schedule</module>
-        <module>demo11.solon_jdk_http_mvc</module>
-
-        <module>demo20.solon_db_weed_snack</module>
-
-        <module>demo21.solon_db_mybatis_fastjson</module>
-    </modules>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.14.4</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <finalName>${project.artifactId}</finalName>
