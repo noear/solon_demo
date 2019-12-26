@@ -10,8 +10,8 @@ import org.noear.solon.XApp;
  * resources/WEB-INF/view/ 为视图文件根目标（支持多视图共存）
  *
  * */
-public class App {
+public class MvcJspApp {
     public static void main(String[] args) {
-        XApp.start(App.class, args);
+        XApp.start(MvcJspApp.class, args);
     }
 }
