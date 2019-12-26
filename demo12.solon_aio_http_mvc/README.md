@@ -2,7 +2,7 @@
 
 > 写了篇《基于jdk自带httpserver开发的最小完整MVC框架》，就再写篇AIO的MVC
 
-##### DEMO启动时间：0.1s
+##### DEMO启动时间：0.1s（应该算少的吧？）
 
 * solon 是一个插件框架，提供MVC,IOC,AOP,注解,插件等机制。
 * smarthttp smart-http 是一款比较简易的 http服务器，其通信内核采用了smart-socket最新版v1.4.6。

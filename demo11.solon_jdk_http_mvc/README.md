@@ -2,7 +2,7 @@
 
 ##### 410kb级的完整MVC：solon(83k) + jdkhttp(27k) + enjoy(227k) + snack3(73k)
 
-##### DEMO启动时间：0.1s
+##### DEMO启动时间：0.1s（应该算少的吧？）
 
 * solon 是一个插件框架，提供MVC,IOC,AOP,注解,插件机制。
 * jdkhttp 基于jdk8自带com.sun.net.httpserver封装而成，有完整的http功能。
