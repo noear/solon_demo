@@ -10,3 +10,31 @@
     <version>1.0.4</version>
 </dependency>
 ```
+
+##### （三）添加文件
+* java/HelloworldApp.java
+
+```java
+@XController
+public class HelloworldApp {
+    public static void main(String[] args) {
+        XApp.start(HelloworldApp.class, args);
+    }
+
+    @XMapping("/")
+    public String helloworld(){
+        return "Hello world!";
+    }
+}
+
+```
+
+##### （四）运行 HelloworldApp.main()
+* 浏览器打开：http://localhost:8080/
+* 浏览器：Hello world!
+
+
+##### （五）DEMO源码
+[源码：demo10.solon_schedule](https://gitee.com/noear/solon_demo/tree/master/demo10.solon_schedule)
+
+
