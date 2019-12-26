@@ -83,3 +83,20 @@ solon.schedule.job3.cron4x=3s
 solon.schedule.job3.enable=true
 ```
 
+##### （五）运行输出
+```
+solon.plugin:: Start loading
+file:/Users/xieyuejia/WORK/work_github/solon_demo/demo10.solon_schedule/target/classes/application.properties
+jar:file:/Users/xieyuejia/.m2/repository/org/noear/cron4j-solon-plugin/1.0.4/cron4j-solon-plugin-1.0.4.jar!/solonplugin/solon.extend.cron4j.properties
+我是 Job1 （2s）
+我是 Job3 （props）
+solon.plugin:: End loading @129ms
+我是 Job1 （2s）
+我是 Job3 （props）
+我是 Job1 （2s）
+我是 Job1 （2s）
+```
+
+##### （六）DEMO源码
+[源码：demo10.solon_schedule](https://gitee.com/noear/solon_demo/tree/master/demo10.solon_schedule)
+
