@@ -1,102 +1,128 @@
-# 使用 cron4j-solon-plugin 开发定时任务
+# 基于jdk自带httpserver开发的最小完整mvc
+
+##### 410kb级的完整MVC：solon(83k) + jdkhttp(27k) + enjoy(227k) + snack3(73k)
+
+##### DEMO启动时间：0.1s
+
+* solon 是一个插件框架，提供MVC,IOC,AOP,注解,插件机制。
+* jdkhttp 基于jdk自带httpserver封装而成，有完整的http功能，参数，cookies，上传文件。
+* snack3 提供json和序列化支持。
+* enjoy 很难再找到比它更小的模板引擎了，还快得让人想哭。
+
 
 ##### （一）新建一个 maven 空项目
 
 ##### （二）添加 maven 引用
 ```xml
-<dependency>
-    <groupId>org.noear</groupId>
-    <artifactId>cron4j-solon-plugin</artifactId>
-    <version>1.0.4</version>
-</dependency>
+<dependencies>
+    <dependency>
+        <groupId>org.noear</groupId>
+        <artifactId>solon.boot.jdkhttp</artifactId>
+        <version>1.0.4</version>
+    </dependency>
+    <dependency>
+        <groupId>org.noear</groupId>
+        <artifactId>solon.serialization.snack3</artifactId>
+        <version>1.0.4</version>
+    </dependency>
+    <dependency>
+        <groupId>org.noear</groupId>
+        <artifactId>solon.view.enjoy</artifactId>
+        <version>1.0.4</version>
+    </dependency>
+</dependencies>
 ```
 
-##### （三）新建代码文件
-* java/jobapp/JobApp
-* java/jobapp/controller/Job1
-* java/jobapp/controller/Job2
-* java/jobapp/controller/Job3
-* reources/application.properties
+##### （三）添加文件
+* java/webapp/controller/HelloworldController.java
+* java/webapp/controller/HomeController.java
+* java/webapp/model/UserModel.java
+* java/webapp/widget/FooterTag.java
+* java/webapp/JdkApp.java
+* resources/static/jinjin.htm
+* resources/WEB-INF/view/helloworld.shtm
+* //不用配置
 
 ##### （四）代码
 
-* JobApp 代码
-
-JobApp.java 
+* webapp/JdkApp.java
 ```java
-public class JobApp {
+public class JdkApp {
     public static void main(String[] args) {
-        //加载配置和注解
-        XApp.start(JobApp.class, args);
+        XApp.start(JdkApp.class, args);
     }
 }
 ```
 
-* 注解模式，Job1，Job2（使用@Job注解）
-1. cron4x，极速配置：n + ms,s,m,h,d
-
-Job1.java
+* webapp/widget/FooterTag.java
 ```java
-@Job(cron4x = "2s")
-public class Job1  implements Runnable{
+@XBean("view:footer")
+public class FooterTag extends Directive {
     @Override
-    public void run() {
-        System.out.println("我是 Job1 （2s）");
+    public void exec(Env env, Scope scope, Writer writer) {
+        StringBuffer sb = new StringBuffer();
+
+        sb.append("<footer>");
+        sb.append("我是自定义标签，FooterTag");
+        sb.append("</footer>");
+
+        try {
+            writer.write(sb.toString());
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
     }
 }
 ```
 
-2. cron4x，cron4配置：* * * * *
-
-Job2.java
+* webapp/model/UserModel.java
 ```java
-@Job(cron4x = "*/1 * * * *")
-public class Job2 implements Runnable{
-    @Override
-    public void run() {
-        System.out.println("我是 Job2 （*/1 * * * *）");
-    }
+@Data
+public class UserModel {
+    private long id;
+    private String name;
+    private int sex;
+    private String label;
 }
-
 ```
 
-* 配置模式：Job3（使用@XBean注解）
-
-Job3.java
+* webapp/controller/HomeController.java
 ```java
-//模式：@XBean("job:{job name}")
-//
-@XBean("job:job3")
-public class Job3 implements Runnable{
-    @Override
-    public void run() {
-        System.out.println("我是 Job3 （props）");
+@XController
+public class HomeController {
+    @XMapping(value = "/", produces = "text/html;charset=utf-8")
+    public String home(){
+        return "<a href='/helloworld'>/helloworld</a>";
     }
 }
 ```
 
-application.properties
-```properties
-# solon.schedule.{job name}
-#
-solon.schedule.job3.cron4x=3s
-solon.schedule.job3.enable=true
+* webapp/controller/HelloworldController.java
+```java
+@XController
+public class HelloworldController {
+    @XMapping("/helloworld")
+    public Object helloworld(){
+        UserModel m = new UserModel();
+        m.setId(10);
+        m.setName("刘之西东");
+        m.setSex(1);
+
+        ModelAndView vm = new ModelAndView("helloworld.shtm");
+
+        vm.put("title","demo");
+        vm.put("message","hello world!");
+        vm.put("m",m);
+
+        return vm;
+    }
+}
 ```
 
-##### （五）运行输出
-```
-solon.plugin:: Start loading
-file:/Users/xieyuejia/WORK/work_github/solon_demo/demo10.solon_schedule/target/classes/application.properties
-jar:file:/Users/xieyuejia/.m2/repository/org/noear/cron4j-solon-plugin/1.0.4/cron4j-solon-plugin-1.0.4.jar!/solonplugin/solon.extend.cron4j.properties
-我是 Job1 （2s）
-我是 Job3 （props）
-solon.plugin:: End loading @129ms
-我是 Job1 （2s）
-我是 Job3 （props）
-我是 Job1 （2s）
-我是 Job1 （2s）
-```
+##### （五）运行 JdkApp.main()
+* 浏览器打开：http://localhost:8080/
+* 浏览器输出：<a href='/helloworld'>/helloworld</a>
+
 
 ##### （六）DEMO源码
-[源码：demo10.solon_schedule](https://gitee.com/noear/solon_demo/tree/master/demo10.solon_schedule)
-
+[源码：demo01.solon_tmp](https://gitee.com/noear/solon_demo/tree/master/demo01.solon_tmp)
