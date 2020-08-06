@@ -4,8 +4,6 @@ import client.model.ComplexModel;
 import client.model.Person;
 import client.model.Point;
 import com.caucho.hessian.client.HessianProxyFactory;
-import org.noear.solon.XApp;
-import server.ServerApp;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -13,18 +11,6 @@ import java.util.List;
 
 public class ClientApp {
     public static void main(String[] args) throws Throwable{
-
-        /**
-         * 启动服务端
-         * */
-        ServerApp.main(args);
-
-        Thread.sleep(1000);
-
-        /**
-         * 启动客户端
-         * */
-
         //RPC访问地址
         String url = "http://localhost:8080/test/";
 
