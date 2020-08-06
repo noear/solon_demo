@@ -171,4 +171,7 @@ OK，传说中的一个微形小服务出来了。
 
 再用浏览器打开：`http://localhost:8080/`
 
+### 三、DEMO源码
+
+[源码：demo02.solon_helloworld](https://gitee.com/noear/solon_demo/tree/master/demo02.solon_helloworld)
 
