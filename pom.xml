@@ -9,14 +9,13 @@
     <version>1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>${artifactId}</name>
+    <name>${project.artifactId}</name>
     <description>java project for solon demo</description>
 
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
         <version>1.0.9</version>
-        <relativePath></relativePath>
     </parent>
 
     <modules>
@@ -24,6 +23,7 @@
         <module>demo02.solon_helloworld</module>
         <module>demo03.solon_mvc</module>
         <module>demo04.solon_mvc_jsp</module>
+        <module>demo05.solon_undertow_jsp</module>
 
         <module>demo10.solon_schedule</module>
         <module>demo11.solon_jdk_http_mvc</module>
@@ -50,6 +50,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
                 <configuration>
                     <compilerArgument>-parameters</compilerArgument>
                     <source>1.8</source>

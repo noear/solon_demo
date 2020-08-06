@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear</groupId>
-    <artifactId>demo03.solon_mvc</artifactId>
+    <artifactId>demo05.solon_undertow_jsp</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
@@ -18,26 +18,38 @@
         <version>1-SNAPSHOT</version>
     </parent>
 
-    <!--
-     多模板引擎共存时，模板文件后缀默认对应关系：
-     beetl:       .htm
-     enjoy:       .shtm
-     freemaerker: .ftl
-     jsp:         .jsp
-     thyemeleaf:  .html
-     velocity:    .vm
-     -->
-
-
     <dependencies>
-        <!--
-        solon-api 和 solon-mvc 的区别是：前者没有模板和SessionState
-        -->
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon-mvc</artifactId>
+            <artifactId>solon-web</artifactId>
+            <type>pom</type>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.noear</groupId>
+                    <artifactId>solon.boot.jlhttp</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- 添加 undertow 启动器 -->
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.boot.undertow</artifactId>
+        </dependency>
+
+        <!-- 添加 undertow jsp 扩展支持包 -->
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.extend.undertow.jsp</artifactId>
             <type>pom</type>
         </dependency>
+
+        <!-- 添加 jsp 视图引擎 -->
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.view.jsp</artifactId>
+        </dependency>
+
 
         <dependency>
             <groupId>org.projectlombok</groupId>
