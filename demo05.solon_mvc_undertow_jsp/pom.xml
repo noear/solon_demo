@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear</groupId>
-    <artifactId>demo05.solon_undertow_jsp</artifactId>
+    <artifactId>demo05.solon_mvc_undertow_jsp</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
