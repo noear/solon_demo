@@ -19,11 +19,13 @@
     </parent>
 
     <dependencies>
+        <!-- 添加 solon web 开发包 -->
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon-web</artifactId>
             <type>pom</type>
             <exclusions>
+                <!-- 排除默认的 jlhttp 启动器 -->
                 <exclusion>
                     <groupId>org.noear</groupId>
                     <artifactId>solon.boot.jlhttp</artifactId>

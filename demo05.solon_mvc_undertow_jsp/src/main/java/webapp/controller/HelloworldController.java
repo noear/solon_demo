@@ -10,11 +10,12 @@ import webapp.model.UserModel;
 @XController
 public class HelloworldController {
 
+    //这里注入个配置
     @XInject("${custom.user}")
     protected String user;
 
     @XMapping("/helloworld")
-    public Object helloworld(XContext ctx){
+    public ModelAndView helloworld(XContext ctx){
         UserModel m = new UserModel();
         m.setId(10);
         m.setName("刘之西东");
