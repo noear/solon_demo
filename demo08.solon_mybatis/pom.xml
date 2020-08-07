@@ -5,49 +5,55 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear</groupId>
-    <artifactId>solon_demo</artifactId>
-    <version>1-SNAPSHOT</version>
-    <packaging>pom</packaging>
+    <artifactId>demo08.solon_mybatis</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
 
     <name>${project.artifactId}</name>
     <description>java project for solon demo</description>
 
     <parent>
         <groupId>org.noear</groupId>
-        <artifactId>solon-parent</artifactId>
-        <version>1.0.9</version>
-        <relativePath />
+        <artifactId>solon_demo</artifactId>
+        <version>1-SNAPSHOT</version>
     </parent>
 
-    <modules>
-        <module>demo01.solon_tmp</module>
-        <module>demo01.solon_simple</module>
-        <module>demo02.solon_helloworld</module>
-        <module>demo03.solon_mvc</module>
-        <module>demo04.solon_mvc_jsp</module>
-        <module>demo05.solon_mvc_undertow_jsp</module>
-        <module>demo06.solon_hessian_rpc</module>
-        <module>demo07.solon_weed</module>
-        <module>demo08.solon_mybatis</module>
+    <dependencies>
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon-web</artifactId>
+            <type>pom</type>
+        </dependency>
 
-        <module>demo10.solon_schedule</module>
-        <module>demo11.solon_jdk_http_mvc</module>
-        <module>demo12.solon_aio_http_mvc</module>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.5.3</version>
+        </dependency>
 
-        <module>demo20.solon_db_weed_snack</module>
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>3.3.1</version>
+        </dependency>
 
-        <module>demo21.solon_db_mybatis_fastjson</module>
-    </modules>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.18</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.14.4</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
-            <plugin>
-                <groupId>org.noear</groupId>
-                <artifactId>weed3-maven-plugin</artifactId>
-                <version>3.2.9</version>
-            </plugin>
-
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
