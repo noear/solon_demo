@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 @Db("db1")
-public interface SqlMapper2 {
+public interface SqlMapper1 {
     @Sql("select app_id from appx limit 1")
     int appx_get() throws Exception;
 

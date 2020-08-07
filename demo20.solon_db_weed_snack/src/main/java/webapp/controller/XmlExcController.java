@@ -1,11 +1,11 @@
 package webapp.controller;
 
 import org.noear.solon.annotation.XController;
+import org.noear.solon.annotation.XInject;
 import org.noear.solon.annotation.XMapping;
 import org.noear.solon.annotation.XSingleton;
 import org.noear.solon.core.ModelAndView;
 import org.noear.weed.DbContext;
-import webapp.dso.DbConfig;
 import webapp.model.AppxModel;
 
 import java.util.HashMap;
@@ -16,7 +16,8 @@ import java.util.Map;
 @XSingleton(true)
 @XController
 public class XmlExcController {
-    DbContext db2 = DbConfig.db2;
+    @XInject("db2")
+    DbContext db2;
 
 
     @XMapping("demo0/html")

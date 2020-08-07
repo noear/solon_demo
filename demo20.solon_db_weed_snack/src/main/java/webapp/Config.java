@@ -18,7 +18,7 @@ public class Config {
     //
     //缓存服务配置:: //新建个缓存服务，并通过nameSet 注册到 全局 libOfCache
     //
-    public ICacheServiceEx cache = new LocalCache("test",60).nameSet("test");
+    public static ICacheServiceEx cache1 = new LocalCache("test",60).nameSet("cache1");
 
 
     //

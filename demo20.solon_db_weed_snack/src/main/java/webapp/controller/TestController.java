@@ -12,7 +12,7 @@ import java.util.Map;
 @XSingleton(true)
 @XController
 public class TestController {
-    @XInject("db1")
+    @XInject("db2")
     DbContext db2;
 
     @XInject
@@ -47,7 +47,7 @@ public class TestController {
         if (sql == null) {
             return tmp;
         } else {
-            return db2.lastCommand.text;
+            return db2.lastCommand.text; //lastCommand 线程不安全，仅用于调试
         }
     }
 

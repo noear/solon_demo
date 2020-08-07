@@ -5,7 +5,7 @@ import org.noear.solon.annotation.XMapping;
 import org.noear.solon.annotation.XSingleton;
 import org.noear.solon.core.ModelAndView;
 import org.noear.weed.DbContext;
-import webapp.dso.DbConfig;
+import webapp.Config;
 import webapp.model.AppxModel;
 
 
@@ -13,7 +13,7 @@ import webapp.model.AppxModel;
 @XSingleton(true)
 @XController
 public class JavaController {
-    DbContext db2 = DbConfig.db2;
+    DbContext db1 = Config.db1;
 
     @XMapping("demo0/html")
     public ModelAndView demo0() throws Exception {
@@ -30,7 +30,7 @@ public class JavaController {
         //
         // select app_id from appx limit 1
         //
-        return db2.table("appx")
+        return db1.table("appx")
                 .limit(1)
                 .select("app_id")
                 .getValue();
@@ -43,11 +43,11 @@ public class JavaController {
         //
         int app_id = 48;
 
-        return db2.table("appx")
+        return db1.table("appx")
                 .whereEq("app_id", app_id)
                 .limit(1)
                 .select("*")
-                .caching(DbConfig.cache)
+                .caching(Config.cache1)
                 .cacheTag("app_" + app_id)
                 .getItem(AppxModel.class);
     }
@@ -60,13 +60,13 @@ public class JavaController {
         int app_id = 48;
         String tb = "appx";
 
-        Object tmp = db2.table(tb)
+        Object tmp = db1.table(tb)
                 .whereEq("app_id", app_id)
                 .limit(1)
                 .select("*")
                 .getMap();
 
-        DbConfig.cache.clear("test");
+        Config.cache1.clear("test");
 
         return tmp;
     }
@@ -78,7 +78,7 @@ public class JavaController {
         //
         // select * from appx where app_id>@{app_id} order by app_id asc limit 4
         //
-        return db2.table("appx")
+        return db1.table("appx")
                 .where("app_id>?",48)
                 .orderBy("app_id ASC")
                 .limit(4)
@@ -91,7 +91,7 @@ public class JavaController {
         //
         // select app_id from appx limit 4
         //
-        return db2.table("appx")
+        return db1.table("appx")
                 .limit(4)
                 .select("app_id")
                 .getArray(0);
