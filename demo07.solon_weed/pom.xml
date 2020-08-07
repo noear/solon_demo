@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear</groupId>
-    <artifactId>demo20.solon_db_weed_snack</artifactId>
+    <artifactId>demo07.solon_weed</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
@@ -18,29 +18,25 @@
         <version>1-SNAPSHOT</version>
     </parent>
 
+    <!--
+     多模板引擎共存时，模板文件后缀默认对应关系：
+     beetl:       .htm
+     enjoy:       .shtm
+     freemaerker: .ftl
+     jsp:         .jsp
+     thyemeleaf:  .html
+     velocity:    .vm
+     -->
+
+
     <dependencies>
+        <!--
+        solon-api 和 solon-mvc 的区别是：前者没有模板和SessionState
+        -->
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon-web</artifactId>
             <type>pom</type>
-        </dependency>
-
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>weed3</artifactId>
-            <version>3.2.9</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
-            <version>3.3.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.18</version>
         </dependency>
 
         <dependency>

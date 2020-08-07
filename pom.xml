@@ -27,6 +27,7 @@
         <module>demo04.solon_mvc_jsp</module>
         <module>demo05.solon_mvc_undertow_jsp</module>
         <module>demo06.solon_hessian_rpc</module>
+        <module>demo07.solon_weed</module>
 
         <module>demo10.solon_schedule</module>
         <module>demo11.solon_jdk_http_mvc</module>
