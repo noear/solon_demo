@@ -18,25 +18,29 @@
         <version>1-SNAPSHOT</version>
     </parent>
 
-    <!--
-     多模板引擎共存时，模板文件后缀默认对应关系：
-     beetl:       .htm
-     enjoy:       .shtm
-     freemaerker: .ftl
-     jsp:         .jsp
-     thyemeleaf:  .html
-     velocity:    .vm
-     -->
-
-
     <dependencies>
-        <!--
-        solon-api 和 solon-mvc 的区别是：前者没有模板和SessionState
-        -->
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon-web</artifactId>
             <type>pom</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>weed3</artifactId>
+            <version>3.2.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>3.3.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.18</version>
         </dependency>
 
         <dependency>
@@ -46,5 +50,28 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.noear</groupId>
+                <artifactId>weed3-maven-plugin</artifactId>
+                <version>3.2.9</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <compilerArgument>-parameters</compilerArgument>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
