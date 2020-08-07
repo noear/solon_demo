@@ -20,7 +20,7 @@ public class HelloController {
     /**
      * 这是返回个对象（以json形式）
      * */
-    @XMapping("/")
+    @XMapping("/json")
     public Map hello_json() {
         Map<String,Object> map = new HashMap<>(); //实体也ok
         map.put("message", "Hello world!");
