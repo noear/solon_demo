@@ -6,7 +6,7 @@ import org.noear.solon.annotation.XSingleton;
 import org.noear.solon.core.ModelAndView;
 import org.noear.weed.DbContext;
 import webapp.dso.DbConfig;
-import webapp.dso.SqlAnnotation;
+import webapp.dso.mapper.SqlAnnotation;
 
 
 @XMapping("/annot")
