@@ -14,6 +14,10 @@ public class DemoController {
     @XInject
     SqlMapper sqlMapper1;
 
+//    //也可以-使用指定数据库注入
+//    @Db("db1")
+//    SqlMapper sqlMapper1;
+
     /**
      * 使用指定数据库注入
      * */
