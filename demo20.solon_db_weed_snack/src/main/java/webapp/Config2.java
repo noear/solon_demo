@@ -33,7 +33,7 @@ public class Config2 {
      * @param dataSource 根据配置注入一个 HikariDataSource 实例（配置的属性要与HikariDataSource字段对应）
      */
     @XBean("db2")
-    public DbContext db1(@XInject("${test.db2}") HikariDataSource dataSource) {
+    public DbContext db2(@XInject("${test.db2}") HikariDataSource dataSource) {
         //直接读配置的演示
         //
         String schema = XApp.cfg().get("test.db2.schema");
