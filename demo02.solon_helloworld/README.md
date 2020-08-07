@@ -60,7 +60,7 @@ public class HelloController {
     /**
      * 这是返回个对象（以json形式）
      * */
-    @XMapping("/")
+    @XMapping("/json")
     public Map hello_json() {
         Map<String,Object> map = new HashMap<>(); //实体也ok
         map.put("message", "Hello world!");
@@ -115,8 +115,8 @@ public class HelloController {
 <dependencies>
     <dependency>
         <groupId>org.noear</groupId>
-        <artifactId>solon-mvc</artifactId>
-        <version>1.0.8</version>
+        <artifactId>solon-web</artifactId>
+        <version>1.0.9</version>
         <type>pom</type>
     </dependency>
 </dependencies>
@@ -174,4 +174,3 @@ OK，传说中的一个微形小服务出来了。
 ### 三、DEMO源码
 
 [源码：demo02.solon_helloworld](https://gitee.com/noear/solon_demo/tree/master/demo02.solon_helloworld)
-
