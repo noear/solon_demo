@@ -9,12 +9,6 @@ import org.noear.weed.DbContext;
 
 @XConfiguration
 public class Config {
-
-    /**
-     * 数据库上下文配置
-     *
-     * @param dataSource 根据配置注入一个 HikariDataSource 实例（配置的属性要与HikariDataSource字段对应）
-     */
     @XBean("db1")
     public DbContext db1(@XInject("${test.db1}") HikariDataSource dataSource) {
         //直接读配置的演示

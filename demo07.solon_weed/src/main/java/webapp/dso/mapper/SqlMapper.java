@@ -11,7 +11,7 @@ import org.noear.weed.annotation.Db;
 import org.noear.weed.xml.Namespace;
 import webapp.model.*;
 
-@Db("db2")
+@Db("db1")
 @Namespace("webapp.dso.mapper")
 public interface SqlMapper{
     //随便取条数据的ID
