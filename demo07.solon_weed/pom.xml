@@ -25,6 +25,7 @@
             <type>pom</type>
         </dependency>
 
+        <!-- weed3-solon-plugin 相对于 weed3；增加了 @Db 的注入支持 -->
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>weed3-solon-plugin</artifactId>
