@@ -1,6 +1,9 @@
-`Solon` 开发 `jsp` 还是简单的，可以有 `jetty` 启动器 或者 `undertow` 启动器。下面就用 `undertow + jsp` 走起：
+# 怎么用 Solon 开发基于 undertow jsp tld 的项目？
 
-#### 一、 开始Meven配置
+
+`Solon` 开发 `jsp` 还是简单的，可以有 `jetty` 启动器 或者 `undertow` 启动器。此文用 `undertow + jsp + tld` 这个套路搞一把：
+
+#### 一、 开始Meven配置走起
 
 > 用solon 做 undertow + jsp 的开发；只需要配置一下 meven 即可（不需要其它的额外处理或启用）
 
@@ -103,7 +106,7 @@ public class HelloworldController {
 
 * 再搞个自定义标签 `src/main/java/webapp/widget/FooterTag.java` （对jsp来说，这个演示很重要）
 
-```
+```java
 public class FooterTag extends TagSupport {
     @Override
     public int doStartTag() throws JspException {
