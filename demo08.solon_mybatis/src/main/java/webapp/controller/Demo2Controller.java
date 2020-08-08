@@ -3,18 +3,19 @@ package webapp.controller;
 import org.noear.solon.annotation.XController;
 import org.noear.solon.annotation.XInject;
 import org.noear.solon.annotation.XMapping;
+import org.noear.solon.extend.mybatis.Df;
 import webapp.dso.db1.AppxMapper;
 import webapp.dso.db2.Appx2Mapper;
 
-@XMapping("/demo/")
+
+@XMapping("/demo2/")
 @XController
-public class DemoController {
-    //已被 Config 的 @MapperScan 生成bean了
-    @XInject
+public class Demo2Controller {
+    @Df("db1f")
     AppxMapper appxMapper;
 
     //已被 Config2 的 @MapperScan 生成bean了
-    @XInject
+    @Df("db2f")
     Appx2Mapper appxMapper2;
 
     @XMapping("/test")
@@ -28,3 +29,4 @@ public class DemoController {
     }
 
 }
+
