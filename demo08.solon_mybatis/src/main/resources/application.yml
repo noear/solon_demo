@@ -1,15 +1,28 @@
-test:
-  db1:
-    schema: rock
-    jdbcUrl: jdbc:mysql://localdb:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
-    driverClassName: com.mysql.cj.jdbc.Driver
-    username: demo
-    password: UL0hHlg0Ybq60xyb
-  db2:
+solon.output.meta: 1
+
+test.db1:
     schema: rock
     jdbcUrl: jdbc:mysql://localdb:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
     driverClassName: com.mysql.cj.jdbc.Driver
     username: demo
     password: UL0hHlg0Ybq60xyb
 
-solon.output.meta: 1
+test.db2:
+    schema: rock
+    jdbcUrl: jdbc:mysql://localdb:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: demo
+    password: UL0hHlg0Ybq60xyb
+
+
+mybatis.db1f:
+    typeAliases:
+        package: "webapp.model"
+    mappers:
+        package: "webapp.dso.db1"
+
+mybatis.db2f:
+    typeAliases:
+        package: "webapp.model"
+    mappers:
+        package: "webapp.dso.db2"

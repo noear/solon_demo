@@ -10,16 +10,15 @@ import org.noear.solon.extend.mybatis.SqlSessionFactoryBean;
 
 import java.util.Properties;
 
-@MapperScan(basePackages = "webapp.dso.mapper", sqlSessionFactoryRef = "db1f")
+@MapperScan(basePackages = "webapp.dso.mapper2", sqlSessionFactoryRef = "db2f")
 @XConfiguration
-public class Config {
-
-
-    @XBean("db1f")
-    public SqlSessionFactory sqlSessionFactory1(
-            @XInject("${test.db1}") HikariDataSource dataSource,
-            @XInject("${mybatis.db1f}") Properties props
+public class Config2 {
+    @XBean("db2f")
+    public SqlSessionFactory sqlSessionFactory2(
+            @XInject("${test.db2}") HikariDataSource dataSource,
+            @XInject("${mybatis.db2f}") Properties props
     ){
         return new SqlSessionFactoryBean(dataSource, props).getObject();
     }
+    
 }
