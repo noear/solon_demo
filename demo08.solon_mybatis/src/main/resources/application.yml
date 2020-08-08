@@ -17,12 +17,12 @@ test.db2:
 
 mybatis.db1f:
     typeAliases:
-        package: "webapp.model"
+        - "webapp.model"    #支持包名 或 类名（.class 结尾）
     mappers:
-        package: "webapp.dso.db1"
+        - "webapp.dso.db1"  #支持包名 或 类名（.class 结尾）或 xml（.xml结尾）
 
 mybatis.db2f:
     typeAliases:
-        package: "webapp.model"
+        - "webapp.model"
     mappers:
-        package: "webapp.dso.db2"
+        - "webapp/dso/db2/Appx2Mapper.xml"
