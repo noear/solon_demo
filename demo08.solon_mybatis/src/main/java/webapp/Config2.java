@@ -16,8 +16,7 @@ public class Config2 {
     @XBean("db2f")
     public SqlSessionFactory sqlSessionFactory2(
             @XInject("${test.db2}") HikariDataSource dataSource,
-            @XInject("${mybatis.db2f}") Properties props
-    ){
+            @XInject("${mybatis.db2f}") Properties props) {
         return new SqlSessionFactoryBean(dataSource, props).getObject();
     }
 }
