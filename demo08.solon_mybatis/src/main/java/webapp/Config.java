@@ -10,7 +10,7 @@ import org.noear.solon.extend.mybatis.SqlSessionFactoryBean;
 
 import java.util.Properties;
 
-@MapperScan(basePackages = "webapp.dso.mapper", sqlSessionFactoryRef = "db1f")
+@MapperScan(basePackages = "webapp.dso.db1", sqlSessionFactoryRef = "db1f")
 @XConfiguration
 public class Config {
 
