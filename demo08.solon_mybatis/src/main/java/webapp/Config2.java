@@ -20,5 +20,4 @@ public class Config2 {
     ){
         return new SqlSessionFactoryBean(dataSource, props).getObject();
     }
-    
 }

@@ -13,11 +13,17 @@ import java.util.Properties;
 @MapperScan(basePackages = "webapp.dso.db1", sqlSessionFactoryRef = "db1f")
 @XConfiguration
 public class Config {
-
-
     @XBean("db1f")
     public SqlSessionFactory sqlSessionFactory1(
             @XInject("${test.db1}") HikariDataSource dataSource,
+            @XInject("${mybatis.db1f}") Properties props
+    ){
+        return new SqlSessionFactoryBean(dataSource, props).getObject();
+    }
+
+    @XBean("db1f2")
+    public SqlSessionFactory sqlSessionFactory2(
+            @XInject("${test.db2}") HikariDataSource dataSource,
             @XInject("${mybatis.db1f}") Properties props
     ){
         return new SqlSessionFactoryBean(dataSource, props).getObject();
