@@ -3,9 +3,13 @@ package webapp.controller;
 import org.noear.solon.annotation.XController;
 import org.noear.solon.annotation.XInject;
 import org.noear.solon.annotation.XMapping;
+import org.noear.solon.extend.mybatis.Df;
 import org.noear.solon.extend.mybatis.MybatisProxy;
 import webapp.dso.mapper.AppxMapper;
 
+/**
+ * 事务
+ * */
 @XMapping("/tran/")
 @XController
 public class TranController {
@@ -17,7 +21,7 @@ public class TranController {
      *
      * solon 不目前支持注解事务，说明出于性能考虑
      * */
-    @XInject("db1f")
+    @Df("db1f")
     MybatisProxy proxy;
 
     @XMapping("test")
