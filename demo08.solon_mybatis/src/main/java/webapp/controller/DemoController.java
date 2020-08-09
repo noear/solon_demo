@@ -3,8 +3,8 @@ package webapp.controller;
 import org.noear.solon.annotation.XController;
 import org.noear.solon.annotation.XInject;
 import org.noear.solon.annotation.XMapping;
-import webapp.dso.db1.AppxMapper;
-import webapp.dso.db2.Appx2Mapper;
+import webapp.dso.mapper.AppxMapper;
+import webapp.dso.mapper.Appx2Mapper;
 
 @XMapping("/demo/")
 @XController

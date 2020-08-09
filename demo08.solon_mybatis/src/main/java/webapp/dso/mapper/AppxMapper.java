@@ -1,4 +1,4 @@
-package webapp.dso.db1;
+package webapp.dso.mapper;
 
 
 import org.apache.ibatis.annotations.Mapper;
