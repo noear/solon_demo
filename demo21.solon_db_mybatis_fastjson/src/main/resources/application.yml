@@ -1,0 +1,30 @@
+solon.output.meta: 1
+
+test.db1:
+  schema: rock
+  jdbcUrl: jdbc:mysql://localdb:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
+  driverClassName: com.mysql.cj.jdbc.Driver
+  username: demo
+  password: UL0hHlg0Ybq60xyb
+
+test.db2:
+  schema: rock
+  jdbcUrl: jdbc:mysql://localdb:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
+  driverClassName: com.mysql.cj.jdbc.Driver
+  username: demo
+  password: UL0hHlg0Ybq60xyb
+
+
+#默认
+mybatis:
+  typeAliases:
+    - "webapp.model"    #支持包名 或 类名（.class 结尾）
+  mappers:
+    - "webapp.dso"  #支持包名 或 类名（.class 结尾）或 xml（.xml结尾）
+
+#定义个新配置
+mybatis.db2f:
+  typeAliases:
+    - "webapp.model"
+  mappers:
+    - "webapp/dso/db2/Appx2Mapper.xml"

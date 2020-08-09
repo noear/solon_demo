@@ -12,60 +12,36 @@ import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
 import org.noear.solon.XApp;
 import org.noear.solon.annotation.XBean;
 import org.noear.solon.annotation.XConfiguration;
+import org.noear.solon.annotation.XInject;
 import org.noear.solon.core.XMap;
+import org.noear.solon.extend.mybatis.MybatisAdapter;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.util.Properties;
+
 
 @XConfiguration
 public class Config {
-    /**
-     * 使用 xml 配置创建
-     * */
-    @XBean
-    public SqlSession getSqlSession_cfg() throws IOException {
-        //通过配置文件获取数据库连接信息
-        Reader reader = Resources.getResourceAsReader("mybatis.xml");
-
-        //通过配置信息构建一个SqlSessionFactory
-        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
-
-        //通过SqlSessionFactory打开一个数据库会话
-        SqlSession sqlsession = sqlSessionFactory.openSession();
-        return sqlsession;
+    @XBean("db1f")
+    public SqlSessionFactory db1f(@XInject("${test.db1}") HikariDataSource dataSource) {
+        //
+        //可以用默认的配置
+        //
+        return new MybatisAdapter(dataSource)
+                .mapperScan("webapp.dso.db1")   //替代@mapperScan注解（相对来说，可以把多个 mapperScan 安排在一个 Config里）
+                .getFactory();
     }
 
-
-    /**
-     * 使用 java 配置创建
-     * */
-    @XBean("sqlSession2")
-    public SqlSession getSqlSession_java() throws IOException {
-        TransactionFactory transactionFactory = new JdbcTransactionFactory();
-        Environment environment = new Environment("development", transactionFactory, dataSource_java());
-        Configuration configuration = new Configuration(environment);
-
-        //添加 typeAliases
-        configuration.getTypeAliasRegistry().registerAliases("webapp.model");
-
-        //添加 mappers
-        configuration.addMappers("webapp.dso.db");
-
-        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(configuration);
-
-        //通过SqlSessionFactory打开一个数据库会话
-        SqlSession sqlsession = sqlSessionFactory.openSession();
-        return sqlsession;
-    }
-
-    public HikariDataSource dataSource_java() {
-        XMap map = XApp.cfg().getXmap("test.db");
-
-        HikariDataSource dataSource = new HikariDataSource();
-        dataSource.setJdbcUrl(map.get("url"));
-        dataSource.setUsername(map.get("username"));
-        dataSource.setPassword(map.get("password"));
-
-        return dataSource;
+    @XBean("db2f")
+    public SqlSessionFactory db2f(
+            @XInject("${test.db2}") HikariDataSource dataSource,
+            @XInject("${mybatis.db2f}") Properties props) {
+        //
+        //可以指定配置 ${mybatis.db2f}
+        //
+        return new MybatisAdapter(dataSource, props)
+                .mapperScan("webapp.dso.db2")
+                .getFactory();
     }
 }
