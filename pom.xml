@@ -12,12 +12,12 @@
     <name>${project.artifactId}</name>
     <description>java project for solon demo</description>
 
-    <parent>
-        <groupId>org.noear</groupId>
-        <artifactId>solon-parent</artifactId>
-        <version>1.0.9.2</version>
-        <relativePath />
-    </parent>
+<parent>
+    <groupId>org.noear</groupId>
+    <artifactId>solon-parent</artifactId>
+    <version>1.0.9.2</version>
+    <relativePath />
+</parent>
 
     <modules>
         <module>demo01.solon_tmp</module>

@@ -17,7 +17,7 @@ public class Config {
         //可以用默认的配置
         //
         return new MybatisAdapter(dataSource)
-                .mapperScan()   //替代@mapperScan注解（相对来说，可以把多个 mapperScan 安排在一个 Config里）
+                .mapperScan()   //完成Spring 的 @mapperScan注解的功能（相对来说，改成函数可以把多个 mapperScan 安排在一个 Config里）
                 .getFactory();
     }
 
