@@ -8,7 +8,7 @@ import org.noear.solon.extend.mybatis.MybatisProxy;
 import webapp.dso.mapper.AppxMapper;
 
 /**
- * 事务
+ * 事务演示
  * */
 @XMapping("/tran/")
 @XController
