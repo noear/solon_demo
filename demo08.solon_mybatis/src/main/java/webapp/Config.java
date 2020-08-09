@@ -17,7 +17,7 @@ public class Config {
         //可以用默认的配置
         //
         return new MybatisAdapter(dataSource)
-                .mapperScan("webapp.dso.db1")   //替代@mapperScan注解（相对来说，可以把多个 mapperScan 安排在一个 Config里）
+                .mapperScan()   //替代@mapperScan注解（相对来说，可以把多个 mapperScan 安排在一个 Config里）
                 .getFactory();
     }
 
@@ -29,7 +29,7 @@ public class Config {
         //可以指定配置 ${mybatis.db2f}
         //
         return new MybatisAdapter(dataSource, props)
-                .mapperScan("webapp.dso.db2")
+                .mapperScan()
                 .getFactory();
     }
 }

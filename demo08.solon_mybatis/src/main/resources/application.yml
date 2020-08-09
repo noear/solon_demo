@@ -20,11 +20,11 @@ mybatis:
     typeAliases:
         - "webapp.model"    #支持包名 或 类名（.class 结尾）
     mappers:
-        - "webapp.dso"  #支持包名 或 类名（.class 结尾）或 xml（.xml结尾）
+        - "webapp.dso.db1.AppxMapper.class"  #支持包名 或 类名（.class 结尾）或 xml（.xml结尾）
 
 #定义个新配置
 mybatis.db2f:
     typeAliases:
         - "webapp.model"
     mappers:
-        - "webapp/dso/db2/Appx2Mapper.xml"
+        - "webapp.dso.db2.Appx2Mapper.class"
