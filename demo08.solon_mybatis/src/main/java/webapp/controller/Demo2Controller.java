@@ -3,20 +3,20 @@ package webapp.controller;
 import org.noear.solon.annotation.XController;
 import org.noear.solon.annotation.XInject;
 import org.noear.solon.annotation.XMapping;
-import webapp.dso.mapper.AppxMapper;
 import webapp.dso.mapper.Appx2Mapper;
+import webapp.dso.mapper.AppxMapper;
 import webapp.model.AppxModel;
 
 /**
- * 分包模式，一开始就被会话工厂mapperScan()并关联好了
+ * 注解模式，在注入指定具体的会话工厂
  * */
-@XMapping("/demo/")
+@XMapping("/demo2/")
 @XController
-public class DemoController {
-    @XInject
+public class Demo2Controller {
+    @XInject("db1f")
     AppxMapper appxMapper;
 
-    @XInject
+    @XInject("db2f")
     Appx2Mapper appxMapper2;
 
     @XMapping("test")
