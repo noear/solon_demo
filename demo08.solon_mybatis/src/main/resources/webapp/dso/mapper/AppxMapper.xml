@@ -6,7 +6,7 @@
     </select>
 
     <select id="appx_get_page" resultType="AppxModel">
-        select * from appx
+        select * from appx limit 10
     </select>
 
     <select id="appx_get2" resultType="AppxModel">
