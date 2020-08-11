@@ -7,9 +7,8 @@ import org.noear.solon.annotation.XMapping;
 import webapp.dso.mapper.AppxMapper;
 
 /**
- * 事务演示
+ * 分面演示（使用sqlhelper组件）
  *
- * @Df 可注入 Mapper, SqlSession, SqlSessionFactory, MybatisProxy
  * */
 @XMapping("/page/")
 @XController
