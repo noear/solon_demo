@@ -29,7 +29,7 @@ mybatis.db2f:
     mappers:
         - "webapp.dso.mapper.Appx2Mapper.class"
 
-
+#分页组件的配置
 sqlhelper:
     mybatis:
         instrumentor:
