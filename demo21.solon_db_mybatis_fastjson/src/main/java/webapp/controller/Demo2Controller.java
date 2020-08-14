@@ -2,8 +2,8 @@ package webapp.controller;
 
 import org.noear.solon.annotation.XController;
 import org.noear.solon.annotation.XMapping;
+import org.noear.solon.annotation.XTran;
 import org.noear.solon.extend.mybatis.Df;
-import org.noear.solon.extend.mybatis.MybatisProxy;
 import webapp.dso.db1.AppxMapper;
 import webapp.dso.db2.Appx2Mapper;
 
@@ -20,18 +20,14 @@ public class Demo2Controller {
     @Df("db2f")
     Appx2Mapper appxMapper2;
 
-    @Df("db1f")
-    MybatisProxy proxy;
-
+    @XTran("db1f")
     @XMapping("/test")
     public Object test() throws SQLException {
-        return proxy.tran((session)->{
-            session.result = appxMapper.appx_get();
-        });
+        return appxMapper.appx_get();
     }
 
     @XMapping("/test2")
-    public Object test2(){
+    public Object test2() {
         return appxMapper2.appx_get2(48);
     }
 

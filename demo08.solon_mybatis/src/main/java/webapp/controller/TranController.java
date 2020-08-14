@@ -4,34 +4,77 @@ import org.noear.solon.annotation.XController;
 import org.noear.solon.annotation.XInject;
 import org.noear.solon.annotation.XMapping;
 import org.noear.solon.annotation.XTran;
-import webapp.dso.mapper.AppxMapper;
+import webapp.dso.service.AppService;
 
-/**
- * 事务演示
- *
- * @Df 可注入 Mapper, SqlSession, SqlSessionFactory, MybatisProxy
- * */
 @XMapping("/tran/")
 @XController
 public class TranController {
     @XInject
-    AppxMapper appxMapper;
+    AppService appService;
 
     @XTran
     @XMapping("test")
-    public Object test() throws Throwable {
-         appxMapper.appx_add();
-
-         return "OK";
+    public void test() throws Exception {
+        //添加会成功
+        //
+        appService.addApp();
     }
 
     @XTran
     @XMapping("test2")
-    public Object test2() throws Throwable {
-        appxMapper.appx_add();
+    public void test2() throws Exception {
+        //添加会失败，因为在事务里出异常了
+        //
+        appService.addApp();
 
         throw new RuntimeException("不让你加");
+    }
 
-        //return "OK";
+    @XMapping("test11")
+    public void test11() throws Exception {
+        //添加会成功
+        //
+        appService.addApp2();
+    }
+
+    @XMapping("test12")
+    public void test12() throws Exception {
+        //添加会成功（因为异常在事务之外） // addApp2 有事务
+        //
+        appService.addApp2();
+
+        throw new RuntimeException("不让你加");
+    }
+
+    @XTran
+    @XMapping("test21")
+    public void test21() throws Exception {
+        appService.addApp2();
+    }
+
+    @XTran
+    @XMapping("test22")
+    public void test22() throws Exception {
+        //添加会失败，因为在事务里出异常了
+        //
+        appService.addApp2();
+
+        throw new RuntimeException("不让你加");
+    }
+
+    @XTran(multisource = true)
+    @XMapping("test31")
+    public void test31() throws Exception {
+        appService.addApp2();
+    }
+
+    @XTran(multisource = true)
+    @XMapping("test32")
+    public void test32() throws Exception {
+        //添加会失败，因为在事务里出异常了
+        //
+        appService.addApp2();
+
+        throw new RuntimeException("不让你加");
     }
 }
