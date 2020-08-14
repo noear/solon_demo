@@ -6,16 +6,17 @@ import org.noear.solon.annotation.XMapping;
 import org.noear.solon.annotation.XTran;
 import org.noear.weed.annotation.Db;
 import webapp.dso.mapper.SqlMapper;
+import webapp.dso.service.AppService;
 
 @XMapping("/tran/")
 @XController
 public class TranController {
     @XInject
-    SqlMapper sqlMapper1;
+    AppService appService;
 
-    @XTran("db1")
+    //@XTran(multisource = true)
     @XMapping("test")
     public Object db1() throws Exception {
-        return sqlMapper1.appx_get2(1);
+        return appService.getApp("1");
     }
 }
