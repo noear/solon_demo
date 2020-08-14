@@ -17,12 +17,16 @@ public class TranController {
     @XTran
     @XMapping("test")
     public void test() throws Exception {
+        //添加会成功
+        //
         appService.addApp();
     }
 
     @XTran
     @XMapping("test2")
     public void test2() throws Exception {
+        //添加会失败，因为在事务里出异常了
+        //
         appService.addApp();
 
         throw new RuntimeException("不让你加");
@@ -30,11 +34,15 @@ public class TranController {
 
     @XMapping("test11")
     public void test11() throws Exception {
+        //添加会成功
+        //
         appService.addApp2();
     }
 
     @XMapping("test12")
     public void test12() throws Exception {
+        //添加会成功（因为异常在事务之外） // addApp2 有事务
+        //
         appService.addApp2();
 
         throw new RuntimeException("不让你加");
@@ -49,6 +57,8 @@ public class TranController {
     @XTran
     @XMapping("test22")
     public void test22() throws Exception {
+        //添加会失败，因为在事务里出异常了
+        //
         appService.addApp2();
 
         throw new RuntimeException("不让你加");
@@ -63,6 +73,8 @@ public class TranController {
     @XTran(multisource = true)
     @XMapping("test32")
     public void test32() throws Exception {
+        //添加会失败，因为在事务里出异常了
+        //
         appService.addApp2();
 
         throw new RuntimeException("不让你加");
