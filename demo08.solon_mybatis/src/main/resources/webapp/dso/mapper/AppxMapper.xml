@@ -13,4 +13,8 @@
         select * from appx where app_id=${app_id} limit 1;
     </select>
 
+    <insert id="appx_add">
+        insert into test (v1) values (1024);
+    </insert>
+
 </mapper>

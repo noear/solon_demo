@@ -20,6 +20,18 @@ public class TranController {
     @XTran
     @XMapping("test")
     public Object test() throws Throwable {
-        return appxMapper.appx_get();
+         appxMapper.appx_add();
+
+         return "OK";
+    }
+
+    @XTran
+    @XMapping("test2")
+    public Object test2() throws Throwable {
+        appxMapper.appx_add();
+
+        throw new RuntimeException("不让你加");
+
+        //return "OK";
     }
 }
