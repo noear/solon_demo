@@ -14,7 +14,7 @@ public class TranController {
     @XInject
     AppService appService;
 
-    @XTran
+    @XTran("db1")
     @XMapping("test")
     public void test() throws Exception {
         //添加成功
@@ -22,7 +22,7 @@ public class TranController {
         appService.addApp();
     }
 
-    @XTran
+    @XTran("db1")
     @XMapping("test2")
     public void test2() throws Exception {
         //添加会失败，因为在事务里出异常了
