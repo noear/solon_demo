@@ -14,9 +14,21 @@ public class TranController {
     @XInject
     AppService appService;
 
-    //@XTran(multisource = true)
+    @XTran
     @XMapping("test")
-    public Object db1() throws Exception {
-        return appService.getApp("1");
+    public void test() throws Exception {
+        //添加成功
+        //
+        appService.addApp();
+    }
+
+    @XTran
+    @XMapping("test2")
+    public void test2() throws Exception {
+        //添加会失败，因为在事务里出异常了
+        //
+        appService.addApp();
+
+        throw new RuntimeException("不让你加");
     }
 }

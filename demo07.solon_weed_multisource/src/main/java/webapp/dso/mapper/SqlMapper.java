@@ -23,4 +23,6 @@ public interface SqlMapper{
     List<AppxModel> appx_getlist(int app_id) throws Exception;
 
     List<Integer> appx_getids() throws Exception;
+
+    void appx_add();
 }
