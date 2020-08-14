@@ -14,6 +14,9 @@ public class TranController {
     @XInject
     AppService appService;
 
+    /**
+     * 多数据源时，明确哪个库。。。可增加代码可读性
+     * */
     @XTran("db1")
     @XMapping("test")
     public void test() throws Exception {
