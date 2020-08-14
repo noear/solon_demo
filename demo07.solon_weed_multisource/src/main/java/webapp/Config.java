@@ -9,8 +9,14 @@ import org.noear.weed.DbContext;
 
 @XConfiguration
 public class Config {
-    @XBean
+    @XBean("db1")
     public DbContext db1(@XInject("${test.db1}") HikariDataSource dataSource) {
+        String schema = dataSource.getSchema();
+        return new DbContext(schema, dataSource);
+    }
+
+    @XBean("db2")
+    public DbContext db2(@XInject("${test.db2}") HikariDataSource dataSource) {
         String schema = dataSource.getSchema();
         return new DbContext(schema, dataSource);
     }

@@ -6,7 +6,7 @@ import org.noear.solon.annotation.XMapping;
 import org.noear.weed.annotation.Db;
 import webapp.dso.mapper.SqlMapper;
 
-@XMapping("/demo/")
+@XMapping("/tran/")
 @XController
 public class DemoController {
     /**
@@ -15,9 +15,23 @@ public class DemoController {
     @XInject
     SqlMapper sqlMapper1;
 
+//    //也可以-使用指定数据库注入
+//    @Db("db1")
+//    SqlMapper sqlMapper1;
+
+    /**
+     * 使用指定数据库注入
+     * */
+    @Db("db2")
+    SqlMapper sqlMapper2;
 
     @XMapping("/test")
     public Object db1() throws Exception{
         return sqlMapper1.appx_get2(1);
+    }
+
+    @XMapping("/test2")
+    public Object db2() throws Exception{
+        return sqlMapper2.appx_get2(1);
     }
 }

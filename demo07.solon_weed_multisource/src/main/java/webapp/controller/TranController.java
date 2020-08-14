@@ -14,9 +14,9 @@ public class TranController {
     @XInject
     AppService appService;
 
-    @XTran
+    //@XTran(multisource = true)
     @XMapping("test")
     public Object db1() throws Exception {
-        return appService.getApp(1);
+        return appService.getApp("1");
     }
 }
