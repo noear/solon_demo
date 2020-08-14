@@ -18,14 +18,21 @@ public class TranController {
     @XInject
     AppxMapper appxMapper;
 
-    /**
-     * mybatis-solon-plugin 的事务，需要通过 MybatisProxy 发起
-     * <p>
-     * solon 不目前支持注解事务，说明出于性能考虑
-     */
     @XTran("db1f")
     @XMapping("test")
-    public Object test() throws Throwable {
-        return appxMapper.appx_get();
+    public void test() throws Throwable {
+        //添加成功
+        //
+        appxMapper.appx_add();
+    }
+
+    @XTran("db1f")
+    @XMapping("test2")
+    public void test2() throws Throwable {
+        //添加会失败，因为在事务里出异常了
+        //
+        appxMapper.appx_add();
+
+        throw new RuntimeException("不让你加");
     }
 }
