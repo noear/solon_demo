@@ -17,4 +17,8 @@
     <sql id="appx_getids" return="List[Integer]">
         select app_id from appx limit 4
     </sql>
+
+    <sql id="appx_add">
+        insert into test (v1) values (1024);
+    </sql>
 </mapper>
