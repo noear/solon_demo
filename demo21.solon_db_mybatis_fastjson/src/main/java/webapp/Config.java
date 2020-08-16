@@ -23,8 +23,8 @@ import java.util.Properties;
 
 @XConfiguration
 public class Config {
-    @XBean("db1f")
-    public SqlSessionFactory db1f(@XInject("${test.db1}") HikariDataSource dataSource) {
+    @XBean("db1")
+    public SqlSessionFactory db1(@XInject("${test.db1}") HikariDataSource dataSource) {
         //
         //可以用默认的配置
         //

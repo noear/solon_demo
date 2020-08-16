@@ -1,9 +1,8 @@
 package webapp.controller;
 
 import org.noear.solon.annotation.XController;
-import org.noear.solon.annotation.XInject;
 import org.noear.solon.annotation.XMapping;
-import org.noear.solon.extend.mybatis.Df;
+import org.noear.solon.extend.mybatis.Db;
 import webapp.dso.mapper.Appx2Mapper;
 import webapp.dso.mapper.AppxMapper;
 import webapp.model.AppxModel;
@@ -16,10 +15,10 @@ import webapp.model.AppxModel;
 @XMapping("/demo2/")
 @XController
 public class Demo2Controller {
-    @Df("db1f")
+    @Db("db1")
     AppxMapper appxMapper;
 
-    @Df("db2f")
+    @Db("db2f")
     Appx2Mapper appxMapper2;
 
     @XMapping("test")
