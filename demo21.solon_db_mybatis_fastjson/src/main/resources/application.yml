@@ -23,7 +23,7 @@ mybatis:
     - "webapp.dso"  #支持包名 或 类名（.class 结尾）或 xml（.xml结尾）
 
 #定义个新配置
-mybatis.db2f:
+mybatis.db2:
   typeAliases:
     - "webapp.model"
   mappers:

@@ -21,12 +21,12 @@ public class Config {
                 .getFactory();
     }
 
-    @XBean("db2f")
-    public SqlSessionFactory db2f(
+    @XBean("db2")
+    public SqlSessionFactory db2(
             @XInject("${test.db2}") HikariDataSource dataSource,
-            @XInject("${mybatis.db2f}") Properties props) {
+            @XInject("${mybatis.db2}") Properties props) {
         //
-        //可以指定配置 ${mybatis.db2f}
+        //可以指定配置 ${mybatis.db2}
         //
         return new MybatisAdapter(dataSource, props)
                 .mapperScan()

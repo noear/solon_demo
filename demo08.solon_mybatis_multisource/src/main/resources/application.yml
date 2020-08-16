@@ -23,7 +23,7 @@ mybatis:
         - "webapp.dso.mapper.AppxMapper.class"
 
 #再定义个新配置
-mybatis.db2f:
+mybatis.db2:
     typeAliases:
         - "webapp.model"
     mappers:

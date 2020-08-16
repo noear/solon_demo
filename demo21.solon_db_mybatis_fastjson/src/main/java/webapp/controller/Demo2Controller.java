@@ -17,7 +17,7 @@ public class Demo2Controller {
     AppxMapper appxMapper;
 
     //已被 Config2 的 @MapperScan 生成bean了
-    @Db("db2f")
+    @Db("db2")
     Appx2Mapper appxMapper2;
 
     @XTran("db1")

@@ -18,7 +18,7 @@ public class Demo2Controller {
     @Db("db1")
     AppxMapper appxMapper;
 
-    @Db("db2f")
+    @Db("db2")
     Appx2Mapper appxMapper2;
 
     @XMapping("test")
