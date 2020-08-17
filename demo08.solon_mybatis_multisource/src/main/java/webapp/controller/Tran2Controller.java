@@ -21,6 +21,9 @@ public class Tran2Controller {
     App2Service app2Service;
 
 
+    /**
+     * 申明这是一个多数据源的事务（这个可以放在任何事务的最外层）
+     * */
     @XTran(multisource = true)
     @XMapping("test")
     public void test() throws Throwable {

@@ -10,6 +10,9 @@ public class App2Service {
     @XInject
     Appx2Mapper appxMapper2;
 
+    /**
+     * 申明使用db2的事务
+     * */
     @XTran("db2")
     public void add(){
         appxMapper2.appx_add();
