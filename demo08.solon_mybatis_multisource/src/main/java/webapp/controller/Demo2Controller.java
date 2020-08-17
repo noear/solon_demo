@@ -10,7 +10,7 @@ import webapp.model.AppxModel;
 /**
  * 注解模式，通过@Db注入，并指定具体的会话工厂
  *
- * @Df 可注入 Mapper, SqlSession, SqlSessionFactory, MybatisProxy
+ * @Db 可注入 Mapper, SqlSession, SqlSessionFactory, MybatisProxy
  * */
 @XMapping("/demo2/")
 @XController

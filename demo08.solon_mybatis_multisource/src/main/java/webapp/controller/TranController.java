@@ -8,8 +8,6 @@ import webapp.dso.mapper.AppxMapper;
 
 /**
  * 事务演示
- *
- * @Df 可注入 Mapper, SqlSession, SqlSessionFactory, MybatisProxy
  * */
 @XMapping("/tran/")
 @XController
