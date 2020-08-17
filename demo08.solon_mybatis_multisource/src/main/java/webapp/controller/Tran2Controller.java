@@ -27,7 +27,10 @@ public class Tran2Controller {
     @XTran(multisource = true)
     @XMapping("test")
     public void test() throws Throwable {
+        //内部申明了用db2的事务
         app2Service.add();
-        appService.add();;
+
+        //内部申明了用db1的事务
+        appService.add();
     }
 }
