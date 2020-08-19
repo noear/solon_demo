@@ -119,4 +119,28 @@ public class TranController {
 
         throw new RuntimeException("不让你加，但还是成功了：（");
     }
+
+    @XTran
+    @XMapping("test61")
+    public void test61() throws Exception {
+        //会失败
+        //
+        appService.addApp5();
+
+    }
+
+    @XTran(group = true)
+    @XMapping("test62")
+    public void test62() throws Exception {
+        //添加会成功，因为事务组不是真的事务
+        //
+        appService.addApp5();
+    }
+
+    @XMapping("test63")
+    public void test63() throws Exception {
+        //添加会成功
+        //
+        appService.addApp5();
+    }
 }
