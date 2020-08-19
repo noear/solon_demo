@@ -42,4 +42,9 @@ public class AppService {
     public void addApp5(){
         sqlMapper1.appx_add();
     }
+
+    @XTran(policy = TranPolicy.mandatory)
+    public void addApp6(){
+        sqlMapper1.appx_add();
+    }
 }

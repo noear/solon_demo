@@ -143,4 +143,28 @@ public class TranController {
         //
         appService.addApp5();
     }
+
+    @XTran
+    @XMapping("test71")
+    public void test71() throws Exception {
+        //会成功
+        //
+        appService.addApp6();
+
+    }
+
+    @XTran(group = true)
+    @XMapping("test72")
+    public void test72() throws Exception {
+        //添加会成功，因为事务组不是真的事务
+        //
+        appService.addApp6();
+    }
+
+    @XMapping("test73")
+    public void test73() throws Exception {
+        //会失败
+        //
+        appService.addApp6();
+    }
 }
