@@ -2,6 +2,7 @@ package webapp.dso.service;
 
 import org.noear.solon.annotation.XInject;
 import org.noear.solon.annotation.XTran;
+import org.noear.solon.core.TranPolicy;
 import org.noear.solon.extend.aspect.annotation.XService;
 import webapp.dso.mapper.SqlMapper;
 
@@ -24,6 +25,16 @@ public class AppService {
 
     @XTran
     public void addApp2(){
+        sqlMapper1.appx_add();
+    }
+
+    @XTran(policy = TranPolicy.nested)
+    public void addApp3(){
+        sqlMapper1.appx_add();
+    }
+
+    @XTran(policy = TranPolicy.requires_new)
+    public void addApp4(){
         sqlMapper1.appx_add();
     }
 }

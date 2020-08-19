@@ -79,4 +79,44 @@ public class TranController {
 
         throw new RuntimeException("不让你加");
     }
+
+    @XTran
+    @XMapping("test41")
+    public void test41() throws Exception {
+        //添加会成功
+        //
+        appService.addApp3();
+
+        throw new RuntimeException("不让你加，但还是成功了：（");
+    }
+
+    @XTran(group = true)
+    @XMapping("test42")
+    public void test42() throws Exception {
+        //添加会失败，因为addApp3加入了事务组；且事务组出异常了
+        //
+        appService.addApp3();
+
+        throw new RuntimeException("不让你加");
+    }
+
+    @XTran
+    @XMapping("test51")
+    public void test51() throws Exception {
+        //添加会成功，因为addApp4是独立的新事务
+        //
+        appService.addApp4();
+
+        throw new RuntimeException("不让你加，但还是成功了：（");
+    }
+
+    @XTran(group = true)
+    @XMapping("test52")
+    public void test52() throws Exception {
+        //添加会成功，因为addApp4是独立的新事务
+        //
+        appService.addApp4();
+
+        throw new RuntimeException("不让你加，但还是成功了：（");
+    }
 }
