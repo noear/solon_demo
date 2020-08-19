@@ -45,7 +45,7 @@ public class TranController {
         //
         appService.addApp2();
 
-        throw new RuntimeException("不让你加");
+        throw new RuntimeException("不让你加；但还是加了:(");
     }
 
     @XTran
