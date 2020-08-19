@@ -62,13 +62,13 @@ public class TranController {
         throw new RuntimeException("不让你加");
     }
 
-    @XTran(multisource = true)
+    @XTran(group = true)
     @XMapping("test31")
     public void test31() throws Exception {
         appService.addApp2();
     }
 
-    @XTran(multisource = true)
+    @XTran(group = true)
     @XMapping("test32")
     public void test32() throws Exception {
         //添加会失败，因为在事务里出异常了
