@@ -53,6 +53,12 @@
             <version>1.14.4</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon-test</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
