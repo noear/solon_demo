@@ -4,8 +4,6 @@ import org.noear.solon.annotation.XController;
 import org.noear.solon.annotation.XInject;
 import org.noear.solon.annotation.XMapping;
 import org.noear.solon.annotation.XTran;
-import org.noear.weed.annotation.Db;
-import webapp.dso.mapper.SqlMapper;
 import webapp.dso.service.AppService;
 
 @XMapping("/tran/")

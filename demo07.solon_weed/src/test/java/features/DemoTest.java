@@ -69,7 +69,9 @@ public class DemoTest extends HttpTestBase {
         path("/tran/test22").get();
         path("/tran/test22").get();
         path("/tran/test22").get();
-        assert db.table("test").count() == 0;
+        long count = db.table("test").count();
+        System.out.println(count);
+        assert count == 0;
     }
 
     @Test
