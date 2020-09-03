@@ -62,21 +62,6 @@ public class TranController {
         throw new RuntimeException("不让你加");
     }
 
-    @XTran(group = true)
-    @XMapping("test31")
-    public void test31() throws Exception {
-        appService.addApp2();
-    }
-
-    @XTran(group = true)
-    @XMapping("test32")
-    public void test32() throws Exception {
-        //添加会失败，因为在事务里出异常了
-        //
-        appService.addApp2();
-
-        throw new RuntimeException("不让你加");
-    }
 
     @XTran
     @XMapping("test41")
@@ -85,32 +70,13 @@ public class TranController {
         //
         appService.addApp3();
 
-        throw new RuntimeException("不让你加，但还是成功了：（");
-    }
-
-    @XTran(group = true)
-    @XMapping("test42")
-    public void test42() throws Exception {
-        //添加会失败，因为addApp3加入了事务组；且事务组出异常了
-        //
-        appService.addApp3();
-
         throw new RuntimeException("不让你加");
     }
+
 
     @XTran
     @XMapping("test51")
     public void test51() throws Exception {
-        //添加会成功，因为addApp4是独立的新事务
-        //
-        appService.addApp4();
-
-        throw new RuntimeException("不让你加，但还是成功了：（");
-    }
-
-    @XTran(group = true)
-    @XMapping("test52")
-    public void test52() throws Exception {
         //添加会成功，因为addApp4是独立的新事务
         //
         appService.addApp4();
@@ -127,13 +93,6 @@ public class TranController {
 
     }
 
-    @XTran(group = true)
-    @XMapping("test62")
-    public void test62() throws Exception {
-        //添加会成功，因为事务组不是真的事务
-        //
-        appService.addApp5();
-    }
 
     @XMapping("test63")
     public void test63() throws Exception {
@@ -149,14 +108,6 @@ public class TranController {
         //
         appService.addApp6();
 
-    }
-
-    @XTran(group = true)
-    @XMapping("test72")
-    public void test72() throws Exception {
-        //添加会成功，因为事务组不是真的事务
-        //
-        appService.addApp6();
     }
 
     @XMapping("test73")

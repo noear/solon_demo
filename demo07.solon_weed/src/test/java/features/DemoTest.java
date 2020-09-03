@@ -74,25 +74,6 @@ public class DemoTest extends HttpTestBase {
         assert count == 0;
     }
 
-    @Test
-    public void test31() throws Exception {
-        DbContext db = Aop.get(DbContext.class);
-        clear(db);
-        path("/tran/test31").get();
-        path("/tran/test31").get();
-        path("/tran/test31").get();
-        assert db.table("test").count() == 3;
-    }
-
-    @Test
-    public void test32() throws Exception {
-        DbContext db = Aop.get(DbContext.class);
-        clear(db);
-        path("/tran/test32").get();
-        path("/tran/test32").get();
-        path("/tran/test32").get();
-        assert db.table("test").count() == 0;
-    }
 
     @Test
     public void test41() throws Exception {
@@ -101,17 +82,75 @@ public class DemoTest extends HttpTestBase {
         path("/tran/test41").get();
         path("/tran/test41").get();
         path("/tran/test41").get();
-        assert db.table("test").count() == 3;
+
+        long count = db.table("test").count();
+        System.out.println(count);
+        assert count == 0;
     }
 
     @Test
-    public void test42() throws Exception {
+    public void test51() throws Exception {
         DbContext db = Aop.get(DbContext.class);
         clear(db);
-        path("/tran/test42").get();
-        path("/tran/test42").get();
-        path("/tran/test42").get();
-        assert db.table("test").count() == 0;
+        path("/tran/test51").get();
+        path("/tran/test51").get();
+        path("/tran/test51").get();
+
+        long count = db.table("test").count();
+        System.out.println(count);
+        assert count == 3;
+    }
+
+    @Test
+    public void test61() throws Exception {
+        DbContext db = Aop.get(DbContext.class);
+        clear(db);
+        path("/tran/test61").get();
+        path("/tran/test61").get();
+        path("/tran/test61").get();
+
+        long count = db.table("test").count();
+        System.out.println(count);
+        assert count == 0;
+    }
+
+    @Test
+    public void test63() throws Exception {
+        DbContext db = Aop.get(DbContext.class);
+        clear(db);
+        path("/tran/test63").get();
+        path("/tran/test63").get();
+        path("/tran/test63").get();
+
+        long count = db.table("test").count();
+        System.out.println(count);
+        assert count == 3;
+    }
+
+    @Test
+    public void test71() throws Exception {
+        DbContext db = Aop.get(DbContext.class);
+        clear(db);
+        path("/tran/test71").get();
+        path("/tran/test71").get();
+        path("/tran/test71").get();
+
+        long count = db.table("test").count();
+        System.out.println(count);
+        assert count == 3;
+    }
+
+    @Test
+    public void test73() throws Exception {
+        DbContext db = Aop.get(DbContext.class);
+        clear(db);
+        path("/tran/test73").get();
+        path("/tran/test73").get();
+        path("/tran/test73").get();
+
+        long count = db.table("test").count();
+        System.out.println(count);
+        assert count == 0;
     }
 
     private void clear(DbContext db) throws Exception {
