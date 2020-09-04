@@ -8,7 +8,7 @@ import java.util.Date;
 
 @XController
 public class CacheController {
-    @XCache(tags = "test")
+    @XCache(tags = "test" , seconds = 10)
     @XMapping("/cache/")
     public Object test() {
         return new Date();
