@@ -84,10 +84,11 @@ public class TranController {
     @XCache(seconds = 10)
     @XTran
     @XMapping("test52")
-    public void test52() throws Exception {
+    public boolean test52() throws Exception {
         //添加会成功，因为addApp4是独立的新事务
         //
         appService.addApp4();
+        return true;
     }
 
     @XTran
