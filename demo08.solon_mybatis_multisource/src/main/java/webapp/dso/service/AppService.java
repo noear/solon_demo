@@ -13,7 +13,7 @@ public class AppService {
     /**
      * 申明使用db1的事务
      * */
-    @XTran("db1")
+    @XTran
     public void add(){
         appxMapper.appx_add();
     }

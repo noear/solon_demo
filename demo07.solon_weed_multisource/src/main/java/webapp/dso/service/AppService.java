@@ -10,7 +10,7 @@ public class AppService {
     @XInject
     SqlMapper sqlMapper1;
 
-    @XTran("db1")
+    @XTran
     public Object getApp(int app_id) throws Exception {
         return sqlMapper1.appx_get2(app_id);
     }

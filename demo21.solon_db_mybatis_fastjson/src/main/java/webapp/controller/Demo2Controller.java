@@ -20,7 +20,7 @@ public class Demo2Controller {
     @Db("db2")
     Appx2Mapper appxMapper2;
 
-    @XTran("db1")
+    @XTran
     @XMapping("/test")
     public Object test() throws SQLException {
         return appxMapper.appx_get();

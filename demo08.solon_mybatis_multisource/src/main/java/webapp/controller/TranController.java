@@ -15,7 +15,7 @@ public class TranController {
     @XInject
     AppxMapper appxMapper;
 
-    @XTran("db1")
+    @XTran
     @XMapping("test")
     public void test() throws Throwable {
         //添加成功
@@ -23,7 +23,7 @@ public class TranController {
         appxMapper.appx_add();
     }
 
-    @XTran("db1")
+    @XTran
     @XMapping("test2")
     public void test2() throws Throwable {
         //添加会失败，因为在事务里出异常了

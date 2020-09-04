@@ -24,7 +24,7 @@ public class Tran2Controller {
     /**
      * 申明这是一个多数据源的事务（这个可以放在任何事务的最外层；用于管理下面的子事务）
      * */
-    @XTran(group = true)
+    @XTran
     @XMapping("test")
     public void test() throws Throwable {
         //内部申明了用db2的事务
