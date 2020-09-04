@@ -81,13 +81,12 @@ public class TranController {
         throw new RuntimeException("不让你加，但还是成功了：（");
     }
 
-    @XCache(seconds = 10)
     @XTran
     @XMapping("test52")
     public boolean test52() throws Exception {
         //添加会成功，因为addApp4是独立的新事务
         //
-        appService.addApp4();
+        appService.addApp52();
         return true;
     }
 

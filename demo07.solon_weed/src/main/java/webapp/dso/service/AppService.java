@@ -1,5 +1,6 @@
 package webapp.dso.service;
 
+import org.noear.solon.annotation.XCache;
 import org.noear.solon.annotation.XInject;
 import org.noear.solon.annotation.XTran;
 import org.noear.solon.core.TranPolicy;
@@ -34,8 +35,16 @@ public class AppService {
     }
 
     @XTran(policy = TranPolicy.requires_new)
-    public void addApp4(){
+    public boolean addApp4(){
         sqlMapper1.appx_add();
+        return true;
+    }
+
+    @XCache(seconds = 10)
+    @XTran(policy = TranPolicy.requires_new)
+    public boolean addApp52(){
+        sqlMapper1.appx_add();
+        return true;
     }
 
     @XTran(policy = TranPolicy.never)

@@ -1,7 +1,6 @@
 package webapp;
 
 import org.noear.solon.XApp;
-import org.noear.solon.extend.data.annotation.EnableTransaction;
 
 /**
  *
