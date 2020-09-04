@@ -24,8 +24,8 @@ import org.noear.solon.extend.data.annotation.EnableTransaction;
  *   UNIQUE KEY `IX_akey` (`akey`) USING BTREE
  * ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='应用表';
  * */
-@EnableCaching
-@EnableTransaction
+//@EnableCaching(false) //关掉缓存
+//@EnableTransaction(false) //关掉事务
 public class DemoApp {
     public static void main(String[] args) {
         XApp.start(DemoApp.class, args);
