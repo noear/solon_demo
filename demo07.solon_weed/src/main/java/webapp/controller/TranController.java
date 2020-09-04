@@ -1,9 +1,6 @@
 package webapp.controller;
 
-import org.noear.solon.annotation.XController;
-import org.noear.solon.annotation.XInject;
-import org.noear.solon.annotation.XMapping;
-import org.noear.solon.annotation.XTran;
+import org.noear.solon.annotation.*;
 import webapp.dso.service.AppService;
 
 @XMapping("/tran/")
@@ -82,6 +79,15 @@ public class TranController {
         appService.addApp4();
 
         throw new RuntimeException("不让你加，但还是成功了：（");
+    }
+
+    @XCache(seconds = 10)
+    @XTran
+    @XMapping("test52")
+    public void test52() throws Exception {
+        //添加会成功，因为addApp4是独立的新事务
+        //
+        appService.addApp4();
     }
 
     @XTran

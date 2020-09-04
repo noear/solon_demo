@@ -102,6 +102,19 @@ public class DemoTest extends HttpTestBase {
     }
 
     @Test
+    public void test52() throws Exception {
+        DbContext db = Aop.get(DbContext.class);
+        clear(db);
+        path("/tran/test52").get();
+        path("/tran/test52").get();
+        path("/tran/test52").get();
+
+        long count = db.table("test").count();
+        System.out.println(count);
+        assert count == 1; //因为有cache，只被执行了1次
+    }
+
+    @Test
     public void test61() throws Exception {
         DbContext db = Aop.get(DbContext.class);
         clear(db);

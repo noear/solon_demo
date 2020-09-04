@@ -1,6 +1,7 @@
 package webapp;
 
 import org.noear.solon.XApp;
+import org.noear.solon.extend.data.annotation.EnableCaching;
 import org.noear.solon.extend.data.annotation.EnableTransaction;
 
 /**
@@ -23,6 +24,7 @@ import org.noear.solon.extend.data.annotation.EnableTransaction;
  *   UNIQUE KEY `IX_akey` (`akey`) USING BTREE
  * ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='应用表';
  * */
+@EnableCaching
 @EnableTransaction
 public class DemoApp {
     public static void main(String[] args) {
