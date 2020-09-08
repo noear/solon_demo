@@ -13,7 +13,12 @@ public class Config {
             ctx.setHandled(true);
 
             if (XUtil.isEmpty(msg)) {
-                msg = ano.annotationType().getSimpleName() + " verification failed: " + rst.getDescription();
+                msg = new StringBuilder(100)
+                        .append("@")
+                        .append(ano.annotationType().getSimpleName())
+                        .append(" verification failed: ")
+                        .append(rst.getDescription())
+                        .toString();
             }
 
             ctx.output(msg);

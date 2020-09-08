@@ -1,6 +1,5 @@
 package webapp.controller;
 
-import lombok.NonNull;
 import org.noear.solon.annotation.XController;
 import org.noear.solon.annotation.XMapping;
 import org.noear.solon.extend.validation.annotation.NoRepeatSubmit;
@@ -15,7 +14,7 @@ public class ValidationController {
     @NoRepeatSubmit
     @NotNull({"name", "icon", "mobile"})
     @XMapping("/valid")
-    public void test(String name, String icon, @Pattern("13\\d{9}") String mobile) {
-
+    public String test(String name, String icon, @Pattern("13\\d{9}") String mobile) {
+        return "OK";
     }
 }
