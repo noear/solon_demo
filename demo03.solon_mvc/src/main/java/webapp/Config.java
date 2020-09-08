@@ -9,19 +9,27 @@ import org.noear.solon.extend.validation.ValidatorManager;
 public class Config {
     @XBean
     public void init() {
-        ValidatorManager.globalSet(new ValidatorManager((ctx, ano, rst, msg) -> {
+        ValidatorManager.globalSet(new ValidatorManager((ctx, ano, rst, message) -> {
             ctx.setHandled(true);
 
-            if (XUtil.isEmpty(msg)) {
-                msg = new StringBuilder(100)
-                        .append("@")
-                        .append(ano.annotationType().getSimpleName())
-                        .append(" verification failed: ")
-                        .append(rst.getDescription())
-                        .toString();
+            if (XUtil.isEmpty(message)) {
+                if(XUtil.isEmpty(rst.getDescription())){
+                    message = new StringBuilder(100)
+                            .append("@")
+                            .append(ano.annotationType().getSimpleName())
+                            .append(" verification failed")
+                            .toString();
+                }else{
+                    message = new StringBuilder(100)
+                            .append("@")
+                            .append(ano.annotationType().getSimpleName())
+                            .append(" verification failed: ")
+                            .append(rst.getDescription())
+                            .toString();
+                }
             }
 
-            ctx.output(msg);
+            ctx.output(message);
 
             return true;
         }));
