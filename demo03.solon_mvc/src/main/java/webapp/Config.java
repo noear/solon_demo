@@ -8,7 +8,7 @@ import org.noear.solon.extend.validation.ValidatorManager;
 @XConfiguration
 public class Config {
     @XBean
-    public void init() {
+    public void adapter() {
         ValidatorManager.globalSet(new ValidatorManager((ctx, ano, rst, message) -> {
             ctx.setHandled(true);
 
