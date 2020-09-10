@@ -37,6 +37,7 @@
         <module>demo12.solon_aio_http_mvc</module>
 
         <module>demo13.solon_jwt</module>
+        <module>demo14.solon_swagger</module>
 
         <module>demo20.solon_db_weed_snack</module>
 
