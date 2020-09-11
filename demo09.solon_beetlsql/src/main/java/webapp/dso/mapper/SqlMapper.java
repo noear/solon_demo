@@ -3,6 +3,7 @@ package webapp.dso.mapper;
 import java.util.*;
 
 import org.beetl.sql.mapper.annotation.SqlResource;
+import org.beetl.sql.mapper.annotation.Update;
 import webapp.model.*;
 
 @SqlResource("SqlMapper")
@@ -17,5 +18,6 @@ public interface SqlMapper {
 
     List<Integer> appx_getids() throws Exception;
 
+    @Update
     void appx_add();
 }

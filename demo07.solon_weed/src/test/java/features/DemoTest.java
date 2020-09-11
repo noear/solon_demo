@@ -12,6 +12,11 @@ import webapp.DemoApp;
 @RunWith(SolonJUnit4ClassRunner.class)
 @SolonBootTest(DemoApp.class)
 public class DemoTest extends HttpTestBase {
+    @Override
+    public boolean enablePrint() {
+        return true;
+    }
+
     @Test
     public void test() throws Exception {
         DbContext db = Aop.get(DbContext.class);
