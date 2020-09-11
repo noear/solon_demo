@@ -1,0 +1,20 @@
+test:
+  db1:
+    schema: rock
+    jdbcUrl: jdbc:mysql://localdb:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: demo
+    password: UL0hHlg0Ybq60xyb
+  db2:
+    schema: rock
+    jdbcUrl: jdbc:mysql://localdb:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: demo
+    password: UL0hHlg0Ybq60xyb
+
+solon.output.meta: 1
+
+#beetlsql: sqlManager1
+#beetlsql.sqlManager1.ds: ds1
+#beetlsql.sqlManager1.basePackage: org.beetl.sql.springboot.simple
+#beetlsql.sqlManager1.dbStyle: org.beetl.sql.core.db.MySqlStyle
