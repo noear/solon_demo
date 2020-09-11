@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @XMapping("/test/")
-@XBean(tag = "hessian")
+@XBean(tags = "hessian")
 public class ComplexModelServiceImpl implements ComplexModelService {
     private Map<Integer,ComplexModel> models = new HashMap<Integer, ComplexModel>();
 

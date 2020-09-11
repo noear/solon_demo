@@ -4,13 +4,13 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.noear.solon.core.Aop;
 import org.noear.solon.test.HttpTestBase;
-import org.noear.solon.test.SolonBootTest;
+import org.noear.solon.test.SolonTest;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.weed.DbContext;
 import webapp.DemoApp;
 
 @RunWith(SolonJUnit4ClassRunner.class)
-@SolonBootTest(DemoApp.class)
+@SolonTest(DemoApp.class)
 public class DemoTest extends HttpTestBase {
     @Test
     public void test() throws Exception {
