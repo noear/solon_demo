@@ -21,39 +21,39 @@ public class AppService {
     }
 
     public void addApp(){
-        sqlMapper1.appx_add();
+        sqlMapper1.appx_add(1);
     }
 
     @XTran
     public void addApp2(){
-        sqlMapper1.appx_add();
+        sqlMapper1.appx_add(1);
     }
 
     @XTran(policy = TranPolicy.nested)
     public void addApp3(){
-        sqlMapper1.appx_add();
+        sqlMapper1.appx_add(1);
     }
 
     @XTran(policy = TranPolicy.requires_new)
     public boolean addApp4(){
-        sqlMapper1.appx_add();
+        sqlMapper1.appx_add(1);
         return true;
     }
 
     @XCache(seconds = 10)
     @XTran(policy = TranPolicy.requires_new)
     public boolean addApp52(){
-        sqlMapper1.appx_add();
+        sqlMapper1.appx_add(1);
         return true;
     }
 
     @XTran(policy = TranPolicy.never)
     public void addApp5(){
-        sqlMapper1.appx_add();
+        sqlMapper1.appx_add(1);
     }
 
     @XTran(policy = TranPolicy.mandatory)
     public void addApp6(){
-        sqlMapper1.appx_add();
+        sqlMapper1.appx_add(1);
     }
 }

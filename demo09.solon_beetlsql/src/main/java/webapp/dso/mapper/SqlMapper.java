@@ -19,5 +19,5 @@ public interface SqlMapper {
     List<Integer> appx_getids() throws Exception;
 
     @Update
-    void appx_add();
+    void appx_add(int app_id);
 }
