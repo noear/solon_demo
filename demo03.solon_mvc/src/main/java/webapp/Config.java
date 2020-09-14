@@ -6,9 +6,7 @@ import org.noear.solon.core.CacheService;
 import org.noear.solon.extend.validation.ValidatorManager;
 import org.noear.solon.extend.validation.annotation.Date;
 import org.noear.solon.extend.validation.annotation.DateValidator;
-import webapp.dso.MemCacheService;
 import webapp.dso.NotCacheService;
-import webapp.dso.WhitelistValidatorImpl;
 
 
 @XConfiguration
