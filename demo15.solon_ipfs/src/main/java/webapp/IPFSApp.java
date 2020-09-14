@@ -4,7 +4,6 @@ import io.ipfs.api.IPFS;
 import io.ipfs.api.MerkleNode;
 import io.ipfs.api.NamedStreamable;
 import io.ipfs.multihash.Multihash;
-import org.noear.solon.XApp;
 
 import java.io.File;
 import java.io.FileOutputStream;
