@@ -40,6 +40,7 @@
 
         <module>demo13.solon_jwt</module>
         <module>demo14.solon_swagger</module>
+        <module>demo15.solon_ipfs</module>
 
         <module>demo20.solon_db_weed_snack</module>
 
