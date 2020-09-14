@@ -1,6 +1,5 @@
 package webapp.dso;
 
-import org.noear.solon.annotation.XBean;
 import org.noear.solon.core.XContext;
 import org.noear.solon.core.XResult;
 import org.noear.solon.extend.validation.annotation.Whitelist;
