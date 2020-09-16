@@ -1,47 +1,22 @@
 package webapp;
 
 import com.zaxxer.hikari.HikariDataSource;
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.mapping.Environment;
-import org.apache.ibatis.session.Configuration;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-import org.apache.ibatis.transaction.TransactionFactory;
-import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
-import org.noear.solon.XApp;
 import org.noear.solon.annotation.XBean;
 import org.noear.solon.annotation.XConfiguration;
 import org.noear.solon.annotation.XInject;
-import org.noear.solon.core.XMap;
-import org.noear.solon.extend.mybatis.MybatisAdapter;
 
-import java.io.IOException;
-import java.io.Reader;
-import java.util.Properties;
+import javax.sql.DataSource;
 
 
 @XConfiguration
 public class Config {
-    @XBean("db1")
-    public SqlSessionFactory db1(@XInject("${test.db1}") HikariDataSource dataSource) {
-        //
-        //可以用默认的配置
-        //
-        return new MybatisAdapter(dataSource)
-                .mapperScan("webapp.dso.db1")   //替代@mapperScan注解（相对来说，可以把多个 mapperScan 安排在一个 Config里）
-                .getFactory();
+    @XBean(value = "db1", typed = true)
+    public DataSource db1(@XInject("${test.db1}") HikariDataSource ds) {
+        return ds;
     }
 
     @XBean("db2")
-    public SqlSessionFactory db2(
-            @XInject("${test.db2}") HikariDataSource dataSource,
-            @XInject("${mybatis.db2}") Properties props) {
-        //
-        //可以指定配置 ${mybatis.db2}
-        //
-        return new MybatisAdapter(dataSource, props)
-                .mapperScan("webapp.dso.db2")
-                .getFactory();
+    public DataSource db2(@XInject("${test.db2}") HikariDataSource ds) {
+       return ds;
     }
 }
