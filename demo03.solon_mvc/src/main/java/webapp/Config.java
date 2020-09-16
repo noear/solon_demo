@@ -7,8 +7,6 @@ import org.noear.solon.core.CacheService;
 import org.noear.solon.extend.validation.ValidatorManager;
 import org.noear.solon.extend.validation.annotation.Date;
 import org.noear.solon.extend.validation.annotation.DateValidator;
-import org.noear.solon.extend.validation.annotation.NoRepeatSubmit;
-import org.noear.solon.extend.validation.annotation.NoRepeatSubmitValidator;
 import webapp.dso.NotCacheService;
 
 

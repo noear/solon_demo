@@ -8,7 +8,7 @@ test.db1:
     password: UL0hHlg0Ybq60xyb
 
 #默认
-mybatis:
+mybatis.db1:
     typeAliases:    #支持包名 或 类名（.class 结尾）
         - "webapp.model"
     mappers:        #支持包名 或 类名（.class 结尾）或 xml（.xml结尾）

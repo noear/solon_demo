@@ -7,12 +7,13 @@ import org.noear.solon.annotation.XConfiguration;
 import org.noear.solon.annotation.XInject;
 import org.noear.weed.DbContext;
 
+import javax.sql.DataSource;
+
 @XConfiguration
 public class Config {
     @XBean
-    public DbContext db1(@XInject("${test.db1}") HikariDataSource dataSource) {
-        String schema = dataSource.getSchema();
-        return new DbContext(schema, dataSource);
+    public DataSource db1(@XInject("${test.db1}") HikariDataSource ds) {
+        return ds;
     }
 }
 
