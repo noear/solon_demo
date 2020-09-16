@@ -11,7 +11,7 @@ import webapp.DemoApp;
 
 @RunWith(SolonJUnit4ClassRunner.class)
 @SolonTest(DemoApp.class)
-public class DemoTest extends HttpTestBase {
+public class TranTest extends HttpTestBase {
     @Test
     public void test() throws Exception {
         DbContext db = Aop.get(DbContext.class);
