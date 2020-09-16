@@ -1,6 +1,5 @@
 package demo;
 
-import com.sun.tools.javac.parser.ScannerFactory;
 import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
