@@ -1,8 +1,8 @@
 package webapp.controller;
 
+import org.beetl.sql.ext.solon.Db;
 import org.noear.solon.annotation.XController;
 import org.noear.solon.annotation.XMapping;
-import org.noear.solon.extend.beetlsql.Db;
 import webapp.dso.mapper.SqlMapper;
 
 @XMapping("/demo/")
