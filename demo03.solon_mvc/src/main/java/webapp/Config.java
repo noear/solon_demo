@@ -37,10 +37,10 @@ public class Config {
     /**
      *
      */
-    @XBean
-    public CacheService cache() {
-        return new NotCacheService();
-    }
+//    @XBean
+//    public CacheService cache() {
+//        return new NotCacheService();
+//    }
 
 //    @XBean("cache1")
 //    public CacheService cache1(@XInject("${cache1}") Properties props) {
