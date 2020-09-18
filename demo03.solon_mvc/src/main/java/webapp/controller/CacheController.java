@@ -1,6 +1,6 @@
 package webapp.controller;
 
-import org.noear.solon.annotation.XCachePut;
+import org.noear.solon.annotation.XCache;
 import org.noear.solon.annotation.XCacheRemove;
 import org.noear.solon.annotation.XController;
 import org.noear.solon.annotation.XMapping;
@@ -12,7 +12,7 @@ public class CacheController {
     /**
      * 执行结果缓存10秒，并添加 test_${label} 和 test1 标签
      * */
-    @XCachePut(tags = "test_${label},test1" , seconds = 10)
+    @XCache(tags = "test_${label},test1" , seconds = 10)
     @XMapping("/cache/")
     public Object test(int label) {
         return new Date();
