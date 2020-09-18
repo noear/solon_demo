@@ -28,7 +28,7 @@ public class TranTest extends HttpTestBase {
         path("/tran/test").get();
         path("/tran/test").get();
         path("/tran/test").get();
-        assert db.table("test").count() == 3;
+        assert db.table("test").count() == 6;
     }
 
     @Test

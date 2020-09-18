@@ -18,6 +18,7 @@ public class TranController {
         //添加会成功
         //
         appService.addApp();
+        appService.addApp();
     }
 
     @XTran
@@ -25,6 +26,7 @@ public class TranController {
     public void test2() throws Exception {
         //添加会失败，因为在事务里出异常了
         //
+        appService.addApp();
         appService.addApp();
 
         throw new RuntimeException("不让你加");
