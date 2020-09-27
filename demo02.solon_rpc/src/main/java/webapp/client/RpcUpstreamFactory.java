@@ -3,6 +3,9 @@ package webapp.client;
 import org.noear.solon.core.XUpstream;
 import org.noear.solon.core.XUpstreamFactory;
 
+/**
+ * 定义个负载工厂
+ * */
 public class RpcUpstreamFactory implements XUpstreamFactory {
     XUpstream local = () -> "http://localhost:8080";
 
