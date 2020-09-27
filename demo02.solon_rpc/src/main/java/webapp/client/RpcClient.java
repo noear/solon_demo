@@ -13,6 +13,7 @@ import webapp.protocol.UserService;
 @XBean
 public class RpcClient {
     public static void main(String[] args) {
+        //通过桥接器，为Solon实例化一个负载工厂
         XBridge.upstreamFactorySet(new RpcUpstreamFactory());
 
         //开启ioc服务，并关掉http端口（免得冲突）
