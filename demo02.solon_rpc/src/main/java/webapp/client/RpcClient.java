@@ -15,8 +15,10 @@ public class RpcClient {
     public static void main(String[] args) {
         XBridge.upstreamFactorySet(new RpcUpstreamFactory());
 
+        //开启ioc服务，并关掉http端口（免得冲突）
         XApp.start(RpcClient.class, args, app -> app.enableHttp(false));
 
+        //Aop获取一个bean
         RpcClient client = Aop.get(RpcClient.class);
         client.test();
     }
