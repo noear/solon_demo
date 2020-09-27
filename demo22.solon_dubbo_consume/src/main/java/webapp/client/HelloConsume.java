@@ -1,14 +1,15 @@
 package webapp.client;
 
 import org.apache.dubbo.config.annotation.Reference;
+import org.noear.solon.annotation.XBean;
 import org.noear.solon.annotation.XController;
 import org.noear.solon.annotation.XMapping;
 import webapp.protocol.HelloService;
 import webapp.protocol.UserService;
 
-@XController
+@XBean
 public class HelloConsume {
-    @Reference(group = "hello")
+    @Reference
     HelloService helloService;
 
     @Reference
