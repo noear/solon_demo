@@ -5,7 +5,6 @@ import org.noear.fairy.annotation.FairyClient;
 import org.noear.solon.XApp;
 import org.noear.solon.annotation.XBean;
 import org.noear.solon.core.Aop;
-import org.noear.solon.core.XBridge;
 import webapp.protocol.UserModel;
 import webapp.protocol.UserService;
 
@@ -13,9 +12,6 @@ import webapp.protocol.UserService;
 @XBean
 public class RpcClient {
     public static void main(String[] args) {
-        //通过桥接器，为Solon实例化一个负载工厂
-        XBridge.upstreamFactorySet(new RpcUpstreamFactory());
-
         //开启ioc服务，并关掉http端口（免得冲突）
         XApp.start(RpcClient.class, args, app -> app.enableHttp(false));
 
