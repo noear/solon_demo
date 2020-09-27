@@ -5,6 +5,7 @@ import org.noear.fairy.annotation.FairyClient;
 import org.noear.solon.XApp;
 import org.noear.solon.annotation.XBean;
 import org.noear.solon.core.Aop;
+import org.noear.solon.core.XBridge;
 import webapp.protocol.UserModel;
 import webapp.protocol.UserService;
 
@@ -12,17 +13,27 @@ import webapp.protocol.UserService;
 @XBean
 public class RpcClient {
     public static void main(String[] args) {
-        XApp.start(RpcClient.class, args, app->app.enableHttp(false));
+        XBridge.upstreamFactorySet(new RpcUpstreamFactory());
+
+        XApp.start(RpcClient.class, args, app -> app.enableHttp(false));
 
         RpcClient client = Aop.get(RpcClient.class);
         client.test();
     }
 
+    //直接指定服务端地址
     @FairyClient("http://localhost:8080/user/")
     UserService userService;
 
-    public void test(){
+    //使用负载
+    @FairyClient("local:/user/")
+    UserService userService2;
+
+    public void test() {
         UserModel user = userService.getUser(12);
+        System.out.println(user);
+
+        user = userService2.getUser(23);
         System.out.println(user);
     }
 }
