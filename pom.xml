@@ -24,6 +24,7 @@
         <module>demo01.solon_simple</module>
         <module>demo02.solon_helloworld</module>
         <module>demo03.solon_mvc</module>
+        <module>demo02.solon_rpc</module>
         <module>demo04.solon_mvc_jsp</module>
         <module>demo05.solon_mvc_undertow_jsp</module>
         <module>demo06.solon_hessian_rpc</module>
