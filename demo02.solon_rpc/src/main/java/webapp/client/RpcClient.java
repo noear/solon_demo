@@ -8,8 +8,8 @@ import org.noear.solon.core.Aop;
 import webapp.protocol.UserModel;
 import webapp.protocol.UserService;
 
-@XBean
 @EnableFairyClients
+@XBean
 public class RpcClient {
     public static void main(String[] args) {
         XApp.start(RpcClient.class, args, app->app.enableHttp(false));
