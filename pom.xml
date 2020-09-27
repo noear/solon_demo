@@ -46,6 +46,9 @@
         <module>demo20.solon_db_weed_snack</module>
 
         <module>demo21.solon_db_mybatis_fastjson</module>
+        <module>demo22.solon_dubbo_consume</module>
+        <module>demo22.solon_dubbo_provider</module>
+        <module>demo22.solon_dubbo_service</module>
     </modules>
 
     <build>
