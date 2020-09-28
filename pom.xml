@@ -49,6 +49,7 @@
         <module>demo22.solon_dubbo_consume</module>
         <module>demo22.solon_dubbo_provider</module>
         <module>demo22.solon_dubbo_service</module>
+        <module>demo23.solon_dubbo_sml</module>
     </modules>
 
     <build>
