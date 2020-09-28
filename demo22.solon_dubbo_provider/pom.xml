@@ -21,12 +21,6 @@
     <dependencies>
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon-web</artifactId>
-            <type>pom</type>
-        </dependency>
-
-        <dependency>
-            <groupId>org.noear</groupId>
             <artifactId>dubbo-solon-plugin</artifactId>
         </dependency>
 
