@@ -7,10 +7,10 @@ public class XPluginImp implements XPlugin {
     @Override
     public void start(XApp app) {
         //扫描出控制器
-        app.beanScan(XPluginImp.class);
+        app.loadBean(XPluginImp.class); //以后会更名为：beanScan
 
         //如果只有一个类，可用beanMake（快）
-        //app.beanMake(HomeController.class);
+        //app.makeBean(HomeController.class); //以后会更名为：beanMake
 
         //如果随便玩玩，也可用handler风格
         //app.get("/",x->x.output("Hello world!"));
