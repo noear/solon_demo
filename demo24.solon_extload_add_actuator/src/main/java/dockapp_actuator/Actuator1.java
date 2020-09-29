@@ -7,6 +7,6 @@ import org.noear.solon.annotation.XBean;
 public class Actuator1 implements IActuator {
     @Override
     public void exec() {
-        System.out.println("我是执行器:(");
+        System.out.println("我是体外放进来的执行器，别打我:(");
     }
 }

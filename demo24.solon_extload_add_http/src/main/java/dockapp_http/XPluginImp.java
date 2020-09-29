@@ -14,5 +14,8 @@ public class XPluginImp implements XPlugin {
 
         //如果随便玩玩，也可用handler风格
         //app.get("/",x->x.output("Hello world!"));
+
+        System.out.println("我是个体外扩展包，我让你能玩http了");
+        System.out.println("用浏览器打开：http://localhost:8080/");
     }
 }
