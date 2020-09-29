@@ -1,16 +1,16 @@
 **实验指南：**
 
-1. 建个文件夹 dockapp，并按以下结构放好文件
+1. 建个文件夹 demo24.bin，并按以下结构放好文件
 
 ```
-dockapp/
-dockapp/dockapp.jar
-dockapp/dockapp_ext/
-dockapp/dockapp_ext/dockapp.add.actuator.jar
-dockapp/dockapp_ext/dockapp.add.http.jar
+demo24.bin/
+demo24.bin/dockapp.jar
+demo24.bin/dockapp_ext/
+demo24.bin/dockapp_ext/dockapp.add.actuator.jar
+demo24.bin/dockapp_ext/dockapp.add.http.jar
 ```
 
-2. 然后通过java命令运行：
+2. 然后通过java命令运行（支持：jdk8+）：
 
 ```
 java -jar dockapp.jar  #由jar包内的配置文件，指定扩展目录
