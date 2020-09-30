@@ -21,19 +21,13 @@
     <dependencies>
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.boot.jlhttp</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.noear</groupId>
-                    <artifactId>solon</artifactId>
-                </exclusion>
-            </exclusions>
+            <artifactId>solon</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon</artifactId>
-            <scope>provided</scope>
+            <artifactId>solon.boot.jlhttp</artifactId>
         </dependency>
     </dependencies>
 
