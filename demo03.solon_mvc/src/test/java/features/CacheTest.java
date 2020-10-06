@@ -1,0 +1,69 @@
+package features;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.noear.solon.test.HttpTestBase;
+import org.noear.solon.test.SolonJUnit4ClassRunner;
+import org.noear.solon.test.SolonTest;
+import webapp.MvcApp;
+
+@RunWith(SolonJUnit4ClassRunner.class)
+@SolonTest(MvcApp.class)
+public class CacheTest extends HttpTestBase {
+    @Test
+    public void test1() throws Exception{
+        String rst = path("/cache/").get();
+
+        Thread.sleep(100);
+
+        assert rst.equals(path("/cache/").get());
+
+        Thread.sleep(100);
+
+        assert rst.equals(path("/cache/").get());
+
+        Thread.sleep(100);
+
+        assert rst.equals(path("/cache/").get());
+    }
+
+    @Test
+    public void test2() throws Exception{
+        String rst = path("/cache/").get();
+
+        Thread.sleep(100);
+
+        path("/cache/clear").get();
+        assert rst.equals(path("/cache/").get());
+
+        Thread.sleep(100);
+
+        path("/cache/clear").get();
+        assert rst.equals(path("/cache/").get());
+
+        Thread.sleep(100);
+
+        path("/cache/clear").get();
+        assert rst.equals(path("/cache/").get());
+    }
+
+    @Test
+    public void test3() throws Exception{
+        String rst = path("/cache/").get();
+
+        Thread.sleep(100);
+
+        path("/cache/clear2").get();
+        assert rst.equals(path("/cache/").get()) == false;
+
+        Thread.sleep(100);
+
+        path("/cache/clear2").get();
+        assert rst.equals(path("/cache/").get()) == false;
+
+        Thread.sleep(100);
+
+        path("/cache/clear2").get();
+        assert rst.equals(path("/cache/").get()) == false;
+    }
+}
