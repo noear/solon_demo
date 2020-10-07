@@ -9,6 +9,17 @@ public class TranController {
     @XInject
     AppService appService;
 
+    @XCache
+    @XTran
+    @XMapping("test0")
+    public String test0() throws Exception {
+        //添加会成功
+        //
+        appService.addApp();
+        appService.addApp();
+        return "OK";
+    }
+
     @XTran
     @XMapping("test")
     public void test() throws Exception {

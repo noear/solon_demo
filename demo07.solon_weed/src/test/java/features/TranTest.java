@@ -21,6 +21,14 @@ public class TranTest extends HttpTestBase {
     public boolean enablePrint() {
         return true;
     }
+    @Test
+    public void test0() throws Exception {
+        clear(db);
+        path("/tran/test0").get();
+        path("/tran/test0").get();
+        path("/tran/test0").get();
+        assert db.table("test").count() == 2;
+    }
 
     @Test
     public void test() throws Exception {
