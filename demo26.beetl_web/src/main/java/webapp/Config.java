@@ -20,9 +20,13 @@ import java.io.IOException;
 public class Config {
     @XBean
     public void validAdapter() {
+        //
+        // 添加Date验证器
+        //
         ValidatorManager.global().register(Date.class, DateValidator.instance);
-
-
+        //
+        // 适配验证输出
+        //
         ValidatorManager.global().onFailure((ctx, ano, rst, message) -> {
             ctx.setHandled(true);
 

@@ -13,10 +13,14 @@ import webapp.dso.NotCacheService;
 @XConfiguration
 public class Config {
     @XBean
-    public void adapter() {
+    public void validAdapter() {
+        //
+        // 添加Date验证器
+        //
         ValidatorManager.global().register(Date.class, DateValidator.instance);
-
-
+        //
+        // 适配验证输出，更友好些
+        //
         ValidatorManager.global().onFailure((ctx, ano, rst, message) -> {
             ctx.setHandled(true);
 
