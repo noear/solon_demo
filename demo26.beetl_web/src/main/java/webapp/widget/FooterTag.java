@@ -4,6 +4,9 @@ package webapp.widget;
 import org.beetl.core.tag.Tag;
 import org.noear.solon.annotation.XBean;
 
+/**
+ * 自定义标签
+ * */
 @XBean("view:footer")
 public class FooterTag extends Tag {
 
