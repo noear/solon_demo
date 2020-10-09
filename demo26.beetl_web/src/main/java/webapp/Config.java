@@ -41,7 +41,7 @@ public class Config {
     }
 
     @XBean
-    public DataSource ds(@XInject("${db1}") HikariDataSource ds) throws IOException {
+    public DataSource db1(@XInject("${db1}") HikariDataSource ds) throws IOException {
         DsHelper.initData(ds);
         
         return ds;

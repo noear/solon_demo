@@ -1,13 +1,17 @@
 package webapp.model;
 
 import lombok.Data;
+import org.beetl.sql.annotation.entity.AssignID;
+import org.beetl.sql.annotation.entity.Table;
 
 import java.util.Date;
 
+@Table(name = "sys_user")
 @Data
 public class SysUserModel {
-    private long id;
+    @AssignID
+    private Long id;
     private String name;
-    private int departmentId;
+    private Integer departmentId;
     private Date createTime;
 }

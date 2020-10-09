@@ -4,9 +4,6 @@ package webapp.widget;
 import org.beetl.core.tag.Tag;
 import org.noear.solon.annotation.XBean;
 
-import java.io.IOException;
-import java.util.Map;
-
 @XBean("view:footer")
 public class FooterTag extends Tag {
 
@@ -15,7 +12,7 @@ public class FooterTag extends Tag {
         StringBuffer sb = new StringBuffer();
 
         sb.append("<footer>");
-        sb.append("我是自定义标签，FooterTag");
+        sb.append("::我是自定义标签，FooterTag");
         sb.append("</footer>");
 
         try {
