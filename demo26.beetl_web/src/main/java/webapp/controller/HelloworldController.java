@@ -3,16 +3,16 @@ package webapp.controller;
 import org.noear.solon.annotation.XController;
 import org.noear.solon.annotation.XMapping;
 import org.noear.solon.core.ModelAndView;
-import webapp.model.UserModel;
+import webapp.model.SysUserModel;
 
 @XController
 public class HelloworldController {
     @XMapping("/helloworld")
     public Object helloworld(){
-        UserModel m = new UserModel();
+        SysUserModel m = new SysUserModel();
         m.setId(10);
         m.setName("刘之西东");
-        m.setSex(1);
+        m.setDepartmentId(1);
 
         ModelAndView vm = new ModelAndView("helloworld.htm");
 

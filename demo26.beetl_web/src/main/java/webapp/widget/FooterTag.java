@@ -1,26 +1,27 @@
 package webapp.widget;
 
-import freemarker.core.Environment;
-import freemarker.template.TemplateDirectiveBody;
-import freemarker.template.TemplateDirectiveModel;
-import freemarker.template.TemplateException;
-import freemarker.template.TemplateModel;
+
+import org.beetl.core.tag.Tag;
 import org.noear.solon.annotation.XBean;
 
 import java.io.IOException;
 import java.util.Map;
 
 @XBean("view:footer")
-public class FooterTag implements TemplateDirectiveModel {
-    @Override
-    public void execute(Environment env, Map map, TemplateModel[] templateModels, TemplateDirectiveBody templateDirectiveBody) throws TemplateException, IOException {
+public class FooterTag extends Tag {
 
+    @Override
+    public void render() {
         StringBuffer sb = new StringBuffer();
 
         sb.append("<footer>");
         sb.append("我是自定义标签，FooterTag");
         sb.append("</footer>");
 
-        env.getOut().write(sb.toString());
+        try {
+            ctx.byteWriter.writeString(sb.toString());
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
     }
 }
