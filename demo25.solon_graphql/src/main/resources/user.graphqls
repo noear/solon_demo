@@ -1,0 +1,26 @@
+#对应的User定义如下
+schema {
+    #定义查询
+    query: UserQuery
+}
+
+#定义查询类型
+type UserQuery {
+    #指定对象以及参数类型
+    queryUser : User
+    queryUserById(id:ID) : User
+}
+
+#定义对象
+type User {
+    #!表示非空
+    id: ID!
+    name:String
+    age:Int
+    card:Card
+}
+
+type Card {
+    cardNumber:String
+    userId:ID
+}

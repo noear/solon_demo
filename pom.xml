@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>1.0.42</version>
+        <version>1.0.43</version>
         <relativePath />
     </parent>
 
@@ -54,6 +54,7 @@
         <module>demo24.solon_extload</module>
         <module>demo24.solon_extload_add_actuator</module>
         <module>demo24.solon_extload_add_http</module>
+        <module>demo25.solon_graphql</module>
     </modules>
 
     <build>
