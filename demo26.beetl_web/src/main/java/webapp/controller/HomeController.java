@@ -7,6 +7,6 @@ import org.noear.solon.annotation.XMapping;
 public class HomeController {
     @XMapping(value = "/", produces = "text/html;charset=utf-8")
     public String home(){
-        return "<a href='/helloworld'>/helloworld</a> <br/> <a href='/dao/'>/dao/::json</a>";
+        return "<a href='/helloworld'>/helloworld::html</a> <br/> <a href='/dao/'>/dao/::json</a>";
     }
 }
