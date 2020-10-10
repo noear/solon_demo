@@ -22,14 +22,14 @@
     </filter-mapping>
 
     <!-- (建议)启动模块 -->
-<!--    <context-param>-->
-<!--        <param-name>hasor-root-module</param-name>-->
-<!--        <param-value>com.xxx.you.project.StartModule</param-value>-->
-<!--    </context-param>-->
+    <context-param>
+        <param-name>hasor-root-module</param-name>
+        <param-value>webapp.StartModule</param-value>
+    </context-param>
 
     <!-- (可选)如果有配置文件在这里指定 -->
-<!--    <context-param>-->
-<!--        <param-name>hasor-hconfig-name</param-name>-->
-<!--        <param-value>hasor-config.xml</param-value>-->
-<!--    </context-param>-->
+    <context-param>
+        <param-name>hasor-hconfig-name</param-name>
+        <param-value>hconfig.xml</param-value>
+    </context-param>
 </web-app>

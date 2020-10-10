@@ -54,9 +54,11 @@
         <module>demo24.solon_extload_add_actuator</module>
         <module>demo24.solon_extload_add_http</module>
         <module>demo25.solon_graphql</module>
-        <module>demo25.solon_dataway</module>
 
         <module>demo26.beetl_web</module>
+
+        <module>demo27.solon_dataway</module>
+<!--        <module>demo27.hasor-solon</module>-->
     </modules>
 
     <build>
