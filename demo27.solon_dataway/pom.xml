@@ -18,21 +18,7 @@
         <version>1-SNAPSHOT</version>
     </parent>
 
-    <!--
-     多模板引擎共存时，模板文件后缀默认对应关系：
-     beetl:       .htm
-     enjoy:       .shtm
-     freemaerker: .ftl
-     jsp:         .jsp
-     thyemeleaf:  .html
-     velocity:    .vm
-     -->
-
-
     <dependencies>
-        <!--
-        solon-api 和 solon-mvc 的区别是：前者没有模板和SessionState
-        -->
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon.boot.jetty</artifactId>
@@ -44,43 +30,25 @@
             <artifactId>jetty-webapp</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>net.hasor</groupId>
-            <artifactId>hasor-web</artifactId>
-            <version>4.2.0</version><!-- 查看最新版本：https://mvnrepository.com/artifact/net.hasor/hasor-web -->
-        </dependency>
-
+        <!-- dataway -->
         <dependency>
             <groupId>net.hasor</groupId>
             <artifactId>hasor-dataway</artifactId>
-            <version>4.2.0</version><!-- 查看最新版本：https://mvnrepository.com/artifact/net.hasor/hasor-dataway -->
+            <version>4.2.0</version>
         </dependency>
 
-
+        <!-- 线程池 -->
         <dependency>
             <groupId>com.zaxxer</groupId>
             <artifactId>HikariCP</artifactId>
             <version>3.3.1</version>
         </dependency>
 
+        <!-- mysql 驱动 -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.49</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>solon-test</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.14.4</version>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>
