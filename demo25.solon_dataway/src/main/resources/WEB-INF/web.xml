@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         id="WebApp_ID"
+         version="2.5">
+
+    <!-- 框架启动 -->
+    <listener>
+        <listener-class>net.hasor.web.startup.RuntimeListener</listener-class>
+    </listener>
+
+    <!-- 全局拦截器 -->
+    <filter>
+        <filter-name>rootFilter</filter-name>
+        <filter-class>net.hasor.web.startup.RuntimeFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>rootFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- (建议)启动模块 -->
+<!--    <context-param>-->
+<!--        <param-name>hasor-root-module</param-name>-->
+<!--        <param-value>com.xxx.you.project.StartModule</param-value>-->
+<!--    </context-param>-->
+
+    <!-- (可选)如果有配置文件在这里指定 -->
+<!--    <context-param>-->
+<!--        <param-name>hasor-hconfig-name</param-name>-->
+<!--        <param-value>hasor-config.xml</param-value>-->
+<!--    </context-param>-->
+</web-app>
