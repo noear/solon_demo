@@ -29,7 +29,7 @@ import java.lang.annotation.Target;
  * */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-@XImport(value = BasicHasorConfiguration.class)
+@XImport(value = HasorConfiguration.class)
 public @interface EnableHasor {
     /**
      * 扫描范围，如果 scanPackages 配置的扫描范围超出了 ComponentScan，那么这些标记了 @DimModule 的 Module 接口实现类将会以 new 的形式进行创建。

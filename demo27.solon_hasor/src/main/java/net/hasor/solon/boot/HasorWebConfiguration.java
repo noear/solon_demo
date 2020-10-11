@@ -14,18 +14,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.EventListener;
-import java.util.Objects;
 
 @XConfiguration
-public class WebHasorConfiguration extends BaseConfiguration {
-    private static final Logger logger = LoggerFactory.getLogger(WebHasorConfiguration.class);
+public class HasorWebConfiguration extends BaseConfiguration {
+    private static final Logger logger = LoggerFactory.getLogger(HasorWebConfiguration.class);
     private String filterPath = "/*";
     private int filterOrder = 0;
 
 
     @XBean
     public void init() {
-
         // 得到 EnableHasorWeb
         EnableHasorWeb enableHasor = XApp.global().source().getAnnotation(EnableHasorWeb.class);
         //
@@ -37,10 +35,7 @@ public class WebHasorConfiguration extends BaseConfiguration {
 
     @XBean
     public EventListener hasorRuntimeListener(@XInject AppContext appContext) {
-        Objects.requireNonNull(appContext, "AppContext is not inject.");
-        RuntimeListener runtimeListener = (new RuntimeListener(appContext));
-
-        return runtimeListener;
+        return new RuntimeListener(appContext);
     }
 
     /**
@@ -48,11 +43,10 @@ public class WebHasorConfiguration extends BaseConfiguration {
      */
     @XBean
     public void hasorInterceptors(@XInject AppContext appContext) {
-        Objects.requireNonNull(appContext, "AppContext is not inject.");
-
         try {
             RuntimeFilter runtimeFilter = new RuntimeFilter(appContext);
             runtimeFilter.init(new OneConfig("", () -> appContext));
+
             Filter2Interceptor interceptor = new Filter2Interceptor(runtimeFilter);
             //
             String filterPath = this.filterPath;

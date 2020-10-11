@@ -18,12 +18,11 @@ import org.slf4j.LoggerFactory;
 import javax.servlet.ServletContext;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.annotation.Annotation;
 import java.util.*;
 
 @XConfiguration
-public class BasicHasorConfiguration extends BaseConfiguration {
-    private static Logger logger = LoggerFactory.getLogger(BasicHasorConfiguration.class);
+public class HasorConfiguration extends BaseConfiguration {
+    private static Logger logger = LoggerFactory.getLogger(HasorConfiguration.class);
 
     @XBean
     public void init() {
@@ -34,36 +33,16 @@ public class BasicHasorConfiguration extends BaseConfiguration {
 
         // 处理mainConfig
         buildConfig.mainConfig = enableHasor.mainConfig();
+
         // 处理useProperties
         buildConfig.useProperties = enableHasor.useProperties();
+
         // 处理startWith
         for (Class<? extends Module> startWith : enableHasor.startWith()) {
-            boolean useSpring = false;
-            Annotation[] interfaces = startWith.getAnnotations();
-            for (Annotation annotatedType : interfaces) {
-                if (annotatedType instanceof XBean) {
-                    useSpring = true;
-                    break;
-                }
-                if (annotatedType.annotationType().getAnnotation(XBean.class) != null) {
-                    useSpring = true;
-                    break;
-                }
-            }
-            if (useSpring) {
-                buildConfig.loadModules.add(Aop.get(startWith));
-            } else {
-                try {
-                    buildConfig.loadModules.add(startWith.newInstance());
-                } catch (Exception e) {
-                    throw ExceptionUtils.toRuntimeException(e);
-                }
-            }
+            buildConfig.loadModules.add(Aop.get(startWith));
         }
 
-
         // 把Spring 中所有标记了 @DimModule 的 Module，捞进来。 //交给XPluginImp处理
-
 
         //
         // 处理scanPackages
@@ -80,8 +59,13 @@ public class BasicHasorConfiguration extends BaseConfiguration {
                 buildConfig.customProperties.put(name, property.value());
             }
         }
+
         //
         // .打印 Hello
+        printLogo();
+    }
+
+    private void printLogo(){
         try {
             InputStream inputStream = ResourcesUtils.getResourceAsStream("/META-INF/hasor-framework/hasor-spring-hello.txt");
             List<String> helloText = IOUtils.readLines(inputStream, "utf-8");
@@ -91,7 +75,6 @@ public class BasicHasorConfiguration extends BaseConfiguration {
             }
             logger.info(builder.toString());
         } catch (Exception e) { /**/ }
-        //
     }
 
 

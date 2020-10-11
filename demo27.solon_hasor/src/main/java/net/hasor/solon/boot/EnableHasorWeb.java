@@ -28,7 +28,7 @@ import java.lang.annotation.Target;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-@XImport(value = { WebHasorConfiguration.class })
+@XImport(value = { HasorWebConfiguration.class })
 public @interface EnableHasorWeb {
     /**
      * Hasor 全局拦截器工作的目录
