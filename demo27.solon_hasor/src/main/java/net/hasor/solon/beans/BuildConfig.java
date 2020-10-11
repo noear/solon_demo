@@ -46,7 +46,7 @@ public class BuildConfig {
 
     public Hasor build(Object parentObject) throws IOException {
         Hasor hasorBuild = (parentObject == null) ? Hasor.create() : Hasor.create(parentObject);
-        hasorBuild.parentClassLoaderWith(XClassLoader.global());
+        hasorBuild.parentClassLoaderWith(Thread.currentThread().getContextClassLoader());
         //
         // make sure mainConfig
         String config = this.mainConfig;

@@ -81,13 +81,13 @@ public class HasorConfiguration extends BaseConfiguration {
     @XBean
     public AppContext appContext() {
         ServletContext parent = Aop.getOrNull(ServletContext.class);
-        //如果不为null，则为web
-        return this.createAppContext(parent);
-    }
+        if(parent == null) {
+            System.out.println("ServletContext: is null!!!!");
+        }
 
-    protected AppContext createAppContext(Object parentObject) {
+        //如果不为null，则为web
         try {
-            return this.getBuildConfig().build(parentObject).build(apiBinder -> {
+            return this.getBuildConfig().build(parent).build(apiBinder -> {
                 //apiBinder.bindType(ApplicationContext.class).toInstance(applicationContext);
             });
         } catch (IOException e) {
