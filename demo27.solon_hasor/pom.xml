@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear</groupId>
-    <artifactId>demo27.solon_dataway</artifactId>
+    <artifactId>demo27.solon_hasor</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
@@ -18,56 +18,37 @@
         <version>1-SNAPSHOT</version>
     </parent>
 
+
     <dependencies>
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.boot.jetty</artifactId>
+            <artifactId>solon</artifactId>
         </dependency>
 
-        <!-- 支持 servlet -->
         <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-servlet</artifactId>
+            <groupId>net.hasor</groupId>
+            <artifactId>hasor-web</artifactId>
+            <version>4.2.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>demo27.solon_hasor</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-
-        <!-- dataway -->
-        <dependency>
-            <groupId>net.hasor</groupId>
-            <artifactId>hasor-dataway</artifactId>
-            <version>4.2.0</version>
-        </dependency>
-
-        <!-- 线程池 -->
-        <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
-            <version>3.3.1</version>
-        </dependency>
-
-        <!-- mysql 驱动 -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.49</version>
-        </dependency>
-
-        <!-- H2 驱动 -->
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>RELEASE</version>
+            <artifactId>solon-test</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>1.7.21</version>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.14.4</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -97,7 +78,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>webapp.DatawayApp</mainClass>
+                            <mainClass>webapp.JwtApp</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -113,6 +94,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>
