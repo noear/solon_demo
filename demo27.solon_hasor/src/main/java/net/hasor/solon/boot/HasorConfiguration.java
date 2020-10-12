@@ -1,8 +1,6 @@
 package net.hasor.solon.boot;
 
 import net.hasor.core.Module;
-import net.hasor.solon.beans.BaseConfiguration;
-import net.hasor.solon.beans.BuildConfig;
 import net.hasor.utils.ResourcesUtils;
 import net.hasor.utils.StringUtils;
 import net.hasor.utils.io.IOUtils;

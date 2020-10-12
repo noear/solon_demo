@@ -1,4 +1,4 @@
-package net.hasor.solon.beans;
+package net.hasor.solon.boot;
 
 import org.noear.solon.XApp;
 

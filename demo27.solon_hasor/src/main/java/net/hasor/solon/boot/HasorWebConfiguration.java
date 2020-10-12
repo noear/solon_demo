@@ -1,7 +1,6 @@
 package net.hasor.solon.boot;
 
 import net.hasor.core.AppContext;
-import net.hasor.solon.beans.BaseConfiguration;
 import net.hasor.utils.ExceptionUtils;
 import net.hasor.web.startup.RuntimeFilter;
 import net.hasor.web.startup.RuntimeListener;
