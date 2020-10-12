@@ -1,17 +1,18 @@
 package net.hasor.solon.boot;
 
+import net.hasor.core.AppContext;
 import net.hasor.core.Module;
-import net.hasor.utils.ResourcesUtils;
+import net.hasor.utils.ExceptionUtils;
 import net.hasor.utils.StringUtils;
-import net.hasor.utils.io.IOUtils;
 import org.noear.solon.XApp;
 import org.noear.solon.annotation.XConfiguration;
 import org.noear.solon.core.Aop;
+import org.noear.solon.core.XEventListener;
+import org.noear.solon.event.BeanLoadedEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.InputStream;
-import java.util.*;
+import java.io.IOException;
 
 /**
  * 将注解的配置转到 BuildConfig 实例上
@@ -20,7 +21,7 @@ import java.util.*;
  * @since 2020.10.10
  * */
 @XConfiguration
-public class HasorConfiguration {
+public class HasorConfiguration implements XEventListener<BeanLoadedEvent> {
     private static Logger logger = LoggerFactory.getLogger(HasorConfiguration.class);
 
     public HasorConfiguration() {
@@ -43,7 +44,7 @@ public class HasorConfiguration {
 
         // 处理startWith
         for (Class<? extends Module> startWith : enableHasor.startWith()) {
-            buildConfig.loadModules.add(Aop.get(startWith));
+            buildConfig.addModules(Aop.get(startWith));
         }
 
         // 把Solon 中所有标记了 @DimModule 的 Module，捞进来。 //交给XPluginImp处理
@@ -52,9 +53,14 @@ public class HasorConfiguration {
         // 处理scanPackages
         if (enableHasor.scanPackages().length != 0) {
             for (String p : enableHasor.scanPackages()) {
-                XApp.global().beanScan(p);
+                if (p.endsWith(".*")) {
+                    XApp.global().beanScan(p.substring(0, p.length() - 2));
+                } else {
+                    XApp.global().beanScan(p);
+                }
             }
         }
+
         // 处理customProperties
         Property[] customProperties = enableHasor.customProperties();
         for (Property property : customProperties) {
@@ -63,21 +69,23 @@ public class HasorConfiguration {
                 buildConfig.customProperties.put(name, property.value());
             }
         }
-
-        //
-        // .打印 Hello
-        printLogo();
     }
 
-    private void printLogo() {
+    @Override
+    public void onEvent(BeanLoadedEvent beanLoadedEvent) {
+        //没有EnableHasorWeb时，生成AppContext并注入容器
+        //
+        if (XApp.global().source().getAnnotation(EnableHasorWeb.class) == null) {
+            //所有bean加载完成之后，手动注入AppContext
+            Aop.wrapAndPut(AppContext.class, initAppContext());
+        }
+    }
+
+    private AppContext initAppContext() {
         try {
-            InputStream inputStream = ResourcesUtils.getResourceAsStream("/META-INF/hasor-framework/hasor-spring-hello.txt");
-            List<String> helloText = IOUtils.readLines(inputStream, "utf-8");
-            StringBuilder builder = new StringBuilder("\n");
-            for (String msg : helloText) {
-                builder.append(msg).append("\n");
-            }
-            logger.info(builder.toString());
-        } catch (Exception e) { /**/ }
+            return BuildConfig.getInstance().build(null);
+        } catch (IOException e) {
+            throw ExceptionUtils.toRuntimeException(e);
+        }
     }
 }

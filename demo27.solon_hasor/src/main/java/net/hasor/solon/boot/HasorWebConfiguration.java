@@ -6,6 +6,7 @@ import net.hasor.web.startup.RuntimeFilter;
 import net.hasor.web.startup.RuntimeListener;
 import org.noear.solon.XApp;
 import org.noear.solon.annotation.XConfiguration;
+import org.noear.solon.core.Aop;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -48,6 +49,9 @@ public class HasorWebConfiguration implements ServletContainerInitializer {
     public void onStartup(Set<Class<?>> set, ServletContext servletContext) throws ServletException {
         AppContext appContext = initAppContext(servletContext);
 
+        //将AppContext注入容器
+        Aop.wrapAndPut(AppContext.class,appContext);
+
         //注册 listener
         RuntimeListener listener = new RuntimeListener(appContext);
         servletContext.addListener(listener);
@@ -60,7 +64,7 @@ public class HasorWebConfiguration implements ServletContainerInitializer {
 
     private AppContext initAppContext(ServletContext servletContext) {
         try {
-            return BuildConfig.getInstance().build(servletContext).build();
+            return BuildConfig.getInstance().build(servletContext);
         } catch (IOException e) {
             throw ExceptionUtils.toRuntimeException(e);
         }
