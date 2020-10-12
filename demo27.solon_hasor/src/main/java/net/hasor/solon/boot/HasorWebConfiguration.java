@@ -25,8 +25,15 @@ public class HasorWebConfiguration implements ServletContainerInitializer {
     private int filterOrder = 0;
 
     public HasorWebConfiguration() {
-        // 得到 EnableHasorWeb
-        EnableHasorWeb enableHasor = XApp.global().source().getAnnotation(EnableHasorWeb.class);
+       this(XApp.global().source().getAnnotation(EnableHasorWeb.class));
+    }
+
+    /**
+     * 此构建函数，是为了手动写代码提供支持；充许EnableHasorWeb注在别的临时类上实现配置
+     *
+     * 为开发隐式插件提供支持
+     * */
+    public HasorWebConfiguration(EnableHasorWeb enableHasor) {
         //
         this.filterPath = enableHasor.path();
         this.filterOrder = 0;

@@ -22,10 +22,16 @@ public class HasorConfiguration {
     private static Logger logger = LoggerFactory.getLogger(HasorConfiguration.class);
 
     public HasorConfiguration() {
-        BuildConfig buildConfig = BuildConfig.getInstance();
+        this(XApp.global().source().getAnnotation(EnableHasor.class));
+    }
 
-        // 得到 EnableHasor
-        EnableHasor enableHasor = XApp.global().source().getAnnotation(EnableHasor.class);
+    /**
+     * 此构建函数，是为了手动写代码提供支持；充许EnableHasor注在别的临时类上实现配置
+     *
+     * 为开发隐式插件提供支持
+     * */
+    public HasorConfiguration(EnableHasor enableHasor) {
+       BuildConfig buildConfig = BuildConfig.getInstance();
 
         // 处理mainConfig
         buildConfig.mainConfig = enableHasor.mainConfig();
