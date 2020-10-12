@@ -17,7 +17,7 @@ public class XPluginImp implements XPlugin {
             // 把Spring 中所有标记了 @DimModule 的 Module，捞进来。
             //
             if (Module.class.isAssignableFrom(type)) {
-                BuildConfig.instance.loadModules.add(bw.raw());
+                BuildConfig.getInstance().loadModules.add(bw.raw());
             }
         });
     }
