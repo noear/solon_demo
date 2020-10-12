@@ -13,6 +13,10 @@ import org.slf4j.LoggerFactory;
 import java.io.InputStream;
 import java.util.*;
 
+/**
+ * @author noear
+ * @since 2020.10.10
+ * */
 @XConfiguration
 public class HasorConfiguration {
     private static Logger logger = LoggerFactory.getLogger(HasorConfiguration.class);

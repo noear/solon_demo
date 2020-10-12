@@ -14,6 +14,10 @@ import java.io.IOException;
 import java.util.EnumSet;
 import java.util.Set;
 
+/**
+ * @author noear
+ * @since 2020.10.10
+ * */
 @XConfiguration
 public class HasorWebConfiguration implements ServletContainerInitializer {
     private static final Logger logger = LoggerFactory.getLogger(HasorWebConfiguration.class);
