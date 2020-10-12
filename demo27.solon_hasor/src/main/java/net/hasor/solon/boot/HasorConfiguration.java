@@ -14,6 +14,8 @@ import java.io.InputStream;
 import java.util.*;
 
 /**
+ * 将注解的配置转到 BuildConfig 实例上
+ *
  * @author noear
  * @since 2020.10.10
  * */
@@ -27,11 +29,11 @@ public class HasorConfiguration {
 
     /**
      * 此构建函数，是为了手动写代码提供支持；充许EnableHasor注在别的临时类上实现配置
-     *
+     * <p>
      * 为开发隐式插件提供支持
-     * */
+     */
     public HasorConfiguration(EnableHasor enableHasor) {
-       BuildConfig buildConfig = BuildConfig.getInstance();
+        BuildConfig buildConfig = BuildConfig.getInstance();
 
         // 处理mainConfig
         buildConfig.mainConfig = enableHasor.mainConfig();
