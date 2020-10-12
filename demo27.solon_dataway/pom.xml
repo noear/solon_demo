@@ -21,13 +21,13 @@
     <dependencies>
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.boot.jetty</artifactId>
+            <artifactId>solon.boot.undertow</artifactId>
         </dependency>
 
         <!-- 支持 servlet -->
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.extend.jetty.jsp</artifactId>
+            <artifactId>solon.extend.undertow.jsp</artifactId>
         </dependency>
 
 <!--        <dependency>-->

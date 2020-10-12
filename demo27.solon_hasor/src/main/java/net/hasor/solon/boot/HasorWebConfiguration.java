@@ -36,13 +36,13 @@ public class HasorWebConfiguration extends BaseConfiguration implements ServletC
     public void onStartup(Set<Class<?>> set, ServletContext servletContext) throws ServletException {
         AppContext appContext = initAppContext(servletContext);
 
-        //registerListeners(appContext,servletContext);
+        //注册 listener
         RuntimeListener listener = new RuntimeListener(appContext);
         servletContext.addListener(listener);
 
-        //registerFilters(appContext,servletContext);
-        Filter runtimeFilter = new RuntimeFilter(appContext);
-        servletContext.addFilter("runtimeFilter", runtimeFilter)
+        //注册 filter
+        Filter filter = new RuntimeFilter(appContext);
+        servletContext.addFilter("runtimeFilter", filter)
                 .addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST), true, this.filterPath);
     }
 

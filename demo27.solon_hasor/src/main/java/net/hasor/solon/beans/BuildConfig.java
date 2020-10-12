@@ -18,7 +18,6 @@ import net.hasor.core.Hasor;
 import net.hasor.core.Module;
 import net.hasor.utils.StringUtils;
 import org.noear.solon.XUtil;
-import org.noear.solon.core.XClassLoader;
 
 import java.io.IOException;
 import java.net.URL;
@@ -37,7 +36,7 @@ public class BuildConfig {
     public Properties          refProperties    = null; // 2st,通过 refProperties 配置的 K/V
     public Map<Object, Object> customProperties = null; // 3st,利用 property 额外扩充的 K/V
     public boolean             useProperties    = true; // 是否把属性导入到Settings
-    public Set<Module>        loadModules      = null; // 要加载的模块
+    public Set<Module>         loadModules      = null; // 要加载的模块
 
     public BuildConfig() {
         this.customProperties = new HashMap<>();
@@ -46,7 +45,7 @@ public class BuildConfig {
 
     public Hasor build(Object parentObject) throws IOException {
         Hasor hasorBuild = (parentObject == null) ? Hasor.create() : Hasor.create(parentObject);
-        hasorBuild.parentClassLoaderWith(Thread.currentThread().getContextClassLoader());
+        hasorBuild.parentClassLoaderWith(BuildConfig.class.getClassLoader());
         //
         // make sure mainConfig
         String config = this.mainConfig;
