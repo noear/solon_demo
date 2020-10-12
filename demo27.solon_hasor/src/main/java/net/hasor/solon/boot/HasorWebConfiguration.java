@@ -15,12 +15,12 @@ import java.util.EnumSet;
 import java.util.Set;
 
 @XConfiguration
-public class HasorWebConfiguration extends BaseConfiguration implements ServletContainerInitializer {
+public class HasorWebConfiguration implements ServletContainerInitializer {
     private static final Logger logger = LoggerFactory.getLogger(HasorWebConfiguration.class);
     private String filterPath = "/*";
     private int filterOrder = 0;
 
-    public HasorWebConfiguration(){
+    public HasorWebConfiguration() {
         // 得到 EnableHasorWeb
         EnableHasorWeb enableHasor = XApp.global().source().getAnnotation(EnableHasorWeb.class);
         //
@@ -47,7 +47,7 @@ public class HasorWebConfiguration extends BaseConfiguration implements ServletC
 
     private AppContext initAppContext(ServletContext servletContext) {
         try {
-            return this.getBuildConfig().build(servletContext).build();
+            return BuildConfig.getInstance().build(servletContext).build();
         } catch (IOException e) {
             throw ExceptionUtils.toRuntimeException(e);
         }

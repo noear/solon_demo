@@ -14,11 +14,11 @@ import java.io.InputStream;
 import java.util.*;
 
 @XConfiguration
-public class HasorConfiguration extends BaseConfiguration {
+public class HasorConfiguration {
     private static Logger logger = LoggerFactory.getLogger(HasorConfiguration.class);
 
     public HasorConfiguration() {
-        BuildConfig buildConfig = getBuildConfig();
+        BuildConfig buildConfig = BuildConfig.getInstance();
 
         // 得到 EnableHasor
         EnableHasor enableHasor = XApp.global().source().getAnnotation(EnableHasor.class);

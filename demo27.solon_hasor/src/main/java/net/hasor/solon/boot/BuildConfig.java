@@ -17,6 +17,7 @@ package net.hasor.solon.boot;
 import net.hasor.core.Hasor;
 import net.hasor.core.Module;
 import net.hasor.utils.StringUtils;
+import org.noear.solon.XApp;
 import org.noear.solon.XUtil;
 
 import java.io.IOException;
@@ -29,7 +30,16 @@ import java.util.*;
  * @author 赵永春 (zyc@hasor.net)
  */
 public class BuildConfig {
-    public static BuildConfig instance = new BuildConfig();
+    private static BuildConfig instance;
+    public static BuildConfig getInstance() {
+        if(instance == null){
+            instance = new BuildConfig();
+        }
+
+        return instance;
+    }
+
+
 
     public String              mainConfig       = null; // 主配置文件
     public Properties          envProperties    = null; // 1st,来自 EnvironmentAware 接口的 K/V
@@ -41,6 +51,8 @@ public class BuildConfig {
     public BuildConfig() {
         this.customProperties = new HashMap<>();
         this.loadModules = new LinkedHashSet<>();
+
+        this.envProperties = XApp.cfg();
     }
 
     public Hasor build(Object parentObject) throws IOException {
