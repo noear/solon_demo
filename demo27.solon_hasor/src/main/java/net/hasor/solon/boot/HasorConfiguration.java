@@ -46,7 +46,7 @@ public class HasorConfiguration {
             buildConfig.loadModules.add(Aop.get(startWith));
         }
 
-        // 把Spring 中所有标记了 @DimModule 的 Module，捞进来。 //交给XPluginImp处理
+        // 把Solon 中所有标记了 @DimModule 的 Module，捞进来。 //交给XPluginImp处理
 
         //
         // 处理scanPackages
