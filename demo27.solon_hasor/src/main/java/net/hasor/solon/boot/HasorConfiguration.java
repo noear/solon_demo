@@ -1,22 +1,17 @@
 package net.hasor.solon.boot;
 
-import net.hasor.core.AppContext;
 import net.hasor.core.Module;
 import net.hasor.solon.beans.BaseConfiguration;
 import net.hasor.solon.beans.BuildConfig;
-import net.hasor.utils.ExceptionUtils;
 import net.hasor.utils.ResourcesUtils;
 import net.hasor.utils.StringUtils;
 import net.hasor.utils.io.IOUtils;
 import org.noear.solon.XApp;
-import org.noear.solon.annotation.XBean;
 import org.noear.solon.annotation.XConfiguration;
 import org.noear.solon.core.Aop;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.servlet.ServletContext;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
 
@@ -24,8 +19,7 @@ import java.util.*;
 public class HasorConfiguration extends BaseConfiguration {
     private static Logger logger = LoggerFactory.getLogger(HasorConfiguration.class);
 
-    @XBean
-    public void init() {
+    public HasorConfiguration() {
         BuildConfig buildConfig = getBuildConfig();
 
         // 得到 EnableHasor
@@ -65,7 +59,7 @@ public class HasorConfiguration extends BaseConfiguration {
         printLogo();
     }
 
-    private void printLogo(){
+    private void printLogo() {
         try {
             InputStream inputStream = ResourcesUtils.getResourceAsStream("/META-INF/hasor-framework/hasor-spring-hello.txt");
             List<String> helloText = IOUtils.readLines(inputStream, "utf-8");
@@ -75,23 +69,5 @@ public class HasorConfiguration extends BaseConfiguration {
             }
             logger.info(builder.toString());
         } catch (Exception e) { /**/ }
-    }
-
-
-    @XBean
-    public AppContext appContext() {
-        ServletContext parent = Aop.getOrNull(ServletContext.class);
-        if(parent == null) {
-            System.out.println("ServletContext: is null!!!!");
-        }
-
-        //如果不为null，则为web
-        try {
-            return this.getBuildConfig().build(parent).build(apiBinder -> {
-                //apiBinder.bindType(ApplicationContext.class).toInstance(applicationContext);
-            });
-        } catch (IOException e) {
-            throw ExceptionUtils.toRuntimeException(e);
-        }
     }
 }
