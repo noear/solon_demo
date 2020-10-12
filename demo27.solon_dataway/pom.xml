@@ -21,25 +21,21 @@
     <dependencies>
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.boot.undertow</artifactId>
+            <artifactId>solon.boot.jetty</artifactId>
         </dependency>
 
         <!-- 支持 servlet -->
         <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>solon.extend.undertow.jsp</artifactId>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-servlet</artifactId>
         </dependency>
-
-<!--        <dependency>-->
-<!--            <groupId>org.eclipse.jetty</groupId>-->
-<!--            <artifactId>jetty-servlet</artifactId>-->
-<!--        </dependency>-->
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>demo27.solon_hasor</artifactId>
-            <version>1.0.0</version>
+            <artifactId>hasor-solon-plugin</artifactId>
         </dependency>
+
+
 
         <!-- dataway -->
         <dependency>
