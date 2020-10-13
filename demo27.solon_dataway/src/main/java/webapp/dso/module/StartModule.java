@@ -1,4 +1,4 @@
-package webapp;
+package webapp.dso.module;
 
 import com.zaxxer.hikari.HikariDataSource;
 import net.hasor.core.ApiBinder;

@@ -113,6 +113,7 @@
                 </executions>
             </plugin>
 
+            <!-- 这段必须加，不然hasor.schemas会丢失掉 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>

@@ -27,6 +27,12 @@
 
         <dependency>
             <groupId>net.hasor</groupId>
+            <artifactId>hasor-core</artifactId>
+            <version>4.2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.hasor</groupId>
             <artifactId>hasor-web</artifactId>
             <version>4.2.0</version>
             <scope>provided</scope>
@@ -38,6 +44,24 @@
             <scope>provided</scope>
         </dependency>
 
+
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.boot.undertow</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.67</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
 </project>
