@@ -14,8 +14,8 @@
 
     <parent>
         <groupId>org.noear</groupId>
-        <artifactId>solon_demo</artifactId>
-        <version>1-SNAPSHOT</version>
+        <artifactId>solon-parent</artifactId>
+        <version>1.1.1</version>
     </parent>
 
     <dependencies>
@@ -24,17 +24,17 @@
             <artifactId>solon.boot.jetty</artifactId>
         </dependency>
 
-        <!-- 支持 servlet -->
+        <!-- 支持 servlet 容器 -->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-servlet</artifactId>
         </dependency>
 
+        <!-- 与 net.hasor:hasor-core 代码相同 -->
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>hasor-solon-plugin</artifactId>
         </dependency>
-
 
 
         <!-- dataway -->

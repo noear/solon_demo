@@ -7,6 +7,7 @@ import net.hasor.db.Level;
 import net.hasor.web.WebApiBinder;
 import net.hasor.web.WebModule;
 import org.noear.solon.XApp;
+import org.noear.solon.annotation.XBean;
 import org.noear.solon.core.Aop;
 import org.noear.solon.core.ExtendLoader;
 import webapp.dso.DsHelper;
@@ -36,7 +37,7 @@ public class StartModule implements WebModule {
     }
 
     private DataSource buildH2Ds() {
-        //1.替换H2的持久化路径
+        //1.替换H2的持久化路径（路径要变，所以不做自动注入处理）
         Properties props = XApp.cfg().getProp("db1");
         props.setProperty("jdbcUrl", props.getProperty("jdbcUrl").replace("~/", ExtendLoader.path()));
 
