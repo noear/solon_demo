@@ -7,7 +7,6 @@ import net.hasor.db.Level;
 import net.hasor.web.WebApiBinder;
 import net.hasor.web.WebModule;
 import org.noear.solon.XApp;
-import org.noear.solon.annotation.XBean;
 import org.noear.solon.core.Aop;
 import org.noear.solon.core.ExtendLoader;
 import webapp.dso.DsHelper;
