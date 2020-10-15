@@ -38,12 +38,12 @@ public class CacheTest extends HttpTestBase {
 
         Thread.sleep(100);
 
-        rst = path("/cache/remove").get();
+        rst = path("/cache/update").get();
         assert rst.equals(path("/cache/").get());
 
         Thread.sleep(100);
 
-        rst = path("/cache/remove").get();
+        rst = path("/cache/update").get();
         assert rst.equals(path("/cache/").get());
     }
 
