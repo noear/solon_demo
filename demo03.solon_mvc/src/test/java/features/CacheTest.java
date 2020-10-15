@@ -33,17 +33,17 @@ public class CacheTest extends HttpTestBase {
 
         Thread.sleep(100);
 
-        path("/cache/clear").get();
+        rst = path("/cache/update").get();
         assert rst.equals(path("/cache/").get());
 
         Thread.sleep(100);
 
-        path("/cache/clear").get();
+        rst = path("/cache/remove").get();
         assert rst.equals(path("/cache/").get());
 
         Thread.sleep(100);
 
-        path("/cache/clear").get();
+        rst = path("/cache/remove").get();
         assert rst.equals(path("/cache/").get());
     }
 
@@ -53,17 +53,17 @@ public class CacheTest extends HttpTestBase {
 
         Thread.sleep(100);
 
-        path("/cache/clear2").get();
+        path("/cache/remove").get();
         assert rst.equals(path("/cache/").get()) == false;
 
         Thread.sleep(100);
 
-        path("/cache/clear2").get();
+        path("/cache/remove").get();
         assert rst.equals(path("/cache/").get()) == false;
 
         Thread.sleep(100);
 
-        path("/cache/clear2").get();
+        path("/cache/remove").get();
         assert rst.equals(path("/cache/").get()) == false;
     }
 }
