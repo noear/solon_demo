@@ -18,7 +18,7 @@ public class CacheController {
     /**
      * 执行后，清除 标签为 test  的缓存（不过，目前没有 test 的示签...）
      * */
-    @XCacheUpdate(tags = "test1")
+    @XCachePut(tags = "test1")
     @XMapping("/cache/update")
     public Date update() {
         return new Date();
