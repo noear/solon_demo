@@ -3,11 +3,12 @@ package webapp;
 import com.zaxxer.hikari.HikariDataSource;
 import org.noear.solon.XApp;
 import org.noear.solon.annotation.XConfiguration;
-import org.noear.solon.core.ClassWrap;
+import org.noear.solon.core.Aop;
 import org.noear.weed.DbContext;
 import org.noear.weed.cache.ICacheServiceEx;
 import org.noear.weed.cache.LocalCache;
 
+import javax.sql.DataSource;
 import java.util.Properties;
 
 /**
@@ -24,14 +25,14 @@ public class Config {
     //
     //使用连接池 配置 数据库上下文
     //
-    private final static DbContext build(){
+    private final static DbContext build() {
         Properties prop = XApp.cfg().getProp("test.db1");
         String schema = prop.getProperty("schema");
 
+
         //利于一个solon的内部工具
         //
-        HikariDataSource dataSource = ClassWrap.get(HikariDataSource.class)
-                .newBy(prop::getProperty);
+        DataSource dataSource = Aop.inject(new HikariDataSource(), prop);
 
         return new DbContext(schema, dataSource);
     }
