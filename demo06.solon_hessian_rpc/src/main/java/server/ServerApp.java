@@ -11,7 +11,7 @@ public class ServerApp {
         XApp app = XApp.start(ServerApp.class, args);
 
         //手动添加
-        app.http("/test/", new HessianHandler(ComplexModelService.class, Aop.get(ComplexModelServiceImpl.class)));
+        //app.http("/test/", new HessianHandler(ComplexModelService.class, Aop.get(ComplexModelServiceImpl.class)));
 
         //自动批量添加（下次把这个写成插件好了）
 //        Aop.beanForeach((key, beanWrap) -> {
