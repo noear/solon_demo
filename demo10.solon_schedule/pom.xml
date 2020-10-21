@@ -23,6 +23,11 @@
             <groupId>org.noear</groupId>
             <artifactId>cron4j-solon-plugin</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>quartz-solon-plugin</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

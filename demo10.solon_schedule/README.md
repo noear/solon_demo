@@ -13,9 +13,8 @@
 
 ##### （三）新建代码文件
 * java/jobapp/JobApp
-* java/jobapp/controller/Job1
-* java/jobapp/controller/Job2
-* java/jobapp/controller/Job3
+* java/jobapp/controller/Cron4jRun1
+* java/jobapp/controller/Cron4jRun2
 * reources/application.properties
 
 ##### （四）代码
