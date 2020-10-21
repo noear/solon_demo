@@ -1,6 +1,6 @@
 package webapp.client;
 
-import org.noear.fairy.annotation.EnableFairyClients;
+import org.noear.fairy.annotation.EnableFairyClient;
 import org.noear.fairy.annotation.FairyClient;
 import org.noear.solon.XApp;
 import org.noear.solon.annotation.XBean;
@@ -8,7 +8,7 @@ import org.noear.solon.core.Aop;
 import webapp.protocol.UserModel;
 import webapp.protocol.UserService;
 
-@EnableFairyClients
+@EnableFairyClient
 @XBean
 public class RpcClient {
     public static void main(String[] args) {
