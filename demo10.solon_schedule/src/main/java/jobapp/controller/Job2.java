@@ -1,8 +1,8 @@
 package jobapp.controller;
 
-import org.noear.solon.extend.cron4j.Job;
+import org.noear.solon.extend.cron4j.Cron4j;
 
-@Job(cron4x = "*/1 * * * *")
+@Cron4j(cron5x = "*/1 * * * *")
 public class Job2 implements Runnable{
     @Override
     public void run() {
