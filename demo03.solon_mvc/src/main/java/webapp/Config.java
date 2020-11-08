@@ -28,7 +28,8 @@ public class Config {
                 message = new StringBuilder(100)
                         .append("@")
                         .append(ano.annotationType().getSimpleName())
-                        .append(" verification failed")
+                        .append(" verification failed(")
+                        .append(rst.getDescription()).append(")")
                         .toString();
             }
 
