@@ -60,6 +60,7 @@
 
         <module>demo27.solon_dataway</module>
         <module>demo27.solon_hasor</module>
+        <module>demo28.solon_rsocket</module>
     </modules>
 
     <build>
