@@ -19,8 +19,11 @@
     </parent>
 
     <modules>
-        <module>_test2</module>
+        <module>_test_protostuff</module>
         <module>_test_servlet</module>
+        <module>_test_reactor</module>
+        <module>_test_rsocket</module>
+
         <module>demo01.solon_tmp</module>
         <module>demo01.solon_simple</module>
         <module>demo02.solon_helloworld</module>
@@ -62,7 +65,6 @@
 
         <module>demo27.solon_dataway</module>
         <module>demo27.solon_hasor</module>
-        <module>demo28.solon_rsocket</module>
     </modules>
 
     <build>
