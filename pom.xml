@@ -19,6 +19,8 @@
     </parent>
 
     <modules>
+        <module>_test2</module>
+        <module>_test_servlet</module>
         <module>demo01.solon_tmp</module>
         <module>demo01.solon_simple</module>
         <module>demo02.solon_helloworld</module>
