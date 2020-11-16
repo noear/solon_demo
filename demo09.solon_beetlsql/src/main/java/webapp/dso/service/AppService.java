@@ -1,10 +1,10 @@
 package webapp.dso.service;
 
 import org.beetl.sql.ext.solon.Db;
-import org.noear.solon.annotation.Cache;
-import org.noear.solon.annotation.Tran;
-import org.noear.solon.core.TranPolicy;
 import org.noear.solon.extend.aspect.annotation.Service;
+import org.noear.solon.extend.data.annotation.Cache;
+import org.noear.solon.extend.data.annotation.Tran;
+import org.noear.solon.extend.data.tran.TranPolicy;
 import webapp.dso.mapper.SqlMapper;
 
 @Service

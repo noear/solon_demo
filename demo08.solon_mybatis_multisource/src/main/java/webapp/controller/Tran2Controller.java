@@ -3,8 +3,7 @@ package webapp.controller;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
-import org.noear.solon.annotation.Tran;
-import webapp.dso.mapper.AppxMapper;
+import org.noear.solon.extend.data.annotation.Tran;
 import webapp.dso.service.App2Service;
 import webapp.dso.service.AppService;
 
