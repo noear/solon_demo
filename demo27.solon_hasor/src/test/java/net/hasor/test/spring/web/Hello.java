@@ -3,10 +3,11 @@ import net.hasor.web.annotation.Any;
 import net.hasor.web.annotation.MappingTo;
 import net.hasor.web.render.RenderType;
 import org.noear.solon.annotation.Bean;
+import org.noear.solon.annotation.Component;
 
 import java.util.HashMap;
 
-@Bean
+@Component
 @MappingTo("/hello")
 public class Hello {
 

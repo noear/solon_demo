@@ -18,6 +18,7 @@ import net.hasor.core.ApiBinder;
 import net.hasor.core.DimModule;
 import net.hasor.core.Module;
 import org.noear.solon.annotation.Bean;
+import org.noear.solon.annotation.Component;
 
 /**
  *
@@ -25,7 +26,7 @@ import org.noear.solon.annotation.Bean;
  * @author 赵永春 (zyc@hasor.net)
  */
 @DimModule
-@Bean
+@Component
 public class TestDimModuleB implements Module {
     public TestDimModuleB() {
     }
