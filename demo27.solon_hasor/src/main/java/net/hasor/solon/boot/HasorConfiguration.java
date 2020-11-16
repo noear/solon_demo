@@ -7,8 +7,8 @@ import net.hasor.utils.StringUtils;
 import org.noear.solon.Solon;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.core.Aop;
-import org.noear.solon.core.XEventListener;
-import org.noear.solon.event.BeanLoadEndEvent;
+import org.noear.solon.core.event.BeanLoadEndEvent;
+import org.noear.solon.core.event.EventListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,7 +21,7 @@ import java.io.IOException;
  * @since 2020.10.10
  * */
 @Configuration
-public class HasorConfiguration implements XEventListener<BeanLoadEndEvent> {
+public class HasorConfiguration implements EventListener<BeanLoadEndEvent> {
     private static Logger logger = LoggerFactory.getLogger(HasorConfiguration.class);
 
     public HasorConfiguration() {
@@ -47,7 +47,7 @@ public class HasorConfiguration implements XEventListener<BeanLoadEndEvent> {
             buildConfig.addModules(Aop.get(startWith));
         }
 
-        // 把Solon 中所有标记了 @DimModule 的 Module，捞进来。 //交给XPluginImp处理
+        // 把Solon 中所有标记了 @DimModule 的 Module，捞进来。 //交给PluginImp处理
 
         //
         // 处理scanPackages
