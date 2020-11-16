@@ -2,7 +2,7 @@ package webapp.controller;
 
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
-import org.noear.solon.core.handler.ModelAndView;
+import org.noear.solon.core.handle.ModelAndView;
 import webapp.model.UserModel;
 
 @Controller

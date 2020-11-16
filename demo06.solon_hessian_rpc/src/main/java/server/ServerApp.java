@@ -1,14 +1,14 @@
 package server;
 
-import client.ComplexModelService;
 import org.noear.solon.Solon;
+import org.noear.solon.SolonApp;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.core.Aop;
 import org.noear.solon.serialization.hession.HessianHandler;
 
 public class ServerApp {
     public static void main(String[] args) {
-        Solon app = Solon.start(ServerApp.class, args);
+        SolonApp app = Solon.start(ServerApp.class, args);
 
         //手动添加
         //app.http("/test/", new HessianHandler(ComplexModelService.class, Aop.get(ComplexModelServiceImpl.class)));
