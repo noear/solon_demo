@@ -8,11 +8,11 @@ import net.hasor.core.TypeSupplier;
 
 import net.hasor.web.WebApiBinder;
 import net.hasor.web.WebModule;
-import org.noear.solon.annotation.XImport;
+import org.noear.solon.annotation.Import;
 
 @EnableHasorWeb
 @EnableHasor(startWith = WebBootEnableHasor_1.class)
-@XImport(scanPackages = "net.hasor.test.spring.web")
+@Import(scanPackages = "net.hasor.test.spring.web")
 public class WebBootEnableHasor_1 implements WebModule, SolonModule {
     @Override
     public void loadModule(WebApiBinder apiBinder) {
