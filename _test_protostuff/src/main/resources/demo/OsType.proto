@@ -1,0 +1,5 @@
+// 操作系统类型
+enum OsType {
+  ANDROID = 1;  // Android
+  IOS = 2;  // iOS
+};

@@ -1,0 +1,7 @@
+// 应用信息
+message App {
+    optional string app_id = 1[default = ""];  // 必填; 应用ID, 在Mobile SSP（以下简称MSSP）完成注册, 并上传应用通过审核后, 平台会提供应用ID
+    optional string channel_id = 2;  // 选填; 发布渠道ID, 渠道接入方必需填写
+    optional int32 app_version = 3;  // 必填; 应用版本, 将影响优选策略
+    optional string app_package = 4; // 必填; 应用包名, 需要跟应用提交时一一对应, 中文需要UTF-8编码
+};

@@ -1,4 +1,4 @@
-package rsocktapp;
+package rsocktapp.demo1;
 
 import io.rsocket.Payload;
 import io.rsocket.RSocket;
