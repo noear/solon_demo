@@ -12,8 +12,7 @@ import graphql.schema.idl.SchemaGenerator;
 import graphql.schema.idl.SchemaParser;
 import graphql.schema.idl.TypeDefinitionRegistry;
 import org.junit.Test;
-import org.noear.solon.XUtil;
-import sun.misc.IOUtils;
+import org.noear.solon.Utils;
 import webapp.model.Card;
 import webapp.model.User;
 
@@ -105,7 +104,7 @@ public class GraphqlTest {
     public void test3() throws Exception{
         //读取graphqls文件
         String fileName = "user.graphqls";
-        String fileContent =  XUtil.getString( XUtil.getResource(fileName).openStream(),null);
+        String fileContent =  Utils.getString( Utils.getResource(fileName).openStream(),null);
         //解析文件
         TypeDefinitionRegistry typeDefinitionRegistry = new SchemaParser().parse(fileContent);
 

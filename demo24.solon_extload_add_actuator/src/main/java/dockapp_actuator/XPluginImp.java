@@ -1,9 +1,9 @@
 package dockapp_actuator;
 
 import org.noear.solon.Solon;
-import org.noear.solon.core.XPlugin;
+import org.noear.solon.core.Plugin;
 
-public class XPluginImp implements XPlugin {
+public class XPluginImp implements Plugin {
     @Override
     public void start(Solon app) {
 
