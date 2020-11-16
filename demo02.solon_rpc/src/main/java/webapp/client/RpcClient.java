@@ -2,18 +2,18 @@ package webapp.client;
 
 import org.noear.fairy.annotation.EnableFairyClient;
 import org.noear.fairy.annotation.FairyClient;
-import org.noear.solon.XApp;
-import org.noear.solon.annotation.XBean;
+import org.noear.solon.Solon;
+import org.noear.solon.annotation.Component;
 import org.noear.solon.core.Aop;
 import webapp.protocol.UserModel;
 import webapp.protocol.UserService;
 
 @EnableFairyClient
-@XBean
+@Component
 public class RpcClient {
     public static void main(String[] args) {
         //开启ioc服务，并关掉http端口（免得冲突）
-        XApp.start(RpcClient.class, args, app -> app.enableHttp(false));
+        Solon.start(RpcClient.class, args, app -> app.enableHttp(false));
 
         //Aop获取一个bean
         RpcClient client = Aop.get(RpcClient.class);

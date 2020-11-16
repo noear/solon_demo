@@ -2,14 +2,15 @@ package server;
 
 import client.ComplexModelService;
 import client.model.ComplexModel;
-import org.noear.solon.annotation.XBean;
-import org.noear.solon.annotation.XMapping;
+import org.noear.solon.annotation.Bean;
+import org.noear.solon.annotation.Component;
+import org.noear.solon.annotation.Mapping;
 
 import java.util.HashMap;
 import java.util.Map;
 
-@XMapping("/test/")
-@XBean(tag = "hessian")
+@Mapping("/test/")
+@Component(tag = "hessian")
 public class ComplexModelServiceImpl implements ComplexModelService {
     private Map<Integer,ComplexModel> models = new HashMap<Integer, ComplexModel>();
 

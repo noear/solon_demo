@@ -5,13 +5,13 @@
 ```java
 
 @XValid
-@XController
+@Controller
 public class UserController {
     @NoRepeatSubmit  //重复提交验证
     @Whitelist     //白名单验证
     @NotNull({"name", "mobile", "icon", "code"})  //非NULL验证
     @Numeric({"code"})
-    @XMapping("/user/add")
+    @Mapping("/user/add")
     public void addUser(String name, @Pattern("^http") String icon, int code, @Pattern("^13\\d{9}$") String mobile){
         //...
     }
@@ -91,9 +91,9 @@ ValidatorManager.setWhitelistChecker(new WhitelistCheckerNew());
 solon.extend.validation 默认输出 http 400 状态 + json；尝试改改去掉 http 400 状态。
 
 ```java
-@XConfiguration
+@Configuration
 public class Config {
-    @XBean  //Solon 的 @XBean 也支持空函数，为其它提运行申明
+    @Bean  //Solon 的 @Bean 也支持空函数，为其它提运行申明
     public void adapter() {
         ValidatorManager.global().onFailure((ctx, ano, rst, message) -> {
             ctx.setHandled(true);
@@ -178,9 +178,9 @@ public class DateValidator implements Validator<Date> {
 #### 3、注册到校验管理器
 
 ```java
-@XConfiguration
+@Configuration
 public class Config {
-    @XBean
+    @Bean
     public void adapter() {
         //
         // 此处为注册验证器。如果有些验证器重写了，也是在此处注册
@@ -194,9 +194,9 @@ public class Config {
 
 ```java
 @XValid
-@XController
+@Controller
 public class UserController extends VerifyController{
-    @XMapping("/user/add")
+    @Mapping("/user/add")
     public void addUser(String name, @Date("yyyy-MM-dd") String birthday){
         //...
     }

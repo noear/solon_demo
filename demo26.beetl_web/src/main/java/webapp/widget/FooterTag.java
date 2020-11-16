@@ -2,12 +2,12 @@ package webapp.widget;
 
 
 import org.beetl.core.tag.Tag;
-import org.noear.solon.annotation.XBean;
+import org.noear.solon.annotation.Bean;
 
 /**
  * 自定义标签
  * */
-@XBean("view:footer")
+@Bean("view:footer")
 public class FooterTag extends Tag {
 
     @Override

@@ -69,14 +69,14 @@ resources/WEB-INF/view/ 为视图文件根目标（支持多视图共存）
 ```java
 public class JdkApp {
     public static void main(String[] args) {
-        XApp.start(JdkApp.class, args);
+        Solon.start(JdkApp.class, args);
     }
 }
 ```
 
 * webapp/widget/FooterTag.java
 ```java
-@XBean("view:footer")
+@Bean("view:footer")
 public class FooterTag extends Directive {
     @Override
     public void exec(Env env, Scope scope, Writer writer) {
@@ -108,9 +108,9 @@ public class UserModel {
 
 * webapp/controller/HomeController.java
 ```java
-@XController
+@Controller
 public class HomeController {
-    @XMapping(value = "/", produces = "text/html;charset=utf-8")
+    @Mapping(value = "/", produces = "text/html;charset=utf-8")
     public String home(){
         return "<a href='/helloworld'>/helloworld</a>";
     }
@@ -119,9 +119,9 @@ public class HomeController {
 
 * webapp/controller/HelloworldController.java
 ```java
-@XController
+@Controller
 public class HelloworldController {
-    @XMapping("/helloworld")
+    @Mapping("/helloworld")
     public Object helloworld(){
         UserModel m = new UserModel();
         m.setId(10);

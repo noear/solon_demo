@@ -74,14 +74,14 @@ resources/WEB-INF/view/ 为视图文件根目标（支持多视图共存）
 * 添加个控制器 `src/main/java/webapp/controller/HelloworldController.java`
 
 ```java
-@XController
+@Controller
 public class HelloworldController {
 
     //这里注入个配置
-    @XInject("${custom.user}")
+    @Inject("${custom.user}")
     protected String user;
 
-    @XMapping("/helloworld")
+    @Mapping("/helloworld")
     public ModelAndView helloworld(XContext ctx){
         UserModel m = new UserModel();
         m.setId(10);

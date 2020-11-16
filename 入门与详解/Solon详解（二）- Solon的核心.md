@@ -2,9 +2,9 @@
 
 在上篇中我们成功运行了一个简单的web应用；本篇将对它的启动过程、扩展体系和应用属性配置进行介绍。
 
-#### （一）XApp.start(source, args, builder) 内部执行过程（即Solon的启动过程）
+#### （一）Solon.start(source, args, builder) 内部执行过程（即Solon的启动过程）
 
-1. 实例化 XApp.global() 
+1. 实例化 Solon.global() 
 2. 加载应用属性配置
 3. 加载扩展文件夹
 4. 扫描插件并排序记录（插件也可叫扩展组件）
@@ -35,7 +35,7 @@ Solon 的插件也可以叫扩展组件，相当于Spring 的 starter。Solon已
 | org.noear:solon.extend.staticfiles | 扩展插件,添加静态文件支持（监视 resources/static 文件夹） |
 | | |
 | 切面支持插件:: | 说明 |
-| org.noear:solon.extend.aspect | 扩展插件,添加XDao、XService注解支持；进而支持事务和缓存注解 |
+| org.noear:solon.extend.aspect | 扩展插件,添加XDao、Service注解支持；进而支持事务和缓存注解 |
 | | |
 | 数据操作支持插件:: | 说明 |
 | org.noear:solon.extend.data | 扩展插件,实现事务和缓存的注解支持 |
@@ -175,7 +175,7 @@ message: "${user.name} 你好!" #这个不支持（有需要的时候，自己�
 ##### c.如何获取属性配置
 ```java
 //注解模式
-@XInject("${user.name}")
+@Inject("${user.name}")
 
 //代码模式
 XApp.cfg().get("user.name")
@@ -188,17 +188,17 @@ XApp.cfg().get("user.name")
 ```java
 //注解模式
 //
-@XConfiguration  // XConfiguration或别的类注解，都可
+@Configuration  // Configuration或别的类注解，都可
 public class test{
     //注入字段，在任何托管Bean里有效
     //
-    @XInject("${user}")
+    @Inject("${user}")
     UserModel user;
     
-    //注入参数，只在@XConfiguration类有效
+    //注入参数，只在@Configuration类有效
     //
-    @XBean
-    public Xxxxx buildXxxx(@XInject("${test.db1}") HikariDataSource dataSource){    
+    @Bean
+    public Xxxxx buildXxxx(@Inject("${test.db1}") HikariDataSource dataSource){    
     
     }
 }

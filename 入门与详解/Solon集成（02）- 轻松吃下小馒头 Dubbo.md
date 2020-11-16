@@ -62,7 +62,7 @@ public class HelloServiceImpl implements HelloService {
 public class DubboProviderApp {
     //服务端启动入口
     public static void main(String[] args) {
-        XApp.start(DubboProviderApp.class, args);
+        Solon.start(DubboProviderApp.class, args);
     }
 }
 ```
@@ -73,11 +73,11 @@ public class DubboProviderApp {
 
 ```java
 @EnableDubbo
-@XController
+@Controller
 public class DubboConsumeApp {
     //同时加个应用启动入口；方便测试
     public static void main(String[] args) {
-        XApp.start(DubboConsumeApp.class, args, app -> app.enableHttp(false));
+        Solon.start(DubboConsumeApp.class, args, app -> app.enableHttp(false));
 
         //通过手动模式直接拉取bean
         DubboConsumeApp tmp = Aop.get(DubboConsumeApp.class);
@@ -87,7 +87,7 @@ public class DubboConsumeApp {
     @Reference(group = "hello")
     HelloService helloService;
 
-    @XMapping("/")
+    @Mapping("/")
     public String home() {
         return helloService.sayHello("noear");
     }

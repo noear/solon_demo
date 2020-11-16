@@ -3,7 +3,7 @@ import com.alibaba.fastjson.JSONObject;
 import net.hasor.core.AppContext;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.noear.solon.annotation.XInject;
+import org.noear.solon.annotation.Inject;
 import org.noear.solon.test.HttpTestBase;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
@@ -11,7 +11,7 @@ import org.noear.solon.test.SolonTest;
 @RunWith(SolonJUnit4ClassRunner.class)
 @SolonTest(WebBootEnableHasor_1.class)
 public class WebBootEnableHasor_1_Test extends HttpTestBase {
-    @XInject
+    @Inject
     private AppContext            appContext;
     //private MockMvc               mockMvc;
 

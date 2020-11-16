@@ -16,14 +16,14 @@
 package net.hasor.test.spring.mod1;
 import net.hasor.core.ApiBinder;
 import net.hasor.core.Module;
-import org.noear.solon.annotation.XBean;
+import org.noear.solon.annotation.Bean;
 
 /**
  *
  * @version : 2016年2月15日
  * @author 赵永春 (zyc@hasor.net)
  */
-@XBean
+@Bean
 public class TestDimModuleC implements Module {
 
     public TestDimModuleC() {

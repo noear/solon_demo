@@ -4,14 +4,14 @@ import net.hasor.core.Environment;
 import net.hasor.core.Settings;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.noear.solon.annotation.XInject;
+import org.noear.solon.annotation.Inject;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
 
 @RunWith(SolonJUnit4ClassRunner.class)
 @SolonTest(BootShareHasor_2.class)
 public class BootShareHasor_2_Test {
-    @XInject
+    @Inject
     private AppContext appContext;
 
     @Test

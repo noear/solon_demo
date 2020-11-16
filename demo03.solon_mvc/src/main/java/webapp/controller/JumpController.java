@@ -1,14 +1,14 @@
 package webapp.controller;
 
-import org.noear.solon.annotation.XController;
-import org.noear.solon.annotation.XMapping;
-import org.noear.solon.core.XContext;
+import org.noear.solon.annotation.Controller;
+import org.noear.solon.annotation.Mapping;
+import org.noear.solon.core.handler.Context;
 
-@XController
+@Controller
 public class JumpController {
 
-    @XMapping("/jump/")
-    public void jump(XContext ctx) {
+    @Mapping("/jump/")
+    public void jump(Context ctx) {
         ctx.redirect("http://www.noear.org");
     }
 }

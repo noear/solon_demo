@@ -4,9 +4,9 @@ import com.jfinal.template.Directive;
 import com.jfinal.template.Env;
 import com.jfinal.template.io.Writer;
 import com.jfinal.template.stat.Scope;
-import org.noear.solon.annotation.XBean;
+import org.noear.solon.annotation.Bean;
 
-@XBean("view:footer")
+@Bean("view:footer")
 public class FooterTag extends Directive {
     @Override
     public void exec(Env env, Scope scope, Writer writer) {

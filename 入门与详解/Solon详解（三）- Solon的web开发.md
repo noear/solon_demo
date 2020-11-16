@@ -23,7 +23,7 @@ Solon里所有的处理，都属于XHandler。可以用handler 的模式写，�
 ```java
 // handler模式
 //
-XApp.global().before("/hello/", ctx->{
+Solon.global().before("/hello/", ctx->{
     if(ctx.param("name") == null){    
         ctx.setHandled(true);    //如果没有name, 则终止处理
     }
@@ -33,7 +33,7 @@ XApp.global().before("/hello/", ctx->{
 //
 @XInterceptor
 public class HelloInterceptor  {
-    @XMapping(value = "/hello/" , before = true)
+    @Mapping(value = "/hello/" , before = true)
     public void handle(XContext ctx, String name) {
         if(name == null){            
             ctx.setHandled(true);  //如果没有name, 则终止处理
@@ -44,9 +44,9 @@ public class HelloInterceptor  {
 
 #### 3、读取外部的配置文件
 ```java
-@XConfiguration
+@Configuration
 public class Config{
-    @XInject("${classpath:user.yml}")
+    @Inject("${classpath:user.yml}")
     private UserModel user;
 }
 ```
@@ -84,17 +84,17 @@ test.db1:
 
 ##### c.配置HikariCP数据源
 
-建议这种操作，都安排在 @XConfiguration 配置类里执行。
+建议这种操作，都安排在 @Configuration 配置类里执行。
 
 ```java
 //注解模式
 //
-@XConfiguration
+@Configuration
 public class Config{
     // 同时支持 name 和 类型 两种方式注入（注入时没有name，即为按类型注入）
     //
-    @XBean(value = "db1", typed = true)   
-    pubblic DataSource dataSource(@XInject("${test.db1}") HikariDataSource ds){
+    @Bean(value = "db1", typed = true)   
+    pubblic DataSource dataSource(@Inject("${test.db1}") HikariDataSource ds){
         return ds;
     }
 }
@@ -102,11 +102,11 @@ public class Config{
 //静态类模式
 //
 //public class Config{
-//    pubblic static HikariDataSource dataSource = XApp.cfg().getBean("test.db1", HikariDataSource.class);
+//    pubblic static HikariDataSource dataSource = Solon.cfg().getBean("test.db1", HikariDataSource.class);
 //}
 ```
 
-之后就可以通过@XInject注解得到这个数据源了。一般会改用加强注解对数据源进行自动转换；所有与solon对接的ORM框架皆采用这种方案。
+之后就可以通过@Inject注解得到这个数据源了。一般会改用加强注解对数据源进行自动转换；所有与solon对接的ORM框架皆采用这种方案。
 
 #### 6、数据库操作框架集成
 
@@ -125,7 +125,7 @@ Wee3是和Solon一样轻巧的一个框架，配置起来自然是简单的。
 刚才的Config配置类即可复用。先以单数据源场景演示：
 ```java
 //使用示例
-@XController
+@Controller
 public class DemoController{
     //@Db 按类型注入  //或 @Db("db1") 按名字注入  
     //@Db是weed3在Solon里的扩展注解 //可以注入 Mapper, BaseMapper, DbContext
@@ -133,7 +133,7 @@ public class DemoController{
     @Db  
     BaseMapper<UserModel> userDao;
     
-    @XMapping("/user/")
+    @Mapping("/user/")
     pubblic UserModel geUser(long puid){
         return userDao.selectById(puid);
     }
@@ -164,14 +164,14 @@ mybatis.db1: #db1 要与数据源的bean name 对上
 刚才的Config配置类即也可复用
 ```java
 //使用示例
-@XController
+@Controller
 public class DemoController{
     //@Db 是  mybatis-solon-plugin 里的扩展注解，可注入 SqlSessionFactory，SqlSession，Mapper
     //
     @Db    
-    UserMapper userDao;  //UserMapper 已被 db1 自动 mapperScan 并已托管，也可用 @XInject 注入
+    UserMapper userDao;  //UserMapper 已被 db1 自动 mapperScan 并已托管，也可用 @Inject 注入
     
-    @XMapping("/user/")
+    @Mapping("/user/")
     pubblic UserModel geUser(long puid){
         return userDao.geUser(puid);
     }
@@ -180,20 +180,20 @@ public class DemoController{
 
 #### 7、使用事务
 
-Solon中推荐使用@XTran注解来申明和管理事务。
+Solon中推荐使用@Tran注解来申明和管理事务。
 
-> @XTran 支持多数据源事务，且使用方便
+> @Tran 支持多数据源事务，且使用方便
 
 ##### a.Weed3的事务
 ```java
 //使用示例
-@XController
+@Controller
 public class DemoController{
     @Db  //@Db("db1") 为多数据源模式
     BaseMapper<UserModel> userDao;
     
-    @XTran 
-    @XMapping("/user/add")
+    @Tran 
+    @Mapping("/user/add")
     pubblic Long addUser(UserModel user){
         return userDao.insert(user, true); 
     }
@@ -202,13 +202,13 @@ public class DemoController{
 
 ##### b.Mybatis的事务
 ```java
-@XController
+@Controller
 public class DemoController{
     @Db  
-    UserMapper userDao;  //UserMapper 已被 db1 mapperScan并已托管，也可用 @XInject 注入
+    UserMapper userDao;  //UserMapper 已被 db1 mapperScan并已托管，也可用 @Inject 注入
     
-    @XTran 
-    @XMapping("/user/add")
+    @Tran 
+    @Mapping("/user/add")
     pubblic Long addUser(UserModel user){
         return userDao.addUser(user); 
     }
@@ -217,38 +217,38 @@ public class DemoController{
 
 ##### c.混合多源事务（这个时候，我们需要Service层参演了）
 ```java
-@XService
+@Service
 public class UserService{
     @Db("db1")  //数据库1
     UserMapper userDao;  
     
-    @XTran
+    @Tran
     public void addUser(UserModel user){
         userDao.insert(user);
     }
 }
 
-@XService
+@Service
 public class AccountService{
     @Db("db2")  //数据库2
     AccountMapper accountDao;  
     
-    @XTran
+    @Tran
     public void addAccount(UserModel user){
         accountDao.insert(user);
     }
 }
 
-@XController
+@Controller
 public class DemoController{
-    @XInject
+    @Inject
     AccountService accountService; 
     
-    @XInject
+    @Inject
     UserService userService; 
     
-    @XTran
-    @XMapping("/user/add")
+    @Tran
+    @Mapping("/user/add")
     pubblic Long geUser(UserModel user){
         Long puid = userService.addUser(user);     //会执行db1事务
         
@@ -301,40 +301,40 @@ solon 的jsp支持，是基于视图模板的定位去处理的。根据启动�
 
 #### 1、Solon的MVC注解
 
-##### a.@XController
+##### a.@Controller
 
 控制器，只有一个注解。会自动通过不同的返回值做不同的处理
 ```java
-@XController
+@Controller
 public class DemoController{
-    @XMapping("/test1/")
+    @Mapping("/test1/")
     public void test1(){
         //没返回
     }
     
-    @XMapping("/test2/")
+    @Mapping("/test2/")
     public String test2(){
         return "返回字符串并输出";
     }
     
-    @XMapping("/test3/")
+    @Mapping("/test3/")
     public UseModel test3(){
         return new UseModel(2, "noear"); //返回个模型，默认会渲染为json格式输出
     }
     
-    @XMapping("/test4/")
+    @Mapping("/test4/")
     public ModelAndView test4(){
         return new ModelAndView("view path", map); //返回模型与视图，会被视图引擎渲染后再输出，默认是html格式
     }
 }
 ```
 
-##### b.@XMapping(value, method, produces)
+##### b.@Mapping(value, method, produces)
 
 默认只需要设定value值即可，method默认为XMethod.HTTP，即接收所有的http方法请求。
 
 ```
-@XMapping("/user/")
+@Mapping("/user/")
 ```
 
 #### 2、视图模板开发
@@ -357,9 +357,9 @@ freemaerker 视图
 
 控制器
 ```java
-@XController
+@Controller
 public class HelloworldController {
-    @XMapping("/helloworld")
+    @Mapping("/helloworld")
     public Object helloworld(){
         ModelAndView vm = new ModelAndView("helloworld.ftl");
 
@@ -383,12 +383,12 @@ Solon校验的是XContext上的参数（即http传入的参数），是在XActio
 
 ```java
 @XValid  //为控制器开启校验能力；也可以做用在一个基类上
-@XController
+@Controller
 public class ValidationController {
 
     @NoRepeatSubmit
     @NotNull({"name", "icon", "mobile"})
-    @XMapping("/valid")
+    @Mapping("/valid")
     public void test(String name, String icon, @Pattern("13\\d{9}") String mobile) {
 
     }
@@ -423,7 +423,7 @@ public class ValidationController {
 #### 5、统一异常处理
 
 ```java
-XApp.start(source, args)
+Solon.start(source, args)
     .onError(err->err.printStackTrace()); //或者记录到日志系统
 ```
 

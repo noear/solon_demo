@@ -1,9 +1,9 @@
 package dockapp_actuator;
 
 import actuator.IActuator;
-import org.noear.solon.annotation.XBean;
+import org.noear.solon.annotation.Bean;
 
-@XBean
+@Bean
 public class Actuator1 implements IActuator {
     @Override
     public void exec() {

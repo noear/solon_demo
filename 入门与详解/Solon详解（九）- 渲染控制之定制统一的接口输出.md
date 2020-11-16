@@ -65,11 +65,11 @@ public class UapiBase implements XRender {
 此接口做个白名单检测。如果成功，则返加符串：OK
 
 ```java
-@XController
+@Controller
 public class CMD_run_whitelist_check extends UapiBase {
     //此处的@NotEmpty验证，如果没通过会抛出UapiCode
     @NotEmpty({"type", "value"})
-    @XMapping("/run/whitelist/check/")
+    @Mapping("/run/whitelist/check/")
     public String cmd_exec(XContext ctx, String type, String value) throws Exception {
         String tags = ctx.param("tags", "");
 
@@ -95,11 +95,11 @@ public class CMD_run_whitelist_check extends UapiBase {
 ```java
 //此处的@Whitelist验证，如果没通过会抛出UapiCode
 @Whitelist
-@XController
+@Controller
 public class CMD_run_push extends UapiBase {
     //此处的@NotEmpty验证，如果没通过会抛出UapiCode
     @NotEmpty({"msg", "target"})
-    @XMapping("/run/push/")
+    @Mapping("/run/push/")
     public XResult cmd_exec(String msg, String target) throws Exception {
 
         List<String> list = new ArrayList<String>();
@@ -133,11 +133,11 @@ public class CMD_run_push extends UapiBase {
 @Logging
 //此处的@Whitelist验证，如果没通过会抛出UapiCode
 @Whitelist
-@XController
+@Controller
 public class CMD_cfg_get extends UapiBase {
     //此处的@NotEmpty验证，如果没通过会抛出UapiCode
     @NotEmpty("tag")
-    @XMapping("/cfg/get/")
+    @Mapping("/cfg/get/")
     public ONode cmd_exec(XContext ctx, String tag) throws Throwable {
         ONode nList = new ONode().asObject();
 

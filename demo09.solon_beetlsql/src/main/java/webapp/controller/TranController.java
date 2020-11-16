@@ -3,14 +3,14 @@ package webapp.controller;
 import org.noear.solon.annotation.*;
 import webapp.dso.service.AppService;
 
-@XMapping("/tran/")
-@XController
+@Mapping("/tran/")
+@Controller
 public class TranController {
-    @XInject
+    @Inject
     AppService appService;
 
-    @XTran
-    @XMapping("test")
+    @Tran
+    @Mapping("test")
     public void test() throws Exception {
         //添加会成功
         //
@@ -18,8 +18,8 @@ public class TranController {
         appService.addApp();
     }
 
-    @XTran
-    @XMapping("test2")
+    @Tran
+    @Mapping("test2")
     public void test2() throws Exception {
         //添加会失败，因为在事务里出异常了
         //
@@ -29,14 +29,14 @@ public class TranController {
         throw new RuntimeException("不让你加");
     }
 
-    @XMapping("test11")
+    @Mapping("test11")
     public void test11() throws Exception {
         //添加会成功
         //
         appService.addApp2();
     }
 
-    @XMapping("test12")
+    @Mapping("test12")
     public void test12() throws Exception {
         //添加会成功（因为异常在事务之外） // addApp2 有事务
         //
@@ -45,14 +45,14 @@ public class TranController {
         throw new RuntimeException("不让你加；但还是加了:(");
     }
 
-    @XTran
-    @XMapping("test21")
+    @Tran
+    @Mapping("test21")
     public void test21() throws Exception {
         appService.addApp2();
     }
 
-    @XTran
-    @XMapping("test22")
+    @Tran
+    @Mapping("test22")
     public void test22() throws Exception {
         //添加会失败，因为在事务里出异常了
         //
@@ -62,8 +62,8 @@ public class TranController {
     }
 
 
-    @XTran
-    @XMapping("test41")
+    @Tran
+    @Mapping("test41")
     public void test41() throws Exception {
         //添加会成功
         //
@@ -73,8 +73,8 @@ public class TranController {
     }
 
 
-    @XTran
-    @XMapping("test51")
+    @Tran
+    @Mapping("test51")
     public void test51() throws Exception {
         //添加会成功，因为addApp4是独立的新事务
         //
@@ -83,8 +83,8 @@ public class TranController {
         throw new RuntimeException("不让你加，但还是成功了：（");
     }
 
-    @XTran
-    @XMapping("test52")
+    @Tran
+    @Mapping("test52")
     public boolean test52() throws Exception {
         //添加会成功，因为addApp4是独立的新事务
         //
@@ -92,8 +92,8 @@ public class TranController {
         return true;
     }
 
-    @XTran
-    @XMapping("test61")
+    @Tran
+    @Mapping("test61")
     public void test61() throws Exception {
         //会失败
         //
@@ -102,15 +102,15 @@ public class TranController {
     }
 
 
-    @XMapping("test63")
+    @Mapping("test63")
     public void test63() throws Exception {
         //添加会成功
         //
         appService.addApp5();
     }
 
-    @XTran
-    @XMapping("test71")
+    @Tran
+    @Mapping("test71")
     public void test71() throws Exception {
         //会成功
         //
@@ -118,7 +118,7 @@ public class TranController {
 
     }
 
-    @XMapping("test73")
+    @Mapping("test73")
     public void test73() throws Exception {
         //会失败
         //

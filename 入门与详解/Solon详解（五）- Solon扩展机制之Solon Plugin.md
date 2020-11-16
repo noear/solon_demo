@@ -21,22 +21,22 @@ XPlugin的作用：
 
 ### 二、扩展示例，插件：solon.extend.aspect 
 
-这个插件，是为Solon提供 `@XDao` 和 `@XService` 扩展注解，进而实现class的动态代理能力；基于ASM实现，但算是比较克制，暂时没加别的功能。本例完整的项目源码：[https://gitee.com/noear/solon/tree/master/_extend/solon.extend.aspect](https://gitee.com/noear/solon/tree/master/_extend/solon.extend.aspect)，此处主要展示与扩展机制有关系的代码和配置。
+这个插件，是为Solon提供 `@XDao` 和 `@Service` 扩展注解，进而实现class的动态代理能力；基于ASM实现，但算是比较克制，暂时没加别的功能。本例完整的项目源码：[https://gitee.com/noear/solon/tree/master/_extend/solon.extend.aspect](https://gitee.com/noear/solon/tree/master/_extend/solon.extend.aspect)，此处主要展示与扩展机制有关系的代码和配置。
 
 * 代码文件：`src/main/java/org.noear.solon.extend.aspect.XPluginImp.java`，实现XPlugin接口：
 
 ```java
 package org.noear.solon.extend.aspect;
 
-import org.noear.solon.XApp;
+import org.noear.solon.Solon;
 import org.noear.solon.core.Aop;
 import org.noear.solon.core.XPlugin;
 import org.noear.solon.extend.aspect.annotation.XDao;
-import org.noear.solon.extend.aspect.annotation.XService;
+import org.noear.solon.extend.aspect.annotation.Service;
 
 public class XPluginImp implements XPlugin {
     @Override
-    public void start(XApp app) {
+    public void start(Solon app) {
         //向Aop工厂注册Bean生成器；代理XDao注解的处理
         //
         Aop.factory().beanCreatorAdd(XDao.class, (clz, bw, anno) -> {
@@ -44,9 +44,9 @@ public class XPluginImp implements XPlugin {
             bw.proxySet(BeanProxyImp.global());
         });
 
-        //向Aop工厂注册Bean生成器；代理XService注解的处理
+        //向Aop工厂注册Bean生成器；代理Service注解的处理
         //
-        Aop.factory().beanCreatorAdd(XService.class, (clz, bw, anno) -> {
+        Aop.factory().beanCreatorAdd(Service.class, (clz, bw, anno) -> {
             //为BeanWrap设置class代理
             bw.proxySet(BeanProxyImp.global());
         });
@@ -66,15 +66,15 @@ solon.plugin=org.noear.solon.extend.aspect.XPluginImp
 * 应用示例
 
 ```java
-@XService
+@Service
 public class AppService {
-    @XInject
+    @Inject
     SqlMapper sqlMapper1;
 
     //
-    // @XService 注解，可为 bean 添加 class 动态代理；进而支持事务注解：@XTran
+    // @Service 注解，可为 bean 添加 class 动态代理；进而支持事务注解：@Tran
     //
-    @XTran
+    @Tran
     public void addApp(){
         sqlMapper1.appx_add();
     }
@@ -83,7 +83,7 @@ public class AppService {
 
 ### 三、附：Solon应用启动顺序
 
-1. 实例化 XApp.global()
+1. 实例化 Solon.global()
 2. 加载应用属性配置
 3. 加载扩展文件夹
 4. 扫描插件并排序记录（插件也可叫扩展组件）

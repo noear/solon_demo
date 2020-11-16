@@ -24,26 +24,26 @@ Solon 的项目地址：
 ```java
 package helloworld;
 
-import org.noear.solon.XApp;
-import org.noear.solon.annotation.XController;
-import org.noear.solon.annotation.XMapping;
+import org.noear.solon.Solon;
+import org.noear.solon.annotation.Controller;
+import org.noear.solon.annotation.Mapping;
 
 /**
  * 申明控制器
  * */
-@XController
+@Controller
 public class App {
     public static void main(String[] args) {
         /**
          * 启动应用
          * */
-        XApp.start(App.class, args);
+        Solon.start(App.class, args);
     }
 
     /**
      * Http 路径映射
      * */
-    @XMapping("/")
+    @Mapping("/")
     public String hello(){
         return "Hello world!";
     }

@@ -18,7 +18,7 @@ import net.hasor.core.AppContext;
 import net.hasor.core.Hasor;
 import net.hasor.core.Module;
 import net.hasor.utils.StringUtils;
-import org.noear.solon.XApp;
+import org.noear.solon.Solon;
 import org.noear.solon.XUtil;
 
 import java.io.IOException;
@@ -55,7 +55,7 @@ public class BuildConfig {
         this.customProperties = new HashMap<>();
         this.loadModules = new LinkedHashSet<>();
 
-        this.envProperties = XApp.cfg();
+        this.envProperties = Solon.cfg();
     }
 
     public void addModules(Module module) {

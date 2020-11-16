@@ -15,7 +15,7 @@
  */
 package net.hasor.test.spring;
 
-import org.noear.solon.annotation.XInject;
+import org.noear.solon.annotation.Inject;
 
 /**
  * 使用Spring的方式注入Hasor的Bean。
@@ -23,7 +23,7 @@ import org.noear.solon.annotation.XInject;
  * @author 赵永春 (zyc@hasor.net)
  */
 public class SpringBean {
-    @XInject
+    @Inject
     private HasorBean hasorBean;
 
     public HasorBean getHasorBean() {

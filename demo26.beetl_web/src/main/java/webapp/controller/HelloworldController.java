@@ -2,18 +2,18 @@ package webapp.controller;
 
 import org.beetl.sql.ext.solon.Db;
 import org.noear.snack.ONode;
-import org.noear.solon.annotation.XController;
-import org.noear.solon.annotation.XMapping;
+import org.noear.solon.annotation.Controller;
+import org.noear.solon.annotation.Mapping;
 import org.noear.solon.core.ModelAndView;
 import webapp.dso.dao.UserMapper;
 import webapp.model.SysUserModel;
 
-@XController
+@Controller
 public class HelloworldController {
     @Db
     UserMapper mapper;
 
-    @XMapping("/helloworld")
+    @Mapping("/helloworld")
     public Object helloworld(){
         SysUserModel m = new SysUserModel();
         m.setId(10L);

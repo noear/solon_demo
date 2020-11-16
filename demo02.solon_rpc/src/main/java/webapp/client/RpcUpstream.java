@@ -1,13 +1,13 @@
 package webapp.client;
 
-import org.noear.solon.annotation.XBean;
-import org.noear.solon.core.XUpstream;
+import org.noear.solon.annotation.Component;
+import org.noear.solon.core.Upstream;
 
 /**
  * 定义一个负载器（可以对接发现服务）
  * */
-@XBean("local")
-public class RpcUpstream implements XUpstream {
+@Component("local")
+public class RpcUpstream implements Upstream {
     @Override
     public String getServer() {
         return "http://localhost:8080";

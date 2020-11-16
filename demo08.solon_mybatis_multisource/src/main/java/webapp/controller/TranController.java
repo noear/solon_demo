@@ -1,30 +1,30 @@
 package webapp.controller;
 
-import org.noear.solon.annotation.XController;
-import org.noear.solon.annotation.XInject;
-import org.noear.solon.annotation.XMapping;
-import org.noear.solon.annotation.XTran;
+import org.noear.solon.annotation.Controller;
+import org.noear.solon.annotation.Inject;
+import org.noear.solon.annotation.Mapping;
+import org.noear.solon.annotation.Tran;
 import webapp.dso.mapper.AppxMapper;
 
 /**
  * 事务演示
  * */
-@XMapping("/tran/")
-@XController
+@Mapping("/tran/")
+@Controller
 public class TranController {
-    @XInject
+    @Inject
     AppxMapper appxMapper;
 
-    @XTran
-    @XMapping("test")
+    @Tran
+    @Mapping("test")
     public void test() throws Throwable {
         //添加成功
         //
         appxMapper.appx_add();
     }
 
-    @XTran
-    @XMapping("test2")
+    @Tran
+    @Mapping("test2")
     public void test2() throws Throwable {
         //添加会失败，因为在事务里出异常了
         //

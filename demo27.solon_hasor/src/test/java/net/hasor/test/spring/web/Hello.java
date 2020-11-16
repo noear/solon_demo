@@ -2,11 +2,11 @@ package net.hasor.test.spring.web;
 import net.hasor.web.annotation.Any;
 import net.hasor.web.annotation.MappingTo;
 import net.hasor.web.render.RenderType;
-import org.noear.solon.annotation.XBean;
+import org.noear.solon.annotation.Bean;
 
 import java.util.HashMap;
 
-@XBean
+@Bean
 @MappingTo("/hello")
 public class Hello {
 

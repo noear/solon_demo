@@ -1,6 +1,6 @@
 package webapp;
 
-import org.noear.solon.XApp;
+import org.noear.solon.Solon;
 
 /**
  *
@@ -24,7 +24,7 @@ import org.noear.solon.XApp;
  * */
 public class DemoApp {
     public static void main(String[] args) {
-        XApp.start(DemoApp.class, args, (app) -> {
+        Solon.start(DemoApp.class, args, (app) -> {
 //            //可以在调试模式下关闭缓存
 //            //
 //            if (app.prop().isDebugMode()) {

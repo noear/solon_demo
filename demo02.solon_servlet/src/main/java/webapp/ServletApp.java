@@ -1,9 +1,9 @@
 package webapp;
 
-import org.noear.solon.XApp;
+import org.noear.solon.Solon;
 
 public class ServletApp {
     public static void main(String[] args){
-        XApp.start(ServletApp.class,args);
+        Solon.start(ServletApp.class,args);
     }
 }

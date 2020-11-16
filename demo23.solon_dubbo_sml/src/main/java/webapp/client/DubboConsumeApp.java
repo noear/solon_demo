@@ -1,18 +1,18 @@
 package webapp.client;
 
 import org.apache.dubbo.config.annotation.Reference;
-import org.noear.solon.XApp;
-import org.noear.solon.annotation.XController;
-import org.noear.solon.annotation.XMapping;
+import org.noear.solon.Solon;
+import org.noear.solon.annotation.Controller;
+import org.noear.solon.annotation.Mapping;
 import org.noear.solon.core.Aop;
 import org.noear.solon.extend.dubbo.EnableDubbo;
 import webapp.protocol.HelloService;
 
 @EnableDubbo
-@XController
+@Controller
 public class DubboConsumeApp {
     public static void main(String[] args) {
-        XApp.start(DubboConsumeApp.class, args, app -> app.enableHttp(false));
+        Solon.start(DubboConsumeApp.class, args, app -> app.enableHttp(false));
 
         //通过手动模式直接拉取bean
         DubboConsumeApp tmp = Aop.get(DubboConsumeApp.class);
@@ -22,7 +22,7 @@ public class DubboConsumeApp {
     @Reference(group = "hello")
     HelloService helloService;
 
-    @XMapping("/")
+    @Mapping("/")
     public String home() {
         return helloService.sayHello("noear");
     }

@@ -15,13 +15,13 @@
 * java/HelloworldApp.java
 
 ```java
-@XController
+@Controller
 public class HelloworldApp {
     public static void main(String[] args) {
-        XApp.start(HelloworldApp.class, args);
+        Solon.start(HelloworldApp.class, args);
     }
 
-    @XMapping("/")
+    @Mapping("/")
     public String helloworld(){
         return "Hello world!";
     }

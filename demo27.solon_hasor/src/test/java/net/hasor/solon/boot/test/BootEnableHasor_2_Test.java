@@ -3,7 +3,7 @@ import net.hasor.test.spring.mod1.*;
 import net.hasor.core.AppContext;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.noear.solon.annotation.XInject;
+import org.noear.solon.annotation.Inject;
 import org.noear.solon.core.Aop;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
@@ -14,7 +14,7 @@ import java.util.Set;
 @RunWith(SolonJUnit4ClassRunner.class)
 @SolonTest(BootEnableHasor_2.class)
 public class BootEnableHasor_2_Test {
-    @XInject
+    @Inject
     private AppContext         appContext;
 
     @Test

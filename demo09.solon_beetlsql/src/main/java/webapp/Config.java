@@ -1,17 +1,17 @@
 package webapp;
 
 import com.zaxxer.hikari.HikariDataSource;
-import org.noear.solon.annotation.XBean;
-import org.noear.solon.annotation.XConfiguration;
-import org.noear.solon.annotation.XInject;
+import org.noear.solon.annotation.Bean;
+import org.noear.solon.annotation.Configuration;
+import org.noear.solon.annotation.Inject;
 
 import javax.sql.DataSource;
 
 
-@XConfiguration
+@Configuration
 public class Config {
-    @XBean
-    public DataSource db1(@XInject("${test.db1}") HikariDataSource dataSource) {
+    @Bean
+    public DataSource db1(@Inject("${test.db1}") HikariDataSource dataSource) {
         return dataSource;
     }
 }

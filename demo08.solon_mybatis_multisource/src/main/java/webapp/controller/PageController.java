@@ -1,22 +1,22 @@
 package webapp.controller;
 
 import com.jn.sqlhelper.dialect.pagination.SqlPaginations;
-import org.noear.solon.annotation.XController;
-import org.noear.solon.annotation.XInject;
-import org.noear.solon.annotation.XMapping;
+import org.noear.solon.annotation.Controller;
+import org.noear.solon.annotation.Inject;
+import org.noear.solon.annotation.Mapping;
 import webapp.dso.mapper.AppxMapper;
 
 /**
  * 分面演示（使用sqlhelper组件）
  *
  * */
-@XMapping("/page/")
-@XController
+@Mapping("/page/")
+@Controller
 public class PageController {
-    @XInject
+    @Inject
     AppxMapper appxMapper;
 
-    @XMapping("test")
+    @Mapping("test")
     public Object test() throws Throwable{
         SqlPaginations.preparePagination(2,2);
 

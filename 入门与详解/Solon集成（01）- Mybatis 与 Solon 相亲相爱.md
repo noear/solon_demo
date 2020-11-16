@@ -123,18 +123,18 @@ sqlhelper:
 在Solon的适配下，只需要完成数据源的配置就完事了。其它的，根据配置已自动扫描或处理。
 
 ```java
-@XConfiguration
+@Configuration
 public class Config {
     //
     //数据源名字与mybatis的配置名要对应上
     //
-    @XBean(value = "db1", typed = true)
-    public DataSource db1(@XInject("${test.db1}") HikariDataSource ds) {
+    @Bean(value = "db1", typed = true)
+    public DataSource db1(@Inject("${test.db1}") HikariDataSource ds) {
         return ds;
     }
 
-    @XBean("db2")
-    public DataSource db2(@XInject("${test.db2}") HikariDataSource ds) {
+    @Bean("db2")
+    public DataSource db2(@Inject("${test.db2}") HikariDataSource ds) {
         return ds;
     }
 }
@@ -148,21 +148,21 @@ public class Config {
 /**
  * 分包模式，一开始就被会话工厂mapperScan()并关联好了
  * */
-@XMapping("/demo/")
-@XController
+@Mapping("/demo/")
+@Controller
 public class DemoController {
-    @XInject
+    @Inject
     AppxMapper appxMapper;      //已被db1 mapperScan 了(内部自动处理)，可直接注入
 
-    @XInject
+    @Inject
     Appx2Mapper appxMapper2;    //已被db2 mapperScan 了(内部自动处理)，可直接注入
 
-    @XMapping("test")
+    @Mapping("test")
     public AppxModel test(){
         return appxMapper.appx_get();
     }
 
-    @XMapping("test2")
+    @Mapping("test2")
     public AppxModel test2(){
         return appxMapper2.appx_get2(48);
     }
@@ -178,8 +178,8 @@ public class DemoController {
  *
  * @Db 可注入 Mapper, SqlSession, SqlSessionFactory 类型的字段
  * */
-@XMapping("/demo2/")
-@XController
+@Mapping("/demo2/")
+@Controller
 public class Demo2Controller {
     @Db("db1")
     AppxMapper appxMapper;     //使用@Db 指定会话工厂并注入
@@ -187,12 +187,12 @@ public class Demo2Controller {
     @Db("db2")
     Appx2Mapper appxMapper2;
 
-    @XMapping("test")
+    @Mapping("test")
     public AppxModel test(){
         return appxMapper.appx_get();
     }
 
-    @XMapping("test2")
+    @Mapping("test2")
     public AppxModel test2(){
         return appxMapper2.appx_get2(48);
     }
@@ -206,17 +206,17 @@ public class Demo2Controller {
 /**
  * 事务演示
  * */
-@XMapping("/tran/")
-@XController
+@Mapping("/tran/")
+@Controller
 public class TranController {
-    @XInject
+    @Inject
     AppxMapper appxMapper;
 
     /**
-     * mybatis-solon-plugin 的事务，由 @XTran 注解发起（更详细的说明，参考其它文章）
+     * mybatis-solon-plugin 的事务，由 @Tran 注解发起（更详细的说明，参考其它文章）
      * */
-    @XTran
-    @XMapping("test")
+    @Tran
+    @Mapping("test")
     public Object test() throws Throwable{
         appxMapper.appx_get();
     }
@@ -229,21 +229,21 @@ public class TranController {
 /**
  * 多数据源事务演示
  * */
-@XMapping("/tran2/")
-@XController
+@Mapping("/tran2/")
+@Controller
 public class Tran2Controller {
-    @XInject
-    AppService appService;   //这是定义的Service类，里面的函数注解了@XTran("db1")
+    @Inject
+    AppService appService;   //这是定义的Service类，里面的函数注解了@Tran("db1")
 
-    @XInject
+    @Inject
     App2Service app2Service;    //同上
 
 
     /**
      * 这是一个多数据源的事务组
      * */
-    @XTran
-    @XMapping("test")
+    @Tran
+    @Mapping("test")
     public void test() throws Throwable {
         //内部走的是db2的事务
         app2Service.add();
@@ -257,13 +257,13 @@ public class Tran2Controller {
 关于分页的示例：（本案用的是sqlhelper）
 
 ```java
-@XMapping("/page/")
-@XController
+@Mapping("/page/")
+@Controller
 public class PageController {
-    @XInject
+    @Inject
     AppxMapper appxMapper;
 
-    @XMapping("test")
+    @Mapping("test")
     public Object test() throws Throwable{
         SqlPaginations.preparePagination(2,2);
 

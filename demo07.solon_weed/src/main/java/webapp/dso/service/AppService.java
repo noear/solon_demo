@@ -1,15 +1,15 @@
 package webapp.dso.service;
 
-import org.noear.solon.annotation.XCache;
-import org.noear.solon.annotation.XInject;
-import org.noear.solon.annotation.XTran;
-import org.noear.solon.core.TranPolicy;
-import org.noear.solon.extend.aspect.annotation.XService;
+import org.noear.solon.annotation.Inject;
+import org.noear.solon.extend.aspect.annotation.Service;
+import org.noear.solon.extend.data.annotation.Cache;
+import org.noear.solon.extend.data.annotation.Tran;
+import org.noear.solon.extend.data.tran.TranPolicy;
 import webapp.dso.mapper.SqlMapper;
 
-@XService
+@Service
 public class AppService {
-    @XInject
+    @Inject
     SqlMapper sqlMapper1;
 
     public Object getApp(int app_id) throws Exception {
@@ -24,35 +24,35 @@ public class AppService {
         sqlMapper1.appx_add();
     }
 
-    @XTran
+    @Tran
     public void addApp2(){
         sqlMapper1.appx_add();
     }
 
-    @XTran(policy = TranPolicy.nested)
+    @Tran(policy = TranPolicy.nested)
     public void addApp3(){
         sqlMapper1.appx_add();
     }
 
-    @XTran(policy = TranPolicy.requires_new)
+    @Tran(policy = TranPolicy.requires_new)
     public boolean addApp4(){
         sqlMapper1.appx_add();
         return true;
     }
 
-    @XCache(seconds = 10)
-    @XTran(policy = TranPolicy.requires_new)
+    @Cache(seconds = 10)
+    @Tran(policy = TranPolicy.requires_new)
     public boolean addApp52(){
         sqlMapper1.appx_add();
         return true;
     }
 
-    @XTran(policy = TranPolicy.never)
+    @Tran(policy = TranPolicy.never)
     public void addApp5(){
         sqlMapper1.appx_add();
     }
 
-    @XTran(policy = TranPolicy.mandatory)
+    @Tran(policy = TranPolicy.mandatory)
     public void addApp6(){
         sqlMapper1.appx_add();
     }

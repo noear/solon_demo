@@ -1,6 +1,6 @@
 package webapp;
 
-import org.noear.solon.XApp;
+import org.noear.solon.Solon;
 
 /**
  *
@@ -25,7 +25,7 @@ import org.noear.solon.XApp;
 //@EnableTransaction(false) //关掉事务
 public class DemoApp {
     public static void main(String[] args) {
-        XApp.start(DemoApp.class, args)
+        Solon.start(DemoApp.class, args)
                 .onError((err) -> err.printStackTrace());
     }
 }

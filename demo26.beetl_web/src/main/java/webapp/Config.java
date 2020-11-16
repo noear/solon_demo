@@ -2,9 +2,9 @@ package webapp;
 
 import com.zaxxer.hikari.HikariDataSource;
 import org.noear.solon.XUtil;
-import org.noear.solon.annotation.XBean;
-import org.noear.solon.annotation.XConfiguration;
-import org.noear.solon.annotation.XInject;
+import org.noear.solon.annotation.Bean;
+import org.noear.solon.annotation.Configuration;
+import org.noear.solon.annotation.Inject;
 import org.noear.solon.core.CacheService;
 import org.noear.solon.extend.validation.ValidatorManager;
 import org.noear.solon.extend.validation.annotation.Date;
@@ -16,9 +16,9 @@ import javax.sql.DataSource;
 import java.io.IOException;
 
 
-@XConfiguration
+@Configuration
 public class Config {
-    @XBean
+    @Bean
     public void validAdapter() {
         //
         // 添加Date验证器
@@ -44,8 +44,8 @@ public class Config {
         });
     }
 
-    @XBean
-    public DataSource db1(@XInject("${db1}") HikariDataSource ds) throws IOException {
+    @Bean
+    public DataSource db1(@Inject("${db1}") HikariDataSource ds) throws IOException {
         DsHelper.initData(ds);
         
         return ds;

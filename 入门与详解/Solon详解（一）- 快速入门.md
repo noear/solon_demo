@@ -28,20 +28,20 @@ Solon参考过Spring boot 和 Javalin 的设计。吸取了两者的的优点，
 
 使用Solon，可以零配置就让你的项目快速运行起来，完全使用代码和注解取代配置。使用java代码方式可以更好的理解你配置的Bean，下面就先来看看两个最基本的注释：
 
-##### 1）@XConfiguration 和 @XBean
+##### 1）@Configuration 和 @Bean
 
-Solon的java配置方式是通过@XConfiguration 和 @XBean这两个注释实现的：
+Solon的java配置方式是通过@Configuration 和 @Bean这两个注释实现的：
 
-* @XConfiguration 作用于类上，对Bean进行配置
-* @XBean 用在类上，也可以作用在 @XConfiguration 类的方法上
+* @Configuration 作用于类上，对Bean进行配置
+* @Bean 用在类上，也可以作用在 @Configuration 类的方法上
 
 ##### 2）示例
 > 该示例将通过java配置方式配置Bean，实现Solon IOC功能。
 
-下面是一个简单的模拟从数据库获取User数据的Dao类（使用了@XBean注解，说明它将交给Solon容器管理）。
+下面是一个简单的模拟从数据库获取User数据的Dao类（使用了@Bean注解，说明它将交给Solon容器管理）。
 
 ```java
-@XBean 
+@Bean 
 public class UserDao {
     public List<String> queryUserList() {
         //为省事儿，此处不操作数据库
@@ -55,9 +55,9 @@ public class UserDao {
 
 //也可以通过配置器构建Bean
 //
-//@XConfiguration
+//@Configuration
 //public class SolonConfig {
-//    @XBean
+//    @Bean
 //    public UserDao getUserDao() {
 //        return new UserDao();
 //    }
@@ -67,10 +67,10 @@ public class UserDao {
 然后是一个最最常见的Service，通过注入UserDao，使用UserDao的方法获取用户数据。
 
 ```java
-@XBean
+@Bean
 public class UserService {
 
-    @XInject
+    @Inject
     UserDao userDao;
 
     public void getUserList() {
@@ -89,7 +89,7 @@ public class UserService {
 public class Test {
     public static void main(String[] args) {
         //启动容器服务
-        XApp.start(Test.class, args);
+        Solon.start(Test.class, args);
         
         //或通过Aop对象获取托管的Bean（或者注解方式）
         //
@@ -135,20 +135,20 @@ public class Test {
 
 ##### 2）小示例
 ```java
-@XController    //这标明是一个solon的控制器
+@Controller    //这标明是一个solon的控制器
 public class HelloApp {
     public static void main(String[] args) {    //这是程序入口
-        XApp.start(HelloApp.class, args);
+        Solon.start(HelloApp.class, args);
     }
 
-    @XMapping("/hello")
+    @Mapping("/hello")
     public String hello(String name){
         return "Hello world!";
     }
 }
 ```
 
-> Solon 程序的重点是要：在main函数的入口处，通过XApp.start(...) 启动Solon的容器服务，进而启动它的所有机能。
+> Solon 程序的重点是要：在main函数的入口处，通过Solon.start(...) 启动Solon的容器服务，进而启动它的所有机能。
 
 运行HelloApp中的main()方法，启动该web应用后，在地址栏输入"http://localhost:8080/hello"，就可以看到输出结果了。
 

@@ -1,11 +1,11 @@
 package dockapp_http;
 
-import org.noear.solon.XApp;
+import org.noear.solon.Solon;
 import org.noear.solon.core.XPlugin;
 
 public class XPluginImp implements XPlugin {
     @Override
-    public void start(XApp app) {
+    public void start(Solon app) {
         //扫描出控制器
         app.beanScan(XPluginImp.class);
 

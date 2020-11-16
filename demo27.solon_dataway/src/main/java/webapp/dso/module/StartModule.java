@@ -6,7 +6,7 @@ import net.hasor.db.JdbcModule;
 import net.hasor.db.Level;
 import net.hasor.web.WebApiBinder;
 import net.hasor.web.WebModule;
-import org.noear.solon.XApp;
+import org.noear.solon.Solon;
 import org.noear.solon.core.Aop;
 import org.noear.solon.core.ExtendLoader;
 import webapp.dso.DsHelper;
@@ -27,7 +27,7 @@ public class StartModule implements WebModule {
 
     private JdbcModule buildDs() {
         //for mysql
-        //DataSource ds = Aop.inject(new HikariDataSource(), XApp.cfg().getProp("db1"));
+        //DataSource ds = Aop.inject(new HikariDataSource(), Solon.cfg().getProp("db1"));
 
         //for h2
         DataSource ds = buildH2Ds();
@@ -37,7 +37,7 @@ public class StartModule implements WebModule {
 
     private DataSource buildH2Ds() {
         //1.替换H2的持久化路径（路径要变，所以不做自动注入处理）
-        Properties props = XApp.cfg().getProp("db1");
+        Properties props = Solon.cfg().getProp("db1");
         props.setProperty("jdbcUrl", props.getProperty("jdbcUrl").replace("~/", ExtendLoader.path()));
 
         //2.生成DataSource

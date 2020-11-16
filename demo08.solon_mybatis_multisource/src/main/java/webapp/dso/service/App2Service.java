@@ -1,19 +1,19 @@
 package webapp.dso.service;
 
-import org.noear.solon.annotation.XInject;
-import org.noear.solon.annotation.XTran;
-import org.noear.solon.extend.aspect.annotation.XService;
+import org.noear.solon.annotation.Inject;
+import org.noear.solon.annotation.Tran;
+import org.noear.solon.extend.aspect.annotation.Service;
 import webapp.dso.mapper.Appx2Mapper;
 
-@XService
+@Service
 public class App2Service {
-    @XInject
+    @Inject
     Appx2Mapper appxMapper2;
 
     /**
      * 申明使用db2的事务
      * */
-    @XTran
+    @Tran
     public void add(){
         appxMapper2.appx_add();
     }

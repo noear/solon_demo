@@ -1,16 +1,16 @@
 package webapp.dso.service;
 
-import org.noear.solon.annotation.XInject;
-import org.noear.solon.annotation.XTran;
-import org.noear.solon.extend.aspect.annotation.XService;
+import org.noear.solon.annotation.Inject;
+import org.noear.solon.extend.aspect.annotation.Service;
+import org.noear.solon.extend.data.annotation.Tran;
 import webapp.dso.mapper.SqlMapper;
 
-@XService
+@Service
 public class AppService {
-    @XInject
+    @Inject
     SqlMapper sqlMapper1;
 
-    @XTran
+    @Tran
     public Object getApp(int app_id) throws Exception {
         return sqlMapper1.appx_get2(app_id);
     }
@@ -23,7 +23,7 @@ public class AppService {
         sqlMapper1.appx_add();
     }
 
-    @XTran
+    @Tran
     public void addApp2(){
         sqlMapper1.appx_add();
     }

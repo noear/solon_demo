@@ -1,21 +1,21 @@
 package webapp.controller;
 
-import org.noear.solon.annotation.XController;
-import org.noear.solon.annotation.XInject;
-import org.noear.solon.annotation.XMapping;
-import org.noear.solon.core.ModelAndView;
-import org.noear.solon.core.XContext;
+import org.noear.solon.annotation.Controller;
+import org.noear.solon.annotation.Inject;
+import org.noear.solon.annotation.Mapping;
+import org.noear.solon.core.handler.Context;
+import org.noear.solon.core.handler.ModelAndView;
 import webapp.model.UserModel;
 
-@XController
+@Controller
 public class HelloworldController {
 
     //这里注入个配置
-    @XInject("${custom.user}")
+    @Inject("${custom.user}")
     protected String user;
 
-    @XMapping("/helloworld")
-    public ModelAndView helloworld(XContext ctx){
+    @Mapping("/helloworld")
+    public ModelAndView helloworld(Context ctx){
         UserModel m = new UserModel();
         m.setId(10);
         m.setName("刘之西东");

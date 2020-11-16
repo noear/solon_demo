@@ -3,7 +3,7 @@ package net.hasor.solon;
 import net.hasor.core.DimModule;
 import net.hasor.core.Module;
 import net.hasor.solon.boot.BuildConfig;
-import org.noear.solon.XApp;
+import org.noear.solon.Solon;
 import org.noear.solon.core.Aop;
 import org.noear.solon.core.XPlugin;
 
@@ -15,7 +15,7 @@ import org.noear.solon.core.XPlugin;
  * */
 public class XPluginImp implements XPlugin {
     @Override
-    public void start(XApp app) {
+    public void start(Solon app) {
         //
         //注册bean构建器
         //
