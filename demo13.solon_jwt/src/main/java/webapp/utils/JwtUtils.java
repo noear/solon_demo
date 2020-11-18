@@ -31,7 +31,10 @@ public class JwtUtils {
     }
     public static Claims chekcJwt(String token) {
         try {
-            final Claims claims = Jwts.parser().setSigningKey(SECRETKEY).parseClaimsJws(token).getBody();
+            final Claims claims = Jwts.parser()
+                    .setSigningKey(SECRETKEY)
+                    .parseClaimsJws(token)
+                    .getBody();
             return claims;
         } catch (Exception e) {
             e.printStackTrace();
