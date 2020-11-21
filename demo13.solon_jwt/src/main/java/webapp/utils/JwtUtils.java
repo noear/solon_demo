@@ -24,6 +24,7 @@ public class JwtUtils {
                 .claim("name", user.getName())
                 .claim("img", user.getHeadImg())
                 .setIssuedAt(new Date())
+                .setIssuer("solon")
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRE))
                 .signWith(SignatureAlgorithm.HS256, SECRETKEY).compact();
 
