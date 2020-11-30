@@ -1,14 +1,14 @@
 package webapp.client;
 
-import org.noear.fairy.annotation.EnableFairyClient;
-import org.noear.fairy.annotation.FairyClient;
+import org.noear.nami.annotation.EnableNamiClient;
+import org.noear.nami.annotation.NamiClient;
 import org.noear.solon.Solon;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.core.Aop;
 import webapp.protocol.UserModel;
 import webapp.protocol.UserService;
 
-@EnableFairyClient
+@EnableNamiClient
 @Component
 public class RpcClient {
     public static void main(String[] args) {
@@ -21,11 +21,11 @@ public class RpcClient {
     }
 
     //直接指定服务端地址
-    @FairyClient("http://localhost:8080/user/")
+    @NamiClient("http://localhost:8080/user/")
     UserService userService;
 
     //使用负载
-    @FairyClient("local:/user/")
+    @NamiClient("local:/user/")
     UserService userService2;
 
     public void test() {

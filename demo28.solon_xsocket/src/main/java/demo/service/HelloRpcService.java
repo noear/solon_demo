@@ -1,8 +1,8 @@
 package demo.service;
 
-import org.noear.fairy.annotation.FairyClient;
+import org.noear.nami.annotation.NamiClient;
 
-@FairyClient("localrpc:/demoe/rpc")
+@NamiClient("localrpc:/demoe/rpc")
 public interface HelloRpcService {
     String hello(String name);
 }

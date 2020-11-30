@@ -1,6 +1,6 @@
 package demo.service;
 
-import org.noear.fairy.channel.xsocket.XSocket;
+import org.noear.nami.channel.xsocket.XSocket;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.core.handle.Context;
