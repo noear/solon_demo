@@ -67,6 +67,7 @@
         <module>demo27.solon_hasor</module>
         <module>demo28.solon_xsocket</module>
         <module>demo29.solon_flink</module>
+        <module>demo29.solon_spark</module>
     </modules>
 
     <build>
