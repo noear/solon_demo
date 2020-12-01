@@ -16,7 +16,7 @@ public class SocketWordCount {
         DataStream text = env.socketTextStream("localhost", 9000, "\n");
 
         // 解析数据，按 word 分组，开窗，聚合
-        DataStream windowCounts = text
+        DataStream wordCounts = text
                 .flatMap(new FlatMapFunction<String,String>() {
                     @Override
                     public void flatMap(String value, Collector out) {
@@ -30,7 +30,7 @@ public class SocketWordCount {
                 .sum(1);
 
         // 将结果打印到控制台，注意这里使用的是单线程打印，而非多线程
-        windowCounts.print().setParallelism(1);
+        wordCounts.print().setParallelism(1);
 
         env.execute("Socket Window WordCount");
 

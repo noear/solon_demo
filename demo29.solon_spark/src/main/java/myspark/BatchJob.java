@@ -1,4 +1,4 @@
-package myflink;
+package myspark;
 
 public class BatchJob {
 }

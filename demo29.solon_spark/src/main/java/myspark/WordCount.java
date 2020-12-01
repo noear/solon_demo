@@ -1,4 +1,4 @@
-package myflink;
+package myspark;
 
 
 import org.apache.spark.SparkConf;
