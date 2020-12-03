@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear</groupId>
-    <artifactId>demo28.solon_xsocket</artifactId>
+    <artifactId>demo28.solon_socketd_rpc</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
@@ -27,7 +27,7 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.extend.xsocket</artifactId>
+            <artifactId>solon.boot.socketd.jdksocket</artifactId>
         </dependency>
 
         <dependency>
@@ -36,11 +36,6 @@
         </dependency>
 
 
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>solon.boot.undertow</artifactId>
-            <scope>test</scope>
-        </dependency>
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon-test</artifactId>

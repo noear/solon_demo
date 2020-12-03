@@ -22,7 +22,7 @@
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon.boot.reactor-netty</artifactId>
-            <version>1.2.3</version>
+            <version>1.2.5</version>
         </dependency>
 
         <dependency>

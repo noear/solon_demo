@@ -1,6 +1,5 @@
 package demo.service;
 
-import org.noear.nami.channel.xsocket.XSocket;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.core.handle.Context;
@@ -15,9 +14,8 @@ public class HelloRpcServiceImpl implements HelloRpcService {
     }
 
     public String hello(String name) {
-        NameRpcService rpc = XSocket.create(Context.current(), NameRpcService.class);
-
-        name = rpc.name(name);
+//        NameRpcService rpc = SocketD.create(Context.current(), NameRpcService.class);
+//        name = rpc.name(name);
 
         return "name=" + name;
     }
