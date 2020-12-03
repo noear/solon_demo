@@ -31,7 +31,7 @@ public class ClientApp {
         });
 
         //可以先发个握手包
-        //session.sendHandshake("Token=12",null);
+        //session.sendHandshake("Token=12&Sn=s6");
 
         //启用自动心跳包
         session.sendHeartbeatAuto(30);
