@@ -19,10 +19,10 @@
     </parent>
 
     <modules>
-        <module>_test_protostuff</module>
-        <module>_test_servlet</module>
-        <module>_test_reactor</module>
-        <module>_test_rsocket</module>
+<!--        <module>_test_protostuff</module>-->
+<!--        <module>_test_servlet</module>-->
+<!--        <module>_test_reactor</module>-->
+<!--        <module>_test_rsocket</module>-->
 
         <module>demo01.solon_tmp</module>
         <module>demo01.solon_simple</module>
@@ -59,16 +59,16 @@
         <module>demo24.solon_extload</module>
         <module>demo24.solon_extload_add_actuator</module>
         <module>demo24.solon_extload_add_http</module>
-        <module>demo25.solon_graphql</module>
+<!--        <module>demo25.solon_graphql</module>-->
 
         <module>demo26.beetl_web</module>
 
         <module>demo27.solon_dataway</module>
         <module>demo27.solon_hasor</module>
         <module>demo28.solon_socketd_message</module>
-        <module>demo28.solon_socketd_rpc</module>
-        <module>demo29.solon_flink</module>
-        <module>demo29.solon_spark</module>
+<!--        <module>demo28.solon_socketd_rpc</module>-->
+<!--        <module>demo29.solon_flink</module>-->
+<!--        <module>demo29.solon_spark</module>-->
     </modules>
 
     <build>
