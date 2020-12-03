@@ -21,5 +21,7 @@ public class ClientListener implements Listener {
         // 配置，就是在此处收到
         //
         System.out.println("客户端2：我收到了：" + message);
+
+        //message.bodyAsString(); //获取 body 的字符串形态
     }
 }
