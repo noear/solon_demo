@@ -4,6 +4,7 @@ import org.noear.solon.Solon;
 import org.noear.solon.core.message.Listener;
 import org.noear.solon.core.message.Message;
 import org.noear.solon.core.message.Session;
+import org.noear.solon.extend.socketd.MessageWrapper;
 import org.noear.solon.extend.socketd.SocketD;
 
 public class ClientApp {
@@ -35,6 +36,14 @@ public class ClientApp {
         //启用自动心跳包
         session.sendHeartbeatAuto(30);
 
+        //示例：有session后，可以：
+        //
+        //1.异步调用并等待结果
+        //Message rst = session.sendAndResponse(MessageWrapper.wrap(null));
+        //2.异步调用并回调结果
+        //session.sendAndCallback(MessageWrapper.wrap(null), (rst, err) -> {});
+        //3.变成RPC客户端
+        //HelloService rpc = SocketD.create(session,HelloService.class);
 
 
         //卡一下；因为没有任何别的服务启动
