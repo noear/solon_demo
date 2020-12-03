@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear</groupId>
-    <artifactId>demo28.solon_socketd_message</artifactId>
+    <artifactId>demo28.solon_socketd_message_server</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 

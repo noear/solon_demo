@@ -65,7 +65,8 @@
 
         <module>demo27.solon_dataway</module>
         <module>demo27.solon_hasor</module>
-        <module>demo28.solon_socketd_message</module>
+        <module>demo28.solon_socketd_message_client</module>
+        <module>demo28.solon_socketd_message_server</module>
         <module>demo28.solon_socketd_rpc</module>
         <module>demo29.solon_flink</module>
         <module>demo29.solon_spark</module>
