@@ -15,6 +15,9 @@ public class ServerApp {
         // 此处只为演示需要；实际诮和不需要这个
         //
         if (status.get()) {
+            //再待一秒，或许有更多会话边中来
+            Thread.sleep(1000);
+
             SessionFactory.getOpens().forEach(session -> {
                 session.send("配置是：1");
             });

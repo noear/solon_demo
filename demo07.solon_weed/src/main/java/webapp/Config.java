@@ -13,6 +13,10 @@ import javax.sql.DataSource;
 public class Config {
     @Bean
     public DataSource db1(@Inject("${test.db1}") HikariDataSource ds) {
+
+        DbContext db = new DbContext("","","","");
+        db.driverSet("com.mysql.cj.jdbc.Driver");
+
         return ds;
     }
 }
