@@ -1,11 +1,11 @@
 package demo.server;
 
-import org.noear.solon.annotation.ListenEndpoint;
+import org.noear.solon.annotation.ServerEndpoint;
 import org.noear.solon.core.message.Listener;
 import org.noear.solon.core.message.Message;
 import org.noear.solon.core.message.Session;
 
-@ListenEndpoint
+@ServerEndpoint
 public class ServerListener implements Listener {
     @Override
     public void onOpen(Session session) {
