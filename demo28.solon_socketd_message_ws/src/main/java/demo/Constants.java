@@ -7,5 +7,5 @@ public class Constants {
      *
      * 开起或关闭，client server 要一起开头
      * */
-    public static final boolean enableWebSocketD = false;
+    public static final boolean enableWebSocketD = true;
 }
