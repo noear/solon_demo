@@ -8,7 +8,7 @@ import org.noear.solon.extend.socketd.annotation.ClientEndpoint;
 /**
  * 注解模式；适用于固定的服务端
  * */
-@ClientEndpoint(host = "localhost", port = 28080, handshakeHeader = "Token=Xxxxx;Sn=12ddd")
+@ClientEndpoint(uri = "tcp://localhost:28080", handshakeHeader = "Token=Xxxxx;Sn=12ddd")
 public class ClientListener implements Listener {
     @Override
     public void onOpen(Session session) {

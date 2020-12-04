@@ -1,7 +1,7 @@
 package demo.server;
 
 import org.noear.solon.Solon;
-import org.noear.solon.extend.socketd.SessionFactory;
+import org.noear.solon.extend.socketd.SessionManager;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -18,7 +18,7 @@ public class ServerApp {
             //再待一秒，或许有更多会话边中来
             Thread.sleep(1000);
 
-            SessionFactory.getOpens().forEach(session -> {
+            SessionManager.getOpens().forEach(session -> {
                 session.send("配置是：1");
             });
         }

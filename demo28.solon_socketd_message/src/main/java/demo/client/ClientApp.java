@@ -4,7 +4,6 @@ import org.noear.solon.Solon;
 import org.noear.solon.core.message.Listener;
 import org.noear.solon.core.message.Message;
 import org.noear.solon.core.message.Session;
-import org.noear.solon.extend.socketd.MessageWrapper;
 import org.noear.solon.extend.socketd.SocketD;
 
 public class ClientApp {
@@ -14,7 +13,11 @@ public class ClientApp {
         //
         //手动模式：适用于服务端不固定的
         //
-        Session session = SocketD.create("localhost", 28080);
+        //ws://
+        //wss://
+        //tcp://
+        //
+        Session session = SocketD.create("tcp://localhost:28080");
         session.listener(new Listener() {
             @Override
             public void onOpen(Session session) {
