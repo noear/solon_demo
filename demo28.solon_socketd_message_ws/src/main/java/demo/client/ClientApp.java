@@ -10,8 +10,8 @@ import org.noear.solon.extend.socketd.SocketD;
 public class ClientApp {
     public static void main(String[] args) throws Throwable {
         Solon.start(ClientApp.class, args, app -> {
-            app.enableHttp(false);
-            app.enableWebSocketD(Constants.enableWebSocketD);
+            app.enableHttp(false)
+                    .enableWebSocketD(Constants.enableWebSocketD);
         });
 
         //
