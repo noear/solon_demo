@@ -11,7 +11,7 @@ import java.util.concurrent.CompletableFuture;
 public class ServerApp {
     public static CompletableFuture<Boolean> status = new CompletableFuture<>();
 
-    public static void main(String[] args) throws Throwable{
+    public static void main(String[] args) throws Throwable {
         //
         //smarthttp 自带了 websocket服务，与http同用8080端口
         //
@@ -27,7 +27,7 @@ public class ServerApp {
             //再待一秒，或许有更多会话边中来
             Thread.sleep(500);
 
-            _SessionManagerImpl.getOpens().forEach(session -> {
+            SessionManager.getOpens().forEach(session -> {
                 session.send("配置是：1");
             });
         }
