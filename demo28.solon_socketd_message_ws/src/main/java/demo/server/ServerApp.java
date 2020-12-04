@@ -1,5 +1,6 @@
 package demo.server;
 
+import demo.Constants;
 import org.noear.solon.Solon;
 import org.noear.solon.extend.socketd.SessionManager;
 
@@ -14,7 +15,7 @@ public class ServerApp {
         //
         Solon.start(ServerApp.class, args, app -> {
             app.enableWebSocket(true);
-            app.enableWebSocketD(true);
+            app.enableWebSocketD(Constants.enableWebSocketD);
         });
 
         //

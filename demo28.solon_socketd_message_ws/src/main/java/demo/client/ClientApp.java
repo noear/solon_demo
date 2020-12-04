@@ -1,5 +1,6 @@
 package demo.client;
 
+import demo.Constants;
 import org.noear.solon.Solon;
 import org.noear.solon.core.message.Listener;
 import org.noear.solon.core.message.Message;
@@ -10,7 +11,7 @@ public class ClientApp {
     public static void main(String[] args) throws Throwable {
         Solon.start(ClientApp.class, args, app -> {
             app.enableHttp(false);
-            app.enableWebSocketD(true);
+            app.enableWebSocketD(Constants.enableWebSocketD);
         });
 
         //
