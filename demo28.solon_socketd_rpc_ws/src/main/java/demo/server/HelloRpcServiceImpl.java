@@ -7,8 +7,10 @@ import org.noear.solon.annotation.Mapping;
 import org.noear.solon.core.handle.Context;
 import org.noear.solon.core.handle.MethodType;
 import org.noear.solon.extend.socketd.SocketD;
-
-@Mapping(value = "/demoe/rpc", method = MethodType.SOCKET)
+//
+//注意method的区别（也可以同时加 SOCKET 和 WEBSOCKET）
+//
+@Mapping(value = "/demoe/rpc", method = MethodType.WEBSOCKET)
 @Component(remoting = true)
 public class HelloRpcServiceImpl implements HelloRpcService {
     public String hello(String name) {
