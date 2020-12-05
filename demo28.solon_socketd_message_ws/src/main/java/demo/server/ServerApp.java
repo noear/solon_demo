@@ -2,8 +2,6 @@ package demo.server;
 
 import demo.Constants;
 import org.noear.solon.Solon;
-import org.noear.solon.boot.smarthttp.websocket._SessionManagerImpl;
-import org.noear.solon.boot.smarthttp.websocket._SocketServerSession;
 import org.noear.solon.extend.socketd.SessionManager;
 
 import java.util.concurrent.CompletableFuture;
@@ -27,7 +25,7 @@ public class ServerApp {
             //再待一秒，或许有更多会话边中来
             Thread.sleep(500);
 
-            SessionManager.getOpens().forEach(session -> {
+            SessionManager.websocket().getOpenSessions().forEach(session -> {
                 session.send("配置是：1");
             });
         }
