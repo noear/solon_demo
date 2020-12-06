@@ -17,8 +17,8 @@ public class HelloRpcServiceImpl implements HelloRpcService {
         //
         //[服务端] 调用 [客户端] 的 rpc
         //
-        //NameRpcService rpc = SocketD.create(Context.current(), NameRpcService.class);
-        //name = rpc.name(name);
+        NameRpcService rpc = SocketD.create(Context.current(), NameRpcService.class);
+        name = rpc.name(name);
 
         return "name=" + name;
     }

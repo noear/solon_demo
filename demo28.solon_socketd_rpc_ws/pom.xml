@@ -20,14 +20,33 @@
 
 
     <dependencies>
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>solon.boot.smarthttp</artifactId>
-        </dependency>
+        <!-- java websocket //ok -->
+<!--        <dependency>-->
+<!--            <groupId>org.noear</groupId>-->
+<!--            <artifactId>solon.boot.websocket</artifactId>-->
+<!--        </dependency>-->
+
+
+        <!-- jetty websocket //ok -->
+<!--        <dependency>-->
+<!--            <groupId>org.noear</groupId>-->
+<!--            <artifactId>solon.boot.jetty</artifactId>-->
+<!--        </dependency>-->
 <!--        <dependency>-->
 <!--            <groupId>org.noear</groupId>-->
 <!--            <artifactId>solon.extend.jetty.websocket</artifactId>-->
 <!--        </dependency>-->
+
+        <!-- undertow websocket //ok -->
+<!--        <dependency>-->
+<!--            <groupId>org.noear</groupId>-->
+<!--            <artifactId>solon.boot.undertow</artifactId>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.boot.smarthttp</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
@@ -37,6 +56,12 @@
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon.serialization.snack3</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.21</version>
         </dependency>
 
         <dependency>

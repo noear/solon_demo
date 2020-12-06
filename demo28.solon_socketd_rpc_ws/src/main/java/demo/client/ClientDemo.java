@@ -13,6 +13,6 @@ public class ClientDemo {
         //
         HelloRpcService rpc = SocketD.create("ws://localhost:8080", HelloRpcService.class);
 
-        System.out.println(rpc.hello("noear"));
+        System.out.println("RPC result:: " + rpc.hello("noear"));
     }
 }

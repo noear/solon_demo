@@ -18,7 +18,7 @@ public class ServerApp {
             //再待一秒，或许有更多会话边中来
             Thread.sleep(1000);
 
-            SessionManager.websocket().getOpenSessions().forEach(session -> {
+            SessionManager.socket().getOpenSessions().forEach(session -> {
                 session.send("配置是：1");
             });
         }
