@@ -5,6 +5,7 @@ import org.noear.solon.Solon;
 import org.noear.solon.core.message.Listener;
 import org.noear.solon.core.message.Message;
 import org.noear.solon.core.message.Session;
+import org.noear.solon.extend.socketd.MessageUtils;
 import org.noear.solon.extend.socketd.SocketD;
 
 public class ClientApp {
@@ -38,7 +39,7 @@ public class ClientApp {
         });
 
         //可以先发个握手包
-        session.sendHandshake("Token=12&Sn=s6");
+        session.sendHandshake(MessageUtils.wrapHandshake("Token=12&Sn=s6"));
 
         //启用自动心跳包
         session.sendHeartbeatAuto(30);
