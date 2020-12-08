@@ -20,7 +20,7 @@
 
     <modules>
 <!--        <module>_test_protostuff</module>-->
-<!--        <module>_test_servlet</module>-->
+        <module>_test_servlet</module>
 <!--        <module>_test_reactor</module>-->
 <!--        <module>_test_rsocket</module>-->
 
