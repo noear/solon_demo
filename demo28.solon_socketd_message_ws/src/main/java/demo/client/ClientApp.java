@@ -22,7 +22,7 @@ public class ClientApp {
         //wss://
         //tcp://
         //
-        Session session = SocketD.create("ws://localhost:8080");
+        Session session = SocketD.createSession("ws://localhost:8080");
         session.listener(new Listener() {
             @Override
             public void onOpen(Session session) {
