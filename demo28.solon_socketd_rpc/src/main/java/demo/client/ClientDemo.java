@@ -3,10 +3,14 @@ package demo.client;
 import demo.service.HelloRpcService;
 import org.noear.solon.Solon;
 import org.noear.solon.extend.socketd.SocketD;
+import org.noear.solon.extend.socketd.protocol.MessageProtocolCompress;
 
 public class ClientDemo {
     public static void main(String[] args) {
-        Solon.start(ClientDemo.class, args);
+        Solon.start(ClientDemo.class, args, app->{
+            //SocketD 启用压缩协议（默认超过1k才进行压缩）
+            SocketD.setProtocol(new MessageProtocolCompress());
+        });
 
         //[客户端] 调用 [服务端] 的 rpc
         //
