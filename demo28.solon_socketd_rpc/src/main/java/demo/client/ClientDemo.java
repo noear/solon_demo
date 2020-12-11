@@ -8,7 +8,7 @@ import org.noear.solon.extend.socketd.protocol.MessageProtocolCompress;
 public class ClientDemo {
     public static void main(String[] args) {
         Solon.start(ClientDemo.class, args, app->{
-            //SocketD 启用压缩协议（默认超过1k才进行压缩）
+            //SocketD 启用压缩协议（默认超过1k才进行压缩）::要与服务端配套启用
             SocketD.setProtocol(new MessageProtocolCompress());
         });
 
