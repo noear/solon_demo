@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.noear</groupId>
-    <artifactId>demo30.solon_reactor</artifactId>
+    <groupId>org.noear.solon</groupId>
+    <artifactId>_test_mqtt</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>${project.artifactId}</name>
-    <description>java project for solon demo</description>
+    <description>java project for solon test</description>
 
     <parent>
         <groupId>org.noear</groupId>
@@ -18,49 +18,29 @@
         <version>1-SNAPSHOT</version>
     </parent>
 
-    <!--
-     多模板引擎共存时，模板文件后缀默认对应关系：
-     beetl:       .htm
-     enjoy:       .shtm
-     freemaerker: .ftl
-     jsp:         .jsp
-     thyemeleaf:  .html
-     velocity:    .vm
-     -->
-
-
     <dependencies>
+
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon-web</artifactId>
-            <type>pom</type>
+            <artifactId>solon</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>io.projectreactor</groupId>
-            <artifactId>reactor-core</artifactId>
-            <version>3.0.5.RELEASE</version>
+            <groupId>org.eclipse.paho</groupId>
+            <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+            <version>1.2.5</version>
         </dependency>
 
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon-test</artifactId>
-            <scope>provided</scope>
+            <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.14.4</version>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
 
-
     <build>
-        <finalName>${project.name}</finalName>
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -75,14 +55,14 @@
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
-                    <finalName>${project.name}</finalName>
+                    <finalName>${project.artifactId}</finalName>
                     <appendAssemblyId>false</appendAssemblyId>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>webapp.GraphqlApp</mainClass>
+                            <mainClass>webapp.ServletApp</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -98,22 +78,5 @@
             </plugin>
         </plugins>
     </build>
-
-    <repositories>
-        <!-- 阿里云镜像，不需要的可以忽略 -->
-        <repository>
-            <id>public</id>
-            <name>aliyun nexus</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </repository>
-        <!-- jitpack.io仓库 -->
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
-        </repository>
-    </repositories>
 
 </project>
