@@ -17,7 +17,7 @@ import java.util.concurrent.ScheduledExecutorService;
  * @author noear 2020/12/19 created
  */
 public class Subscriber {
-    public static final String HOST ="tcp://172.16.1.86:1883";
+    public static final String HOST ="tcp://localhost:51883";
 
     public static final String TOPIC ="speedTopic";
 
