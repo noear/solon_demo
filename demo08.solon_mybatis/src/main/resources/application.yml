@@ -2,10 +2,10 @@ solon.output.meta: 1
 
 test.db1:
     schema: rock
-    jdbcUrl: jdbc:mysql://localdb:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
+    jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
     driverClassName: com.mysql.cj.jdbc.Driver
-    username: demo
-    password: UL0hHlg0Ybq60xyb
+    username: root
+    password: 123456
 
 #默认
 mybatis.db1:
