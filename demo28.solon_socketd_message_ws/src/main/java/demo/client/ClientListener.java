@@ -16,7 +16,7 @@ public class ClientListener implements Listener {
     }
 
     @Override
-    public void onMessage(Session session, Message message, boolean messageIsString) {
+    public void onMessage(Session session, Message message) {
         //
         // 配置，就是在此处收到
         //

@@ -5,7 +5,6 @@ import org.noear.solon.Solon;
 import org.noear.solon.core.message.Listener;
 import org.noear.solon.core.message.Message;
 import org.noear.solon.core.message.Session;
-import org.noear.solon.extend.socketd.MessageUtils;
 import org.noear.solon.extend.socketd.SocketD;
 
 public class ClientApp {
@@ -30,7 +29,7 @@ public class ClientApp {
             }
 
             @Override
-            public void onMessage(Session session, Message message, boolean messageIsString) {
+            public void onMessage(Session session, Message message) {
                 //
                 // message.body 要自己解码一下；如果是字符串，可以：message.toString();
                 //
@@ -39,10 +38,12 @@ public class ClientApp {
         });
 
         //可以先发个握手包
-        session.sendHandshake(MessageUtils.wrapHandshake("Token=12&Sn=s6"));
+        session.sendHandshake(Message.wrapHandshake("Token=12&Sn=s6"));
 
         //启用自动心跳包
         session.sendHeartbeatAuto(30);
+
+
 
         //示例：有session后，可以：
         //

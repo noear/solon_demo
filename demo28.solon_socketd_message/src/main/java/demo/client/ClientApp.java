@@ -25,7 +25,7 @@ public class ClientApp {
             }
 
             @Override
-            public void onMessage(Session session, Message message, boolean messageIsString) {
+            public void onMessage(Session session, Message message) {
                 //
                 // message.body 要自己解码一下；如果是字符串，可以：message.toString();
                 //

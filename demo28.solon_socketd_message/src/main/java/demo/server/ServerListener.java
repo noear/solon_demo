@@ -17,11 +17,13 @@ public class ServerListener implements Listener {
     }
 
     @Override
-    public void onMessage(Session session, Message message, boolean messageIsString) {
+    public void onMessage(Session session, Message message) {
         if(message.flag() == -2){
             System.out.println("服务端：我收到心跳");
         }else {
             System.out.println("服务端：我收到：" + message);
+
+            session.send(Message.wrapResponse(message,"我收到了"));
         }
     }
 }
