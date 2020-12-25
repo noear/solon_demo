@@ -27,16 +27,16 @@
 <!--        </dependency>-->
 
         <!-- smartsocket ok -->
-<!--        <dependency>-->
-<!--            <groupId>org.noear</groupId>-->
-<!--            <artifactId>solon.boot.socketd.smartsocket</artifactId>-->
-<!--        </dependency>-->
-
-        <!-- netty ok -->
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.boot.socketd.netty</artifactId>
+            <artifactId>solon.boot.socketd.smartsocket</artifactId>
         </dependency>
+
+        <!-- netty ok -->
+<!--        <dependency>-->
+<!--            <groupId>org.noear</groupId>-->
+<!--            <artifactId>solon.boot.socketd.netty</artifactId>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.noear</groupId>
