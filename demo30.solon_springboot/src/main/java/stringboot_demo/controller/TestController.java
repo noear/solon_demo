@@ -15,8 +15,11 @@ public class TestController {
     @Inject
     HelloService helloService;
 
+    @Inject("${user.name}")
+    String name;
+
     @Mapping("/test")
     public String home(String msg) throws Exception {
-        return "solon test:" + helloService.hello();
+        return "solon: " + helloService.hello(name);
     }
 }

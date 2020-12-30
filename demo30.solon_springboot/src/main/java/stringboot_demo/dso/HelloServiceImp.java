@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class HelloServiceImp implements HelloService {
     @Override
-    public String hello() {
-        return "hello";
+    public String hello(String name) {
+        return "hello: " + name;
     }
 }
