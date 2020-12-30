@@ -7,7 +7,9 @@ import stringboot_demo.dso.HelloService;
 import javax.annotation.Resource;
 
 /**
- * @author noear 2020/12/28 created
+ * Springboot 不能使用 Solon 的容器资源
+ *
+ * Solon 可以使用 Springboot 的容器资源
  */
 @RestController
 public class Text2Controller {
