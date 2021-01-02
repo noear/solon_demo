@@ -1,6 +1,5 @@
 package stringboot_demo;
 
-import org.noear.solon.Solon;
 import org.noear.solon.extend.springboot.SpringBootLinkSolon;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,7 +11,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DemoApp {
     public static void main(String[] args) {
-        //Solon.start(DemoApp.class, args);
         SpringApplication.run(DemoApp.class, args);
     }
 }
