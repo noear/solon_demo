@@ -74,6 +74,8 @@
 <!--        <module>demo29.solon_flink</module>-->
 <!--        <module>demo29.solon_spark</module>-->
         <module>demo30.solon_springboot</module>
+
+        <module>demo31.nami_rpc</module>
     </modules>
 
     <build>
