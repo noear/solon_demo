@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DemoApp {
     public static void main(String[] args) {
-        Solon.start(DemoApp.class, args);
+        //Solon.start(DemoApp.class, args);
         SpringApplication.run(DemoApp.class, args);
     }
 }
