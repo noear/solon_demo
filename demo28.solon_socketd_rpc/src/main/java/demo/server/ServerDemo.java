@@ -10,8 +10,6 @@ public class ServerDemo {
     public static void main(String[] args) {
         Solon.start(ServerDemo.class, args, app -> {
             app.enableSocket(true);
-            app.enableWebSocket(true);
-            app.enableWebSocketD(true);
 
             //使用压缩协议； 启用压缩协议（默认超过1k才进行压缩，可以自己改改）::要与客户端配套启用
             //SocketD.setProtocol(new MessageProtocolCompress());

@@ -32,12 +32,6 @@
             <artifactId>solon.boot.socketd.smartsocket</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>solon.boot.socketd.websocket</artifactId>
-        </dependency>
-
-
         <!-- netty ok -->
 <!--        <dependency>-->
 <!--            <groupId>org.noear</groupId>-->
@@ -51,12 +45,7 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>nami.channel.socketd</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>solon.socketd.client.websocket</artifactId>
+            <artifactId>nami</artifactId>
         </dependency>
 
         <dependency>
@@ -64,7 +53,6 @@
             <artifactId>solon-test</artifactId>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
