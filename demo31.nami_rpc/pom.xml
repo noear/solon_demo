@@ -34,16 +34,13 @@
         </dependency>
 
 
+        <!-- serialization -->
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon.serialization.snack3</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>nami.channel.socketd</artifactId>
-        </dependency>
-
+        <!-- nami.channel -->
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>nami.channel.socketd.websocket</artifactId>
