@@ -2,7 +2,7 @@ package demo.server;
 
 import demo.Constants;
 import org.noear.solon.Solon;
-import org.noear.solon.extend.socketd.SessionManager;
+import org.noear.solon.socketd.SessionManager;
 
 import java.util.concurrent.CompletableFuture;
 

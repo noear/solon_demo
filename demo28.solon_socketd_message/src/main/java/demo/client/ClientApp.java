@@ -4,7 +4,7 @@ import org.noear.solon.Solon;
 import org.noear.solon.core.message.Listener;
 import org.noear.solon.core.message.Message;
 import org.noear.solon.core.message.Session;
-import org.noear.solon.extend.socketd.SocketD;
+import org.noear.solon.socketd.SocketD;
 
 public class ClientApp {
     public static void main(String[] args) throws Throwable {

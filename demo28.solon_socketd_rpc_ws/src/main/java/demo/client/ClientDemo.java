@@ -2,7 +2,7 @@ package demo.client;
 
 import demo.service.HelloRpcService;
 import org.noear.solon.Solon;
-import org.noear.solon.extend.socketd.SocketD;
+import org.noear.solon.socketd.SocketD;
 
 public class ClientDemo {
     public static void main(String[] args) {

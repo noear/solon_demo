@@ -3,7 +3,7 @@ package demo.client;
 import org.noear.solon.core.message.Listener;
 import org.noear.solon.core.message.Message;
 import org.noear.solon.core.message.Session;
-import org.noear.solon.extend.socketd.annotation.ClientEndpoint;
+import org.noear.solon.socketd.annotation.ClientEndpoint;
 
 /**
  * 注解模式；适用于固定的服务端
