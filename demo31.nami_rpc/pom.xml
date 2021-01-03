@@ -45,15 +45,16 @@
             <groupId>org.noear</groupId>
             <artifactId>nami.channel.okhttp</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>nami.channel.socketd</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon.socketd.client.websocket</artifactId>
         </dependency>
-
 
         <dependency>
             <groupId>org.noear</groupId>

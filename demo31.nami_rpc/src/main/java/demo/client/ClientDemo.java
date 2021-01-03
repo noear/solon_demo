@@ -18,7 +18,6 @@ public class ClientDemo {
         rpc = Nami.builder().upstream(() -> "tcp://localhost:28080").create(HelloRpcService.class);
         System.out.println("RPC result: " + rpc.hello("noear"));
 
-
         rpc = Nami.builder().upstream(() -> "ws://localhost:8080").create(HelloRpcService.class);
         System.out.println("RPC result: " + rpc.hello("noear"));
 
