@@ -8,7 +8,7 @@ import org.noear.solon.socketd.protocol.MessageProtocolSecret;
 public class ServerDemo {
     public static void main(String[] args) {
         Solon.start(ServerDemo.class, args, app -> {
-            app.enableSocket(true);
+            app.enableSocketD(true);
             app.enableWebSocketD(true);
         });
     }

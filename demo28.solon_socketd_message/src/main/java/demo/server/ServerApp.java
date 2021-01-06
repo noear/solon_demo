@@ -9,7 +9,7 @@ public class ServerApp {
     public static CompletableFuture<Boolean> status = new CompletableFuture<>();
 
     public static void main(String[] args) throws Throwable{
-        Solon.start(ServerApp.class, args, app -> app.enableSocket(true));
+        Solon.start(ServerApp.class, args, app -> app.enableSocketD(true));
 
         //
         // 此处只为演示需要；实际诮和不需要这个
