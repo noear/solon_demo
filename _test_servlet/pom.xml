@@ -23,7 +23,6 @@
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon-web</artifactId>
-            <type>pom</type>
         </dependency>
         <dependency>
             <groupId>org.noear</groupId>
