@@ -39,7 +39,6 @@
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon.extend.undertow.jsp</artifactId>
-            <type>pom</type>
         </dependency>
 
         <!-- 添加 jsp 视图渲染器 -->
