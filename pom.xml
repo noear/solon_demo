@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>1.2.18</version>
+        <version>1.2.22</version>
     </parent>
 
     <modules>
@@ -33,6 +33,7 @@
         <module>demo02.solon_rpc</module>
         <module>demo02.solon_servlet</module>
         <module>demo04.solon_mvc_jsp</module>
+        <module>demo04.solon_websocket</module>
         <module>demo05.solon_mvc_undertow_jsp</module>
         <module>demo06.solon_hessian_rpc</module>
         <module>demo07.solon_weed</module>

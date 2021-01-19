@@ -1,7 +1,7 @@
 package stringboot_demo.controller;
 
-import org.noear.solon.Solon;
-import org.noear.solon.core.Aop;
+//import org.noear.solon.Solon;
+//import org.noear.solon.core.Aop;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import stringboot_demo.dso.HelloService;
@@ -22,12 +22,12 @@ public class Text2Controller {
     public String home(String msg) throws Exception {
         //使用Solon的手写特性赋值，进行懒加载
         //
-        if(helloService == null){
-            helloService = Aop.get(HelloService.class);
-        }
+//        if(helloService == null){
+//            helloService = Aop.get(HelloService.class);
+//        }
+//
+//        String name = Solon.cfg().get("user.name");
 
-        String name = Solon.cfg().get("user.name");
-
-        return "springboot: " + helloService.hello(name);
+        return "springboot: " + helloService.hello(msg);
     }
 }
