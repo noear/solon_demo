@@ -1,14 +1,12 @@
 package webapp.client;
 
 import org.noear.nami.annotation.NamiClient;
-import org.noear.nami.integration.solon.EnableNamiClient;
 import org.noear.solon.Solon;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.core.Aop;
 import webapp.protocol.UserModel;
 import webapp.protocol.UserService;
 
-@EnableNamiClient
 @Component
 public class RpcClient {
     public static void main(String[] args) {
@@ -21,11 +19,11 @@ public class RpcClient {
     }
 
     //直接指定服务端地址
-    @NamiClient("http://localhost:8080/user/")
+    @NamiClient(url="http://localhost:8080/user/")
     UserService userService;
 
     //使用负载
-    @NamiClient("local:/user/")
+    @NamiClient(name = "local",path = "/user/")
     UserService userService2;
 
     public void test() {
