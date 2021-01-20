@@ -18,7 +18,6 @@
         <version>1.2.23</version>
     </parent>
 
-
     <modules>
         <module>_test_protostuff</module>
         <module>_test_servlet</module>
