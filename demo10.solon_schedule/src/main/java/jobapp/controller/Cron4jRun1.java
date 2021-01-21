@@ -7,7 +7,6 @@ import java.util.Date;
 
 @Cron4j(cron5x = "200ms", name = "job1")
 public class Cron4jRun1 implements Runnable {
-
     @Override
     public void run() {
         System.out.println("我是定时任务: Cron4jRun1(200ms) -- " + new Date().toString());
