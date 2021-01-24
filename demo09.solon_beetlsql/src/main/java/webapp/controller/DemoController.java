@@ -1,7 +1,9 @@
 package webapp.controller;
 
+import org.beetl.sql.core.SQLManager;
 import org.beetl.sql.ext.solon.Db;
 import org.noear.solon.annotation.Controller;
+import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
 import webapp.dso.mapper.SqlMapper;
 
@@ -13,6 +15,9 @@ public class DemoController {
      * */
     @Db
     SqlMapper sqlMapper1;
+
+    @Db
+    SQLManager sqlManager;
 
 
     @Mapping("/test")
