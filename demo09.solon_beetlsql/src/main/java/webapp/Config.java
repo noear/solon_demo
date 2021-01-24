@@ -10,8 +10,7 @@ import javax.sql.DataSource;
 
 @Configuration
 public class Config {
-    //@Bean(attrs = {"dialect=oracle"}) //通过特性，指定BeetlSQL的方言
-    @Bean
+    @Bean(attrs = {"dialect=mysql"}) //通过特性，指定BeetlSQL的方言
     public DataSource db1(@Inject("${test.db1}") HikariDataSource dataSource) {
         return dataSource;
     }
