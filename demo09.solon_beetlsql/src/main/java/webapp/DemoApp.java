@@ -2,6 +2,7 @@ package webapp;
 
 import org.beetl.sql.core.SQLManagerBuilder;
 import org.beetl.sql.core.db.OracleStyle;
+import org.beetl.sql.ext.DebugInterceptor;
 import org.noear.solon.Solon;
 
 /**
