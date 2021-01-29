@@ -5,6 +5,7 @@ import org.beetl.sql.ext.solon.Db;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
+import webapp.dso.dao.AppxDao;
 import webapp.dso.mapper.SqlMapper;
 
 @Mapping("/demo/")
@@ -19,10 +20,16 @@ public class DemoController {
     @Db
     SQLManager sqlManager;
 
+    @Db
+    AppxDao appxDao;
+
 
     @Mapping("/test")
     public Object test() throws Exception{
-        return sqlMapper1.appx_get2(1);
+
+        return appxDao.single(1);
+
+        //return sqlMapper1.appx_get2(1);
     }
 
     @Mapping("/test2")
