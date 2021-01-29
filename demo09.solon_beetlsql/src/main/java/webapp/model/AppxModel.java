@@ -11,10 +11,10 @@ import org.beetl.sql.annotation.entity.Table;
 @Data
 @Accessors(chain = true)
 public class AppxModel {
+    @AssignID
     private int agroup_id;
     private String note;
     private String app_key;
-    @AssignID
     private int app_id;
     private int ar_is_examine;
 }
