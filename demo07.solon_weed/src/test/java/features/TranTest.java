@@ -17,12 +17,6 @@ public class TranTest extends HttpTestBase {
     @Db
     DbContext db;
 
-    @Override
-    public boolean enablePrint() {
-        return true;
-    }
-
-
     @Test
     public void test() throws Exception {
         clear(db);

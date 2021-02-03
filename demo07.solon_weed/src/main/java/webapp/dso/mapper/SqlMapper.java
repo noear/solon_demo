@@ -12,6 +12,8 @@ public interface SqlMapper {
     //随便取条数据的ID
     int appx_get() throws Exception;
 
+    Integer appx_get0() throws Exception;
+
     //根据id取条数据
     AppxModel appx_get2(int app_id) throws Exception;
 

@@ -15,10 +15,6 @@ public class TranCacheTest extends HttpTestBase {
     @Db
     DbContext db;
 
-    @Override
-    public boolean enablePrint() {
-        return true;
-    }
     @Test
     public void test0() throws Exception {
         clear(db);
