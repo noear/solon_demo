@@ -60,14 +60,17 @@ public class MongoTest2 {
 
 
         Document filter = new Document();
-        filter.append("id", 3);
+        filter.append("id", 5);
 
+
+        Document data = new Document();
+        //newDoc.append("_id", "4cc5d1a21ca7447ca173305ed556d697");
+        data.put("id", 5);
+        data.put("name", "noear-update");
+        //newDoc.append("level",1);
 
         Document newDoc = new Document();
-        //newDoc.append("_id", "4cc5d1a21ca7447ca173305ed556d697");
-        newDoc.append("id", 3);
-        newDoc.append("name", "noear-update");
-        //newDoc.append("level",1);
+        newDoc.put("$set", data);
 
         coll.updateOne(filter, newDoc);
     }

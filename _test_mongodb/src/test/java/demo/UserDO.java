@@ -8,6 +8,7 @@ import java.io.Serializable;
 
 public class UserDO implements Serializable {
     private long id;
+    private int type;
     private String name;
     private String nickname;
 
@@ -17,6 +18,14 @@ public class UserDO implements Serializable {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 
     public String getName() {
