@@ -7,6 +7,9 @@ import org.noear.solon.test.SolonTest;
 import org.noear.weed.annotation.Db;
 import webapp.DemoApp;
 import webapp.dso.mapper.SqlMapper;
+import webapp.model.AppxModel;
+
+import java.util.Set;
 
 /**
  * @author noear 2021/2/3 created
@@ -23,5 +26,14 @@ public class Test0 {
         assert  tmp == null;
 
         assert  sqlMapper.appx_get() > 0;
+    }
+
+    @Test
+    public void test1() throws Exception{
+        Set<Integer> sets = sqlMapper.appx_getids2();
+
+        System.out.println(sets);
+
+        assert sets.size() == 4;
     }
 }

@@ -47,7 +47,7 @@ public class MongoTest2 {
     public void test3() {
         db.table("user")
                 .set("name", "noear-update")
-                .whereEq("id", 5)
+                .whereEq("id", 5).andLk("name","^/no")
                 .update();
     }
 
@@ -84,6 +84,7 @@ public class MongoTest2 {
         List<UserDO> mapList =  db.table("user")
                 .whereEq("type",1)
                 .orderByAsc("id")
+                .limit(10,10)
                 .selectList(UserDO.class);
 
         System.out.println(mapList);
