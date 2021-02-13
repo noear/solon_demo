@@ -53,7 +53,7 @@
 
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt-jackson</artifactId>
+            <artifactId>jjwt-orgjson</artifactId>
             <version>0.11.2</version>
         </dependency>
 
