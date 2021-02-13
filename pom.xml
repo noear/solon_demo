@@ -50,6 +50,7 @@
         <module>demo12.solon_aio_http_mvc</module>
 
         <module>demo13.solon_jwt</module>
+        <module>demo13.solon_jwt2</module>
         <module>demo14.solon_swagger</module>
 <!--        <module>demo15.solon_ipfs</module>-->
 
