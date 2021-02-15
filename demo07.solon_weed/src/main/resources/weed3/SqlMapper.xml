@@ -7,7 +7,7 @@
         select app_id from appx limit 1
     </sql>
 
-    <sql id="appx_get0" return="int" remarks="随便取条数据的ID">
+    <sql id="appx_get0" return="Integer" remarks="随便取条数据的ID">
         <![CDATA[
         select app_id from appx where app_id < 1 limit 1
         ]]>

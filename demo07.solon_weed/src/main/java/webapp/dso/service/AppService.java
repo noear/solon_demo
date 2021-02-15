@@ -1,15 +1,15 @@
 package webapp.dso.service;
 
-import org.noear.solon.annotation.Inject;
 import org.noear.solon.extend.aspect.annotation.Service;
 import org.noear.solon.extend.data.annotation.Cache;
 import org.noear.solon.extend.data.annotation.Tran;
 import org.noear.solon.extend.data.tran.TranPolicy;
+import org.noear.weed.annotation.Db;
 import webapp.dso.mapper.SqlMapper;
 
 @Service
 public class AppService {
-    @Inject
+    @Db
     SqlMapper sqlMapper1;
 
     public Object getApp(int app_id) throws Exception {
