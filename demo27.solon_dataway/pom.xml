@@ -41,7 +41,7 @@
         <dependency>
             <groupId>net.hasor</groupId>
             <artifactId>hasor-dataway</artifactId>
-            <version>4.2.1</version>
+            <version>4.2.3</version>
         </dependency>
 
         <!-- 线程池 -->
