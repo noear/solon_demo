@@ -34,8 +34,9 @@
         solon-api 和 solon-mvc 的区别是：前者没有模板和SessionState
         -->
         <dependency>
-            <groupId>org.noear.solon</groupId>
-            <artifactId>beetl-web</artifactId>
+            <groupId>org.noear</groupId>
+            <artifactId>solon-beetl-web</artifactId>
+            <version>${solon.ver}</version>
         </dependency>
 
         <dependency>
