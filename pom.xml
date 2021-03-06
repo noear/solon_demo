@@ -27,6 +27,7 @@
 <!--        <module>_test_rsocket</module>-->
         <module>_test_mqtt</module>
         <module>_test_coap</module>
+        <module>_test_sentinel</module>
 
         <module>demo01.solon_tmp</module>
         <module>demo01.solon_simple</module>
