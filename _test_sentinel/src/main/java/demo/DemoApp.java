@@ -18,20 +18,13 @@ public class DemoApp {
         initFlowRules();
 
         while (true) {
-            Entry entry = null;
-            try {
-                entry = SphU.entry("HelloWorld");
-                /*您的业务逻辑 - 开始*/
+            // 1.5.0 版本开始可以直接利用 try-with-resources 特性，自动 exit entry
+            try (Entry entry = SphU.entry("HelloWorld")) {
+                // 被保护的逻辑
                 System.out.println("hello world");
-                /*您的业务逻辑 - 结束*/
-            } catch (BlockException e1) {
-                /*流控逻辑处理 - 开始*/
-                System.out.println("block!");
-                /*流控逻辑处理 - 结束*/
-            } finally {
-                if (entry != null) {
-                    entry.exit();
-                }
+            } catch (BlockException ex) {
+                // 处理被流控的逻辑
+                System.out.println("blocked!");
             }
         }
     }
