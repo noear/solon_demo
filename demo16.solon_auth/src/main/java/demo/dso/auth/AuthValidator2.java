@@ -5,10 +5,12 @@ import org.noear.solon.core.handle.Result;
 import org.noear.solon.extend.validation.Validator;
 
 /**
+ * 尝试不同的输出效果
+ *
  * @author noear 2021/3/10 created
  */
-public class AuthValidator implements Validator<Auth> {
-    public static final AuthValidator instance = new AuthValidator();
+public class AuthValidator2 implements Validator<Auth> {
+    public static final AuthValidator2 instance = new AuthValidator2();
 
     @Override
     public String message(Auth anno) {
@@ -24,6 +26,9 @@ public class AuthValidator implements Validator<Auth> {
                 return Result.succeed();
             }
         }
+
+        //将宣染状态设为已宣染（后续只输出http status，不输出内容）
+        ctx.setRendered(true);
 
         return Result.failure(401);
     }
