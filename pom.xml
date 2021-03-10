@@ -55,6 +55,8 @@
         <module>demo14.solon_swagger</module>
 <!--        <module>demo15.solon_ipfs</module>-->
 
+        <module>demo16.solon_auth</module>
+
         <module>demo20.solon_db_weed_snack</module>
 
         <module>demo21.solon_db_mybatis_fastjson</module>
