@@ -9,7 +9,7 @@ import org.noear.solon.extend.validation.annotation.Valid;
 /**
  * @author noear 2021/3/10 created
  */
-@Valid
+@Valid //这个可以注解在基类上
 @Controller
 public class DemoController {
 
