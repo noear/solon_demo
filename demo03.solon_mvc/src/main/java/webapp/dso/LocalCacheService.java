@@ -1,14 +1,14 @@
 package webapp.dso;
 
 import org.noear.solon.core.cache.CacheService;
-import org.noear.weed.cache.memcached.MemCache;
+import org.noear.weed.cache.LocalCache;
 
 import java.util.Properties;
 
-public class MemCacheService implements CacheService {
-    MemCache cache;
-    public MemCacheService(Properties prop){
-        cache = new MemCache(prop);
+public class LocalCacheService implements CacheService {
+    LocalCache cache;
+    public LocalCacheService(){
+        cache = new LocalCache();
     }
 
     @Override

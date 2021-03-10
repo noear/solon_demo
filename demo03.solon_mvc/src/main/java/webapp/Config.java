@@ -3,9 +3,11 @@ package webapp;
 import org.noear.solon.Utils;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
+import org.noear.solon.core.cache.CacheService;
 import org.noear.solon.extend.validation.ValidatorManager;
 import org.noear.solon.extend.validation.annotation.Date;
 import org.noear.solon.extend.validation.annotation.DateValidator;
+import webapp.dso.LocalCacheService;
 
 
 @Configuration
@@ -45,9 +47,11 @@ public class Config {
 //        return new NotCacheService();
 //    }
 
-//    @Bean("cache1")
-//    public CacheService cache1(@Inject("${cache1}") Properties props) {
-//        return new MemCacheService(props);
-//    }
-
+    /**
+     * 定义一个缓存服务
+     * */
+    @Bean
+    public CacheService cache1() {
+        return new LocalCacheService();
+    }
 }
