@@ -31,7 +31,7 @@ public class CacheByKeyController3 {
      * 执行后，清除 标签为 test_${label}  的缓存
      */
     @CachePut(key = "test3_${label}")
-    @CacheRemove(keys = "test2")
+    @CacheRemove(key = "test2")
     @Mapping("/cache3/update")
     public String remove(int label) {
         return "清除成功-" + new Date();
