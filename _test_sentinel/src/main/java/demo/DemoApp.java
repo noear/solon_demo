@@ -6,6 +6,7 @@ import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.alibaba.csp.sentinel.slots.block.RuleConstant;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowRule;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowRuleManager;
+import org.noear.solon.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,31 +15,36 @@ import java.util.List;
  * @author noear 2021/3/6 created
  */
 public class DemoApp {
-    public static void main(String[] args) throws Exception{
-        initFlowRules();
+    public static void main(String[] args) throws Exception {
+        initFlowRules("HelloWorld", 2);
 
-        while (true) {
-            // 1.5.0 版本开始可以直接利用 try-with-resources 特性，自动 exit entry
-            try (Entry entry = SphU.entry("HelloWorld")) {
-                // 被保护的逻辑
-                System.out.println("hello world");
-            } catch (BlockException ex) {
-                // 处理被流控的逻辑
-                System.out.println("blocked!");
-            }
+        for (int i = 0; i < 100; i++) {
+            Utils.pools.submit(() -> {
+                try (Entry entry = SphU.asyncEntry("HelloWorld")) {
+                    System.out.println("hello world");
+                } catch (BlockException ex) {
+                    System.out.println("blocked!");
+                }
+            });
         }
     }
 
-    private static void initFlowRules(){
-        List<FlowRule> rules = new ArrayList<>();
-        FlowRule rule = new FlowRule();
+    private static void initFlowRules(String breakerName, int permits) {
+        List<FlowRule> ruleList = new ArrayList<>();
+        FlowRule rule = null;
 
-        rule.setResource("HelloWorld");
-        rule.setGrade(RuleConstant.FLOW_GRADE_QPS);
-        // Set limit QPS to 20.
-        rule.setCount(2000);
-        rules.add(rule);
+        rule = new FlowRule();
+        rule.setResource(breakerName);
+        rule.setGrade(RuleConstant.FLOW_GRADE_QPS); //qps
+        rule.setCount(permits);
+        ruleList.add(rule);
 
-        FlowRuleManager.loadRules(rules);
+        rule = new FlowRule();
+        rule.setResource(breakerName);
+        rule.setGrade(RuleConstant.FLOW_GRADE_THREAD); //并发数
+        rule.setCount(permits);
+        ruleList.add(rule);
+
+        FlowRuleManager.loadRules(ruleList);
     }
 }
