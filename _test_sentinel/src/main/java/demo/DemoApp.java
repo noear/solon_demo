@@ -20,7 +20,7 @@ public class DemoApp {
 
         for (int i = 0; i < 100; i++) {
             Utils.pools.submit(() -> {
-                try (Entry entry = SphU.asyncEntry("HelloWorld")) {
+                try (Entry entry = SphU.entry("HelloWorld")) {
                     System.out.println("hello world");
                 } catch (BlockException ex) {
                     System.out.println("blocked!");
