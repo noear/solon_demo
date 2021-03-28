@@ -20,6 +20,7 @@
 
     <modules>
         <module>_test_protostuff</module>
+<!--        <module>_test_jdoc</module>-->
         <module>_test_servlet</module>
         <module>_test_metrics</module>
         <module>_test_mongodb</module>
