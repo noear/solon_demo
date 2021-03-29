@@ -29,6 +29,12 @@
             <artifactId>luffy-solon-plugin</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>luffy.executor.s.ruby</artifactId>
+            <version>${luffy.ver}</version>
+        </dependency>
+
 
         <dependency>
             <groupId>org.noear</groupId>
