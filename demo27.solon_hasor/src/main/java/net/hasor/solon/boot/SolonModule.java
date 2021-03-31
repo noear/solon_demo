@@ -5,7 +5,7 @@ import org.noear.solon.core.Aop;
 
 import java.util.function.Supplier;
 
-public interface SolonModule extends Module {
+public interface SolonModule extends net.hasor.core.Module {
     /**
      * 获取 SpringTypeSupplier
      */
