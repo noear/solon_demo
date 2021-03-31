@@ -11,6 +11,6 @@ public class TestApp {
     public static void main(String[] args) {
         SolonApp app = Solon.start(TestApp.class, args);
 
-        app.all("/**", new LuffyHandler());
+        app.all("**", new LuffyHandler());
     }
 }
