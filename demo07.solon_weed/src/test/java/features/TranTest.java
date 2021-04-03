@@ -158,6 +158,30 @@ public class TranTest extends HttpTestBase {
         assert count == 0;
     }
 
+    @Test
+    public void test74() throws Exception {
+        clear(db);
+        path("/tran/test74").get();
+        path("/tran/test74").get();
+        path("/tran/test74").get();
+
+        long count = db.table("test").selectCount();
+        System.out.println(count);
+        assert count == 0;
+    }
+
+    @Test
+    public void test75() throws Exception {
+        clear(db);
+        path("/tran/test75").get();
+        path("/tran/test75").get();
+        path("/tran/test75").get();
+
+        long count = db.table("test").selectCount();
+        System.out.println(count);
+        assert count == 1;
+    }
+
     private void clear(DbContext db) throws Exception {
         db.exe("TRUNCATE TABLE test");
     }

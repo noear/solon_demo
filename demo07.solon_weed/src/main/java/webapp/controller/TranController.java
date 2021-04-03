@@ -137,4 +137,23 @@ public class TranController {
         //
         appService.addApp6();
     }
+
+    @Tran(readOnly = true)
+    @Mapping("test74")
+    public void test74() throws Exception {
+        //会失败
+        //
+        appService.addApp();
+    }
+
+    @Tran(readOnly = true)
+    @Mapping("test75")
+    public void test75() throws Exception {
+        //会成功
+        //
+        appService.addApp52();
+        //会失败
+        //
+        appService.addApp();
+    }
 }
