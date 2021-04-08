@@ -17,11 +17,11 @@ import java.util.concurrent.ScheduledExecutorService;
  * @author noear 2020/12/19 created
  */
 public class Subscriber {
-    public static final String HOST ="tcp://localhost:51883";
+    public static final String HOST ="tcp://localhost:41883";
 
     public static final String TOPIC ="speedTopic";
 
-    private static final String clientid ="client83";
+    private static final String clientid ="server84";
 
     private MqttClient  client;
 
@@ -61,7 +61,7 @@ public class Subscriber {
 
             //遗言
 
-            options.setWill(topic, "close".getBytes(), 2, true);
+            //options.setWill(topic, "close".getBytes(), 2, true);
 
             client.connect(options);
 
