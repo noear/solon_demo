@@ -6,6 +6,8 @@ import static org.mockito.Mockito.mock;
 import demo.impl.UserModel;
 import demo.impl.UserService;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.noear.solon.test.SolonJUnit4ClassRunner;
 
 import java.util.List;
 
@@ -13,7 +15,7 @@ import java.util.List;
  * @author noear 2021/4/14 created
  */
 
-public class DemoTest {
+public class MockTest {
     @Test
     public void test(){
         //create mock
