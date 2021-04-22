@@ -8,5 +8,12 @@ import org.noear.solon.Solon;
 public class ServerApp {
     public static void main(String[] args) {
         Solon.start(ServerApp.class, args);
+
+        /**
+         * http://localhost:8080/api/rpc/getUser
+         *
+         * http://localhost:8080/api/rest/getUser
+         *
+         * */
     }
 }
