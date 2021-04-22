@@ -10,9 +10,12 @@ public class ServerApp {
         Solon.start(ServerApp.class, args);
 
         /**
-         * http://localhost:8080/api/rpc/getUser
+         * 测试1：运行后可在浏览器打开这两地址，试效果：
          *
-         * http://localhost:8080/api/rest/getUser
+         * http://localhost:8080/api/rpc/user/getUser
+         * http://localhost:8080/api/rest/user/getUser
+         *
+         * 测试2：运行后，再启动 ClientApp 看效果
          *
          * */
     }
