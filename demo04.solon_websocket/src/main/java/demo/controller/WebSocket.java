@@ -10,7 +10,6 @@ import java.io.IOException;
 /**
  * @author noear 2021/4/22 created
  */
-
 @ServerEndpoint(value = "**")
 public class WebSocket implements Listener {
     @Override
