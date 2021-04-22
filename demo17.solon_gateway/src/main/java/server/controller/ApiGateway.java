@@ -1,7 +1,9 @@
 package server.controller;
 
+import org.noear.snack.ONode;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.annotation.Mapping;
+import org.noear.solon.core.Aop;
 import org.noear.solon.core.handle.Context;
 import org.noear.solon.core.handle.Gateway;
 import server.dso.remote.UserServiceImpl;
@@ -21,5 +23,13 @@ public class ApiGateway extends Gateway {
 
         //添加服务
         add("user", UserServiceImpl.class, true);
+
     }
+
+//   也可以直接修改宣染
+//
+//    @Override
+//    public void render(Object obj, Context c) throws Throwable {
+//        c.outputAsJson(ONode.stringify(obj));
+//    }
 }
