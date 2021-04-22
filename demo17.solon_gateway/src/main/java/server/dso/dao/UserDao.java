@@ -1,4 +1,4 @@
-package server.dso.db;
+package server.dso.dao;
 
 import common.UserModel;
 import org.noear.solon.annotation.Component;

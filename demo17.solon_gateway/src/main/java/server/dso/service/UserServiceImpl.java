@@ -1,11 +1,11 @@
-package server.dso.remote;
+package server.dso.service;
 
 import common.UserModel;
 import common.UserService;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.core.handle.Result;
-import server.dso.db.UserDao;
+import server.dso.dao.UserDao;
 
 /**
  * @author noear 2021/4/22 created
