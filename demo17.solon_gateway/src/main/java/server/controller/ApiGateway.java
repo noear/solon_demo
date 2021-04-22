@@ -17,9 +17,9 @@ public class ApiGateway extends Gateway {
     @Override
     protected void register() {
         //或者由此
-        before(c->c.attrSet("@render","@json"));
+        before(c -> c.attrSet("@render", "@json"));
 
         //添加服务
-        add(UserServiceImpl.class, true);
+        add("user", UserServiceImpl.class, true);
     }
 }

@@ -14,9 +14,9 @@ import server.dso.remote.UserServiceImpl;
 public class RpcGateway extends Gateway {
     @Override
     protected void register() {
-        before(c->c.attrSet("@render","@type_json"));
+        before(c -> c.attrSet("@render", "@type_json"));
 
         //添加服务（不带mapping的函数；需要 remoting = true，才会加载出来）
-        add(UserServiceImpl.class, true);
+        add("user", UserServiceImpl.class, true);
     }
 }
