@@ -1,4 +1,4 @@
-package demo.controller;
+package server.controller;
 
 import demo.dso.auth.Auth;
 import static demo.dso.auth.AuthRole.*;

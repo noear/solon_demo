@@ -59,6 +59,7 @@
 <!--        <module>demo15.solon_ipfs</module>-->
 
         <module>demo16.solon_auth</module>
+        <module>demo17.solon_gateway</module>
 
         <module>demo20.solon_db_weed_snack</module>
 
