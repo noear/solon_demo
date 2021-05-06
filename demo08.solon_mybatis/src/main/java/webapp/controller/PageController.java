@@ -21,5 +21,7 @@ public class PageController {
         SqlPaginations.preparePagination(2,2);
 
        return appxMapper.appx_get_page();
+
+
     }
 }
