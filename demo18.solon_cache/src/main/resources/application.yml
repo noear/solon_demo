@@ -4,3 +4,9 @@ solon.app.name: demo1
 cache1:
   server: memcached.water.io:11211
   user: memcached
+
+
+cache2:
+  server: redis.water.io:6379
+  user: redis
+  password: 123456
