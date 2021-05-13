@@ -1,5 +1,7 @@
 
-solon.app.name: demo1
+solon.app:
+  name: demoapp
+  group: demo
 
 cache1:
   server: memcached.water.io:11211
