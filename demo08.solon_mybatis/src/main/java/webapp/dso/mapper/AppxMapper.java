@@ -12,5 +12,6 @@ public interface AppxMapper {
     List<AppxModel> appx_get_page();
     AppxModel appx_get2(int app_id);
     void appx_add();
+    Integer appx_add2(int v1);
 }
 

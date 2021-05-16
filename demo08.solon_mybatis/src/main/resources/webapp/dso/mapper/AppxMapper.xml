@@ -10,11 +10,15 @@
     </select>
 
     <select id="appx_get2" resultType="AppxModel">
-        select * from appx where app_id=${app_id} limit 1;
+        select * from appx where app_id=#{app_id} limit 1;
     </select>
 
     <insert id="appx_add">
         insert into test (v1) values (1024);
+    </insert>
+
+    <insert id="appx_add2">
+        insert into test (v1) values (#{v1});
     </insert>
 
 </mapper>
