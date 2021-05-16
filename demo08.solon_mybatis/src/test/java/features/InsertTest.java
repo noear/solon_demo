@@ -7,7 +7,6 @@ import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
 import webapp.DemoApp;
 import webapp.dso.mapper.AppxMapper;
-import webapp.dso.mapper.TestModel;
 
 /**
  * @author noear 2021/5/16 created
