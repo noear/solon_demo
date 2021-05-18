@@ -3,12 +3,13 @@ package webapp.server;
 import org.noear.solon.Solon;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.annotation.Mapping;
+import org.noear.solon.annotation.Remoting;
 import webapp.protocol.UserModel;
 import webapp.protocol.UserService;
 
 //开启bean的远程服务
-@Component(remoting = true)
 @Mapping("/user/")
+@Remoting
 public class RpcService implements UserService {
     public static void main(String[] args) {
         Solon.start(RpcService.class, args);
