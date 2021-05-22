@@ -13,10 +13,13 @@ import java.io.IOException;
 @ServerEndpoint(value = "**")
 public class WebSocket implements Listener {
     @Override
-    public void onMessage(Session session, Message message) throws IOException {
-        //请求参数
+    public void onOpen(Session session) {
+        //请求参数（想签权，可以在这里做；有问题请求，这里可以close掉）
         System.out.println(session.paramMap());
+    }
 
+    @Override
+    public void onMessage(Session session, Message message) throws IOException {
         //请求地址
         System.out.println(session.path() + ":" + message.resourceDescriptor());
 
