@@ -14,6 +14,10 @@ import java.io.IOException;
 public class WebSocket implements Listener {
     @Override
     public void onMessage(Session session, Message message) throws IOException {
+        //请求参数
+        System.out.println(session.paramMap());
+
+        //请求地址
         System.out.println(session.path() + ":" + message.resourceDescriptor());
 
         //分发给所有客户端
