@@ -1,16 +1,75 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<configuration debug="false" scan="true" scanPeriod="1 seconds">
+<?xml version="1.0" encoding="UTF-8" ?>
 
-    <contextName>logback</contextName>
+<!DOCTYPE configuration>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <!-- 配置文件路径 -->
+    <property name="LOG_HOME" value="../logs"/>
+    <!-- 控制台输出日志 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %magenta(${PID:-}) %white(-&#45;&#45;) %-20(%yellow([%20.20thread])) %-55(%cyan(%.32logger{30}:%L)) %msg%n</pattern>
+        </layout>
+    </appender>
+    <!-- 文件输出日志 (文件大小策略进行文件输出，超过指定大小对文件压缩(.zip)备份)-->
+    <appender name="INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--<filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level> &lt;!&ndash; 指定要对级别为ERROR日志信息过滤 &ndash;&gt;
+            <OnMatch>ACCEPT</OnMatch>           &lt;!&ndash; 如果不匹配，下个过滤器处理 &ndash;&gt;
+            <OnMismatch>DENY</OnMismatch>    &lt;!&ndash; 如果匹配，则立即处理 &ndash;&gt;
+        </filter>-->
 
-    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- 文件的路径及文件名 -->
+        <File>${LOG_HOME}/stdout.log</File>
+        <!-- 配置日志所生成的目录以及生成文件名的规则 在logs/stdout_2016-10-31.0.log -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/stdout_%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+            <!-- 如果按天来回滚，则最大保存时间为90天，90天之前的都将被清理掉 -->
+            <maxHistory>90</maxHistory>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!-- 最大64MB 超过最大值，会重新建一个文件-->
+                <maxFileSize>1 GB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <!-- 格式化输出 -->
+        <!-- 或者用下面的形式格式(推荐)-->
         <encoder>
-            <pattern>%d{HH:mm:ss.SSS} %contextName [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %magenta(${PID:-}) %white(-&#45;&#45;) %-20(%yellow([%20.20thread])) %-55(%cyan(%.32logger{30}:%L)) %msg%n</pattern>
+            <charset>UTF-8</charset>
         </encoder>
     </appender>
+    <!-- 输出ERROR级别的日志到文件(同样采用文件大小策略进行文件输出，超过指定大小对文件压缩(.zip)备份) -->
+    <appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level> <!-- 指定要对级别为ERROR日志信息过滤 -->
+            <OnMatch>ACCEPT</OnMatch>         <!-- 如果匹配，则立即处理 -->
+            <OnMismatch>DENY</OnMismatch>     <!-- 如果不匹配，下个过滤器处理 -->
+        </filter>
 
-    <root level="info">
-        <appender-ref ref="console"/>
+        <File>${LOG_HOME}/stderr.log</File> <!-- 文件名即路径 -->
+        <!-- 配置日志所生成的目录以及生成文件名的规则 在logs/stderr_2016-10-31.0.log -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/stderr_%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+            <!-- 如果按天来回滚，则最大保存时间为90天，90天之前的都将被清理掉 -->
+            <maxHistory>90</maxHistory>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!-- 最大64MB 超过最大值，会重新建一个文件-->
+                <maxFileSize>1GB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <!-- 格式化输出 -->
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %magenta(${PID:-}) %white(-&#45;&#45;) %-20(%yellow([%20.20thread])) %-55(%cyan(%.32logger{30}:%L)) %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+    <!-- 分别将STDOUT与FILE appender都添加到自定义的logger中，否则将不会输出到appender指定的 目的地-->
+
+    <root level="INFO">    <!-- root logger，定义级别为debug-->
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="ERROR"/>
+        <appender-ref ref="INFO"/>
     </root>
 
 </configuration>
