@@ -2,6 +2,7 @@ package webapp.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.noear.weed.annotation.Table;
 
 @Getter
 @Setter
