@@ -62,6 +62,7 @@
         <module>demo16.solon_auth</module>
         <module>demo17.solon_gateway</module>
         <module>demo18.solon_cache</module>
+        <module>demo19.solon_log_logback</module>
 
         <module>demo20.solon_db_weed_snack</module>
 
