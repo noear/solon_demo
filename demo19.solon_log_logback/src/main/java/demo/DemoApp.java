@@ -3,6 +3,7 @@ package demo;
 import lombok.extern.slf4j.Slf4j;
 import org.noear.solon.Solon;
 import org.noear.solon.annotation.Controller;
+import org.noear.solon.annotation.Init;
 import org.noear.solon.annotation.Mapping;
 
 /**
@@ -15,6 +16,11 @@ public class DemoApp {
         Solon.start(DemoApp.class, args);
 
         log.info("Solon 启动了");
+    }
+
+    @Init
+    public void init(){
+        log.info("---------------init-----------");
     }
 
     @Mapping("/")
