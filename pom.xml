@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>1.4.4</version>
+        <version>1.4.2</version>
     </parent>
 
 
@@ -48,7 +48,7 @@
         <module>demo07.solon_weed_multisource</module>
         <module>demo08.solon_mybatis</module>
         <module>demo08.solon_mybatis_multisource</module>
-        <module>demo09.solon_activerecord</module>
+<!--        <module>demo09.solon_activerecord</module>-->
         <module>demo09.solon_beetlsql</module>
         <module>demo09.solon_beetlsql_multisource</module>
 
