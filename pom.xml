@@ -37,6 +37,7 @@
         <module>demo01.solon_simple</module>
         <module>demo02.solon_helloworld</module>
         <module>demo03.solon_mvc</module>
+        <module>demo03.solon_ext</module>
         <module>demo02.solon_rpc</module>
         <module>demo02.solon_servlet</module>
         <module>demo04.solon_mvc_jsp</module>
