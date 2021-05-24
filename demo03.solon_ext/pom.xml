@@ -35,7 +35,7 @@
         -->
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon-web</artifactId>
+            <artifactId>solon-lib</artifactId>
         </dependency>
 
         <dependency>
