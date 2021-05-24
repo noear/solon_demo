@@ -8,9 +8,10 @@ import webapp.model.AppxModel;
 /**
  * @author noear 2021/5/24 created
  */
+@Mapping("/demo/")
 @Controller
 public class DemoController {
-    @Mapping("/")
+    @Mapping("")
     public Object test(){
         return Db.template("appx_get").findFirst();
     }

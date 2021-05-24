@@ -61,8 +61,8 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>weed3</artifactId>
-            <version>${weed3.ver}</version>
+            <artifactId>weed3-solon-plugin</artifactId>
+            <version>${solon.ver}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
