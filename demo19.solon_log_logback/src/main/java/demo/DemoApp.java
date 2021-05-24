@@ -15,12 +15,12 @@ public class DemoApp {
     public static void main(String[] args){
         Solon.start(DemoApp.class, args);
 
-        log.info("Solon 启动了");
+        log.info("Solon 启动完成");
     }
 
     @Init
     public void init(){
-        log.info("---------------init-----------");
+        log.info("---------------DemoApp init-----------");
     }
 
     @Mapping("/")
