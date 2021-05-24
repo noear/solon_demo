@@ -73,7 +73,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>server.App</mainClass>
+                            <mainClass>demo.DemoApp</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
