@@ -40,7 +40,7 @@ public class TranTest extends HttpTestBase {
         path("/tran/test11").get();
         path("/tran/test11").get();
         path("/tran/test11").get();
-        assert db.table("test").count() == 3;
+        assert db.table("test").selectCount() == 3;
     }
 
     @Test
@@ -49,7 +49,7 @@ public class TranTest extends HttpTestBase {
         path("/tran/test12").get();
         path("/tran/test12").get();
         path("/tran/test12").get();
-        assert db.table("test").count() == 3;
+        assert db.table("test").selectCount() == 3;
     }
 
     @Test
@@ -58,7 +58,7 @@ public class TranTest extends HttpTestBase {
         path("/tran/test21").get();
         path("/tran/test21").get();
         path("/tran/test21").get();
-        assert db.table("test").count() == 3;
+        assert db.table("test").selectCount() == 3;
     }
 
     @Test
@@ -67,7 +67,7 @@ public class TranTest extends HttpTestBase {
         path("/tran/test22").get();
         path("/tran/test22").get();
         path("/tran/test22").get();
-        long count = db.table("test").count();
+        long count = db.table("test").selectCount();
         System.out.println(count);
         assert count == 0;
     }
