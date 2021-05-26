@@ -26,5 +26,9 @@ public class DemoApp {
     public static void main(String[] args) {
         Solon.start(DemoApp.class, args)
                 .onError((err) -> err.printStackTrace());
+
+        if(Solon.global() == null){
+            return;
+        }
     }
 }

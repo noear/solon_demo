@@ -14,6 +14,13 @@ mybatis.db1:
     mappers:        #支持包名 或 类名（.class 结尾）或 xml（.xml结尾）
         - "webapp.dso.mapper"
 
+#mybatis.plugin:
+#    - pagehelper:
+#        class: com.github.pagehelper.PageHelper
+#        dialect: mysql
+#        rowBoundsWithCount: true
+
+
 #分页组件的配置
 sqlhelper:
     mybatis:
