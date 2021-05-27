@@ -1,6 +1,7 @@
 package demo2;
 
 import demo.UserDO;
+import org.bson.Document;
 import org.junit.Test;
 import org.noear.solon.Utils;
 import org.noear.weed.mongo.MgContext;
@@ -12,10 +13,9 @@ import java.util.Map;
  * @author noear 2021/2/5 created
  */
 public class MongoTest2 {
-    String serverIp = "172.168.0.162";
-    int serverPort = 27017;
+    String url = "mongodb://172.168.0.162:27017";
 
-    MgContext db = new MgContext(serverIp, serverPort, "demo");
+    MgContext db = new MgContext(url, "demo");
 
     @Test
     public void test1() {
@@ -71,7 +71,7 @@ public class MongoTest2 {
 
     @Test
     public void test5() {
-        List<Map<String,Object>> mapList =  db.table("user")
+        List<Document> mapList =  db.table("user")
                 .whereEq("type",1)
                 .orderByAsc("id")
                 .selectMapList();
