@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear</groupId>
-    <artifactId>demo16.solon_auth_custom</artifactId>
+    <artifactId>demo16.solon_auth</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
@@ -18,6 +18,7 @@
         <version>1-SNAPSHOT</version>
     </parent>
 
+
     <dependencies>
         <!--
         solon-api 和 solon-mvc 的区别是：前者没有模板和SessionState
@@ -29,7 +30,13 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.extend.sessionstate.jwt</artifactId>
+            <artifactId>solon.extend.auth</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>bcfclient-solon-plugin</artifactId>
+            <version>2.0.20</version>
         </dependency>
 
         <dependency>
