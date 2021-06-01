@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear</groupId>
-    <artifactId>demo16.solon_auth</artifactId>
+    <artifactId>demo16.solon_auth_custom</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 

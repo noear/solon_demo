@@ -61,7 +61,7 @@
         <module>demo14.solon_swagger</module>
 <!--        <module>demo15.solon_ipfs</module>-->
 
-        <module>demo16.solon_auth</module>
+        <module>demo16.solon_auth_custom</module>
         <module>demo17.solon_gateway</module>
         <module>demo18.solon_cache</module>
         <module>demo19.solon_log_logback</module>
