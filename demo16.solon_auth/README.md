@@ -1,5 +1,7 @@
 
-Solon auth 框架示例：
+## Solon Auth （solon.extend.auth） 插件示例：
+
+Solon Auth 的定位是，只做认证控制。提供统一的适配标准和应用标准。功能虽少，但用户不会晕。
 
 #### 一、完成2步适配动作
 
@@ -14,7 +16,7 @@ public class Config {
         // 构建适配器
         //
         return new AuthAdapter()
-                .loginUrl("/login") //设定登录地址，未登录时自动跳转
+                .loginUrl("/login") //设定登录地址，未登录时自动跳转（如果不设定，则输出401错误）
                 .addRule(r -> r.include("**").verifyIp().failure((c, t) -> c.output("你的IP不在白名单"))) //添加规则
                 .addRule(b -> b.exclude("/login**").exclude("/run/**").verifyPath()) //添加规则
                 .processor(new AuthProcessorImpl()) //设定认证处理器
@@ -23,6 +25,12 @@ public class Config {
                 });
     }
 }
+
+//规则配置说明
+//1.include(path) 规则包函的路径范围，可多个
+//2.exclude(path) 规则排序的路径池围，可多个
+//3.failure(..)   规则失则后的处理
+//4.verifyIp()... 规则要做的验证方案（可多个不同的验证方案）
 
 ```
 
@@ -74,4 +82,4 @@ public class AgroupController {
 
 [https://gitee.com/noear/water/tree/master/wateradmin](https://gitee.com/noear/water/tree/master/wateradmin)
 
-[https://gitee.com/noear/sponge/tree/main/spongeadmin](https://gitee.com/noear/sponge/tree/main/spongeadmin)
+[https://gitee.com/noear/sponge/tree/main/spongeadmin](https://gitee.com/noear/sponge/tree/main/spongeadmin) ，这个比较完整
