@@ -1,7 +1,7 @@
 
 ## Solon Auth （solon.extend.auth） 插件示例：
 
-Solon Auth 的定位是，只做认证控制。提供统一的适配标准和应用标准。功能虽少，但用户不会晕。
+Solon Auth 的定位是，暂时只做认证控制。侧重对验证结果的适配，及在此基础上的统一配置及应用。功能虽少，但用户不会晕。
 
 #### 一、完成2步适配动作
 
@@ -41,6 +41,8 @@ public class AuthProcessorImpl implements AuthProcessor {
     //具体看一下项目里的代码
 }
 ```
+
+AuthProcessor 对接的是一系列的验证动作结果。相对来说比较直观，同时自己也得多干点活。
 
 #### 二、2种应用方式（一般组合使用）
 
