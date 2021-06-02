@@ -14,6 +14,11 @@ public class AuthProcessorImpl implements AuthProcessor {
     }
 
     @Override
+    public boolean verifyIp() {
+        return true;
+    }
+
+    @Override
     public boolean verifyLogined() {
         return puid() > 0;
     }
