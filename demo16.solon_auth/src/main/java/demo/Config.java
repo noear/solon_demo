@@ -20,7 +20,7 @@ public class Config {
                 .addRule(r -> r.include("**").verifyIp().failure((c, t) -> c.output("你的IP不在白名单"))) //添加规则
                 .addRule(b -> b.include("/rock/**").verifyPath()) //添加规则
                 .processor(new AuthProcessorImpl()) //设定认证处理器
-                .failure((ctx, rst) -> { //设定验证失败代理
+                .failure((ctx, rst) -> { //设定默认的验证失败处理
                     ctx.render(rst);
                 });
     }
