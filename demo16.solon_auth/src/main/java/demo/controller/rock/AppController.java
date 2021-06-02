@@ -22,12 +22,12 @@ public class AppController {
 
     @Mapping("edit/{id}")
     public void edit(int id) {
-        //编译显示页
+        //编辑显示页
     }
 
     @AuthRoles({"admin", "operator"})
     @Mapping("edit/{id}/ajax/save")
     public void save(int id) {
-        //编译处理接口，需要管理员或操作员权限
+        //编辑处理接口，需要管理员或操作员权限
     }
 }

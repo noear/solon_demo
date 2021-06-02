@@ -24,12 +24,12 @@ public class AgroupController {
     @AuthPermissions("agroup:edit")
     @Mapping("edit/{id}")
     public void edit(int id) {
-        //编译显示页，需要编辑权限
+        //编辑显示页，需要编辑权限
     }
 
     @AuthRoles("admin")
     @Mapping("edit/{id}/ajax/save")
     public void save(int id) {
-        //编译处理接口，需要管理员权限
+        //编辑处理接口，需要管理员权限
     }
 }
