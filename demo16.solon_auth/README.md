@@ -60,6 +60,17 @@ AuthProcessor 对接的是一系列的验证动作结果。相对来说比较直
 @Mapping("/rock/agroup")
 @Controller
 public class AgroupController {
+    @Mapping("")
+    public void home() {
+        //agroup 首页
+    }
+
+    @Mapping("inner")
+    public void inner() {
+        //内部列表页
+    }
+
+    
     @AuthPermissions("agroup:edit")
     @Mapping("edit/{id}")
     public void edit(int id) {
