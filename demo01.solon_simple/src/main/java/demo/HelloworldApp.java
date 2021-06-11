@@ -1,6 +1,7 @@
 package demo;
 
 import org.noear.solon.Solon;
+import org.noear.solon.SolonApp;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.core.handle.Result;
@@ -9,7 +10,15 @@ import org.noear.solon.core.handle.Result;
 @Controller
 public class HelloworldApp {
     public static void main(String[] args) {
-        Solon.start(HelloworldApp.class, args);
+        SolonApp app = Solon.start(HelloworldApp.class, args);
+
+
+        app.before(c->{
+            if(c.header("xxx") == null){
+                c.statusSet(403);
+                c.setHandled(true);
+            }
+        });
     }
 
     @Mapping("/")
