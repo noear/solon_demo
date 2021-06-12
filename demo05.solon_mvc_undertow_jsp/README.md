@@ -38,7 +38,7 @@
         <!-- 添加 undertow jsp 扩展支持包 -->
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.extend.undertow.jsp</artifactId>
+            <artifactId>solon.boot.undertow.add.jsp</artifactId>
         </dependency>
 
         <!-- 添加 jsp 视图渲染器 -->

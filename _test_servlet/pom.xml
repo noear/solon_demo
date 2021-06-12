@@ -36,7 +36,7 @@
 
         <!--        <dependency>-->
         <!--            <groupId>org.noear</groupId>-->
-        <!--            <artifactId>solon.extend.jetty.jsp</artifactId>-->
+        <!--            <artifactId>solon.boot.jetty.add.jsp</artifactId>-->
         <!--        </dependency>-->
 
         <dependency>

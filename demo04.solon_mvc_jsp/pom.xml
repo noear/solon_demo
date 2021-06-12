@@ -28,7 +28,7 @@
         <!-- jetty 的 jsp 支持扩展包 -->
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.extend.jetty.jsp</artifactId>
+            <artifactId>solon.boot.jetty.add.jsp</artifactId>
         </dependency>
 
         <!-- jsp 视图渲染器

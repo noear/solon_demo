@@ -5,7 +5,7 @@ import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.cache.jedis.RedisCacheService;
 import org.noear.solon.cache.spymemcached.MemCacheService;
-import org.noear.solon.core.cache.CacheService;
+import org.noear.solon.data.cache.CacheService;
 
 /**
  * @author noear 2021/5/12 created

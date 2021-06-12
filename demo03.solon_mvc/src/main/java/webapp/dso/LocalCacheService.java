@@ -1,6 +1,6 @@
 package webapp.dso;
 
-import org.noear.solon.core.cache.CacheService;
+import org.noear.solon.data.cache.CacheService;
 import org.noear.weed.cache.LocalCache;
 
 import java.util.Properties;

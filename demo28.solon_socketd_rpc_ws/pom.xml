@@ -34,7 +34,7 @@
 <!--        </dependency>-->
 <!--        <dependency>-->
 <!--            <groupId>org.noear</groupId>-->
-<!--            <artifactId>solon.extend.jetty.websocket</artifactId>-->
+<!--            <artifactId>solon.boot.jetty.add.websocket</artifactId>-->
 <!--        </dependency>-->
 
         <!-- undertow websocket //ok -->

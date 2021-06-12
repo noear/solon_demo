@@ -1,7 +1,7 @@
 package webapp.dso;
 
 
-import org.noear.solon.core.cache.CacheService;
+import org.noear.solon.data.cache.CacheService;
 
 public class NotCacheService implements CacheService {
     @Override
