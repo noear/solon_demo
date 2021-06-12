@@ -2,8 +2,8 @@ package demo.controller.rock;
 
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
-import org.noear.solon.extend.auth.annotation.AuthPermissions;
-import org.noear.solon.extend.auth.annotation.AuthRoles;
+import org.noear.solon.auth.annotation.AuthPermissions;
+import org.noear.solon.auth.annotation.AuthRoles;
 
 /**
  * @author noear 2021/6/1 created
