@@ -20,10 +20,10 @@ import java.lang.annotation.Annotation;
 public class AuthPlugin implements Plugin {
     @Override
     public void start(SolonApp app) {
-        ValidatorManager.global().register(Auth.class, AuthValidator.instance);
+        ValidatorManager.register(Auth.class, AuthValidator.instance);
 
         //如果想定义错误信息（可参考默认的实现：ValidatorFailureHandlerImp ）
-        ValidatorManager.global().onFailure(new ValidatorFailureHandler() {
+        ValidatorManager.setFailureHandler(new ValidatorFailureHandler() {
             @Override
             public boolean onFailure(Context ctx, Annotation ano, Result result, String message) {
                 return false;
