@@ -2,7 +2,7 @@ package demo.dso.auth;
 
 import org.noear.solon.core.handle.Context;
 import org.noear.solon.core.handle.Result;
-import org.noear.solon.extend.validation.Validator;
+import org.noear.solon.validation.Validator;
 
 /**
  * 尝试不同的输出效果

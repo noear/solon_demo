@@ -2,7 +2,7 @@ package webapp.controller;
 
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
-import org.noear.solon.extend.validation.annotation.*;
+import org.noear.solon.validation.annotation.*;
 
 @Valid  //为控制器开启校验能力；也可以做用在一个基类上
 @Controller

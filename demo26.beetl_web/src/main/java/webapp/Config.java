@@ -5,9 +5,9 @@ import org.noear.solon.Utils;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
-import org.noear.solon.extend.validation.ValidatorManager;
-import org.noear.solon.extend.validation.annotation.Date;
-import org.noear.solon.extend.validation.annotation.DateValidator;
+import org.noear.solon.validation.ValidatorManager;
+import org.noear.solon.validation.annotation.Date;
+import org.noear.solon.validation.annotation.DateValidator;
 import webapp.utils.DsHelper;
 
 import javax.sql.DataSource;

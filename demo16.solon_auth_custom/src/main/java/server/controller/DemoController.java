@@ -4,7 +4,7 @@ import demo.dso.auth.Auth;
 import static demo.dso.auth.AuthRole.*;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
-import org.noear.solon.extend.validation.annotation.Valid;
+import org.noear.solon.validation.annotation.Valid;
 
 /**
  * @author noear 2021/3/10 created

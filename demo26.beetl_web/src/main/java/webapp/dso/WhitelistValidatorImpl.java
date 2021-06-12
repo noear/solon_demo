@@ -2,8 +2,8 @@ package webapp.dso;
 
 import org.noear.solon.core.handle.Context;
 import org.noear.solon.core.handle.Result;
-import org.noear.solon.extend.validation.annotation.Whitelist;
-import org.noear.solon.extend.validation.annotation.WhitelistValidator;
+import org.noear.solon.validation.annotation.Whitelist;
+import org.noear.solon.validation.annotation.WhitelistValidator;
 
 public class WhitelistValidatorImpl extends WhitelistValidator {
     @Override
