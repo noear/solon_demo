@@ -21,11 +21,11 @@ public class Config {
         //
         // 添加Date验证器
         //
-        ValidatorManager.global().register(Date.class, DateValidator.instance);
+        ValidatorManager.register(Date.class, DateValidator.instance);
         //
         // 适配验证输出
         //
-        ValidatorManager.global().onFailure((ctx, ano, rst, message) -> {
+        ValidatorManager.setFailureHandler((ctx, ano, rst, message) -> {
             ctx.setHandled(true);
 
             if (Utils.isEmpty(message)) {
