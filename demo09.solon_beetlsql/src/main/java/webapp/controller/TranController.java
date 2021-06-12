@@ -1,7 +1,7 @@
 package webapp.controller;
 
 import org.noear.solon.annotation.*;
-import org.noear.solon.extend.data.annotation.Tran;
+import org.noear.solon.data.annotation.Tran;
 import webapp.dso.service.AppService;
 
 @Mapping("/tran/")

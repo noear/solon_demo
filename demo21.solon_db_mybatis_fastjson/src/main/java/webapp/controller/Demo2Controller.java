@@ -3,7 +3,7 @@ package webapp.controller;
 import org.apache.ibatis.ext.solon.Db;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
-import org.noear.solon.extend.data.annotation.Tran;
+import org.noear.solon.data.annotation.Tran;
 import webapp.dso.db1.AppxMapper;
 import webapp.dso.db2.Appx2Mapper;
 

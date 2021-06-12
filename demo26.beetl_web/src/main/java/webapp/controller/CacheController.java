@@ -2,8 +2,8 @@ package webapp.controller;
 
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
-import org.noear.solon.extend.data.annotation.Cache;
-import org.noear.solon.extend.data.annotation.CacheRemove;
+import org.noear.solon.data.annotation.Cache;
+import org.noear.solon.data.annotation.CacheRemove;
 
 import java.util.Date;
 
