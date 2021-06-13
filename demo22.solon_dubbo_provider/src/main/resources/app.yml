@@ -5,4 +5,4 @@ dubbo:
     name: hello-provider
     owner: noear
   registry:
-    address: nacos://192.168.8.118:8848
+    address: nacos://localhost:8848
