@@ -69,7 +69,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>webapp.MvcApp</mainClass>
+                            <mainClass>webapp.server.DemoDubboProviderApp</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
