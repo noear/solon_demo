@@ -7,7 +7,7 @@ import org.noear.solon.validation.annotation.WhitelistValidator;
 
 public class WhitelistValidatorImpl extends WhitelistValidator {
     @Override
-    public Result validate(Context ctx, Whitelist anno, String name, StringBuilder tmp) {
+    public Result validateOfContext(Context ctx, Whitelist anno, String name, StringBuilder tmp) {
         System.out.println("成功定制...");
 
         return Result.failure();

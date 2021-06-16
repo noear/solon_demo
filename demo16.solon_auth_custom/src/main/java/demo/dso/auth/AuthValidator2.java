@@ -18,7 +18,7 @@ public class AuthValidator2 implements Validator<Auth> {
     }
 
     @Override
-    public Result validate(Context ctx, Auth anno, String name, StringBuilder tmp) {
+    public Result validateOfContext(Context ctx, Auth anno, String name, StringBuilder tmp) {
         int user_role = ctx.session("role", 0);
 
         for (AuthRole role : anno.value()) {
@@ -32,4 +32,5 @@ public class AuthValidator2 implements Validator<Auth> {
 
         return Result.failure(401);
     }
+
 }
