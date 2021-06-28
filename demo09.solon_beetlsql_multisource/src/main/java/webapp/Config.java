@@ -14,7 +14,7 @@ public class Config {
     //
     //  申明 db2 是 db1 为的从库
     //
-    @Bean(value = "db1", attrs = {"slaves=db2"})
+    @Bean(name = "db1", attrs = {"slaves=db2"})
     public DataSource db1(@Inject("${test.db1}") HikariDataSource dataSource) {
         return dataSource;
     }
