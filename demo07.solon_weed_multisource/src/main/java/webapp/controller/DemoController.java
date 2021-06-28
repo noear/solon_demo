@@ -6,7 +6,7 @@ import org.noear.solon.annotation.Mapping;
 import org.noear.weed.annotation.Db;
 import webapp.dso.mapper.SqlMapper;
 
-@Mapping("/tran/")
+@Mapping("/demo/")
 @Controller
 public class DemoController {
     /**
@@ -14,10 +14,6 @@ public class DemoController {
      * */
     @Inject
     SqlMapper sqlMapper1;
-
-//    //也可以-使用指定数据库注入
-//    @Db("db1")
-//    SqlMapper sqlMapper1;
 
     /**
      * 使用指定数据库注入
