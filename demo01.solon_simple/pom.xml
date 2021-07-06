@@ -29,14 +29,14 @@
 
 
     <build>
-        <finalName>${project.name}</finalName>
-        <plugins>
+        <finalName>${project.artifactId}</finalName>
 
+        <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
                 <configuration>
-                    <compilerArgument>-parameters</compilerArgument>
                     <source>1.8</source>
                     <target>1.8</target>
                     <encoding>UTF-8</encoding>
@@ -44,13 +44,20 @@
             </plugin>
 
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.3.0</version>
                 <configuration>
-                    <finalName>${project.name}</finalName>
+                    <finalName>${project.artifactId}</finalName>
                     <appendAssemblyId>false</appendAssemblyId>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>demo.HelloworldApp</mainClass>
+                        </manifest>
+                    </archive>
                 </configuration>
                 <executions>
                     <execution>
@@ -63,6 +70,7 @@
                 </executions>
             </plugin>
         </plugins>
+
     </build>
 
 </project>
