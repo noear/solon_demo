@@ -13,7 +13,7 @@ import java.io.IOException;
  */
 
 @RunWith(SolonJUnit4ClassRunner.class)
-@SolonTest(webapp.TestApp.class)
+@SolonTest(webapp.MvcApp.class)
 public class HttpParam2Test extends HttpTestBase {
     @Override
     public boolean enablePrint() {

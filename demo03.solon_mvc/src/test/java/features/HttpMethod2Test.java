@@ -2,6 +2,7 @@ package features;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.noear.solon.test.HttpTestBase;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
 import org.noear.solon.test.SolonTest;
 
@@ -10,12 +11,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RunWith(SolonJUnit4ClassRunner.class)
-@SolonTest(webapp.TestApp.class)
-public class HttpMethod2Test extends _TestBase {
+@SolonTest(webapp.MvcApp.class)
+public class HttpMethod2Test extends HttpTestBase {
 
     @Test
     public void test21() throws IOException {
-        assert getStatus("/demo2/method2/post") == 404;
+        assert path("/demo2/method2/post").exec3("GET") == 404;
     }
 
     @Test
@@ -23,7 +24,7 @@ public class HttpMethod2Test extends _TestBase {
         Map<String, String> map = new HashMap<>();
         map.put("name", "中文");
 
-        assert post("/demo2/method2/post", map).equals("中文");
+        assert path("/demo2/method2/post").data(map).post().equals("中文");
     }
 
     @Test

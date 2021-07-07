@@ -14,7 +14,7 @@ import java.io.IOException;
  * @author noear 2021/6/13 created
  */
 @RunWith(SolonJUnit4ClassRunner.class)
-@SolonTest(webapp.TestApp.class)
+@SolonTest(webapp.MvcApp.class)
 public class HttpParam4Test extends HttpTestBase {
     @Test
     public void json() throws IOException {
