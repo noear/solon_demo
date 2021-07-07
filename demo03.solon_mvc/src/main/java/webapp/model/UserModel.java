@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class UserModel {
-    private long id;
-    private String name;
-    private int sex;
-    private String label;
+    public long id;
+    public String name;
+    public int sex;
+    public String label;
 }

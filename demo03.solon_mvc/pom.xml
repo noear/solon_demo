@@ -45,6 +45,15 @@
 
         <dependency>
             <groupId>org.noear</groupId>
+            <artifactId>nami.channel.http.okhttp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>nami.coder.snack3</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
             <artifactId>weed3</artifactId>
             <version>${weed3.ver}</version>
         </dependency>
