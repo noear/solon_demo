@@ -9,7 +9,7 @@ import org.noear.solon.i18n.annotation.I18n;
 @Controller
 public class ThymeleafView {
 
-    @Mapping("/demo9/view/thymeleaf")
+    @Mapping("/thymeleaf")
     public ModelAndView view() {
         ModelAndView model = new ModelAndView("thymeleaf.html");
         model.put("title", "dock");

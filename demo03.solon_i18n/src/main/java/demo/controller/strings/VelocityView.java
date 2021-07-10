@@ -9,7 +9,7 @@ import org.noear.solon.i18n.annotation.I18n;
 @Controller
 public class VelocityView {
 
-    @Mapping("/demo9/view/velocity")
+    @Mapping("/velocity")
     public ModelAndView view() {
         ModelAndView model = new ModelAndView("velocity.vm");
         model.put("title", "dock");

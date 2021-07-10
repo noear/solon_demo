@@ -6,7 +6,7 @@ import org.noear.solon.core.handle.ModelAndView;
 
 @Controller
 public class EnjoyView extends ViewBase{
-    @Mapping("/demo9/view/enjoy")
+    @Mapping("/enjoy")
     public ModelAndView view() {
         ModelAndView model = new ModelAndView("enjoy.shtm");
         model.put("title", "dock");
