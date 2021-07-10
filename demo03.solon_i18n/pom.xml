@@ -40,6 +40,26 @@
 
         <dependency>
             <groupId>org.noear</groupId>
+            <artifactId>solon.view.enjoy</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.view.beetl</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.view.thymeleaf</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.view.velocity</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
             <artifactId>solon.i18n</artifactId>
         </dependency>
 

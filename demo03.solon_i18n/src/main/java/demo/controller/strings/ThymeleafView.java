@@ -5,6 +5,7 @@ import org.noear.solon.annotation.Mapping;
 import org.noear.solon.core.handle.ModelAndView;
 import org.noear.solon.i18n.annotation.I18n;
 
+//使用指定的国际化内容包
 @I18n("i18n.strings")
 @Controller
 public class ThymeleafView {
