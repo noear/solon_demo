@@ -15,7 +15,6 @@ public class HelloworldApp {
 
     @Mapping("/")
     public Object helloworld(){
-        String xx= "";
-        return Result.succeed(xx);
+        return Result.succeed("hello world!");
     }
 }

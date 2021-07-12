@@ -1,4 +1,4 @@
-# 利用 Solon-mvc 框架写一个 Hello World
+# 利用 Solon-web 框架写一个 Hello World
 
 **Solon 项目的开源地址：**
 
