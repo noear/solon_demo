@@ -22,15 +22,10 @@ mybatis.db1:
 
 
 #分页组件的配置
-sqlhelper:
-    mybatis:
-        instrumentor:
-            dialect: "mysql"
-            cache-instrumented-sql: true
-            subquery-paging-start-flag: "[PAGING_StART]"
-            subquery-paging-end-flag: "[PAGING_END]"
-        pagination:
-            count: true
-            default-page-size: 10
-            use-last-page-if-page-no-out: true
-            count-suffix: _COUNT
+# pagehelper properties
+pagehelper.offsetAsPageNum: true
+pagehelper.rowBoundsWithCount: true
+pagehelper.pageSizeZero: true
+pagehelper.reasonable: false
+pagehelper.params: pageNum=pageHelperStart;pageSize=pageHelperRows;
+pagehelper.supportMethodsArguments: false

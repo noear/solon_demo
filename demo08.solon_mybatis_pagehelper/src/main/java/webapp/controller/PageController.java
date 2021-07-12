@@ -17,9 +17,8 @@ public class PageController {
     AppxMapper appxMapper;
 
     @Mapping("test")
-    public Object test() throws Throwable{
-        PageHelper.offsetPage(2,2);
-       return appxMapper.appx_get_page();
-
+    public Object test() throws Throwable {
+        PageHelper.offsetPage(2, 2);
+        return appxMapper.appx_get_page();
     }
 }
