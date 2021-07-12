@@ -23,9 +23,10 @@ mybatis.db1:
 
 #分页组件的配置
 # pagehelper properties
-pagehelper.offsetAsPageNum: true
-pagehelper.rowBoundsWithCount: true
-pagehelper.pageSizeZero: true
-pagehelper.reasonable: false
-pagehelper.params: pageNum=pageHelperStart;pageSize=pageHelperRows;
-pagehelper.supportMethodsArguments: false
+pagehelper:
+    offsetAsPageNum: true
+    rowBoundsWithCount: true
+    pageSizeZero: true
+    reasonable: false
+    params: pageNum=pageHelperStart;pageSize=pageHelperRows;
+    supportMethodsArguments: false
