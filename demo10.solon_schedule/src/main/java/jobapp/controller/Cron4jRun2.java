@@ -8,6 +8,6 @@ import java.util.Date;
 public class Cron4jRun2 implements Runnable {
     @Override
     public void run() {
-        System.out.println("我是定时任务: Cron4jRun2(*/1 * * * *) -- " + new Date().toString());
+        System.out.println("我是定时任务: Cron4jRun2(*/1 * * * *) -- " + new Date());
     }
 }

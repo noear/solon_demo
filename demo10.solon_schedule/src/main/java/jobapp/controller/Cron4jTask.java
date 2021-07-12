@@ -10,6 +10,6 @@ import java.util.Date;
 public class Cron4jTask extends Task {
     @Override
     public void execute(TaskExecutionContext context) throws RuntimeException {
-        System.out.println("我是定时任务: Cron4jTask(*/1 * * * *) -- " + new Date().toString());
+        System.out.println("我是定时任务: Cron4jTask(*/1 * * * *) -- " + new Date());
     }
 }
