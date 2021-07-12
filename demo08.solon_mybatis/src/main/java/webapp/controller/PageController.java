@@ -14,7 +14,7 @@ import webapp.dso.mapper.AppxMapper;
 @Mapping("/page/")
 @Controller
 public class PageController {
-    @Db
+    @Inject
     AppxMapper appxMapper;
 
     @Mapping("test")

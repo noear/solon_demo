@@ -1,6 +1,8 @@
 package webapp;
 
+import org.apache.ibatis.session.Configuration;
 import org.noear.solon.Solon;
+import org.noear.solon.SolonBuilder;
 
 /**
  *
@@ -25,7 +27,12 @@ import org.noear.solon.Solon;
 //@EnableTransaction(false) //关掉事务
 public class DemoApp {
     public static void main(String[] args) {
-        Solon.start(DemoApp.class, args)
-                .onError((err) -> err.printStackTrace());
+        new SolonBuilder()
+                .onEvent(Configuration.class, c -> {
+                    //添加拦截插件
+                    //c.addInterceptor();
+                })
+                .onError((err) -> err.printStackTrace())
+                .start(DemoApp.class, args);
     }
 }
