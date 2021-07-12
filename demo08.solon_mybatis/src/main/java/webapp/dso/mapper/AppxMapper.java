@@ -1,10 +1,8 @@
 package webapp.dso.mapper;
 
-
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import webapp.model.AppxModel;
-import webapp.model.DbColumn;
 import webapp.model.DbTable;
 
 import java.util.List;
