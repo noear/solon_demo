@@ -48,6 +48,8 @@
         <module>demo07.solon_weed</module>
         <module>demo07.solon_weed_multisource</module>
         <module>demo08.solon_mybatis</module>
+        <module>demo08.solon_mybatis_sqlhelper</module>
+        <module>demo08.solon_mybatis_pagehelper</module>
         <module>demo08.solon_mybatis_multisource</module>
         <module>demo09.solon_activerecord</module>
         <module>demo09.solon_beetlsql</module>
