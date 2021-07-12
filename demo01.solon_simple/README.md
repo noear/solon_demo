@@ -15,7 +15,7 @@ Solon 的项目地址：
     <dependency>
         <groupId>org.noear</groupId>
         <artifactId>solon.boot.jlhttp</artifactId> <!-- 这是 solon 里最小巧的启动器了，0.1m，qps有4.5万 -->
-        <version>1.5.11</version>
+        <version>1.5.12</version>
     </dependency>
 </dependencies>
 ```
