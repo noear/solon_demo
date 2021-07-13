@@ -30,19 +30,19 @@ public class Config {
 }
 
 
-
+//@Configuration
 //public class Config {
-//
-//    @Bean("smsSlave")
-//    public DataSource db2(@Inject("${sms.slave}") HikariDataSource dataSource) {
-//        return dataSource;
-//    }
 //
 //    //
 //    //  申明 db2 是 db1 为的从库
 //    //
 //    @Bean(name = "smsMaster", attrs = {"slaves=smsSlave", "dialect=sqlserver"})
-//    public DataSource db1(@Inject("${sms.master}") HikariDataSource dataSource, @Inject("smsSlave") DataSource smsSlave) {
+//    public DataSource db1(@Inject("${sms.master}") HikariDataSource dataSource) {
+//        return dataSource;
+//    }
+//
+//    @Bean("smsSlave")
+//    public DataSource db2(@Inject("${sms.slave}") HikariDataSource dataSource) {
 //        return dataSource;
 //    }
 //}
