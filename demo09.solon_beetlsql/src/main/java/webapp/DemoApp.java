@@ -4,6 +4,7 @@ import org.beetl.sql.core.SQLManagerBuilder;
 import org.beetl.sql.core.db.OracleStyle;
 import org.beetl.sql.ext.DebugInterceptor;
 import org.noear.solon.Solon;
+import org.noear.solon.SolonBuilder;
 
 /**
  *
@@ -27,10 +28,12 @@ import org.noear.solon.Solon;
  * */
 public class DemoApp {
     public static void main(String[] args) {
-        Solon.start(DemoApp.class, args, (app) -> {
-//            app.onEvent(SQLManagerBuilder.class, builder -> {
-//                builder.setDbStyle(new OracleStyle());
-//            });
-        });
+        new SolonBuilder()
+                .onEvent(SQLManagerBuilder.class, c -> {
+                    if (Solon.cfg().isDebugMode()) {
+                        c.addInterDebug();
+                    }
+                })
+                .start(DemoApp.class, args);
     }
 }
