@@ -17,7 +17,7 @@
     <dependency>
         <groupId>org.noear</groupId>
         <artifactId>solon-web</artifactId>
-        <version>1.5.14</version>
+        <version>1.5.15</version>
     </dependency>
 </dependencies>
 ```
@@ -115,7 +115,7 @@ public class HelloController {
     <dependency>
         <groupId>org.noear</groupId>
         <artifactId>solon-web</artifactId>
-        <version>1.5.14</version>
+        <version>1.5.15</version>
     </dependency>
 </dependencies>
 
