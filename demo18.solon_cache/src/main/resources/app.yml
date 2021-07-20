@@ -1,6 +1,4 @@
 
-solon.debug: 1
-
 solon.app:
   name: demoapp
   group: demo
