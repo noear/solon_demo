@@ -27,7 +27,12 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon.boot.jlhttp</artifactId>
+            <artifactId>solon-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.i18n</artifactId>
         </dependency>
     </dependencies>
 

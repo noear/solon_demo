@@ -3,6 +3,9 @@ package dockapp_http;
 import org.noear.solon.Solon;
 import org.noear.solon.SolonApp;
 import org.noear.solon.core.Plugin;
+import org.noear.solon.i18n.I18nUtil;
+
+import java.util.Locale;
 
 public class XPluginImp implements Plugin {
     @Override
@@ -16,7 +19,10 @@ public class XPluginImp implements Plugin {
         //如果随便玩玩，也可用handler风格
         //app.get("/",x->x.output("Hello world!"));
 
+
         System.out.println("我是个体外扩展包，我让你能玩http了");
         System.out.println("用浏览器打开：http://localhost:8080/");
+
+        System.out.println("i18n::" + I18nUtil.getMessage(Locale.getDefault(), "user.name"));
     }
 }
