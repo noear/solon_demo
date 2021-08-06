@@ -12,6 +12,9 @@ import java.util.Map;
  */
 @Controller
 public class LoginController {
+    /**
+     * 登录
+     * */
     @Mapping("/login")
     public void login(Context ctx, String name) {
         if ("noear".equals(name)) {
@@ -20,9 +23,17 @@ public class LoginController {
         }
     }
 
+    /**
+     * 退出
+     * */
+    @Mapping("/logout")
+    public void logout(Context ctx) {
+        ctx.sessionClear();
+    }
+
 
     /**
-     * 如果想手动传，做为接口的一部分；把：server.session.jwt.allowAutoIssue 设为 false
+     * 登录2。如果想手动传，做为接口的一部分；把：server.session.jwt.allowAutoIssue 设为 false
      */
     @Mapping("/login2")
     public Result login2(Context ctx, String name) {
