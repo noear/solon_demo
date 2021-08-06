@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>1.5.17</version>
+        <version>1.5.19</version>
     </parent>
 
 
@@ -38,6 +38,8 @@
         <module>demo02.solon_helloworld</module>
         <module>demo03.solon_i18n</module>
         <module>demo03.solon_mvc</module>
+        <module>demo03.solon_sessionstate_jwt</module>
+        <module>demo03.solon_sessionstate_jwt2</module>
         <module>demo03.solon_ext</module>
         <module>demo02.solon_rpc</module>
         <module>demo02.solon_servlet</module>

@@ -1,0 +1,19 @@
+package demo_sessionstate_jwt.controller;
+
+import org.noear.solon.annotation.Controller;
+import org.noear.solon.annotation.Mapping;
+import org.noear.solon.core.handle.Context;
+
+/**
+ * @author noear 2021/8/6 created
+ */
+@Controller
+public class LoginController {
+    @Mapping("/login")
+    public void login(Context ctx, String name) {
+        if ("noear".equals(name)) {
+            //登录成功
+            ctx.sessionSet("user_name", name);
+        }
+    }
+}

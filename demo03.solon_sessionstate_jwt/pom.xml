@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear</groupId>
-    <artifactId>demo13.solon_jwt2</artifactId>
+    <artifactId>demo03.solon_sessionstate_jwt</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
@@ -18,6 +18,7 @@
         <version>1-SNAPSHOT</version>
     </parent>
 
+
     <dependencies>
         <!--
         solon-api 和 solon-mvc 的区别是：前者没有模板和SessionState
@@ -27,30 +28,9 @@
             <artifactId>solon-web</artifactId>
         </dependency>
 
-
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt-api</artifactId>
-            <version>0.11.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt-impl</artifactId>
-            <version>0.11.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt-orgjson</artifactId>
-            <version>0.11.2</version>
-        </dependency>
-
-
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon-test</artifactId>
-            <scope>provided</scope>
+            <artifactId>solon.extend.sessionstate.jwt</artifactId>
         </dependency>
 
         <dependency>
@@ -58,6 +38,12 @@
             <artifactId>lombok</artifactId>
             <version>1.18.12</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -87,7 +73,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>webapp.JwtApp</mainClass>
+                            <mainClass>webapp.MvcApp</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
