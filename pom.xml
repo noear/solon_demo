@@ -15,12 +15,13 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>1.5.19</version>
+        <version>1.5.20</version>
     </parent>
 
 
     <modules>
         <module>_test_protostuff</module>
+        <module>_test_handler_err</module>
 <!--        <module>_test_jdoc</module>-->
         <module>_test_servlet</module>
         <module>_test_metrics</module>
