@@ -4,10 +4,9 @@ import org.noear.solon.Utils;
 import org.noear.solon.core.handle.Context;
 import org.noear.solon.core.handle.Handler;
 
-import java.net.URI;
-
 /**
- * @author noear 2021/8/11 created
+ * @author noear
+ * @since 1.5
  */
 public class CrossHandlerImpl implements Handler {
     protected int maxAge = 3600;
@@ -52,40 +51,50 @@ public class CrossHandlerImpl implements Handler {
 
     @Override
     public void handle(Context ctx) throws Throwable {
+        String origin = ctx.header("Origin");
 
+        if (Utils.isEmpty(origin)) {
+            //如果没有 Origin 则不输出 Cross Header
+            return;
+        }
+
+        //设定 max age
         ctx.headerSet("Access-Control-Max-Age", String.valueOf(maxAge));
 
+        //设定 allow headers
         if (Utils.isNotEmpty(allowHeaders)) {
             if ("*".equals(allowHeaders)) {
-                ctx.headerSet("Access-Control-Allow-Headers", ctx.header("Access-Control-Request-Headers"));
+                String requestHeaders = ctx.header("Access-Control-Request-Headers");
+
+                if (Utils.isNotEmpty(requestHeaders)) {
+                    ctx.headerSet("Access-Control-Allow-Headers", requestHeaders);
+                }
             } else {
                 ctx.headerSet("Access-Control-Allow-Headers", allowHeaders);
             }
         }
 
+        //设定 allow methods
         if (Utils.isNotEmpty(allowMethods)) {
             if ("*".equals(allowMethods)) {
-                ctx.headerSet("Access-Control-Allow-Methods", ctx.header("Access-Control-Request-Method"));
+                String requestMethod = ctx.header("Access-Control-Request-Method");
+
+                if (Utils.isEmpty(requestMethod)) {
+                    requestMethod = ctx.method();
+                }
+
+                if (Utils.isNotEmpty(requestMethod)) {
+                    ctx.headerSet("Access-Control-Allow-Methods", requestMethod);
+                }
             } else {
                 ctx.headerSet("Access-Control-Allow-Methods", allowMethods);
             }
         }
 
+        //设定 allow origin
         if (allowCredentials) {
             ctx.headerSet("Access-Control-Allow-Credentials", "true");
-
-            if ("*".equals(allowOrigin)) {
-                String referer = ctx.header("Referer");
-                if (Utils.isNotEmpty(referer)) {
-                    URI uri = URI.create(referer);
-                    String origin = uri.getScheme() +"://" + uri.getAuthority();
-                    ctx.headerSet("Access-Control-Allow-Origin", origin);
-                } else {
-                    ctx.headerSet("Access-Control-Allow-Origin", allowOrigin);
-                }
-            } else {
-                ctx.headerSet("Access-Control-Allow-Origin", allowOrigin);
-            }
+            ctx.headerSet("Access-Control-Allow-Origin", origin);
         } else {
             ctx.headerSet("Access-Control-Allow-Origin", allowOrigin);
         }
