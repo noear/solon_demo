@@ -8,7 +8,7 @@ import org.noear.solon.core.handle.Handler;
  * @author noear
  * @since 1.5
  */
-public class CrossHandlerImpl implements Handler {
+public class CrossHandlerNew implements Handler {
     protected int maxAge = 3600;
 
     protected String allowOrigin = "*";
@@ -18,7 +18,7 @@ public class CrossHandlerImpl implements Handler {
     protected boolean allowCredentials;
 
 
-    public CrossHandlerImpl maxAge(int maxAge) {
+    public CrossHandlerNew maxAge(int maxAge) {
         if (maxAge >= 0) {
             this.maxAge = maxAge;
         }
@@ -26,7 +26,7 @@ public class CrossHandlerImpl implements Handler {
         return this;
     }
 
-    public CrossHandlerImpl allowOrigin(String allowOrigin) {
+    public CrossHandlerNew allowOrigin(String allowOrigin) {
         if (allowOrigin != null) {
             this.allowOrigin = allowOrigin;
         }
@@ -34,17 +34,17 @@ public class CrossHandlerImpl implements Handler {
         return this;
     }
 
-    public CrossHandlerImpl allowMethods(String allowMethods) {
+    public CrossHandlerNew allowMethods(String allowMethods) {
         this.allowMethods = allowMethods;
         return this;
     }
 
-    public CrossHandlerImpl allowHeaders(String allowHeaders) {
+    public CrossHandlerNew allowHeaders(String allowHeaders) {
         this.allowHeaders = allowHeaders;
         return this;
     }
 
-    public CrossHandlerImpl allowCredentials(boolean allowCredentials) {
+    public CrossHandlerNew allowCredentials(boolean allowCredentials) {
         this.allowCredentials = allowCredentials;
         return this;
     }
@@ -79,6 +79,7 @@ public class CrossHandlerImpl implements Handler {
             if ("*".equals(allowMethods)) {
                 String requestMethod = ctx.header("Access-Control-Request-Method");
 
+                //如果没有请求方式，则使用当前请求方式
                 if (Utils.isEmpty(requestMethod)) {
                     requestMethod = ctx.method();
                 }

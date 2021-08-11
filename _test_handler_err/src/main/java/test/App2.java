@@ -2,7 +2,7 @@ package test;
 
 import org.noear.solon.Solon;
 import org.noear.solon.core.handle.Context;
-import test.dso.CrossHandlerImpl;
+import test.dso.CrossHandlerNew;
 
 /**
  * @author noear 2021/8/8 created
@@ -10,7 +10,7 @@ import test.dso.CrossHandlerImpl;
 public class App2 {
     public static void main(String[] args) {
         Solon.start(App2.class, args, app -> {
-            app.before(new CrossHandlerImpl().allowOrigin("*"));
+            app.before(new CrossHandlerNew().allowOrigin("*"));
         }).onError(e -> {
             if (Solon.cfg().isDebugMode() || Solon.cfg().isFilesMode()) {
                 e.printStackTrace();

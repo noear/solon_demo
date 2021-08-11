@@ -2,8 +2,7 @@ package test;
 
 import org.noear.solon.Solon;
 import org.noear.solon.core.handle.Context;
-import org.noear.solon.extend.cors.CrossHandler;
-import test.dso.CrossHandlerImpl;
+import test.dso.CrossHandlerNew;
 
 /**
  * @author noear 2021/8/8 created
@@ -15,7 +14,7 @@ public class App1 {
                 System.out.println(c.method() +" " +c.path());
             });
 
-            app.before(new CrossHandlerImpl()
+            app.before(new CrossHandlerNew()
                     .allowCredentials(true)
                     .allowMethods("*")
                     .allowHeaders("*")
