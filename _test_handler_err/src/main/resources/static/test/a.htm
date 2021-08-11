@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="cleartype" content="on" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js"></script>
+</head>
+<body>
+
+<script>
+    $.get("http://127.0.0.1:8081/user/add?t=1");
+
+    $.ajax({
+        url:"http://127.0.0.1:8081/user/add?t=2",
+        type: "GET",
+        beforeSend: function(request) {
+            request.setRequestHeader("Authorization","zzz");
+        },
+        success:function (e){
+            console.log(e);
+        }});
+
+    $.ajax({
+        url:"http://127.0.0.1:8081/user/add?t=3",
+        type: "POST",
+        data:{user:"noear"},
+        success:function (e){
+            console.log(e);
+        }});
+
+    $.ajax({
+        url:"http://127.0.0.1:8081/user/add?t=4",
+        type: "POST",
+        data:{user:"noear"},
+        beforeSend: function(request) {
+            request.setRequestHeader("Authorization","zzz");
+        },
+        success:function (e){
+            console.log(e);
+        }});
+</script>
+</body>
+</html>

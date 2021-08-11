@@ -2,13 +2,16 @@ package test;
 
 import org.noear.solon.Solon;
 import org.noear.solon.core.handle.Context;
+import test.dso.CrossHandlerImpl;
 
 /**
  * @author noear 2021/8/8 created
  */
 public class App2 {
     public static void main(String[] args) {
-        Solon.start(App2.class, args).onError(e -> {
+        Solon.start(App2.class, args, app -> {
+            app.before(new CrossHandlerImpl().allowOrigin("*"));
+        }).onError(e -> {
             if (Solon.cfg().isDebugMode() || Solon.cfg().isFilesMode()) {
                 e.printStackTrace();
             }

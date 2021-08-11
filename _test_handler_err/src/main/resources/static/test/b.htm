@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="cleartype" content="on" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+</head>
+<body>
+
+<script>
+    axios.get("http://127.0.0.1:8081/user/add?t=1")
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+
+    axios.get("http://127.0.0.1:8081/user/add?t=2",
+        {headers:{
+            Authorization:"noear"
+        }})
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+
+    axios.post("http://127.0.0.1:8081/user/add?t=3", {
+            user:"noear"
+        },{headers:{
+            Authorization:"noear"
+        }})
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+
+    axios.post("http://127.0.0.1:8081/user/add?t=4", {
+            user:"noear"
+        })
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+</script>
+</body>
+</html>
