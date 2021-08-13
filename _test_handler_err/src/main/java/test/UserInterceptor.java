@@ -13,6 +13,6 @@ import org.noear.solon.core.handle.Handler;
 public class UserInterceptor implements Handler {
     @Override
     public void handle(Context ctx) throws Exception {
-        throw new NullPointerException();
+       // throw new NullPointerException();
     }
 }

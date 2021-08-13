@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.noear.solon</groupId>
-    <artifactId>_test_handler_err</artifactId>
+    <artifactId>_test_http_options</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
@@ -22,6 +22,11 @@
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.boot.jetty</artifactId>
         </dependency>
 
         <dependency>
@@ -60,7 +65,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>webapp.ServletApp</mainClass>
+                            <mainClass>demo.App</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
