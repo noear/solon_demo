@@ -3,6 +3,7 @@ package test.dso;
 import org.noear.solon.Utils;
 import org.noear.solon.core.handle.Context;
 import org.noear.solon.core.handle.Handler;
+import org.noear.solon.extend.cors.CrossHandler;
 
 /**
  * @author noear
