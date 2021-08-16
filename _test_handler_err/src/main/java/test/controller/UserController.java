@@ -12,7 +12,7 @@ import org.noear.solon.core.handle.Result;
 @Controller
 public class UserController {
     @Mapping("add")
-    public Object add(Context ctx){
+    public Object add(Context ctx) throws Throwable{
         System.out.println(ctx.method() +"...ADD");
 
         return Result.succeed();

@@ -15,7 +15,7 @@ public class App1 {
                 System.out.println(c.method() +" " +c.path());
             });
 
-            app.before(new CrossHandler()
+            app.before(new CrossHandlerNew()
                     .allowCredentials(true)
                     .allowMethods("*")
                     .allowHeaders("*")
