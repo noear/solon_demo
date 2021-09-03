@@ -55,6 +55,7 @@
         <module>demo08.solon_mybatis_sqlhelper</module>
         <module>demo08.solon_mybatis_pagehelper</module>
         <module>demo08.solon_mybatis_multisource</module>
+        <module>demo08.solon_mybatisplus</module>
         <module>demo09.solon_activerecord</module>
         <module>demo09.solon_beetlsql</module>
         <module>demo09.solon_beetlsql_multisource</module>
