@@ -30,7 +30,7 @@ public class DemoApp {
     public static void main(String[] args) {
         new SolonBuilder()
                 .onEvent(SQLManagerBuilder.class, c -> {
-                    if (Solon.cfg().isDebugMode()) {
+                    if (Solon.cfg().isDebugMode() || Solon.cfg().isFilesMode()) {
                         c.addInterDebug();
                     }
                 })
