@@ -1,6 +1,6 @@
 package webapp.controller;
 
-import com.jn.sqlhelper.dialect.pagination.SqlPaginations;
+import com.github.pagehelper.PageHelper;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
@@ -18,7 +18,7 @@ public class PageController {
 
     @Mapping("test")
     public Object test() throws Throwable{
-        SqlPaginations.preparePagination(2,2);
+        PageHelper.offsetPage(2, 2);
 
        return appxMapper.appx_get_page();
 
