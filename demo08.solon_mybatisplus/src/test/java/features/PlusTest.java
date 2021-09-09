@@ -24,7 +24,7 @@ public class PlusTest {
     AppxMapper2 appxMapper2;
 
     @Test
-    public void test() {
+    public void selectById() {
         AppxModel app = appxMapper2.selectById(2);
         System.out.println(app);
 
@@ -34,7 +34,7 @@ public class PlusTest {
 
 
     @Test
-    public void test2() {
+    public void selectPage() {
         Page<AppxModel> page = new Page<>(1, 10);
         IPage<AppxModel> iPage = appxMapper2.selectPage(page, new QueryWrapper<>());
 
