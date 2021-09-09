@@ -1,6 +1,12 @@
 package webapp;
 
+import com.baomidou.mybatisplus.annotation.DbType;
+import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
+import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
+import com.baomidou.mybatisplus.extension.plugins.pagination.dialects.MySqlDialect;
+import org.apache.ibatis.session.Configuration;
 import org.noear.solon.Solon;
+import org.noear.solon.SolonBuilder;
 
 /**
  *
@@ -25,8 +31,16 @@ import org.noear.solon.Solon;
 public class DemoApp {
     public static void main(String[] args) {
 
-        Solon.start(DemoApp.class, args, (app)->{
-           //app.beanMake(MybatisConfiguration.class);
-        });
+        new SolonBuilder()
+                .onEvent(Configuration.class, e -> {
+                    MybatisPlusInterceptor plusInterceptor = new MybatisPlusInterceptor();
+
+                    plusInterceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
+
+                    e.addInterceptor(plusInterceptor);
+                })
+                .start(DemoApp.class, args, (app) -> {
+                    //app.beanMake(MybatisConfiguration.class);
+                });
     }
 }
