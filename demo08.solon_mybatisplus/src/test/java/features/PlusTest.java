@@ -32,6 +32,15 @@ public class PlusTest {
         assert app.getAppId() == 2;
     }
 
+    @Test
+    public void selectOne() {
+        AppxModel app = appxMapper2.selectOne(new QueryWrapper<AppxModel>().eq("id",2));
+        System.out.println(app);
+
+        assert app != null;
+        assert app.getAppId() == 2;
+    }
+
 
     @Test
     public void selectPage() {
