@@ -32,6 +32,7 @@ public class PlusTest {
         assert app.getAppId() == 2;
     }
 
+
     @Test
     public void test2() {
         Page<AppxModel> page = new Page<>(1, 10);
