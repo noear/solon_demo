@@ -4,7 +4,7 @@ import org.noear.solon.Solon;
 import org.noear.solon.SolonApp;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.core.Aop;
-import org.noear.solon.serialization.hession.HessianHandler;
+import org.noear.solon.serialization.hessian.HessianHandler;
 
 public class ServerApp {
     public static void main(String[] args) {
