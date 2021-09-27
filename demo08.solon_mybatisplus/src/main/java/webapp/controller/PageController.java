@@ -1,6 +1,7 @@
 package webapp.controller;
 
 import com.github.pagehelper.PageHelper;
+import org.apache.ibatis.ext.solon.Db;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
@@ -13,7 +14,7 @@ import webapp.dso.mapper.AppxMapper;
 @Mapping("/page/")
 @Controller
 public class PageController {
-    @Inject
+    @Db
     AppxMapper appxMapper;
 
     @Mapping("test")

@@ -1,5 +1,6 @@
 package webapp.controller;
 
+import org.apache.ibatis.ext.solon.Db;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.annotation.Mapping;
@@ -12,7 +13,7 @@ import webapp.model.AppxModel;
 @Mapping("/demo/")
 @Controller
 public class DemoController {
-    @Inject
+    @Db
     AppxMapper appxMapper;
 
     @Mapping("test")
