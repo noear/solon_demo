@@ -34,7 +34,7 @@ public class DemoApp {
                     //e.addInterceptor();
                 })
                 .onPluginLoadEnd(e -> {
-                    //重新定义 SqlSessionFactoryBuilder
+                    //重新定义 SqlSessionFactoryBuilder（没事儿，别用它）
                     Aop.wrapAndPut(SqlSessionFactoryBuilder.class, new SqlSessionFactoryBuilderImpl());
                 })
                 .start(DemoApp.class, args, (app) -> {

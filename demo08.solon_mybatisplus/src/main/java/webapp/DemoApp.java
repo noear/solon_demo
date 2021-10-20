@@ -1,12 +1,15 @@
 package webapp;
 
 import com.baomidou.mybatisplus.annotation.DbType;
+import com.baomidou.mybatisplus.core.MybatisSqlSessionFactoryBuilder;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.pagination.dialects.MySqlDialect;
 import org.apache.ibatis.session.Configuration;
 import org.noear.solon.Solon;
 import org.noear.solon.SolonBuilder;
+import org.noear.solon.core.Aop;
+import webapp.dso.MybatisSqlSessionFactoryBuilderImpl;
 
 /**
  *
@@ -38,6 +41,10 @@ public class DemoApp {
                     plusInterceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
 
                     e.addInterceptor(plusInterceptor);
+                })
+                .onPluginLoadEnd(e -> {
+                    //重新定义 SqlSessionFactoryBuilder（没事儿，别用它）
+                    Aop.wrapAndPut(MybatisSqlSessionFactoryBuilder.class, new MybatisSqlSessionFactoryBuilderImpl());
                 })
                 .start(DemoApp.class, args, (app) -> {
                     //app.beanMake(MybatisConfiguration.class);
