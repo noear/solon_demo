@@ -5,7 +5,7 @@
 <dependency>
     <groupId>org.noear</groupId>
     <artifactId>cron4j-solon-plugin</artifactId>
-    <version>1.5.45</version>
+    <version>1.5.48</version>
 </dependency>
 ```
 
