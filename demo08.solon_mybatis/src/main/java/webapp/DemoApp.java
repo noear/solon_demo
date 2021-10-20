@@ -1,6 +1,7 @@
 package webapp;
 
-import org.noear.solon.Solon;
+import org.apache.ibatis.session.Configuration;
+import org.noear.solon.SolonBuilder;
 
 /**
  *
@@ -25,8 +26,13 @@ import org.noear.solon.Solon;
 public class DemoApp {
     public static void main(String[] args) {
 
-        Solon.start(DemoApp.class, args, (app)->{
-           //app.beanMake(MybatisConfiguration.class);
-        });
+        new SolonBuilder()
+                .onEvent(Configuration.class, e -> {
+                    //e.addInterceptor();
+                })
+                .start(DemoApp.class, args, (app) -> {
+                    //app.beanMake(MybatisConfiguration.class);
+                });
+
     }
 }
