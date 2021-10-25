@@ -12,10 +12,14 @@
     <name>${project.artifactId}</name>
     <description>java project for solon demo</description>
 
+    <properties>
+        <solon.ver>1.5.50</solon.ver>
+    </properties>
+
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>1.5.49</version>
+        <version>1.5.50</version>
     </parent>
 
 

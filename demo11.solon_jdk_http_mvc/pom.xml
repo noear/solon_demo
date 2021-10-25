@@ -20,8 +20,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.noear</groupId>
+            <groupId>org.noear.hatch</groupId>
             <artifactId>solon.boot.jdkhttp</artifactId>
+            <version>${solon.ver}</version>
         </dependency>
         <dependency>
             <groupId>org.noear</groupId>

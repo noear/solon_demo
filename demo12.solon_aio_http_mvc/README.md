@@ -23,7 +23,7 @@ smart-http 是一款比较简易的 http服务器，其通信内核采用了smar
     <dependency>
         <groupId>org.noear</groupId>
         <artifactId>solon.boot.smarthttp</artifactId>
-        <version>1.0.40</version>
+        <version>1.0.50</version>
     </dependency>
     <!-- 一个小巧的JSON框架 -->
     <dependency>

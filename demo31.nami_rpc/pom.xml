@@ -29,8 +29,9 @@
 
         <!-- http & websocket boot -->
         <dependency>
-            <groupId>org.noear</groupId>
+            <groupId>org.noear.hatch</groupId>
             <artifactId>solon.boot.smarthttp</artifactId>
+            <version>${solon.ver}</version>
         </dependency>
 
 
