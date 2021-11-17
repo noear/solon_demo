@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>1.5.54</version>
+        <version>1.5.68</version>
     </parent>
 
 
@@ -29,9 +29,8 @@
 
         <!-- http & websocket boot -->
         <dependency>
-            <groupId>org.noear.hatch</groupId>
+            <groupId>org.noear</groupId>
             <artifactId>solon.boot.smarthttp</artifactId>
-            <version>${solon.ver}</version>
         </dependency>
 
 

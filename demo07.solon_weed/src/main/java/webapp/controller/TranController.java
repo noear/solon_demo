@@ -3,7 +3,10 @@ package webapp.controller;
 import org.noear.solon.annotation.*;
 import org.noear.solon.data.annotation.Cache;
 import org.noear.solon.data.annotation.Tran;
+import org.noear.weed.DbContext;
+import org.noear.weed.annotation.Db;
 import webapp.dso.service.AppService;
+import webapp.dso.service.AppServiceImpl;
 
 @Mapping("/tran/")
 @Controller
@@ -58,6 +61,13 @@ public class TranController {
         throw new RuntimeException("不让你加；但还是加了:(");
     }
 
+    @Mapping("test12_2")
+    public void test12_2() throws Exception {
+        //添加会成功
+        //
+        appService.addApp2_2();
+    }
+
     @Tran
     @Mapping("test21")
     public void test21() throws Exception {
@@ -77,12 +87,29 @@ public class TranController {
 
     @Tran
     @Mapping("test41")
-    public void test41() throws Exception {
+    public void test41(int nt) throws Exception {
         //添加会成功
         //
         appService.addApp3();
 
-        throw new RuntimeException("不让你加");
+        if (nt == 0) {
+            throw new RuntimeException("不让你加");
+        }
+    }
+
+    @Db
+    DbContext db;
+
+    @Tran
+    @Mapping("test42")
+    public void test42(int nt) throws Exception {
+        //添加会成功
+        //
+        db.exe("insert into test (v1) values (1024);");
+
+        if (nt == 0) {
+            throw new RuntimeException("不让你加");
+        }
     }
 
 

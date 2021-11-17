@@ -23,7 +23,7 @@ public class TranTest extends HttpTestBase {
         path("/tran/test").get();
         path("/tran/test").get();
         path("/tran/test").get();
-        assert db.table("test").count() == 6;
+        assert db.table("test").selectCount() == 6;
     }
 
     @Test
@@ -32,7 +32,7 @@ public class TranTest extends HttpTestBase {
         path("/tran/test2").get();
         path("/tran/test2").get();
         path("/tran/test2").get();
-        assert db.table("test").count() == 0;
+        assert db.table("test").selectCount() == 0;
     }
 
     @Test
@@ -41,7 +41,7 @@ public class TranTest extends HttpTestBase {
         path("/tran/test11").get();
         path("/tran/test11").get();
         path("/tran/test11").get();
-        assert db.table("test").count() == 3;
+        assert db.table("test").selectCount() == 3;
     }
 
     @Test
@@ -50,7 +50,16 @@ public class TranTest extends HttpTestBase {
         path("/tran/test12").get();
         path("/tran/test12").get();
         path("/tran/test12").get();
-        assert db.table("test").count() == 3;
+        assert db.table("test").selectCount() == 3;
+    }
+
+    @Test
+    public void test12_2() throws Exception {
+        clear(db);
+        path("/tran/test12_2").get();
+        path("/tran/test12_2").get();
+        path("/tran/test12_2").get();
+        assert db.table("test").selectCount() == 0;
     }
 
     @Test
@@ -59,7 +68,7 @@ public class TranTest extends HttpTestBase {
         path("/tran/test21").get();
         path("/tran/test21").get();
         path("/tran/test21").get();
-        assert db.table("test").count() == 3;
+        assert db.table("test").selectCount() == 3;
     }
 
     @Test
@@ -68,7 +77,7 @@ public class TranTest extends HttpTestBase {
         path("/tran/test22").get();
         path("/tran/test22").get();
         path("/tran/test22").get();
-        long count = db.table("test").count();
+        long count = db.table("test").selectCount();
         System.out.println(count);
         assert count == 0;
     }
@@ -81,10 +90,48 @@ public class TranTest extends HttpTestBase {
         path("/tran/test41").get();
         path("/tran/test41").get();
 
-        long count = db.table("test").count();
+        long count = db.table("test").selectCount();
         System.out.println(count);
         assert count == 0;
     }
+
+    @Test
+    public void test41_2() throws Exception {
+        clear(db);
+        path("/tran/test41?nt=1").get();
+        path("/tran/test41?nt=1").get();
+        path("/tran/test41?nt=1").get();
+
+        long count = db.table("test").selectCount();
+        System.out.println(count);
+        assert count == 3;
+    }
+
+
+    @Test
+    public void test42() throws Exception {
+        clear(db);
+        path("/tran/test42").get();
+        path("/tran/test42").get();
+        path("/tran/test42").get();
+
+        long count = db.table("test").selectCount();
+        System.out.println(count);
+        assert count == 0;
+    }
+
+    @Test
+    public void test42_2() throws Exception {
+        clear(db);
+        path("/tran/test42?nt=1").get();
+        path("/tran/test42?nt=1").get();
+        path("/tran/test42?nt=1").get();
+
+        long count = db.table("test").selectCount();
+        System.out.println(count);
+        assert count == 3;
+    }
+
 
     @Test
     public void test51() throws Exception {
@@ -93,7 +140,7 @@ public class TranTest extends HttpTestBase {
         path("/tran/test51").get();
         path("/tran/test51").get();
 
-        long count = db.table("test").count();
+        long count = db.table("test").selectCount();
         System.out.println(count);
         assert count == 3;
     }
@@ -105,7 +152,7 @@ public class TranTest extends HttpTestBase {
         path("/tran/test52").get();
         path("/tran/test52").get();
 
-        long count = db.table("test").count();
+        long count = db.table("test").selectCount();
         System.out.println(count);
         assert count == 1; //因为有cache，只被执行了1次
     }
@@ -117,7 +164,7 @@ public class TranTest extends HttpTestBase {
         path("/tran/test61").get();
         path("/tran/test61").get();
 
-        long count = db.table("test").count();
+        long count = db.table("test").selectCount();
         System.out.println(count);
         assert count == 0;
     }
@@ -129,7 +176,7 @@ public class TranTest extends HttpTestBase {
         path("/tran/test63").get();
         path("/tran/test63").get();
 
-        long count = db.table("test").count();
+        long count = db.table("test").selectCount();
         System.out.println(count);
         assert count == 3;
     }
@@ -141,7 +188,7 @@ public class TranTest extends HttpTestBase {
         path("/tran/test71").get();
         path("/tran/test71").get();
 
-        long count = db.table("test").count();
+        long count = db.table("test").selectCount();
         System.out.println(count);
         assert count == 3;
     }
@@ -153,7 +200,7 @@ public class TranTest extends HttpTestBase {
         path("/tran/test73").get();
         path("/tran/test73").get();
 
-        long count = db.table("test").count();
+        long count = db.table("test").selectCount();
         System.out.println(count);
         assert count == 0;
     }
