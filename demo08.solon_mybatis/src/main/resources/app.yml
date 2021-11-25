@@ -1,5 +1,12 @@
 solon.output.meta: 1
 
+solon.logging.logger:
+    "org.eclipse.jetty.*":
+        level: "WARN"
+    "com.zaxxer.hikari.*":
+        level: "WARN"
+
+
 test.db1:
     schema: rock
     jdbcUrl: jdbc:mysql://localhost:3306/rock?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=true
@@ -19,6 +26,8 @@ mybatis.db1:
 #        class: com.github.pagehelper.PageHelper
 #        dialect: mysql
 #        rowBoundsWithCount: true
+
+
 
 
 #分页组件的配置
