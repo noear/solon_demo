@@ -6,10 +6,10 @@
 
     <groupId>org.noear</groupId>
     <artifactId>solon_demo</artifactId>
-    <version>demo</version>
+    <version>dev</version>
     <packaging>pom</packaging>
 
-    <name>${project.artifactId}</name>
+    <name>_root</name>
     <description>java project for solon demo</description>
 
 

@@ -1,5 +1,6 @@
 package demo.controller;
 
+import org.noear.solon.Utils;
 import org.noear.solon.annotation.ServerEndpoint;
 import org.noear.solon.core.message.Listener;
 import org.noear.solon.core.message.Message;
@@ -16,6 +17,8 @@ public class WebSocket implements Listener {
     public void onOpen(Session session) {
         //请求参数（想签权，可以在这里做；有问题请求，这里可以close掉）
         System.out.println(session.paramMap());
+
+        String name = session.path().split("/")[1];
     }
 
     @Override
