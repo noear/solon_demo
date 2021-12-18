@@ -6,9 +6,12 @@
     <property name="LOG_HOME" value="logs"/>
     <!-- 控制台输出日志 -->
     <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
-        <layout class="ch.qos.logback.classic.PatternLayout">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>TRACE</level>
+        </filter>
+        <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %magenta(${PID:-}) %white(-&#45;&#45;) %-20(%yellow([%20.20thread])) %-55(%cyan(%.32logger{30}:%L)) %msg%n</pattern>
-        </layout>
+        </encoder>
     </appender>
 
     <appender name="File" class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -33,7 +36,7 @@
     </appender>
 
     <root>
-        <level value="INFO" />
+        <level value="TRACE" />
         <appender-ref ref="Console"/>
         <appender-ref ref="File"/>
     </root>
