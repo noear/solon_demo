@@ -1,7 +1,6 @@
 package webapp.model;
 
 import lombok.Data;
-import org.noear.solon.annotation.Param;
 
 import java.util.Date;
 
@@ -14,7 +13,6 @@ public class UserModel {
 
     public transient String _type;
 
-    @Param(format = "yyyy-MM-dd")
     public Date date = new Date();
 
     public long[] aaa;

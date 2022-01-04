@@ -2,7 +2,6 @@ package webapp.controller.more;
 
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
-import org.noear.solon.annotation.Param;
 import org.noear.solon.annotation.Singleton;
 import org.noear.solon.core.handle.Context;
 import org.noear.solon.core.handle.MethodType;
@@ -75,7 +74,7 @@ public class ParamController {
 
     //支持时间参数（要加XParam指定格式）
     @Mapping("date")
-    public Object test_h2(Context ctx, @Param(format = "yyyy-MM-dd") Date date, Date date2) throws Exception{
+    public Object test_h2(Context ctx, Date date, Date date2) throws Exception{
         return date + " # " + date2;
     }
 
