@@ -19,6 +19,10 @@
         <relativePath />
     </parent>
 
+    <properties>
+        <dubbo.ver>2.7.5</dubbo.ver>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.noear</groupId>

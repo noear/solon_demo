@@ -27,13 +27,7 @@
 
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>mybatisplus-solon-plugin</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-extension</artifactId>
-            <version>3.4.3.3</version>
+            <artifactId>mybatis-plus-extension-solon-plugin</artifactId>
         </dependency>
 
         <dependency>
