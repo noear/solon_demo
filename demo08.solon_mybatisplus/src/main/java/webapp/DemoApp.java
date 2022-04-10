@@ -2,9 +2,9 @@ package webapp;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.core.MybatisSqlSessionFactoryBuilder;
-import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
-import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
-import com.baomidou.mybatisplus.extension.plugins.pagination.dialects.MySqlDialect;
+import com.baomidou.mybatisplus.solon.plugins.MybatisPlusInterceptor;
+import com.baomidou.mybatisplus.solon.plugins.inner.PaginationInnerInterceptor;
+import com.baomidou.mybatisplus.solon.plugins.pagination.dialects.MySqlDialect;
 import org.apache.ibatis.session.Configuration;
 import org.noear.solon.Solon;
 import org.noear.solon.SolonBuilder;
