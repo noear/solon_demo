@@ -20,13 +20,6 @@
         <dependency>
             <groupId>org.noear</groupId>
             <artifactId>solon-web</artifactId>
-            <exclusions>
-                <!-- 排除默认的 jlhttp 启动器 -->
-                <exclusion>
-                    <groupId>org.noear</groupId>
-                    <artifactId>solon.boot.jlhttp</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <!-- 添加 undertow 启动器 -->

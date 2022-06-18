@@ -21,7 +21,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.noear.hatch</groupId>
+            <groupId>org.noear</groupId>
             <artifactId>solon.boot.jdkhttp</artifactId>
             <version>${solon.ver}</version>
         </dependency>

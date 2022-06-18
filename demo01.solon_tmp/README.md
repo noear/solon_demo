@@ -6,7 +6,7 @@
 ```xml
 <dependency>
     <groupId>org.noear</groupId>
-    <artifactId>solon.boot.jlhttp</artifactId>
+    <artifactId>solon.boot.jdkhttp</artifactId>
     <version>1.8.3</version>
 </dependency>
 ```
