@@ -29,19 +29,19 @@ smart-http 是一款比较简易的 http服务器，其通信内核采用了smar
     <dependency>
         <groupId>org.noear</groupId>
         <artifactId>solon.serialization.snack3</artifactId>
-        <version>1.0.40</version>
+        <version>1.9.0</version>
     </dependency>
     <!-- enjoy模板引擎 -->
     <dependency>
         <groupId>org.noear</groupId>
         <artifactId>solon.view.enjoy</artifactId>
-        <version>1.0.40</version>
+        <version>1.9.0</version>
     </dependency>
     <!-- 静态文件支持 -->
     <dependency>
         <groupId>org.noear</groupId>
-        <artifactId>solon.extend.staticfiles</artifactId>
-        <version>1.0.40</version>
+        <artifactId>solon.web.staticfiles</artifactId>
+        <version>1.9.0</version>
     </dependency>
 </dependencies>
 ```

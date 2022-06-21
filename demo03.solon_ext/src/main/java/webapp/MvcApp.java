@@ -1,8 +1,8 @@
 package webapp;
 
 import org.noear.solon.Solon;
-import org.noear.solon.extend.staticfiles.StaticMappings;
-import org.noear.solon.extend.staticfiles.repository.ExtendStaticRepository;
+import org.noear.solon.web.staticfiles.StaticMappings;
+import org.noear.solon.web.staticfiles.repository.ExtendStaticRepository;
 
 public class MvcApp {
     public static void main(String[] args) {
