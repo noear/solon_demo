@@ -18,30 +18,32 @@ smart-http 是一款比较简易的 http服务器，其通信内核采用了smar
 
 ##### （二）添加 maven 引用
 ```xml
+<parent>
+    <groupId>org.noear</groupId>
+    <artifactId>solon-parent</artifactId>
+    <version>1.9.1</version>
+</parent>
+
 <dependencies>
     <!-- 基于 smart-http 封装的 solon.boot -->
     <dependency>
         <groupId>org.noear</groupId>
         <artifactId>solon.boot.smarthttp</artifactId>
-        <version>1.0.50</version>
     </dependency>
     <!-- 一个小巧的JSON框架 -->
     <dependency>
         <groupId>org.noear</groupId>
         <artifactId>solon.serialization.snack3</artifactId>
-        <version>1.9.0</version>
     </dependency>
     <!-- enjoy模板引擎 -->
     <dependency>
         <groupId>org.noear</groupId>
         <artifactId>solon.view.enjoy</artifactId>
-        <version>1.9.0</version>
     </dependency>
     <!-- 静态文件支持 -->
     <dependency>
         <groupId>org.noear</groupId>
         <artifactId>solon.web.staticfiles</artifactId>
-        <version>1.9.0</version>
     </dependency>
 </dependencies>
 ```
@@ -59,7 +61,7 @@ smart-http 是一款比较简易的 http服务器，其通信内核采用了smar
 补充说明：
 ```
 //资源路径说明（不用配置）
-resources/application.properties（或 application.yml） 为应用配置文件
+resources/app.properties（或 app.yml） 为应用配置文件
 resources/static/ 为静态文件根目标
 resources/WEB-INF/view/ 为视图文件根目标（支持多视图共存）
 
@@ -73,14 +75,14 @@ resources/WEB-INF/view/ 为视图文件根目标（支持多视图共存）
 ```java
 public class AioApp {
     public static void main(String[] args) {
-        Solon.start(AioApp.class, args);
+        App.start(AioApp.class, args);
     }
 }
 ```
 
 * webapp/widget/FooterTag.java
 ```java
-@Bean("view:footer")
+@Component("view:footer")
 public class FooterTag extends Directive {
     @Override
     public void exec(Env env, Scope scope, Writer writer) {
@@ -114,7 +116,8 @@ public class UserModel {
 ```java
 @Controller
 public class HomeController {
-    @Mapping(value = "/", produces = "text/html;charset=utf-8")
+    @Produces("text/html;charset=utf-8")
+    @Mapping("/")
     public String home(){
         return "<a href='/helloworld'>/helloworld</a>";
     }
