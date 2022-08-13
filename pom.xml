@@ -11,7 +11,7 @@
 
     <name>_root</name>
     <description>java project for solon demo</description>
-    
+
     <modules>
         <module>_test_protostuff</module>
         <module>_test_handler_err</module>
