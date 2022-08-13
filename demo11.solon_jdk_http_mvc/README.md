@@ -19,25 +19,25 @@
     <dependency>
         <groupId>org.noear</groupId>
         <artifactId>solon.boot.jdkhttp</artifactId>
-        <version>1.9.4</version>
+        <version>1.10.0</version>
     </dependency>
     <!-- 一个小巧的JSON框架 -->
     <dependency>
         <groupId>org.noear</groupId>
         <artifactId>solon.serialization.snack3</artifactId>
-        <version>1.9.4</version>
+        <version>1.10.0</version>
     </dependency>
     <!-- enjoy模板引擎 -->
     <dependency>
         <groupId>org.noear</groupId>
         <artifactId>solon.view.enjoy</artifactId>
-        <version>1.9.4</version>
+        <version>1.10.0</version>
     </dependency>
     <!-- 静态文件支持 -->
     <dependency>
         <groupId>org.noear</groupId>
         <artifactId>solon.web.staticfiles</artifactId>
-        <version>1.9.4</version>
+        <version>1.10.0</version>
     </dependency>
 </dependencies>
 ```

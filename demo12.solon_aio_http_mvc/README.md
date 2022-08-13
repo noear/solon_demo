@@ -21,7 +21,7 @@ smart-http 是一款比较简易的 http服务器，其通信内核采用了smar
 <parent>
     <groupId>org.noear</groupId>
     <artifactId>solon-parent</artifactId>
-    <version>1.9.4</version>
+    <version>1.10.0</version>
 </parent>
 
 <dependencies>
