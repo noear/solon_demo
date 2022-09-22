@@ -6,7 +6,6 @@ import net.hasor.utils.ExceptionUtils;
 import net.hasor.utils.StringUtils;
 import org.noear.solon.Solon;
 import org.noear.solon.annotation.Configuration;
-import org.noear.solon.core.Aop;
 import org.noear.solon.core.event.BeanLoadEndEvent;
 import org.noear.solon.core.event.EventListener;
 import org.slf4j.Logger;
@@ -25,7 +24,7 @@ public class HasorConfiguration implements EventListener<BeanLoadEndEvent> {
     private static Logger logger = LoggerFactory.getLogger(HasorConfiguration.class);
 
     public HasorConfiguration() {
-        this(Solon.global().source().getAnnotation(EnableHasor.class));
+        this(Solon.app().source().getAnnotation(EnableHasor.class));
     }
 
     /**
@@ -44,7 +43,7 @@ public class HasorConfiguration implements EventListener<BeanLoadEndEvent> {
 
         // 处理startWith
         for (Class<? extends Module> startWith : enableHasor.startWith()) {
-            buildConfig.addModules(Aop.get(startWith));
+            buildConfig.addModules(Solon.context().getBean(startWith));
         }
 
         // 把Solon 中所有标记了 @DimModule 的 Module，捞进来。 //交给PluginImp处理
@@ -54,9 +53,9 @@ public class HasorConfiguration implements EventListener<BeanLoadEndEvent> {
         if (enableHasor.scanPackages().length != 0) {
             for (String p : enableHasor.scanPackages()) {
                 if (p.endsWith(".*")) {
-                    Aop.context().beanScan(p.substring(0, p.length() - 2));
+                    Solon.context().beanScan(p.substring(0, p.length() - 2));
                 } else {
-                    Aop.context().beanScan(p);
+                    Solon.context().beanScan(p);
                 }
             }
         }
@@ -75,9 +74,9 @@ public class HasorConfiguration implements EventListener<BeanLoadEndEvent> {
     public void onEvent(BeanLoadEndEvent beanLoadedEvent) {
         //没有EnableHasorWeb时，生成AppContext并注入容器
         //
-        if (Solon.global().source().getAnnotation(EnableHasorWeb.class) == null) {
+        if (Solon.app().source().getAnnotation(EnableHasorWeb.class) == null) {
             //所有bean加载完成之后，手动注入AppContext
-            Aop.wrapAndPut(AppContext.class, initAppContext());
+            Solon.context().wrapAndPut(AppContext.class, initAppContext());
         }
     }
 

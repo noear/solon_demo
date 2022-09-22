@@ -2,6 +2,7 @@ package webapp;
 
 import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.noear.solon.Solon;
 import org.noear.solon.SolonBuilder;
 import org.noear.solon.core.Aop;
 import webapp.dso.SqlSessionFactoryBuilderImpl;
@@ -35,7 +36,7 @@ public class DemoApp {
                 })
                 .onPluginLoadEnd(e -> {
                     //重新定义 SqlSessionFactoryBuilder（没事儿，别用它）
-                    Aop.wrapAndPut(SqlSessionFactoryBuilder.class, new SqlSessionFactoryBuilderImpl());
+                    Solon.context().wrapAndPut(SqlSessionFactoryBuilder.class, new SqlSessionFactoryBuilderImpl());
                 })
                 .start(DemoApp.class, args, (app) -> {
                     //app.beanMake(MybatisConfiguration.class);

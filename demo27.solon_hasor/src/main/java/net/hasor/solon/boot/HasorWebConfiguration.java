@@ -28,7 +28,7 @@ public class HasorWebConfiguration implements ServletContainerInitializer {
     private int filterOrder = 0;
 
     public HasorWebConfiguration() {
-        this(Solon.global().source().getAnnotation(EnableHasorWeb.class));
+        this(Solon.app().source().getAnnotation(EnableHasorWeb.class));
     }
 
     /**
@@ -50,7 +50,7 @@ public class HasorWebConfiguration implements ServletContainerInitializer {
         AppContext appContext = initAppContext(servletContext);
 
         //将AppContext注入容器
-        Aop.wrapAndPut(AppContext.class,appContext);
+        Solon.context().wrapAndPut(AppContext.class,appContext);
 
         //注册 listener
         RuntimeListener listener = new RuntimeListener(appContext);

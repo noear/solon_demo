@@ -44,7 +44,7 @@ public class DemoApp {
                 })
                 .onPluginLoadEnd(e -> {
                     //重新定义 SqlSessionFactoryBuilder（没事儿，别用它）
-                    Aop.wrapAndPut(MybatisSqlSessionFactoryBuilder.class, new MybatisSqlSessionFactoryBuilderImpl());
+                    Solon.context().wrapAndPut(MybatisSqlSessionFactoryBuilder.class, new MybatisSqlSessionFactoryBuilderImpl());
                 })
                 .start(DemoApp.class, args, (app) -> {
                     //app.beanMake(MybatisConfiguration.class);

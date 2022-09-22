@@ -18,7 +18,7 @@ public class ClientApp {
     public static void main(String[] args) {
         Solon.start(ClientApp.class, args, app -> app.enableHttp(false));
 
-        ClientApp tmp = Aop.get(ClientApp.class);
+        ClientApp tmp = Solon.context().getBean(ClientApp.class);
         Object user = tmp.userService.getUser();
         System.out.println(ONode.stringify(user));
     }

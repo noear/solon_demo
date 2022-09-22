@@ -3,6 +3,7 @@ import net.hasor.test.spring.mod1.*;
 import net.hasor.core.AppContext;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.noear.solon.Solon;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.core.Aop;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
@@ -20,7 +21,7 @@ public class BootEnableHasor_2_Test {
     @Test
     public void contextLoads() {
         Set<Class<?>> hasType = new HashSet<>();
-        Aop.beanForeach((bw) -> {
+        Solon.context().beanForeach((bw) -> {
             hasType.add(bw.clz());
         });
         //
@@ -45,7 +46,7 @@ public class BootEnableHasor_2_Test {
     @Test
     public void contextLoads21() {
         Set<Class<?>> hasType = new HashSet<>();
-        Aop.beanForeach((bw) -> {
+        Solon.context().beanForeach((bw) -> {
             hasType.add(bw.clz());
         });
 
@@ -59,7 +60,7 @@ public class BootEnableHasor_2_Test {
     @Test
     public void contextLoads22() {
         Set<Class<?>> hasType = new HashSet<>();
-        Aop.beanForeach((bw) -> {
+        Solon.context().beanForeach((bw) -> {
             hasType.add(bw.clz());
         });
 
@@ -75,7 +76,7 @@ public class BootEnableHasor_2_Test {
     @Test
     public void contextLoads23() {
         Set<Class<?>> hasType = new HashSet<>();
-        Aop.beanForeach((bw) -> {
+        Solon.context().beanForeach((bw) -> {
             hasType.add(bw.clz());
         });
 
@@ -85,7 +86,7 @@ public class BootEnableHasor_2_Test {
         assert appContext.getBindInfo(TestDimModuleC.class) == null; // 不是一个有效的 Module
         assert hasType.contains(TestDimModuleC.class);// 是Spring Bean
         TestDimModuleC dimModuleC_1 = appContext.getInstance(TestDimModuleC.class);
-        TestDimModuleC dimModuleC_2 = Aop.get(TestDimModuleC.class);
+        TestDimModuleC dimModuleC_2 = Solon.context().getBean(TestDimModuleC.class);
         //assert dimModuleC_1.getApplicationContext() == null;// Hasor 当成普通 Bean 创建
     }
 }

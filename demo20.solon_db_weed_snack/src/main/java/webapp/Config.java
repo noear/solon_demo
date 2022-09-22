@@ -2,6 +2,7 @@ package webapp;
 
 import com.zaxxer.hikari.HikariDataSource;
 import org.noear.solon.Solon;
+import org.noear.solon.Utils;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.core.Aop;
 import org.noear.weed.DbContext;
@@ -32,7 +33,7 @@ public class Config {
 
         //利于一个solon的内部工具
         //
-        DataSource dataSource = Aop.inject(new HikariDataSource(), prop);
+        DataSource dataSource = Utils.injectProperties(new HikariDataSource(), prop);
 
         return new DbContext(schema, dataSource);
     }

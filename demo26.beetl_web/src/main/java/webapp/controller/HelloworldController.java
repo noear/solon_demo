@@ -1,6 +1,6 @@
 package webapp.controller;
 
-import org.beetl.sql.ext.solon.Db;
+import org.beetl.sql.solon.annotation.Db;
 import org.noear.snack.ONode;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;

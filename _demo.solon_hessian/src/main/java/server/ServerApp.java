@@ -13,11 +13,11 @@ public class ServerApp {
         Solon.start(ServerApp.class, args);
 
         Solon.global().add("/web/hessian", MethodType.HTTP,
-                new HessianHandler(IGreetingService.class, Aop.get(IGreetingService.class)));
+                new HessianHandler(IGreetingService.class, Solon.context().getBean(IGreetingService.class)));
 
 
         Solon.global().add("/web/hessian_complex", MethodType.HTTP,
-                new HessianHandler(IComplexModelService.class, Aop.get(ComplexModelService.class)));
+                new HessianHandler(IComplexModelService.class, Solon.context().getBean(ComplexModelService.class)));
 
         //HessianServlet
     }

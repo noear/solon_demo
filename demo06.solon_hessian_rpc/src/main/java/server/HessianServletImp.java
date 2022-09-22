@@ -10,6 +10,6 @@ import javax.servlet.annotation.WebServlet;
 public class HessianServletImp extends HessianServlet {
     public HessianServletImp(){
         setHomeAPI(ComplexModelService.class);
-        setHome(Aop.get(ComplexModelServiceImpl.class));
+        setHome(Solon.context().getBean(ComplexModelServiceImpl.class));
     }
 }

@@ -2,7 +2,7 @@ package webapp;
 
 import com.zaxxer.hikari.HikariDataSource;
 import org.beetl.sql.core.SQLManager;
-import org.beetl.sql.ext.solon.Db;
+import org.beetl.sql.solon.annotation.Db;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Init;

@@ -28,7 +28,7 @@ public class ComplextModelServiceTest10 {
         });
 
 
-        ComplextModelServiceTest10 test5 = Aop.get(ComplextModelServiceTest10.class);
+        ComplextModelServiceTest10 test5 = Solon.context().getBean(ComplextModelServiceTest10.class);
         test5.test();
     }
 

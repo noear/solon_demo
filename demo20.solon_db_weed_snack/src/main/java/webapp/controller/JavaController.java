@@ -32,8 +32,7 @@ public class JavaController {
         //
         return db1.table("appx")
                 .limit(1)
-                .select("app_id")
-                .getValue();
+                .selectValue("app_id");
     }
 
     @Mapping("demo2/json")
@@ -46,10 +45,9 @@ public class JavaController {
         return db1.table("appx")
                 .whereEq("app_id", app_id)
                 .limit(1)
-                .select("*")
                 .caching(Config.cache1)
                 .cacheTag("app_" + app_id)
-                .getItem(AppxModel.class);
+                .selectItem("*", AppxModel.class);
     }
 
     @Mapping("demo3/json")
@@ -63,8 +61,7 @@ public class JavaController {
         Object tmp = db1.table(tb)
                 .whereEq("app_id", app_id)
                 .limit(1)
-                .select("*")
-                .getMap();
+                .selectMap("*");
 
         Config.cache1.clear("test");
 
@@ -82,8 +79,7 @@ public class JavaController {
                 .where("app_id>?",48)
                 .orderBy("app_id ASC")
                 .limit(4)
-                .select("*")
-                .getList(AppxModel.class);
+                .selectList("*", AppxModel.class);
     }
 
     @Mapping("demo5/json")
@@ -93,7 +89,6 @@ public class JavaController {
         //
         return db1.table("appx")
                 .limit(4)
-                .select("app_id")
-                .getArray(0);
+                .selectArray("app_id");
     }
 }

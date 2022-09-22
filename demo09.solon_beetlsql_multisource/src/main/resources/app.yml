@@ -13,3 +13,7 @@ test:
     password: UL0hHlg0Ybq60xyb
 
 solon.output.meta: 1
+
+
+beetlsql.db1:
+  slaves: db2

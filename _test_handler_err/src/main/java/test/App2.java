@@ -2,7 +2,7 @@ package test;
 
 import org.noear.solon.Solon;
 import org.noear.solon.core.handle.Context;
-import org.noear.solon.extend.cors.CrossHandler;
+import org.noear.solon.web.cors.CrossHandler;
 import test.dso.CrossHandlerNew;
 
 /**

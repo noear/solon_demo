@@ -19,7 +19,7 @@ public class DemoApp {
         initFlowRules("HelloWorld", 2);
 
         for (int i = 0; i < 100; i++) {
-            Utils.pools.submit(() -> {
+            Utils.async(() -> {
                 try (Entry entry = SphU.entry("HelloWorld")) {
                     System.out.println("hello world");
                 } catch (BlockException ex) {

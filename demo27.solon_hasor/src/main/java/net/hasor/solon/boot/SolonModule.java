@@ -17,13 +17,13 @@ public interface SolonModule extends net.hasor.core.Module {
      * 使用 Spring getBean(Class) 方式获取Bean。
      */
     default <T> Supplier<T> getSupplierOfType(ApiBinder apiBinder, Class<T> targetType) {
-        return (Provider<T>) () -> Aop.get(targetType);
+        return (Provider<T>) () -> Solon.context().getBean(targetType);
     }
 
     /**
      * 使用 Spring getBean(String) 方式获取Bean。
      */
     default <T> Supplier<T> getSupplierOfName(ApiBinder apiBinder, String beanName) {
-        return (Provider<T>) () -> (T) Aop.get(beanName);
+        return (Provider<T>) () -> (T) Solon.context().getBean(beanName);
     }
 }

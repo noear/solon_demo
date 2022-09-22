@@ -1,6 +1,6 @@
 package webapp.controller;
 
-import org.apache.ibatis.ext.solon.Db;
+import org.apache.ibatis.solon.annotation.Db;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
 import webapp.dso.mapper.Appx2Mapper;

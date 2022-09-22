@@ -7,6 +7,7 @@ import net.hasor.db.Level;
 import net.hasor.web.WebApiBinder;
 import net.hasor.web.WebModule;
 import org.noear.solon.Solon;
+import org.noear.solon.Utils;
 import org.noear.solon.annotation.Component;
 import org.noear.solon.core.Aop;
 import org.noear.solon.core.ExtendLoader;
@@ -43,7 +44,7 @@ public class StartModule implements WebModule {
         props.setProperty("jdbcUrl", props.getProperty("jdbcUrl").replace("~/", ExtendLoader.path()));
 
         //2.生成DataSource
-        DataSource ds = Aop.inject(new HikariDataSource(), props);
+        DataSource ds = Utils.injectProperties(new HikariDataSource(), props);
 
         try {
             //3.需要初始化schame（第一次会成功；之后会失败；不用管...）

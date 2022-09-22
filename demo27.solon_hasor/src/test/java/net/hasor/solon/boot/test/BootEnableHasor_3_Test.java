@@ -3,6 +3,7 @@ import net.hasor.test.spring.mod1.*;
 import net.hasor.core.AppContext;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.noear.solon.Solon;
 import org.noear.solon.annotation.Inject;
 import org.noear.solon.core.Aop;
 import org.noear.solon.test.SolonJUnit4ClassRunner;
@@ -20,7 +21,7 @@ public class BootEnableHasor_3_Test {
     @Test
     public void contextLoads() {
         Set<Class<?>> hasType = new HashSet<>();
-        Aop.beanForeach((bw)->{
+        Solon.context().beanForeach((bw)->{
             hasType.add(bw.clz());
         });
         //
@@ -45,7 +46,7 @@ public class BootEnableHasor_3_Test {
     @Test
     public void contextLoads21() {
         Set<Class<?>> hasType = new HashSet<>();
-        Aop.beanForeach((bw)->{
+        Solon.context().beanForeach((bw)->{
             hasType.add(bw.clz());
         });
         //
@@ -61,7 +62,7 @@ public class BootEnableHasor_3_Test {
     @Test
     public void contextLoads22() {
         Set<Class<?>> hasType = new HashSet<>();
-        Aop.beanForeach((bw)->{
+        Solon.context().beanForeach((bw)->{
             hasType.add(bw.clz());
         });
 
@@ -71,7 +72,7 @@ public class BootEnableHasor_3_Test {
         assert appContext.getBindInfo(TestDimModuleB.class) != null; // Hasor 加载了
         assert hasType.contains(TestDimModuleB.class);// 虽然 没有标注ComponentScan范围，但是启动的主类和它在一个包里面， Spring 仍然会处理 Component。
         TestDimModuleB dimModuleB_1 = appContext.getInstance(TestDimModuleB.class);
-        TestDimModuleB dimModuleB_2 = Aop.get(TestDimModuleB.class);
+        TestDimModuleB dimModuleB_2 = Solon.context().getBean(TestDimModuleB.class);
         //assert dimModuleB_1.getApplicationContext() == applicationContext;// Hasor 当成普通 Bean 创建
         //assert dimModuleB_2.getApplicationContext() == applicationContext;// Spring 会创建它
 
@@ -80,7 +81,7 @@ public class BootEnableHasor_3_Test {
     @Test
     public void contextLoads23() {
         Set<Class<?>> hasType = new HashSet<>();
-        Aop.beanForeach((bw) -> {
+        Solon.context().beanForeach((bw) -> {
             hasType.add(bw.clz());
         });
 
