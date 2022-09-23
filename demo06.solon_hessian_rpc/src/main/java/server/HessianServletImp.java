@@ -2,7 +2,7 @@ package server;
 
 import client.ComplexModelService;
 import com.caucho.hessian.server.HessianServlet;
-import org.noear.solon.core.Aop;
+import org.noear.solon.Solon;
 
 import javax.servlet.annotation.WebServlet;
 

@@ -1,7 +1,7 @@
 package net.hasor.solon.boot;
 
 import net.hasor.core.*;
-import org.noear.solon.core.Aop;
+import org.noear.solon.Solon;
 
 import java.util.function.Supplier;
 
