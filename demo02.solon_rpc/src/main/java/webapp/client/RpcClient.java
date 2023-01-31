@@ -3,7 +3,6 @@ package webapp.client;
 import org.noear.nami.annotation.NamiClient;
 import org.noear.solon.Solon;
 import org.noear.solon.annotation.Component;
-import org.noear.solon.core.Aop;
 import webapp.protocol.UserModel;
 import webapp.protocol.UserService;
 

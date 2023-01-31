@@ -5,7 +5,6 @@ import org.noear.nami.NamiConfigurationDefault;
 import org.noear.nami.annotation.NamiClient;
 import org.noear.solon.Solon;
 import org.noear.solon.annotation.Component;
-import org.noear.solon.core.Aop;
 import server.dso.IComplexModelService;
 import server.model.ComplexModel;
 import server.model.Person;

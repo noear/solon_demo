@@ -1,6 +1,5 @@
 package dockapp_actuator;
 
-import org.noear.solon.SolonApp;
 import org.noear.solon.core.AopContext;
 import org.noear.solon.core.Plugin;
 

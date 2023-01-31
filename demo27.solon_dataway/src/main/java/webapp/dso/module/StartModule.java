@@ -9,7 +9,6 @@ import net.hasor.web.WebModule;
 import org.noear.solon.Solon;
 import org.noear.solon.Utils;
 import org.noear.solon.annotation.Component;
-import org.noear.solon.core.Aop;
 import org.noear.solon.core.ExtendLoader;
 import webapp.dso.DsHelper;
 

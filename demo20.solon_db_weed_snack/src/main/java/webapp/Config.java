@@ -4,7 +4,6 @@ import com.zaxxer.hikari.HikariDataSource;
 import org.noear.solon.Solon;
 import org.noear.solon.Utils;
 import org.noear.solon.annotation.Configuration;
-import org.noear.solon.core.Aop;
 import org.noear.weed.DbContext;
 import org.noear.weed.cache.ICacheServiceEx;
 import org.noear.weed.cache.LocalCache;

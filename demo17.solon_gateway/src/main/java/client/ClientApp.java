@@ -5,7 +5,6 @@ import org.noear.nami.annotation.NamiClient;
 import org.noear.snack.ONode;
 import org.noear.solon.Solon;
 import org.noear.solon.annotation.Component;
-import org.noear.solon.core.Aop;
 
 /**
  * @author noear 2021/4/22 created

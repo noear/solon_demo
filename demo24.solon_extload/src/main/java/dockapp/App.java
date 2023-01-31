@@ -2,7 +2,6 @@ package dockapp;
 
 import actuator.IActuator;
 import org.noear.solon.Solon;
-import org.noear.solon.core.Aop;
 
 public class App {
     public static void main(String[] args) {

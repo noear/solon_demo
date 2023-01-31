@@ -8,7 +8,6 @@ import com.baomidou.mybatisplus.solon.plugins.pagination.dialects.MySqlDialect;
 import org.apache.ibatis.session.Configuration;
 import org.noear.solon.Solon;
 import org.noear.solon.SolonBuilder;
-import org.noear.solon.core.Aop;
 import webapp.dso.MybatisSqlSessionFactoryBuilderImpl;
 
 /**
@@ -42,7 +41,7 @@ public class DemoApp {
 
                     e.addInterceptor(plusInterceptor);
                 })
-                .onPluginLoadEnd(e -> {
+                .onAppPluginLoadEnd(e -> {
                     //重新定义 SqlSessionFactoryBuilder（没事儿，别用它）
                     Solon.context().wrapAndPut(MybatisSqlSessionFactoryBuilder.class, new MybatisSqlSessionFactoryBuilderImpl());
                 })
