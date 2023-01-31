@@ -6,7 +6,7 @@ import net.hasor.utils.ExceptionUtils;
 import net.hasor.utils.StringUtils;
 import org.noear.solon.Solon;
 import org.noear.solon.annotation.Configuration;
-import org.noear.solon.core.event.BeanLoadEndEvent;
+import org.noear.solon.core.event.AppBeanLoadEndEvent;
 import org.noear.solon.core.event.EventListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,7 +20,7 @@ import java.io.IOException;
  * @since 2020.10.10
  * */
 @Configuration
-public class HasorConfiguration implements EventListener<BeanLoadEndEvent> {
+public class HasorConfiguration implements EventListener<AppBeanLoadEndEvent> {
     private static Logger logger = LoggerFactory.getLogger(HasorConfiguration.class);
 
     public HasorConfiguration() {
@@ -71,7 +71,7 @@ public class HasorConfiguration implements EventListener<BeanLoadEndEvent> {
     }
 
     @Override
-    public void onEvent(BeanLoadEndEvent beanLoadedEvent) {
+    public void onEvent(AppBeanLoadEndEvent beanLoadedEvent) {
         //没有EnableHasorWeb时，生成AppContext并注入容器
         //
         if (Solon.app().source().getAnnotation(EnableHasorWeb.class) == null) {
