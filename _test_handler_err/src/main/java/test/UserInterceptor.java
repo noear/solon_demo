@@ -8,8 +8,8 @@ import org.noear.solon.core.handle.Handler;
 /**
  * @author noear 2021/8/8 created
  */
-@Mapping(value = "/user/**", before = true)
-@Controller
+//@Mapping(value = "/user/**", before = true)
+//@Controller
 public class UserInterceptor implements Handler {
     @Override
     public void handle(Context ctx) throws Exception {
