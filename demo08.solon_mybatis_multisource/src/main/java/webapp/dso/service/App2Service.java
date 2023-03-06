@@ -1,11 +1,12 @@
 package webapp.dso.service;
 
 import org.noear.solon.annotation.Inject;
+import org.noear.solon.annotation.ProxyComponent;
 import org.noear.solon.aspect.annotation.Service;
 import org.noear.solon.data.annotation.Tran;
 import webapp.dso.mapper.Appx2Mapper;
 
-@Service
+@ProxyComponent
 public class App2Service {
     @Inject
     Appx2Mapper appxMapper2;

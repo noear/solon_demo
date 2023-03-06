@@ -1,5 +1,6 @@
 package webapp.dso.service;
 
+import org.noear.solon.annotation.ProxyComponent;
 import org.noear.solon.aspect.annotation.Service;
 import org.noear.solon.data.annotation.Cache;
 import org.noear.solon.data.annotation.Tran;
@@ -7,7 +8,7 @@ import org.noear.solon.data.tran.TranPolicy;
 import org.noear.weed.annotation.Db;
 import webapp.dso.mapper.SqlMapper;
 
-@Service
+@ProxyComponent
 public class AppServiceImpl implements AppService{
     @Db
     SqlMapper sqlMapper1;

@@ -1,9 +1,9 @@
 package webapp.server;
 
-import org.apache.dubbo.config.annotation.Service;
+import org.apache.dubbo.config.annotation.DubboService;
 import webapp.protocol.HelloService;
 
-@Service(group = "hello")
+@DubboService(group = "hello")
 public class HelloServiceImpl implements HelloService {
     @Override
     public String sayHello(String name) {
