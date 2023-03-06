@@ -7,7 +7,7 @@
 <dependency>
     <groupId>org.noear</groupId>
     <artifactId>solon.boot.jdkhttp</artifactId>
-    <version>2.0.0</version>
+    <version>2.2.1</version>
 </dependency>
 ```
 
