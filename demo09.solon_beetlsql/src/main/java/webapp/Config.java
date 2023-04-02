@@ -14,17 +14,13 @@ import javax.sql.DataSource;
 @Configuration
 public class Config {
     //@Bean(attrs = {"dialect=oracle"}) //通过特性，指定BeetlSQL的方言
-    @Bean
+    @Bean(name="db1",typed = true)
     public DataSource db1(@Inject("${test.db1}") HikariDataSource dataSource) {
         return dataSource;
     }
 
-    @Db
-    SQLManager sqlManager;
-
-
-    @Init
-    public void init(){
+    @Bean
+    public void db1Init(@Db("db1") SQLManager sqlManager){
         //sqlManager.addIdAutoGen();
     }
 }

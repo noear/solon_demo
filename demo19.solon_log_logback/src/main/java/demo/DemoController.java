@@ -2,18 +2,18 @@ package demo;
 
 import lombok.extern.slf4j.Slf4j;
 import org.noear.solon.annotation.Controller;
-import org.noear.solon.annotation.Init;
 import org.noear.solon.annotation.Mapping;
+import org.noear.solon.core.bean.LifecycleBean;
 
 /**
  * @author noear 2021/5/24 created
  */
 @Slf4j
 @Controller
-public class DemoController {
+public class DemoController implements LifecycleBean {
 
-    @Init
-    public void init(){
+    @Override
+    public void start(){
         log.info("---------------DemoApp init-----------");
     }
 
