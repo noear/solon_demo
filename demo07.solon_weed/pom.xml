@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>2.2.1</version>
+        <version>2.2.8</version>
         <relativePath />
     </parent>
 
@@ -64,7 +64,7 @@
             <plugin>
                 <groupId>org.noear</groupId>
                 <artifactId>weed3-maven-plugin</artifactId>
-                <version>${weed3.ver}</version>
+                <version>${weed3.version}</version>
             </plugin>
 
             <plugin>

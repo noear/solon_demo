@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>2.2.1</version>
+        <version>2.2.8</version>
         <relativePath />
     </parent>
 
@@ -28,7 +28,7 @@
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-registry-nacos</artifactId>
-            <version>${dubbo3.ver}</version>
+            <version>${dubbo3.version}</version>
         </dependency>
     </dependencies>
 
