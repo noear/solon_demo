@@ -1,8 +1,10 @@
 <h1 align="center" style="text-align:center;">
-  Solon for java
+<img src="solon_icon.png" width="128" />
+<br />
+Solon v2.2.8
 </h1>
 <p align="center">
-	<strong>更现代感的，轻量级应用开发框架</strong>
+	<strong>一个高效的 Java 应用开发框架，更小、更快、更简单！</strong>
 </p>
 <p align="center">
 	<a href="https://solon.noear.org/">https://solon.noear.org</a>
@@ -16,7 +18,16 @@
 		<img src="https://img.shields.io/:license-Apache2-blue.svg" alt="Apache 2" />
 	</a>
     <a target="_blank" href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">
-		<img src="https://img.shields.io/badge/JDK-8+-green.svg" alt="jdk-8+" />
+		<img src="https://img.shields.io/badge/JDK-8-green.svg" alt="jdk-8" />
+	</a>
+    <a target="_blank" href="https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html">
+		<img src="https://img.shields.io/badge/JDK-11-green.svg" alt="jdk-11" />
+	</a>
+    <a target="_blank" href="https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html">
+		<img src="https://img.shields.io/badge/JDK-17-green.svg" alt="jdk-17" />
+	</a>
+    <a target="_blank" href="https://www.oracle.com/java/technologies/javase/jdk19-archive-downloads.html">
+		<img src="https://img.shields.io/badge/JDK-19-green.svg" alt="jdk-19" />
 	</a>
     <br />
     <a target="_blank" href='https://gitee.com/noear/solon/stargazers'>
@@ -37,7 +48,6 @@
 <hr />
 
 启动快 5 ～ 10 倍；qps 高 2～ 3 倍；运行时内存节省 1/3 ~ 1/2；打包可以缩到 1/2 ~ 1/10
-
 
 <hr />
 
