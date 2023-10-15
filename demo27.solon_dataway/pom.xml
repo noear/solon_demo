@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.noear</groupId>
         <artifactId>solon-parent</artifactId>
-        <version>2.2.8</version>
+        <version>2.5.9</version>
         <relativePath />
     </parent>
 
@@ -24,12 +24,6 @@
             <groupId>org.noear</groupId>
             <artifactId>solon.boot.undertow</artifactId>
         </dependency>
-
-        <!-- 支持 servlet 容器 -->
-<!--        <dependency>-->
-<!--            <groupId>org.eclipse.jetty</groupId>-->
-<!--            <artifactId>jetty-servlet</artifactId>-->
-<!--        </dependency>-->
 
         <!-- 与 net.hasor:hasor-core 代码相同 -->
         <dependency>

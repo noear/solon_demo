@@ -41,7 +41,6 @@
         <module>demo04.solon_mvc_jsp</module>
         <module>demo04.solon_websocket</module>
         <module>demo05.solon_mvc_undertow_jsp</module>
-        <module>demo06.solon_hessian_rpc</module>
         <module>demo07.solon_weed</module>
         <module>demo07.solon_weed_multisource</module>
         <module>demo08.solon_mybatis</module>

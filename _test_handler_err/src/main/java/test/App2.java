@@ -12,16 +12,6 @@ public class App2 {
     public static void main(String[] args) {
         Solon.start(App2.class, args, app -> {
             app.before(new CrossHandler().allowedOrigins("*"));
-        }).onError(e -> {
-            if (Solon.cfg().isDebugMode() || Solon.cfg().isFilesMode()) {
-                e.printStackTrace();
-            }
-
-            Context ctx = Context.current();
-
-            if (ctx != null) {
-                ctx.output("出错了"); //后面还会有异常输出
-            }
         });
     }
 }

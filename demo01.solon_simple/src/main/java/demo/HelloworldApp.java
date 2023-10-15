@@ -9,8 +9,7 @@ import org.noear.solon.core.handle.Result;
 @Controller
 public class HelloworldApp {
     public static void main(String[] args) {
-        Solon.start(HelloworldApp.class, args)
-                .onError(e-> e.printStackTrace());
+        Solon.start(HelloworldApp.class, args);
     }
 
     @Mapping("/")

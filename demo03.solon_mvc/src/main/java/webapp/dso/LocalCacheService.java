@@ -16,13 +16,14 @@ public class LocalCacheService implements CacheService {
         cache.store(key,obj,seconds);
     }
 
-    @Override
-    public Object get(String key) {
-        return cache.get(key);
-    }
 
     @Override
     public void remove(String key) {
         cache.remove(key);
+    }
+
+    @Override
+    public <T> T get(String key, Class<T> clz) {
+        return null;
     }
 }

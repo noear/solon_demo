@@ -17,12 +17,12 @@ public class MemCacheService implements CacheService {
     }
 
     @Override
-    public Object get(String key) {
-        return cache.get(key);
+    public void remove(String key) {
+        cache.remove(key);
     }
 
     @Override
-    public void remove(String key) {
-        cache.remove(key);
+    public <T> T get(String key, Class<T> clz) {
+        return (T)cache.get(key);
     }
 }

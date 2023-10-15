@@ -20,21 +20,6 @@ public class App1 {
                     .allowMethods("*")
                     .allowHeaders("*")
                     .allowOrigin("*"));
-        }).onError(e -> {
-            if (Solon.cfg().isDebugMode() || Solon.cfg().isFilesMode()) {
-                e.printStackTrace();
-            }
-
-            Context ctx = Context.current();
-
-            if (ctx != null) {
-                if (ctx.getRendered() == false) {
-                    ctx.output("出错了");  //后面不会有异常输出
-                }
-
-                ctx.setHandled(true);
-                ctx.setRendered(true);
-            }
         });
     }
 }
