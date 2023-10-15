@@ -32,7 +32,6 @@ public class DemoApp {
                     //添加拦截插件
                     //c.addInterceptor();
                 })
-                .onError((err) -> err.printStackTrace())
                 .start(DemoApp.class, args);
     }
 }

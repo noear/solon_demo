@@ -1,11 +1,11 @@
 package webapp;
 
 import com.zaxxer.hikari.HikariDataSource;
+import org.apache.ibatis.solon.MybatisAdapter;
 import org.apache.ibatis.solon.annotation.Db;
 import org.noear.solon.annotation.Bean;
 import org.noear.solon.annotation.Configuration;
 import org.noear.solon.annotation.Inject;
-import org.noear.solon.extend.mybatis.MybatisAdapter;
 
 import javax.sql.DataSource;
 
